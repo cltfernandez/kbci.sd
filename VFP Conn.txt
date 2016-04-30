@@ -1,0 +1,109 @@
+
+Dim ConnectionString As String
+
+ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;" & _
+"Data Source=e:\My Documents\dBase;Extended Properties=dBase IV"
+Dim dBaseConnection As New System.Data.OleDb.OleDbConnection(ConnectionString )
+dBaseConnection.Open()
+
+Dim dBaseCommand As New System.Data.OleDb.OleDbCommand("SELECT * FROM MyDBase",
+dBaseConnection)
+Dim dBaseDataReader As System.Data.OleDb.OleDbDataReader =
+dBaseCommand.ExecuteReader(CommandBehavior.Sequent ialAccess)
+
+While dBaseDataReader.Read
+Console.WriteLine(dBaseDataReader("Column1").ToStr ing)
+Console.WriteLine(dBaseDataReader("Column2").ToStr ing)
+Console.WriteLine(dBaseDataReader("Column3").ToStr ing)
+End While
+
+dBaseConnection.Close()
+-------------------------------------------------------------------------------------------
+Public Function opendb()
+    Set MyConn = New ADODB.Connection
+    MyConn.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=c:\sa;Extended Properties=dBASE IV;User ID=Admin;Password="
+    MyConn.Open
+End Function
+Public Function searchroute(stext As String)
+    Dim sql As String
+    sql = "SELECT Routeline from routing where tripnumber=118001"
+    RS.Open sql, MyConn, adOpenForwardOnly, adLockReadOnly, adCmdText
+    
+
+    With RS
+        Do While Not .EOF
+            Main.Text1.AddItem RS("RouteLine")
+            .MoveNext
+        Loop
+    End With
+End Function
+-------------------------------------------------------------------------------------------
+Public Function GetLogFileFields(ByVal folderName As String) As DataColumnCollection
+
+    ' Build a connection string to the FoxPro free table folder.
+    Dim connectionString As String = "Provider=VFPOLEDB.1;Data Source=" & folderName
+
+    ' Create a connection to the tables.
+    Dim connectFoxPro As OleDbConnection = New OleDbConnection(connectionString)
+
+    ' Select all the fields from the log file.
+    Dim queryString As String = "Select * From LogFile"
+    Dim commandLogFile As OleDbCommand = New OleDbCommand(queryString, connectFoxPro)
+
+    Dim readerFoxPro As OleDbDataReader
+
+    Dim tableSchema As DataTable
+
+    Try
+
+      ' Open the connection to the table directory.
+      connectFoxPro.Open()
+
+      ' Get a DataReader to retrieve table information.
+      readerFoxPro = commandLogFile.ExecuteReader
+
+      ' Get the schema from the DataReader.
+      tableSchema = readerFoxPro.GetSchemaTable()
+
+    Catch ex As Exception
+
+      MessageBox.Show(ex.ToString)
+
+    End Try
+
+    ' Return the column collection from the table schema.
+    Return tableSchema.Columns
+
+    If Not connectFoxPro Is Nothing Then
+
+      If connectFoxPro.State = ConnectionState.Open Then
+        connectFoxPro.Close()
+      End If
+
+      connectFoxPro.Dispose()
+
+    End If
+
+    If Not commandLogFile Is Nothing Then
+
+      commandLogFile = Nothing
+
+      commandLogFile.Dispose()
+
+    End If
+
+    If Not tableSchema Is Nothing Then
+      tableSchema = Nothing
+    End If
+
+    If Not readerFoxPro Is Nothing Then
+      readerFoxPro.Close()
+      readerFoxPro = Nothing
+    End If
+
+  End Function 'GetLogFileFields'
+
+
+Call with:
+
+    Dim colsLogFile As DataColumnCollection = GetLogFileFields("WhiteBoard")

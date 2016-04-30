@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{81880EA1-5447-4638-B420-ACF629A3DEE8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SDS.DataSource</RootNamespace>
+    <AssemblyName>SDS.DataSource</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>SDS.DataSource.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>SDS.DataSource.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalDependencies\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalDependencies\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Codegen\LunaEngine\ClassBase\LunaBaseClasses.vb" />
+    <Compile Include="Codegen\LunaEngine\ClassDAO\_Advance.vb" />
+    <Compile Include="Codegen\LunaEngine\ClassDAO\_AdvanceDAO.vb" />
+    <Compile Include="Codegen\LunaEngine\ClassDAO\_Aloans.vb" />
+    <Compile Include="Codegen\LunaEngine\ClassDAO\_AloansDAO.vb" />
+    <Compile Include="Codegen\LunaEngine\ClassDAO\_Ctrl_s.vb" />
+    <Compile Include="Codegen\LunaEngine\ClassDAO\_Ctrl_sDAO.vb" />
+    <Compile Include="Codegen\LunaEngine\ClassDAO\_Divref.vb" />
+    <Compile Include="Codegen\LunaEngine\ClassDAO\_DivrefDAO.vb" />
+    <Compile Include="Codegen\LunaEngine\ClassDAO\_Extkbc.vb" />
+    <Compile Include="Codegen\LunaEngine\ClassDAO\_ExtkbcDAO.vb" />
+    <Compile Include="Codegen\LunaEngine\ClassDAO\_Extract.vb" />
+    <Compile Include="Codegen\LunaEngine\ClassDAO\_ExtractDAO.vb" />
+    <Compile Include="Codegen\LunaEngine\ClassDAO\_Interest.vb" />
+    <Compile Include="Codegen\LunaEngine\ClassDAO\_InterestDAO.vb" />
+    <Compile Include="Codegen\LunaEngine\ClassDAO\_Interest_s.vb" />
+    <Compile Include="Codegen\LunaEngine\ClassDAO\_Interest_sDAO.vb" />
+    <Compile Include="Codegen\LunaEngine\ClassDAO\_Members.vb" />
+    <Compile Include="Codegen\LunaEngine\ClassDAO\_MembersDAO.vb" />
+    <Compile Include="Codegen\LunaEngine\ClassDAO\_Param_s.vb" />
+    <Compile Include="Codegen\LunaEngine\ClassDAO\_Param_sDAO.vb" />
+    <Compile Include="Codegen\LunaEngine\ClassDAO\_Rnterest.vb" />
+    <Compile Include="Codegen\LunaEngine\ClassDAO\_RnterestDAO.vb" />
+    <Compile Include="Codegen\LunaEngine\ClassDAO\_Sd.vb" />
+    <Compile Include="Codegen\LunaEngine\ClassDAO\_Sdcheck.vb" />
+    <Compile Include="Codegen\LunaEngine\ClassDAO\_SdcheckDAO.vb" />
+    <Compile Include="Codegen\LunaEngine\ClassDAO\_SdDAO.vb" />
+    <Compile Include="Codegen\LunaEngine\ClassDAO\_Sdedbal.vb" />
+    <Compile Include="Codegen\LunaEngine\ClassDAO\_SdedbalDAO.vb" />
+    <Compile Include="Codegen\LunaEngine\ClassDAO\_Sdmaster.vb" />
+    <Compile Include="Codegen\LunaEngine\ClassDAO\_SdmasterDAO.vb" />
+    <Compile Include="Codegen\LunaEngine\ClassDAO\_Sdoption.vb" />
+    <Compile Include="Codegen\LunaEngine\ClassDAO\_SdoptionDAO.vb" />
+    <Compile Include="Codegen\LunaEngine\ClassDAO\_Sdothers.vb" />
+    <Compile Include="Codegen\LunaEngine\ClassDAO\_SdothersDAO.vb" />
+    <Compile Include="Codegen\LunaEngine\ClassDAO\_Sdpay.vb" />
+    <Compile Include="Codegen\LunaEngine\ClassDAO\_SdpayDAO.vb" />
+    <Compile Include="Codegen\LunaEngine\ClassDAO\_Sdpost.vb" />
+    <Compile Include="Codegen\LunaEngine\ClassDAO\_SdpostDAO.vb" />
+    <Compile Include="Codegen\LunaEngine\ClassDAO\_Sdtran.vb" />
+    <Compile Include="Codegen\LunaEngine\ClassDAO\_Sdtranb.vb" />
+    <Compile Include="Codegen\LunaEngine\ClassDAO\_SdtranbDAO.vb" />
+    <Compile Include="Codegen\LunaEngine\ClassDAO\_SdtranDAO.vb" />
+    <Compile Include="Codegen\LunaEngine\ClassDAO\_Snterest.vb" />
+    <Compile Include="Codegen\LunaEngine\ClassDAO\_SnterestDAO.vb" />
+    <Compile Include="Codegen\LunaEngine\ClassDAO\_Spteller.vb" />
+    <Compile Include="Codegen\LunaEngine\ClassDAO\_SptellerDAO.vb" />
+    <Compile Include="Codegen\LunaEngine\ClassDAO\_Spuser.vb" />
+    <Compile Include="Codegen\LunaEngine\ClassDAO\_SpuserDAO.vb" />
+    <Compile Include="Codegen\LunaUserClass\ClassBase\LunaContext.vb" />
+    <Compile Include="Codegen\LunaUserClass\ClassDAO\AdvanceDAO.vb" />
+    <Compile Include="Codegen\LunaUserClass\ClassDAO\AloansDAO.vb" />
+    <Compile Include="Codegen\LunaUserClass\ClassDAO\Ctrl_sDAO.vb" />
+    <Compile Include="Codegen\LunaUserClass\ClassDAO\DivrefDAO.vb" />
+    <Compile Include="Codegen\LunaUserClass\ClassDAO\ExtkbcDAO.vb" />
+    <Compile Include="Codegen\LunaUserClass\ClassDAO\ExtractDAO.vb" />
+    <Compile Include="Codegen\LunaUserClass\ClassDAO\InterestDAO.vb" />
+    <Compile Include="Codegen\LunaUserClass\ClassDAO\Interest_sDAO.vb" />
+    <Compile Include="Codegen\LunaUserClass\ClassDAO\MembersDAO.vb" />
+    <Compile Include="Codegen\LunaUserClass\ClassDAO\Param_sDAO.vb" />
+    <Compile Include="Codegen\LunaUserClass\ClassDAO\RnterestDAO.vb" />
+    <Compile Include="Codegen\LunaUserClass\ClassDAO\SdcheckDAO.vb" />
+    <Compile Include="Codegen\LunaUserClass\ClassDAO\SdDAO.vb" />
+    <Compile Include="Codegen\LunaUserClass\ClassDAO\SdedbalDAO.vb" />
+    <Compile Include="Codegen\LunaUserClass\ClassDAO\SdmasterDAO.vb" />
+    <Compile Include="Codegen\LunaUserClass\ClassDAO\SdoptionDAO.vb" />
+    <Compile Include="Codegen\LunaUserClass\ClassDAO\SdothersDAO.vb" />
+    <Compile Include="Codegen\LunaUserClass\ClassDAO\SdpayDAO.vb" />
+    <Compile Include="Codegen\LunaUserClass\ClassDAO\SdpostDAO.vb" />
+    <Compile Include="Codegen\LunaUserClass\ClassDAO\SdtranbDAO.vb" />
+    <Compile Include="Codegen\LunaUserClass\ClassDAO\SdtranDAO.vb" />
+    <Compile Include="Codegen\LunaUserClass\ClassDAO\SnterestDAO.vb" />
+    <Compile Include="Codegen\LunaUserClass\ClassDAO\SptellerDAO.vb" />
+    <Compile Include="Codegen\LunaUserClass\ClassDAO\SpuserDAO.vb" />
+    <Compile Include="Codegen\LunaUserClass\ClassEntity\Advance.vb" />
+    <Compile Include="Codegen\LunaUserClass\ClassEntity\Aloans.vb" />
+    <Compile Include="Codegen\LunaUserClass\ClassEntity\Ctrl_s.vb" />
+    <Compile Include="Codegen\LunaUserClass\ClassEntity\Divref.vb" />
+    <Compile Include="Codegen\LunaUserClass\ClassEntity\Extkbc.vb" />
+    <Compile Include="Codegen\LunaUserClass\ClassEntity\Extract.vb" />
+    <Compile Include="Codegen\LunaUserClass\ClassEntity\Interest.vb" />
+    <Compile Include="Codegen\LunaUserClass\ClassEntity\Interest_s.vb" />
+    <Compile Include="Codegen\LunaUserClass\ClassEntity\Members.vb" />
+    <Compile Include="Codegen\LunaUserClass\ClassEntity\Param_s.vb" />
+    <Compile Include="Codegen\LunaUserClass\ClassEntity\Rnterest.vb" />
+    <Compile Include="Codegen\LunaUserClass\ClassEntity\Sd.vb" />
+    <Compile Include="Codegen\LunaUserClass\ClassEntity\Sdcheck.vb" />
+    <Compile Include="Codegen\LunaUserClass\ClassEntity\Sdedbal.vb" />
+    <Compile Include="Codegen\LunaUserClass\ClassEntity\Sdmaster.vb" />
+    <Compile Include="Codegen\LunaUserClass\ClassEntity\Sdoption.vb" />
+    <Compile Include="Codegen\LunaUserClass\ClassEntity\Sdothers.vb" />
+    <Compile Include="Codegen\LunaUserClass\ClassEntity\Sdpay.vb" />
+    <Compile Include="Codegen\LunaUserClass\ClassEntity\Sdpost.vb" />
+    <Compile Include="Codegen\LunaUserClass\ClassEntity\Sdtran.vb" />
+    <Compile Include="Codegen\LunaUserClass\ClassEntity\Sdtranb.vb" />
+    <Compile Include="Codegen\LunaUserClass\ClassEntity\Snterest.vb" />
+    <Compile Include="Codegen\LunaUserClass\ClassEntity\Spteller.vb" />
+    <Compile Include="Codegen\LunaUserClass\ClassEntity\Spuser.vb" />
+    <Compile Include="Database.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SDS.Common\SDS.Common.vbproj">
+      <Project>{6731CBB5-597D-4A25-8A64-15182C606FDE}</Project>
+      <Name>SDS.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

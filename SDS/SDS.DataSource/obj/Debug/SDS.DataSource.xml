@@ -1,0 +1,2867 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+SDS.DataSource
+</name>
+</assembly>
+<members>
+<member name="M:SDS.DataSource._Sdpay.Read(System.Int32)">
+	<summary>
+This method read an Sdpay from DB.
+ </summary>
+	<returns>
+Return 0 if all ok, 1 if error
+ </returns>
+</member><member name="M:SDS.DataSource._Sdpay.Save">
+	<summary>
+This method save an Sdpay on DB.
+ </summary>
+	<returns>
+Return Id insert in DB if all ok, 0 if error
+ </returns>
+</member><member name="T:SDS.DataSource._Sdpay">
+	<summary>
+DAO Class for table Sdpay
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="T:SDS.DataSource._ISdpay">
+	<summary>
+Interface for table Sdpay
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="T:SDS.DataSource.RnterestDAO">
+	<summary>
+DAO Class for table Rnterest
+ </summary>
+	<remarks>
+Write your DATABASE custom method here
+ </remarks>
+</member><member name="T:SDS.DataSource.SdedbalDAO">
+	<summary>
+DAO Class for table Sdedbal
+ </summary>
+	<remarks>
+Write your DATABASE custom method here
+ </remarks>
+</member><member name="M:SDS.DataSource._Rnterest.Read(System.Int32)">
+	<summary>
+This method read an Rnterest from DB.
+ </summary>
+	<returns>
+Return 0 if all ok, 1 if error
+ </returns>
+</member><member name="M:SDS.DataSource._Rnterest.Save">
+	<summary>
+This method save an Rnterest on DB.
+ </summary>
+	<returns>
+Return Id insert in DB if all ok, 0 if error
+ </returns>
+</member><member name="T:SDS.DataSource._Rnterest">
+	<summary>
+DAO Class for table Rnterest
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="T:SDS.DataSource._IRnterest">
+	<summary>
+Interface for table Rnterest
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="M:SDS.DataSource._SdcheckDAO.Read(System.Int32)">
+	<summary>
+Read from DB table Sdcheck
+ </summary>
+	<returns>
+Return a Sdcheck object
+ </returns>
+</member><member name="M:SDS.DataSource._SdcheckDAO.Save(SDS.DataSource.Sdcheck@)">
+	<summary>
+Save on DB table Sdcheck
+ </summary>
+	<returns>
+Return ID insert in DB
+ </returns>
+</member><member name="M:SDS.DataSource._SdcheckDAO.Delete(System.Int32)">
+	<summary>
+Delete from DB table Sdcheck. Accept id of object to delete.
+ </summary>
+</member><member name="M:SDS.DataSource._SdcheckDAO.Delete(SDS.DataSource.Sdcheck@,System.Collections.Generic.List{SDS.DataSource.Sdcheck}@)">
+	<summary>
+Delete from DB table Sdcheck. Accept object to delete and optional a List to remove the object from.
+ </summary>
+</member><member name="M:SDS.DataSource._SdcheckDAO.Find(SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdcheck
+ </summary>
+	<returns>
+Return first of Sdcheck
+ </returns>
+</member><member name="M:SDS.DataSource._SdcheckDAO.Find(System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdcheck
+ </summary>
+	<returns>
+Return first of Sdcheck
+ </returns>
+</member><member name="M:SDS.DataSource._SdcheckDAO.FindAll(SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdcheck
+ </summary>
+	<returns>
+Return a list of Sdcheck
+ </returns>
+</member><member name="M:SDS.DataSource._SdcheckDAO.FindAll(System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdcheck
+ </summary>
+	<returns>
+Return a list of Sdcheck
+ </returns>
+</member><member name="M:SDS.DataSource._SdcheckDAO.FindAll(System.Int32,System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdcheck
+ </summary>
+	<returns>
+Return a list of Sdcheck
+ </returns>
+</member><member name="M:SDS.DataSource._SdcheckDAO.FindAll(SDS.DataSource.LUNA.LunaSearchOption,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdcheck
+ </summary>
+	<returns>
+Return a list of Sdcheck
+ </returns>
+</member><member name="T:SDS.DataSource._SdcheckDAO">
+	<summary>
+This class manage persistency on db of Sdcheck object
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:SDS.DataSource.Divref">
+	<summary>
+Entity Class for table Divref
+ </summary>
+	<remarks>
+Write your custom method and property here
+ </remarks>
+</member><member name="T:SDS.DataSource.IDivref">
+	<summary>
+Interface for table Divref
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="M:SDS.DataSource._Ctrl_s.Read(System.Int32)">
+	<summary>
+This method read an Ctrl_s from DB.
+ </summary>
+	<returns>
+Return 0 if all ok, 1 if error
+ </returns>
+</member><member name="M:SDS.DataSource._Ctrl_s.Save">
+	<summary>
+This method save an Ctrl_s on DB.
+ </summary>
+	<returns>
+Return Id insert in DB if all ok, 0 if error
+ </returns>
+</member><member name="T:SDS.DataSource._Ctrl_s">
+	<summary>
+DAO Class for table Ctrl_s
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="T:SDS.DataSource._ICtrl_s">
+	<summary>
+Interface for table Ctrl_s
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="M:SDS.DataSource._Interest.Read(System.Int32)">
+	<summary>
+This method read an Interest from DB.
+ </summary>
+	<returns>
+Return 0 if all ok, 1 if error
+ </returns>
+</member><member name="M:SDS.DataSource._Interest.Save">
+	<summary>
+This method save an Interest on DB.
+ </summary>
+	<returns>
+Return Id insert in DB if all ok, 0 if error
+ </returns>
+</member><member name="T:SDS.DataSource._Interest">
+	<summary>
+DAO Class for table Interest
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="T:SDS.DataSource._IInterest">
+	<summary>
+Interface for table Interest
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="M:SDS.DataSource._MembersDAO.Read(System.Int32)">
+	<summary>
+Read from DB table Members
+ </summary>
+	<returns>
+Return a Members object
+ </returns>
+</member><member name="M:SDS.DataSource._MembersDAO.Save(SDS.DataSource.Members@)">
+	<summary>
+Save on DB table Members
+ </summary>
+	<returns>
+Return ID insert in DB
+ </returns>
+</member><member name="M:SDS.DataSource._MembersDAO.Delete(System.Int32)">
+	<summary>
+Delete from DB table Members. Accept id of object to delete.
+ </summary>
+</member><member name="M:SDS.DataSource._MembersDAO.Delete(SDS.DataSource.Members@,System.Collections.Generic.List{SDS.DataSource.Members}@)">
+	<summary>
+Delete from DB table Members. Accept object to delete and optional a List to remove the object from.
+ </summary>
+</member><member name="M:SDS.DataSource._MembersDAO.Find(SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Members
+ </summary>
+	<returns>
+Return first of Members
+ </returns>
+</member><member name="M:SDS.DataSource._MembersDAO.Find(System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Members
+ </summary>
+	<returns>
+Return first of Members
+ </returns>
+</member><member name="M:SDS.DataSource._MembersDAO.FindAll(SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Members
+ </summary>
+	<returns>
+Return a list of Members
+ </returns>
+</member><member name="M:SDS.DataSource._MembersDAO.FindAll(System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Members
+ </summary>
+	<returns>
+Return a list of Members
+ </returns>
+</member><member name="M:SDS.DataSource._MembersDAO.FindAll(System.Int32,System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Members
+ </summary>
+	<returns>
+Return a list of Members
+ </returns>
+</member><member name="M:SDS.DataSource._MembersDAO.FindAll(SDS.DataSource.LUNA.LunaSearchOption,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Members
+ </summary>
+	<returns>
+Return a list of Members
+ </returns>
+</member><member name="T:SDS.DataSource._MembersDAO">
+	<summary>
+This class manage persistency on db of Members object
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:SDS.DataSource._SdoptionDAO.Read(System.Int32)">
+	<summary>
+Read from DB table Sdoption
+ </summary>
+	<returns>
+Return a Sdoption object
+ </returns>
+</member><member name="M:SDS.DataSource._SdoptionDAO.Save(SDS.DataSource.Sdoption@)">
+	<summary>
+Save on DB table Sdoption
+ </summary>
+	<returns>
+Return ID insert in DB
+ </returns>
+</member><member name="M:SDS.DataSource._SdoptionDAO.Delete(System.Int32)">
+	<summary>
+Delete from DB table Sdoption. Accept id of object to delete.
+ </summary>
+</member><member name="M:SDS.DataSource._SdoptionDAO.Delete(SDS.DataSource.Sdoption@,System.Collections.Generic.List{SDS.DataSource.Sdoption}@)">
+	<summary>
+Delete from DB table Sdoption. Accept object to delete and optional a List to remove the object from.
+ </summary>
+</member><member name="M:SDS.DataSource._SdoptionDAO.Find(SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdoption
+ </summary>
+	<returns>
+Return first of Sdoption
+ </returns>
+</member><member name="M:SDS.DataSource._SdoptionDAO.Find(System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdoption
+ </summary>
+	<returns>
+Return first of Sdoption
+ </returns>
+</member><member name="M:SDS.DataSource._SdoptionDAO.FindAll(SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdoption
+ </summary>
+	<returns>
+Return a list of Sdoption
+ </returns>
+</member><member name="M:SDS.DataSource._SdoptionDAO.FindAll(System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdoption
+ </summary>
+	<returns>
+Return a list of Sdoption
+ </returns>
+</member><member name="M:SDS.DataSource._SdoptionDAO.FindAll(System.Int32,System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdoption
+ </summary>
+	<returns>
+Return a list of Sdoption
+ </returns>
+</member><member name="M:SDS.DataSource._SdoptionDAO.FindAll(SDS.DataSource.LUNA.LunaSearchOption,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdoption
+ </summary>
+	<returns>
+Return a list of Sdoption
+ </returns>
+</member><member name="T:SDS.DataSource._SdoptionDAO">
+	<summary>
+This class manage persistency on db of Sdoption object
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:SDS.DataSource.SdcheckDAO">
+	<summary>
+DAO Class for table Sdcheck
+ </summary>
+	<remarks>
+Write your DATABASE custom method here
+ </remarks>
+</member><member name="T:SDS.DataSource.Sd">
+	<summary>
+Entity Class for table Sd
+ </summary>
+	<remarks>
+Write your custom method and property here
+ </remarks>
+</member><member name="T:SDS.DataSource.ISd">
+	<summary>
+Interface for table Sd
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="M:SDS.DataSource._Aloans.Read(System.Int32)">
+	<summary>
+This method read an Aloans from DB.
+ </summary>
+	<returns>
+Return 0 if all ok, 1 if error
+ </returns>
+</member><member name="M:SDS.DataSource._Aloans.Save">
+	<summary>
+This method save an Aloans on DB.
+ </summary>
+	<returns>
+Return Id insert in DB if all ok, 0 if error
+ </returns>
+</member><member name="T:SDS.DataSource._Aloans">
+	<summary>
+DAO Class for table Aloans
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="T:SDS.DataSource._IAloans">
+	<summary>
+Interface for table Aloans
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="M:SDS.DataSource._Spteller.Read(System.Int32)">
+	<summary>
+This method read an Spteller from DB.
+ </summary>
+	<returns>
+Return 0 if all ok, 1 if error
+ </returns>
+</member><member name="M:SDS.DataSource._Spteller.Save">
+	<summary>
+This method save an Spteller on DB.
+ </summary>
+	<returns>
+Return Id insert in DB if all ok, 0 if error
+ </returns>
+</member><member name="T:SDS.DataSource._Spteller">
+	<summary>
+DAO Class for table Spteller
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="T:SDS.DataSource._ISpteller">
+	<summary>
+Interface for table Spteller
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="T:SDS.DataSource.MembersDAO">
+	<summary>
+DAO Class for table Members
+ </summary>
+	<remarks>
+Write your DATABASE custom method here
+ </remarks>
+</member><member name="T:SDS.DataSource.SdoptionDAO">
+	<summary>
+DAO Class for table Sdoption
+ </summary>
+	<remarks>
+Write your DATABASE custom method here
+ </remarks>
+</member><member name="T:SDS.DataSource.Sdmaster">
+	<summary>
+Entity Class for table Sdmaster
+ </summary>
+	<remarks>
+Write your custom method and property here
+ </remarks>
+</member><member name="T:SDS.DataSource.ISdmaster">
+	<summary>
+Interface for table Sdmaster
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="M:SDS.DataSource._Ctrl_sDAO.Read(System.Int32)">
+	<summary>
+Read from DB table Ctrl_s
+ </summary>
+	<returns>
+Return a Ctrl_s object
+ </returns>
+</member><member name="M:SDS.DataSource._Ctrl_sDAO.Save(SDS.DataSource.Ctrl_s@)">
+	<summary>
+Save on DB table Ctrl_s
+ </summary>
+	<returns>
+Return ID insert in DB
+ </returns>
+</member><member name="M:SDS.DataSource._Ctrl_sDAO.Delete(System.Int32)">
+	<summary>
+Delete from DB table Ctrl_s. Accept id of object to delete.
+ </summary>
+</member><member name="M:SDS.DataSource._Ctrl_sDAO.Delete(SDS.DataSource.Ctrl_s@,System.Collections.Generic.List{SDS.DataSource.Ctrl_s}@)">
+	<summary>
+Delete from DB table Ctrl_s. Accept object to delete and optional a List to remove the object from.
+ </summary>
+</member><member name="M:SDS.DataSource._Ctrl_sDAO.Find(SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Ctrl_s
+ </summary>
+	<returns>
+Return first of Ctrl_s
+ </returns>
+</member><member name="M:SDS.DataSource._Ctrl_sDAO.Find(System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Ctrl_s
+ </summary>
+	<returns>
+Return first of Ctrl_s
+ </returns>
+</member><member name="M:SDS.DataSource._Ctrl_sDAO.FindAll(SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Ctrl_s
+ </summary>
+	<returns>
+Return a list of Ctrl_s
+ </returns>
+</member><member name="M:SDS.DataSource._Ctrl_sDAO.FindAll(System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Ctrl_s
+ </summary>
+	<returns>
+Return a list of Ctrl_s
+ </returns>
+</member><member name="M:SDS.DataSource._Ctrl_sDAO.FindAll(System.Int32,System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Ctrl_s
+ </summary>
+	<returns>
+Return a list of Ctrl_s
+ </returns>
+</member><member name="M:SDS.DataSource._Ctrl_sDAO.FindAll(SDS.DataSource.LUNA.LunaSearchOption,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Ctrl_s
+ </summary>
+	<returns>
+Return a list of Ctrl_s
+ </returns>
+</member><member name="T:SDS.DataSource._Ctrl_sDAO">
+	<summary>
+This class manage persistency on db of Ctrl_s object
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:SDS.DataSource._Sdpost.Read(System.Int32)">
+	<summary>
+This method read an Sdpost from DB.
+ </summary>
+	<returns>
+Return 0 if all ok, 1 if error
+ </returns>
+</member><member name="M:SDS.DataSource._Sdpost.Save">
+	<summary>
+This method save an Sdpost on DB.
+ </summary>
+	<returns>
+Return Id insert in DB if all ok, 0 if error
+ </returns>
+</member><member name="T:SDS.DataSource._Sdpost">
+	<summary>
+DAO Class for table Sdpost
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="T:SDS.DataSource._ISdpost">
+	<summary>
+Interface for table Sdpost
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="M:SDS.DataSource._SdtranbDAO.Read(System.Int32)">
+	<summary>
+Read from DB table Sdtranb
+ </summary>
+	<returns>
+Return a Sdtranb object
+ </returns>
+</member><member name="M:SDS.DataSource._SdtranbDAO.Save(SDS.DataSource.Sdtranb@)">
+	<summary>
+Save on DB table Sdtranb
+ </summary>
+	<returns>
+Return ID insert in DB
+ </returns>
+</member><member name="M:SDS.DataSource._SdtranbDAO.Delete(System.Int32)">
+	<summary>
+Delete from DB table Sdtranb. Accept id of object to delete.
+ </summary>
+</member><member name="M:SDS.DataSource._SdtranbDAO.Delete(SDS.DataSource.Sdtranb@,System.Collections.Generic.List{SDS.DataSource.Sdtranb}@)">
+	<summary>
+Delete from DB table Sdtranb. Accept object to delete and optional a List to remove the object from.
+ </summary>
+</member><member name="M:SDS.DataSource._SdtranbDAO.Find(SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdtranb
+ </summary>
+	<returns>
+Return first of Sdtranb
+ </returns>
+</member><member name="M:SDS.DataSource._SdtranbDAO.Find(System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdtranb
+ </summary>
+	<returns>
+Return first of Sdtranb
+ </returns>
+</member><member name="M:SDS.DataSource._SdtranbDAO.FindAll(SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdtranb
+ </summary>
+	<returns>
+Return a list of Sdtranb
+ </returns>
+</member><member name="M:SDS.DataSource._SdtranbDAO.FindAll(System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdtranb
+ </summary>
+	<returns>
+Return a list of Sdtranb
+ </returns>
+</member><member name="M:SDS.DataSource._SdtranbDAO.FindAll(System.Int32,System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdtranb
+ </summary>
+	<returns>
+Return a list of Sdtranb
+ </returns>
+</member><member name="M:SDS.DataSource._SdtranbDAO.FindAll(SDS.DataSource.LUNA.LunaSearchOption,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdtranb
+ </summary>
+	<returns>
+Return a list of Sdtranb
+ </returns>
+</member><member name="T:SDS.DataSource._SdtranbDAO">
+	<summary>
+This class manage persistency on db of Sdtranb object
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:SDS.DataSource.Ctrl_sDAO">
+	<summary>
+DAO Class for table Ctrl_s
+ </summary>
+	<remarks>
+Write your DATABASE custom method here
+ </remarks>
+</member><member name="T:SDS.DataSource.Advance">
+	<summary>
+Entity Class for table Advance
+ </summary>
+	<remarks>
+Write your custom method and property here
+ </remarks>
+</member><member name="T:SDS.DataSource.IAdvance">
+	<summary>
+Interface for table Advance
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="T:SDS.DataSource.Extract">
+	<summary>
+Entity Class for table Extract
+ </summary>
+	<remarks>
+Write your custom method and property here
+ </remarks>
+</member><member name="T:SDS.DataSource.IExtract">
+	<summary>
+Interface for table Extract
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="T:SDS.DataSource.Sdcheck">
+	<summary>
+Entity Class for table Sdcheck
+ </summary>
+	<remarks>
+Write your custom method and property here
+ </remarks>
+</member><member name="T:SDS.DataSource.ISdcheck">
+	<summary>
+Interface for table Sdcheck
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="M:SDS.DataSource._Divref.Read(System.Int32)">
+	<summary>
+This method read an Divref from DB.
+ </summary>
+	<returns>
+Return 0 if all ok, 1 if error
+ </returns>
+</member><member name="M:SDS.DataSource._Divref.Save">
+	<summary>
+This method save an Divref on DB.
+ </summary>
+	<returns>
+Return Id insert in DB if all ok, 0 if error
+ </returns>
+</member><member name="T:SDS.DataSource._Divref">
+	<summary>
+DAO Class for table Divref
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="T:SDS.DataSource._IDivref">
+	<summary>
+Interface for table Divref
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="M:SDS.DataSource._Interest_sDAO.Read(System.Int32)">
+	<summary>
+Read from DB table Interest_s
+ </summary>
+	<returns>
+Return a Interest_s object
+ </returns>
+</member><member name="M:SDS.DataSource._Interest_sDAO.Save(SDS.DataSource.Interest_s@)">
+	<summary>
+Save on DB table Interest_s
+ </summary>
+	<returns>
+Return ID insert in DB
+ </returns>
+</member><member name="M:SDS.DataSource._Interest_sDAO.Delete(System.Int32)">
+	<summary>
+Delete from DB table Interest_s. Accept id of object to delete.
+ </summary>
+</member><member name="M:SDS.DataSource._Interest_sDAO.Delete(SDS.DataSource.Interest_s@,System.Collections.Generic.List{SDS.DataSource.Interest_s}@)">
+	<summary>
+Delete from DB table Interest_s. Accept object to delete and optional a List to remove the object from.
+ </summary>
+</member><member name="M:SDS.DataSource._Interest_sDAO.Find(SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Interest_s
+ </summary>
+	<returns>
+Return first of Interest_s
+ </returns>
+</member><member name="M:SDS.DataSource._Interest_sDAO.Find(System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Interest_s
+ </summary>
+	<returns>
+Return first of Interest_s
+ </returns>
+</member><member name="M:SDS.DataSource._Interest_sDAO.FindAll(SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Interest_s
+ </summary>
+	<returns>
+Return a list of Interest_s
+ </returns>
+</member><member name="M:SDS.DataSource._Interest_sDAO.FindAll(System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Interest_s
+ </summary>
+	<returns>
+Return a list of Interest_s
+ </returns>
+</member><member name="M:SDS.DataSource._Interest_sDAO.FindAll(System.Int32,System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Interest_s
+ </summary>
+	<returns>
+Return a list of Interest_s
+ </returns>
+</member><member name="M:SDS.DataSource._Interest_sDAO.FindAll(SDS.DataSource.LUNA.LunaSearchOption,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Interest_s
+ </summary>
+	<returns>
+Return a list of Interest_s
+ </returns>
+</member><member name="T:SDS.DataSource._Interest_sDAO">
+	<summary>
+This class manage persistency on db of Interest_s object
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:SDS.DataSource._AdvanceDAO.Read(System.Int32)">
+	<summary>
+Read from DB table Advance
+ </summary>
+	<returns>
+Return a Advance object
+ </returns>
+</member><member name="M:SDS.DataSource._AdvanceDAO.Save(SDS.DataSource.Advance@)">
+	<summary>
+Save on DB table Advance
+ </summary>
+	<returns>
+Return ID insert in DB
+ </returns>
+</member><member name="M:SDS.DataSource._AdvanceDAO.Delete(System.Int32)">
+	<summary>
+Delete from DB table Advance. Accept id of object to delete.
+ </summary>
+</member><member name="M:SDS.DataSource._AdvanceDAO.Delete(SDS.DataSource.Advance@,System.Collections.Generic.List{SDS.DataSource.Advance}@)">
+	<summary>
+Delete from DB table Advance. Accept object to delete and optional a List to remove the object from.
+ </summary>
+</member><member name="M:SDS.DataSource._AdvanceDAO.Find(SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Advance
+ </summary>
+	<returns>
+Return first of Advance
+ </returns>
+</member><member name="M:SDS.DataSource._AdvanceDAO.Find(System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Advance
+ </summary>
+	<returns>
+Return first of Advance
+ </returns>
+</member><member name="M:SDS.DataSource._AdvanceDAO.FindAll(SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Advance
+ </summary>
+	<returns>
+Return a list of Advance
+ </returns>
+</member><member name="M:SDS.DataSource._AdvanceDAO.FindAll(System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Advance
+ </summary>
+	<returns>
+Return a list of Advance
+ </returns>
+</member><member name="M:SDS.DataSource._AdvanceDAO.FindAll(System.Int32,System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Advance
+ </summary>
+	<returns>
+Return a list of Advance
+ </returns>
+</member><member name="M:SDS.DataSource._AdvanceDAO.FindAll(SDS.DataSource.LUNA.LunaSearchOption,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Advance
+ </summary>
+	<returns>
+Return a list of Advance
+ </returns>
+</member><member name="T:SDS.DataSource._AdvanceDAO">
+	<summary>
+This class manage persistency on db of Advance object
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:SDS.DataSource._InterestDAO.Read(System.Int32)">
+	<summary>
+Read from DB table Interest
+ </summary>
+	<returns>
+Return a Interest object
+ </returns>
+</member><member name="M:SDS.DataSource._InterestDAO.Save(SDS.DataSource.Interest@)">
+	<summary>
+Save on DB table Interest
+ </summary>
+	<returns>
+Return ID insert in DB
+ </returns>
+</member><member name="M:SDS.DataSource._InterestDAO.Delete(System.Int32)">
+	<summary>
+Delete from DB table Interest. Accept id of object to delete.
+ </summary>
+</member><member name="M:SDS.DataSource._InterestDAO.Delete(SDS.DataSource.Interest@,System.Collections.Generic.List{SDS.DataSource.Interest}@)">
+	<summary>
+Delete from DB table Interest. Accept object to delete and optional a List to remove the object from.
+ </summary>
+</member><member name="M:SDS.DataSource._InterestDAO.Find(SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Interest
+ </summary>
+	<returns>
+Return first of Interest
+ </returns>
+</member><member name="M:SDS.DataSource._InterestDAO.Find(System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Interest
+ </summary>
+	<returns>
+Return first of Interest
+ </returns>
+</member><member name="M:SDS.DataSource._InterestDAO.FindAll(SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Interest
+ </summary>
+	<returns>
+Return a list of Interest
+ </returns>
+</member><member name="M:SDS.DataSource._InterestDAO.FindAll(System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Interest
+ </summary>
+	<returns>
+Return a list of Interest
+ </returns>
+</member><member name="M:SDS.DataSource._InterestDAO.FindAll(System.Int32,System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Interest
+ </summary>
+	<returns>
+Return a list of Interest
+ </returns>
+</member><member name="M:SDS.DataSource._InterestDAO.FindAll(SDS.DataSource.LUNA.LunaSearchOption,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Interest
+ </summary>
+	<returns>
+Return a list of Interest
+ </returns>
+</member><member name="T:SDS.DataSource._InterestDAO">
+	<summary>
+This class manage persistency on db of Interest object
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:SDS.DataSource._Sdothers.Read(System.Int32)">
+	<summary>
+This method read an Sdothers from DB.
+ </summary>
+	<returns>
+Return 0 if all ok, 1 if error
+ </returns>
+</member><member name="M:SDS.DataSource._Sdothers.Save">
+	<summary>
+This method save an Sdothers on DB.
+ </summary>
+	<returns>
+Return Id insert in DB if all ok, 0 if error
+ </returns>
+</member><member name="T:SDS.DataSource._Sdothers">
+	<summary>
+DAO Class for table Sdothers
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="T:SDS.DataSource._ISdothers">
+	<summary>
+Interface for table Sdothers
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="M:SDS.DataSource._SdpayDAO.Read(System.Int32)">
+	<summary>
+Read from DB table Sdpay
+ </summary>
+	<returns>
+Return a Sdpay object
+ </returns>
+</member><member name="M:SDS.DataSource._SdpayDAO.Save(SDS.DataSource.Sdpay@)">
+	<summary>
+Save on DB table Sdpay
+ </summary>
+	<returns>
+Return ID insert in DB
+ </returns>
+</member><member name="M:SDS.DataSource._SdpayDAO.Delete(System.Int32)">
+	<summary>
+Delete from DB table Sdpay. Accept id of object to delete.
+ </summary>
+</member><member name="M:SDS.DataSource._SdpayDAO.Delete(SDS.DataSource.Sdpay@,System.Collections.Generic.List{SDS.DataSource.Sdpay}@)">
+	<summary>
+Delete from DB table Sdpay. Accept object to delete and optional a List to remove the object from.
+ </summary>
+</member><member name="M:SDS.DataSource._SdpayDAO.Find(SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdpay
+ </summary>
+	<returns>
+Return first of Sdpay
+ </returns>
+</member><member name="M:SDS.DataSource._SdpayDAO.Find(System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdpay
+ </summary>
+	<returns>
+Return first of Sdpay
+ </returns>
+</member><member name="M:SDS.DataSource._SdpayDAO.FindAll(SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdpay
+ </summary>
+	<returns>
+Return a list of Sdpay
+ </returns>
+</member><member name="M:SDS.DataSource._SdpayDAO.FindAll(System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdpay
+ </summary>
+	<returns>
+Return a list of Sdpay
+ </returns>
+</member><member name="M:SDS.DataSource._SdpayDAO.FindAll(System.Int32,System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdpay
+ </summary>
+	<returns>
+Return a list of Sdpay
+ </returns>
+</member><member name="M:SDS.DataSource._SdpayDAO.FindAll(SDS.DataSource.LUNA.LunaSearchOption,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdpay
+ </summary>
+	<returns>
+Return a list of Sdpay
+ </returns>
+</member><member name="T:SDS.DataSource._SdpayDAO">
+	<summary>
+This class manage persistency on db of Sdpay object
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:SDS.DataSource.SdtranbDAO">
+	<summary>
+DAO Class for table Sdtranb
+ </summary>
+	<remarks>
+Write your DATABASE custom method here
+ </remarks>
+</member><member name="T:SDS.DataSource.Rnterest">
+	<summary>
+Entity Class for table Rnterest
+ </summary>
+	<remarks>
+Write your custom method and property here
+ </remarks>
+</member><member name="T:SDS.DataSource.IRnterest">
+	<summary>
+Interface for table Rnterest
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="T:SDS.DataSource.Sdtranb">
+	<summary>
+Entity Class for table Sdtranb
+ </summary>
+	<remarks>
+Write your custom method and property here
+ </remarks>
+</member><member name="T:SDS.DataSource.ISdtranb">
+	<summary>
+Interface for table Sdtranb
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="M:SDS.DataSource._Sdoption.Read(System.Int32)">
+	<summary>
+This method read an Sdoption from DB.
+ </summary>
+	<returns>
+Return 0 if all ok, 1 if error
+ </returns>
+</member><member name="M:SDS.DataSource._Sdoption.Save">
+	<summary>
+This method save an Sdoption on DB.
+ </summary>
+	<returns>
+Return Id insert in DB if all ok, 0 if error
+ </returns>
+</member><member name="T:SDS.DataSource._Sdoption">
+	<summary>
+DAO Class for table Sdoption
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="T:SDS.DataSource._ISdoption">
+	<summary>
+Interface for table Sdoption
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="M:SDS.DataSource._Snterest.Read(System.Int32)">
+	<summary>
+This method read an Snterest from DB.
+ </summary>
+	<returns>
+Return 0 if all ok, 1 if error
+ </returns>
+</member><member name="M:SDS.DataSource._Snterest.Save">
+	<summary>
+This method save an Snterest on DB.
+ </summary>
+	<returns>
+Return Id insert in DB if all ok, 0 if error
+ </returns>
+</member><member name="T:SDS.DataSource._Snterest">
+	<summary>
+DAO Class for table Snterest
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="T:SDS.DataSource._ISnterest">
+	<summary>
+Interface for table Snterest
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="T:SDS.DataSource.InterestDAO">
+	<summary>
+DAO Class for table Interest
+ </summary>
+	<remarks>
+Write your DATABASE custom method here
+ </remarks>
+</member><member name="T:SDS.DataSource.SdDAO">
+	<summary>
+DAO Class for table Sd
+ </summary>
+	<remarks>
+Write your DATABASE custom method here
+ </remarks>
+</member><member name="T:SDS.DataSource.SdpayDAO">
+	<summary>
+DAO Class for table Sdpay
+ </summary>
+	<remarks>
+Write your DATABASE custom method here
+ </remarks>
+</member><member name="T:SDS.DataSource.Interest">
+	<summary>
+Entity Class for table Interest
+ </summary>
+	<remarks>
+Write your custom method and property here
+ </remarks>
+</member><member name="T:SDS.DataSource.IInterest">
+	<summary>
+Interface for table Interest
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="T:SDS.DataSource.Spuser">
+	<summary>
+Entity Class for table Spuser
+ </summary>
+	<remarks>
+Write your custom method and property here
+ </remarks>
+</member><member name="T:SDS.DataSource.ISpuser">
+	<summary>
+Interface for table Spuser
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="M:SDS.DataSource._Advance.Read(System.Int32)">
+	<summary>
+This method read an Advance from DB.
+ </summary>
+	<returns>
+Return 0 if all ok, 1 if error
+ </returns>
+</member><member name="M:SDS.DataSource._Advance.Save">
+	<summary>
+This method save an Advance on DB.
+ </summary>
+	<returns>
+Return Id insert in DB if all ok, 0 if error
+ </returns>
+</member><member name="T:SDS.DataSource._Advance">
+	<summary>
+DAO Class for table Advance
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="T:SDS.DataSource._IAdvance">
+	<summary>
+Interface for table Advance
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="M:SDS.DataSource._AloansDAO.Read(System.Int32)">
+	<summary>
+Read from DB table Aloans
+ </summary>
+	<returns>
+Return a Aloans object
+ </returns>
+</member><member name="M:SDS.DataSource._AloansDAO.Save(SDS.DataSource.Aloans@)">
+	<summary>
+Save on DB table Aloans
+ </summary>
+	<returns>
+Return ID insert in DB
+ </returns>
+</member><member name="M:SDS.DataSource._AloansDAO.Delete(System.Int32)">
+	<summary>
+Delete from DB table Aloans. Accept id of object to delete.
+ </summary>
+</member><member name="M:SDS.DataSource._AloansDAO.Delete(SDS.DataSource.Aloans@,System.Collections.Generic.List{SDS.DataSource.Aloans}@)">
+	<summary>
+Delete from DB table Aloans. Accept object to delete and optional a List to remove the object from.
+ </summary>
+</member><member name="M:SDS.DataSource._AloansDAO.Find(SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Aloans
+ </summary>
+	<returns>
+Return first of Aloans
+ </returns>
+</member><member name="M:SDS.DataSource._AloansDAO.Find(System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Aloans
+ </summary>
+	<returns>
+Return first of Aloans
+ </returns>
+</member><member name="M:SDS.DataSource._AloansDAO.FindAll(SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Aloans
+ </summary>
+	<returns>
+Return a list of Aloans
+ </returns>
+</member><member name="M:SDS.DataSource._AloansDAO.FindAll(System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Aloans
+ </summary>
+	<returns>
+Return a list of Aloans
+ </returns>
+</member><member name="M:SDS.DataSource._AloansDAO.FindAll(System.Int32,System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Aloans
+ </summary>
+	<returns>
+Return a list of Aloans
+ </returns>
+</member><member name="M:SDS.DataSource._AloansDAO.FindAll(SDS.DataSource.LUNA.LunaSearchOption,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Aloans
+ </summary>
+	<returns>
+Return a list of Aloans
+ </returns>
+</member><member name="T:SDS.DataSource._AloansDAO">
+	<summary>
+This class manage persistency on db of Aloans object
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:SDS.DataSource._Extract.Read(System.Int32)">
+	<summary>
+This method read an Extract from DB.
+ </summary>
+	<returns>
+Return 0 if all ok, 1 if error
+ </returns>
+</member><member name="M:SDS.DataSource._Extract.Save">
+	<summary>
+This method save an Extract on DB.
+ </summary>
+	<returns>
+Return Id insert in DB if all ok, 0 if error
+ </returns>
+</member><member name="T:SDS.DataSource._Extract">
+	<summary>
+DAO Class for table Extract
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="T:SDS.DataSource._IExtract">
+	<summary>
+Interface for table Extract
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="M:SDS.DataSource._ExtractDAO.Read(System.Int32)">
+	<summary>
+Read from DB table Extract
+ </summary>
+	<returns>
+Return a Extract object
+ </returns>
+</member><member name="M:SDS.DataSource._ExtractDAO.Save(SDS.DataSource.Extract@)">
+	<summary>
+Save on DB table Extract
+ </summary>
+	<returns>
+Return ID insert in DB
+ </returns>
+</member><member name="M:SDS.DataSource._ExtractDAO.Delete(System.Int32)">
+	<summary>
+Delete from DB table Extract. Accept id of object to delete.
+ </summary>
+</member><member name="M:SDS.DataSource._ExtractDAO.Delete(SDS.DataSource.Extract@,System.Collections.Generic.List{SDS.DataSource.Extract}@)">
+	<summary>
+Delete from DB table Extract. Accept object to delete and optional a List to remove the object from.
+ </summary>
+</member><member name="M:SDS.DataSource._ExtractDAO.Find(SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Extract
+ </summary>
+	<returns>
+Return first of Extract
+ </returns>
+</member><member name="M:SDS.DataSource._ExtractDAO.Find(System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Extract
+ </summary>
+	<returns>
+Return first of Extract
+ </returns>
+</member><member name="M:SDS.DataSource._ExtractDAO.FindAll(SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Extract
+ </summary>
+	<returns>
+Return a list of Extract
+ </returns>
+</member><member name="M:SDS.DataSource._ExtractDAO.FindAll(System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Extract
+ </summary>
+	<returns>
+Return a list of Extract
+ </returns>
+</member><member name="M:SDS.DataSource._ExtractDAO.FindAll(System.Int32,System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Extract
+ </summary>
+	<returns>
+Return a list of Extract
+ </returns>
+</member><member name="M:SDS.DataSource._ExtractDAO.FindAll(SDS.DataSource.LUNA.LunaSearchOption,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Extract
+ </summary>
+	<returns>
+Return a list of Extract
+ </returns>
+</member><member name="T:SDS.DataSource._ExtractDAO">
+	<summary>
+This class manage persistency on db of Extract object
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:SDS.DataSource._Sdcheck.Read(System.Int32)">
+	<summary>
+This method read an Sdcheck from DB.
+ </summary>
+	<returns>
+Return 0 if all ok, 1 if error
+ </returns>
+</member><member name="M:SDS.DataSource._Sdcheck.Save">
+	<summary>
+This method save an Sdcheck on DB.
+ </summary>
+	<returns>
+Return Id insert in DB if all ok, 0 if error
+ </returns>
+</member><member name="T:SDS.DataSource._Sdcheck">
+	<summary>
+DAO Class for table Sdcheck
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="T:SDS.DataSource._ISdcheck">
+	<summary>
+Interface for table Sdcheck
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="M:SDS.DataSource._SptellerDAO.Read(System.Int32)">
+	<summary>
+Read from DB table Spteller
+ </summary>
+	<returns>
+Return a Spteller object
+ </returns>
+</member><member name="M:SDS.DataSource._SptellerDAO.Save(SDS.DataSource.Spteller@)">
+	<summary>
+Save on DB table Spteller
+ </summary>
+	<returns>
+Return ID insert in DB
+ </returns>
+</member><member name="M:SDS.DataSource._SptellerDAO.Delete(System.Int32)">
+	<summary>
+Delete from DB table Spteller. Accept id of object to delete.
+ </summary>
+</member><member name="M:SDS.DataSource._SptellerDAO.Delete(SDS.DataSource.Spteller@,System.Collections.Generic.List{SDS.DataSource.Spteller}@)">
+	<summary>
+Delete from DB table Spteller. Accept object to delete and optional a List to remove the object from.
+ </summary>
+</member><member name="M:SDS.DataSource._SptellerDAO.Find(SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Spteller
+ </summary>
+	<returns>
+Return first of Spteller
+ </returns>
+</member><member name="M:SDS.DataSource._SptellerDAO.Find(System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Spteller
+ </summary>
+	<returns>
+Return first of Spteller
+ </returns>
+</member><member name="M:SDS.DataSource._SptellerDAO.FindAll(SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Spteller
+ </summary>
+	<returns>
+Return a list of Spteller
+ </returns>
+</member><member name="M:SDS.DataSource._SptellerDAO.FindAll(System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Spteller
+ </summary>
+	<returns>
+Return a list of Spteller
+ </returns>
+</member><member name="M:SDS.DataSource._SptellerDAO.FindAll(System.Int32,System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Spteller
+ </summary>
+	<returns>
+Return a list of Spteller
+ </returns>
+</member><member name="M:SDS.DataSource._SptellerDAO.FindAll(SDS.DataSource.LUNA.LunaSearchOption,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Spteller
+ </summary>
+	<returns>
+Return a list of Spteller
+ </returns>
+</member><member name="T:SDS.DataSource._SptellerDAO">
+	<summary>
+This class manage persistency on db of Spteller object
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:SDS.DataSource.AdvanceDAO">
+	<summary>
+DAO Class for table Advance
+ </summary>
+	<remarks>
+Write your DATABASE custom method here
+ </remarks>
+</member><member name="T:SDS.DataSource.AloansDAO">
+	<summary>
+DAO Class for table Aloans
+ </summary>
+	<remarks>
+Write your DATABASE custom method here
+ </remarks>
+</member><member name="T:SDS.DataSource.Members">
+	<summary>
+Entity Class for table Members
+ </summary>
+	<remarks>
+Write your custom method and property here
+ </remarks>
+</member><member name="T:SDS.DataSource.IMembers">
+	<summary>
+Interface for table Members
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="T:SDS.DataSource.Spteller">
+	<summary>
+Entity Class for table Spteller
+ </summary>
+	<remarks>
+Write your custom method and property here
+ </remarks>
+</member><member name="T:SDS.DataSource.ISpteller">
+	<summary>
+Interface for table Spteller
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="M:SDS.DataSource._Param_sDAO.Read(System.Int32)">
+	<summary>
+Read from DB table Param_s
+ </summary>
+	<returns>
+Return a Param_s object
+ </returns>
+</member><member name="M:SDS.DataSource._Param_sDAO.Save(SDS.DataSource.Param_s@)">
+	<summary>
+Save on DB table Param_s
+ </summary>
+	<returns>
+Return ID insert in DB
+ </returns>
+</member><member name="M:SDS.DataSource._Param_sDAO.Delete(System.Int32)">
+	<summary>
+Delete from DB table Param_s. Accept id of object to delete.
+ </summary>
+</member><member name="M:SDS.DataSource._Param_sDAO.Delete(SDS.DataSource.Param_s@,System.Collections.Generic.List{SDS.DataSource.Param_s}@)">
+	<summary>
+Delete from DB table Param_s. Accept object to delete and optional a List to remove the object from.
+ </summary>
+</member><member name="M:SDS.DataSource._Param_sDAO.Find(SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Param_s
+ </summary>
+	<returns>
+Return first of Param_s
+ </returns>
+</member><member name="M:SDS.DataSource._Param_sDAO.Find(System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Param_s
+ </summary>
+	<returns>
+Return first of Param_s
+ </returns>
+</member><member name="M:SDS.DataSource._Param_sDAO.FindAll(SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Param_s
+ </summary>
+	<returns>
+Return a list of Param_s
+ </returns>
+</member><member name="M:SDS.DataSource._Param_sDAO.FindAll(System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Param_s
+ </summary>
+	<returns>
+Return a list of Param_s
+ </returns>
+</member><member name="M:SDS.DataSource._Param_sDAO.FindAll(System.Int32,System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Param_s
+ </summary>
+	<returns>
+Return a list of Param_s
+ </returns>
+</member><member name="M:SDS.DataSource._Param_sDAO.FindAll(SDS.DataSource.LUNA.LunaSearchOption,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Param_s
+ </summary>
+	<returns>
+Return a list of Param_s
+ </returns>
+</member><member name="T:SDS.DataSource._Param_sDAO">
+	<summary>
+This class manage persistency on db of Param_s object
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:SDS.DataSource._SdpostDAO.Read(System.Int32)">
+	<summary>
+Read from DB table Sdpost
+ </summary>
+	<returns>
+Return a Sdpost object
+ </returns>
+</member><member name="M:SDS.DataSource._SdpostDAO.Save(SDS.DataSource.Sdpost@)">
+	<summary>
+Save on DB table Sdpost
+ </summary>
+	<returns>
+Return ID insert in DB
+ </returns>
+</member><member name="M:SDS.DataSource._SdpostDAO.Delete(System.Int32)">
+	<summary>
+Delete from DB table Sdpost. Accept id of object to delete.
+ </summary>
+</member><member name="M:SDS.DataSource._SdpostDAO.Delete(SDS.DataSource.Sdpost@,System.Collections.Generic.List{SDS.DataSource.Sdpost}@)">
+	<summary>
+Delete from DB table Sdpost. Accept object to delete and optional a List to remove the object from.
+ </summary>
+</member><member name="M:SDS.DataSource._SdpostDAO.Find(SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdpost
+ </summary>
+	<returns>
+Return first of Sdpost
+ </returns>
+</member><member name="M:SDS.DataSource._SdpostDAO.Find(System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdpost
+ </summary>
+	<returns>
+Return first of Sdpost
+ </returns>
+</member><member name="M:SDS.DataSource._SdpostDAO.FindAll(SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdpost
+ </summary>
+	<returns>
+Return a list of Sdpost
+ </returns>
+</member><member name="M:SDS.DataSource._SdpostDAO.FindAll(System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdpost
+ </summary>
+	<returns>
+Return a list of Sdpost
+ </returns>
+</member><member name="M:SDS.DataSource._SdpostDAO.FindAll(System.Int32,System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdpost
+ </summary>
+	<returns>
+Return a list of Sdpost
+ </returns>
+</member><member name="M:SDS.DataSource._SdpostDAO.FindAll(SDS.DataSource.LUNA.LunaSearchOption,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdpost
+ </summary>
+	<returns>
+Return a list of Sdpost
+ </returns>
+</member><member name="T:SDS.DataSource._SdpostDAO">
+	<summary>
+This class manage persistency on db of Sdpost object
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:SDS.DataSource.SdpostDAO">
+	<summary>
+DAO Class for table Sdpost
+ </summary>
+	<remarks>
+Write your DATABASE custom method here
+ </remarks>
+</member><member name="T:SDS.DataSource.SptellerDAO">
+	<summary>
+DAO Class for table Spteller
+ </summary>
+	<remarks>
+Write your DATABASE custom method here
+ </remarks>
+</member><member name="T:SDS.DataSource.Extkbc">
+	<summary>
+Entity Class for table Extkbc
+ </summary>
+	<remarks>
+Write your custom method and property here
+ </remarks>
+</member><member name="T:SDS.DataSource.IExtkbc">
+	<summary>
+Interface for table Extkbc
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="M:SDS.DataSource._Sdtranb.Read(System.Int32)">
+	<summary>
+This method read an Sdtranb from DB.
+ </summary>
+	<returns>
+Return 0 if all ok, 1 if error
+ </returns>
+</member><member name="M:SDS.DataSource._Sdtranb.Save">
+	<summary>
+This method save an Sdtranb on DB.
+ </summary>
+	<returns>
+Return Id insert in DB if all ok, 0 if error
+ </returns>
+</member><member name="T:SDS.DataSource._Sdtranb">
+	<summary>
+DAO Class for table Sdtranb
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="T:SDS.DataSource._ISdtranb">
+	<summary>
+Interface for table Sdtranb
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="T:SDS.DataSource.ExtractDAO">
+	<summary>
+DAO Class for table Extract
+ </summary>
+	<remarks>
+Write your DATABASE custom method here
+ </remarks>
+</member><member name="M:SDS.DataSource._SdtranDAO.Read(System.Int32)">
+	<summary>
+Read from DB table Sdtran
+ </summary>
+	<returns>
+Return a Sdtran object
+ </returns>
+</member><member name="M:SDS.DataSource._SdtranDAO.Save(SDS.DataSource.Sdtran@)">
+	<summary>
+Save on DB table Sdtran
+ </summary>
+	<returns>
+Return ID insert in DB
+ </returns>
+</member><member name="M:SDS.DataSource._SdtranDAO.Delete(System.Int32)">
+	<summary>
+Delete from DB table Sdtran. Accept id of object to delete.
+ </summary>
+</member><member name="M:SDS.DataSource._SdtranDAO.Delete(SDS.DataSource.Sdtran@,System.Collections.Generic.List{SDS.DataSource.Sdtran}@)">
+	<summary>
+Delete from DB table Sdtran. Accept object to delete and optional a List to remove the object from.
+ </summary>
+</member><member name="M:SDS.DataSource._SdtranDAO.Find(SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdtran
+ </summary>
+	<returns>
+Return first of Sdtran
+ </returns>
+</member><member name="M:SDS.DataSource._SdtranDAO.Find(System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdtran
+ </summary>
+	<returns>
+Return first of Sdtran
+ </returns>
+</member><member name="M:SDS.DataSource._SdtranDAO.FindAll(SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdtran
+ </summary>
+	<returns>
+Return a list of Sdtran
+ </returns>
+</member><member name="M:SDS.DataSource._SdtranDAO.FindAll(System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdtran
+ </summary>
+	<returns>
+Return a list of Sdtran
+ </returns>
+</member><member name="M:SDS.DataSource._SdtranDAO.FindAll(System.Int32,System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdtran
+ </summary>
+	<returns>
+Return a list of Sdtran
+ </returns>
+</member><member name="M:SDS.DataSource._SdtranDAO.FindAll(SDS.DataSource.LUNA.LunaSearchOption,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdtran
+ </summary>
+	<returns>
+Return a list of Sdtran
+ </returns>
+</member><member name="T:SDS.DataSource._SdtranDAO">
+	<summary>
+This class manage persistency on db of Sdtran object
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:SDS.DataSource._Spuser.Read(System.Int32)">
+	<summary>
+This method read an Spuser from DB.
+ </summary>
+	<returns>
+Return 0 if all ok, 1 if error
+ </returns>
+</member><member name="M:SDS.DataSource._Spuser.Save">
+	<summary>
+This method save an Spuser on DB.
+ </summary>
+	<returns>
+Return Id insert in DB if all ok, 0 if error
+ </returns>
+</member><member name="T:SDS.DataSource._Spuser">
+	<summary>
+DAO Class for table Spuser
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="T:SDS.DataSource._ISpuser">
+	<summary>
+Interface for table Spuser
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="T:SDS.DataSource.Param_sDAO">
+	<summary>
+DAO Class for table Param_s
+ </summary>
+	<remarks>
+Write your DATABASE custom method here
+ </remarks>
+</member><member name="T:SDS.DataSource.SdtranDAO">
+	<summary>
+DAO Class for table Sdtran
+ </summary>
+	<remarks>
+Write your DATABASE custom method here
+ </remarks>
+</member><member name="T:SDS.DataSource.Param_s">
+	<summary>
+Entity Class for table Param_s
+ </summary>
+	<remarks>
+Write your custom method and property here
+ </remarks>
+</member><member name="T:SDS.DataSource.IParam_s">
+	<summary>
+Interface for table Param_s
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="T:SDS.DataSource.Sdothers">
+	<summary>
+Entity Class for table Sdothers
+ </summary>
+	<remarks>
+Write your custom method and property here
+ </remarks>
+</member><member name="T:SDS.DataSource.ISdothers">
+	<summary>
+Interface for table Sdothers
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="T:SDS.DataSource.Sdtran">
+	<summary>
+Entity Class for table Sdtran
+ </summary>
+	<remarks>
+Write your custom method and property here
+ </remarks>
+</member><member name="T:SDS.DataSource.ISdtran">
+	<summary>
+Interface for table Sdtran
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="M:SDS.DataSource._Members.Read(System.Int32)">
+	<summary>
+This method read an Members from DB.
+ </summary>
+	<returns>
+Return 0 if all ok, 1 if error
+ </returns>
+</member><member name="M:SDS.DataSource._Members.Save">
+	<summary>
+This method save an Members on DB.
+ </summary>
+	<returns>
+Return Id insert in DB if all ok, 0 if error
+ </returns>
+</member><member name="T:SDS.DataSource._Members">
+	<summary>
+DAO Class for table Members
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="T:SDS.DataSource._IMembers">
+	<summary>
+Interface for table Members
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="M:SDS.DataSource._SdDAO.Read(System.Int32)">
+	<summary>
+Read from DB table Sd
+ </summary>
+	<returns>
+Return a Sd object
+ </returns>
+</member><member name="M:SDS.DataSource._SdDAO.Save(SDS.DataSource.Sd@)">
+	<summary>
+Save on DB table Sd
+ </summary>
+	<returns>
+Return ID insert in DB
+ </returns>
+</member><member name="M:SDS.DataSource._SdDAO.Delete(System.Int32)">
+	<summary>
+Delete from DB table Sd. Accept id of object to delete.
+ </summary>
+</member><member name="M:SDS.DataSource._SdDAO.Delete(SDS.DataSource.Sd@,System.Collections.Generic.List{SDS.DataSource.Sd}@)">
+	<summary>
+Delete from DB table Sd. Accept object to delete and optional a List to remove the object from.
+ </summary>
+</member><member name="M:SDS.DataSource._SdDAO.Find(SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sd
+ </summary>
+	<returns>
+Return first of Sd
+ </returns>
+</member><member name="M:SDS.DataSource._SdDAO.Find(System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sd
+ </summary>
+	<returns>
+Return first of Sd
+ </returns>
+</member><member name="M:SDS.DataSource._SdDAO.FindAll(SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sd
+ </summary>
+	<returns>
+Return a list of Sd
+ </returns>
+</member><member name="M:SDS.DataSource._SdDAO.FindAll(System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sd
+ </summary>
+	<returns>
+Return a list of Sd
+ </returns>
+</member><member name="M:SDS.DataSource._SdDAO.FindAll(System.Int32,System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sd
+ </summary>
+	<returns>
+Return a list of Sd
+ </returns>
+</member><member name="M:SDS.DataSource._SdDAO.FindAll(SDS.DataSource.LUNA.LunaSearchOption,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sd
+ </summary>
+	<returns>
+Return a list of Sd
+ </returns>
+</member><member name="T:SDS.DataSource._SdDAO">
+	<summary>
+This class manage persistency on db of Sd object
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:SDS.DataSource.Sdedbal">
+	<summary>
+Entity Class for table Sdedbal
+ </summary>
+	<remarks>
+Write your custom method and property here
+ </remarks>
+</member><member name="T:SDS.DataSource.ISdedbal">
+	<summary>
+Interface for table Sdedbal
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="T:SDS.DataSource.Sdoption">
+	<summary>
+Entity Class for table Sdoption
+ </summary>
+	<remarks>
+Write your custom method and property here
+ </remarks>
+</member><member name="T:SDS.DataSource.ISdoption">
+	<summary>
+Interface for table Sdoption
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="T:SDS.DataSource.Snterest">
+	<summary>
+Entity Class for table Snterest
+ </summary>
+	<remarks>
+Write your custom method and property here
+ </remarks>
+</member><member name="T:SDS.DataSource.ISnterest">
+	<summary>
+Interface for table Snterest
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="M:SDS.DataSource._ExtkbcDAO.Read(System.Int32)">
+	<summary>
+Read from DB table Extkbc
+ </summary>
+	<returns>
+Return a Extkbc object
+ </returns>
+</member><member name="M:SDS.DataSource._ExtkbcDAO.Save(SDS.DataSource.Extkbc@)">
+	<summary>
+Save on DB table Extkbc
+ </summary>
+	<returns>
+Return ID insert in DB
+ </returns>
+</member><member name="M:SDS.DataSource._ExtkbcDAO.Delete(System.Int32)">
+	<summary>
+Delete from DB table Extkbc. Accept id of object to delete.
+ </summary>
+</member><member name="M:SDS.DataSource._ExtkbcDAO.Delete(SDS.DataSource.Extkbc@,System.Collections.Generic.List{SDS.DataSource.Extkbc}@)">
+	<summary>
+Delete from DB table Extkbc. Accept object to delete and optional a List to remove the object from.
+ </summary>
+</member><member name="M:SDS.DataSource._ExtkbcDAO.Find(SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Extkbc
+ </summary>
+	<returns>
+Return first of Extkbc
+ </returns>
+</member><member name="M:SDS.DataSource._ExtkbcDAO.Find(System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Extkbc
+ </summary>
+	<returns>
+Return first of Extkbc
+ </returns>
+</member><member name="M:SDS.DataSource._ExtkbcDAO.FindAll(SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Extkbc
+ </summary>
+	<returns>
+Return a list of Extkbc
+ </returns>
+</member><member name="M:SDS.DataSource._ExtkbcDAO.FindAll(System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Extkbc
+ </summary>
+	<returns>
+Return a list of Extkbc
+ </returns>
+</member><member name="M:SDS.DataSource._ExtkbcDAO.FindAll(System.Int32,System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Extkbc
+ </summary>
+	<returns>
+Return a list of Extkbc
+ </returns>
+</member><member name="M:SDS.DataSource._ExtkbcDAO.FindAll(SDS.DataSource.LUNA.LunaSearchOption,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Extkbc
+ </summary>
+	<returns>
+Return a list of Extkbc
+ </returns>
+</member><member name="T:SDS.DataSource._ExtkbcDAO">
+	<summary>
+This class manage persistency on db of Extkbc object
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:SDS.DataSource._Sd.Read(System.Int32)">
+	<summary>
+This method read an Sd from DB.
+ </summary>
+	<returns>
+Return 0 if all ok, 1 if error
+ </returns>
+</member><member name="M:SDS.DataSource._Sd.Save">
+	<summary>
+This method save an Sd on DB.
+ </summary>
+	<returns>
+Return Id insert in DB if all ok, 0 if error
+ </returns>
+</member><member name="T:SDS.DataSource._Sd">
+	<summary>
+DAO Class for table Sd
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="T:SDS.DataSource._ISd">
+	<summary>
+Interface for table Sd
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="M:SDS.DataSource._SdmasterDAO.Read(System.Int32)">
+	<summary>
+Read from DB table Sdmaster
+ </summary>
+	<returns>
+Return a Sdmaster object
+ </returns>
+</member><member name="M:SDS.DataSource._SdmasterDAO.Save(SDS.DataSource.Sdmaster@)">
+	<summary>
+Save on DB table Sdmaster
+ </summary>
+	<returns>
+Return ID insert in DB
+ </returns>
+</member><member name="M:SDS.DataSource._SdmasterDAO.Delete(System.Int32)">
+	<summary>
+Delete from DB table Sdmaster. Accept id of object to delete.
+ </summary>
+</member><member name="M:SDS.DataSource._SdmasterDAO.Delete(SDS.DataSource.Sdmaster@,System.Collections.Generic.List{SDS.DataSource.Sdmaster}@)">
+	<summary>
+Delete from DB table Sdmaster. Accept object to delete and optional a List to remove the object from.
+ </summary>
+</member><member name="M:SDS.DataSource._SdmasterDAO.Find(SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdmaster
+ </summary>
+	<returns>
+Return first of Sdmaster
+ </returns>
+</member><member name="M:SDS.DataSource._SdmasterDAO.Find(System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdmaster
+ </summary>
+	<returns>
+Return first of Sdmaster
+ </returns>
+</member><member name="M:SDS.DataSource._SdmasterDAO.FindAll(SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdmaster
+ </summary>
+	<returns>
+Return a list of Sdmaster
+ </returns>
+</member><member name="M:SDS.DataSource._SdmasterDAO.FindAll(System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdmaster
+ </summary>
+	<returns>
+Return a list of Sdmaster
+ </returns>
+</member><member name="M:SDS.DataSource._SdmasterDAO.FindAll(System.Int32,System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdmaster
+ </summary>
+	<returns>
+Return a list of Sdmaster
+ </returns>
+</member><member name="M:SDS.DataSource._SdmasterDAO.FindAll(SDS.DataSource.LUNA.LunaSearchOption,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdmaster
+ </summary>
+	<returns>
+Return a list of Sdmaster
+ </returns>
+</member><member name="T:SDS.DataSource._SdmasterDAO">
+	<summary>
+This class manage persistency on db of Sdmaster object
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:SDS.DataSource.ExtkbcDAO">
+	<summary>
+DAO Class for table Extkbc
+ </summary>
+	<remarks>
+Write your DATABASE custom method here
+ </remarks>
+</member><member name="T:SDS.DataSource.Sdpay">
+	<summary>
+Entity Class for table Sdpay
+ </summary>
+	<remarks>
+Write your custom method and property here
+ </remarks>
+</member><member name="T:SDS.DataSource.ISdpay">
+	<summary>
+Interface for table Sdpay
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="M:SDS.DataSource._DivrefDAO.Read(System.Int32)">
+	<summary>
+Read from DB table Divref
+ </summary>
+	<returns>
+Return a Divref object
+ </returns>
+</member><member name="M:SDS.DataSource._DivrefDAO.Save(SDS.DataSource.Divref@)">
+	<summary>
+Save on DB table Divref
+ </summary>
+	<returns>
+Return ID insert in DB
+ </returns>
+</member><member name="M:SDS.DataSource._DivrefDAO.Delete(System.Int32)">
+	<summary>
+Delete from DB table Divref. Accept id of object to delete.
+ </summary>
+</member><member name="M:SDS.DataSource._DivrefDAO.Delete(SDS.DataSource.Divref@,System.Collections.Generic.List{SDS.DataSource.Divref}@)">
+	<summary>
+Delete from DB table Divref. Accept object to delete and optional a List to remove the object from.
+ </summary>
+</member><member name="M:SDS.DataSource._DivrefDAO.Find(SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Divref
+ </summary>
+	<returns>
+Return first of Divref
+ </returns>
+</member><member name="M:SDS.DataSource._DivrefDAO.Find(System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Divref
+ </summary>
+	<returns>
+Return first of Divref
+ </returns>
+</member><member name="M:SDS.DataSource._DivrefDAO.FindAll(SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Divref
+ </summary>
+	<returns>
+Return a list of Divref
+ </returns>
+</member><member name="M:SDS.DataSource._DivrefDAO.FindAll(System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Divref
+ </summary>
+	<returns>
+Return a list of Divref
+ </returns>
+</member><member name="M:SDS.DataSource._DivrefDAO.FindAll(System.Int32,System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Divref
+ </summary>
+	<returns>
+Return a list of Divref
+ </returns>
+</member><member name="M:SDS.DataSource._DivrefDAO.FindAll(SDS.DataSource.LUNA.LunaSearchOption,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Divref
+ </summary>
+	<returns>
+Return a list of Divref
+ </returns>
+</member><member name="T:SDS.DataSource._DivrefDAO">
+	<summary>
+This class manage persistency on db of Divref object
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:SDS.DataSource._Extkbc.Read(System.Int32)">
+	<summary>
+This method read an Extkbc from DB.
+ </summary>
+	<returns>
+Return 0 if all ok, 1 if error
+ </returns>
+</member><member name="M:SDS.DataSource._Extkbc.Save">
+	<summary>
+This method save an Extkbc on DB.
+ </summary>
+	<returns>
+Return Id insert in DB if all ok, 0 if error
+ </returns>
+</member><member name="T:SDS.DataSource._Extkbc">
+	<summary>
+DAO Class for table Extkbc
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="T:SDS.DataSource._IExtkbc">
+	<summary>
+Interface for table Extkbc
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="M:SDS.DataSource._SdothersDAO.Read(System.Int32)">
+	<summary>
+Read from DB table Sdothers
+ </summary>
+	<returns>
+Return a Sdothers object
+ </returns>
+</member><member name="M:SDS.DataSource._SdothersDAO.Save(SDS.DataSource.Sdothers@)">
+	<summary>
+Save on DB table Sdothers
+ </summary>
+	<returns>
+Return ID insert in DB
+ </returns>
+</member><member name="M:SDS.DataSource._SdothersDAO.Delete(System.Int32)">
+	<summary>
+Delete from DB table Sdothers. Accept id of object to delete.
+ </summary>
+</member><member name="M:SDS.DataSource._SdothersDAO.Delete(SDS.DataSource.Sdothers@,System.Collections.Generic.List{SDS.DataSource.Sdothers}@)">
+	<summary>
+Delete from DB table Sdothers. Accept object to delete and optional a List to remove the object from.
+ </summary>
+</member><member name="M:SDS.DataSource._SdothersDAO.Find(SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdothers
+ </summary>
+	<returns>
+Return first of Sdothers
+ </returns>
+</member><member name="M:SDS.DataSource._SdothersDAO.Find(System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdothers
+ </summary>
+	<returns>
+Return first of Sdothers
+ </returns>
+</member><member name="M:SDS.DataSource._SdothersDAO.FindAll(SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdothers
+ </summary>
+	<returns>
+Return a list of Sdothers
+ </returns>
+</member><member name="M:SDS.DataSource._SdothersDAO.FindAll(System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdothers
+ </summary>
+	<returns>
+Return a list of Sdothers
+ </returns>
+</member><member name="M:SDS.DataSource._SdothersDAO.FindAll(System.Int32,System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdothers
+ </summary>
+	<returns>
+Return a list of Sdothers
+ </returns>
+</member><member name="M:SDS.DataSource._SdothersDAO.FindAll(SDS.DataSource.LUNA.LunaSearchOption,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdothers
+ </summary>
+	<returns>
+Return a list of Sdothers
+ </returns>
+</member><member name="T:SDS.DataSource._SdothersDAO">
+	<summary>
+This class manage persistency on db of Sdothers object
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:SDS.DataSource._SpuserDAO.Read(System.Int32)">
+	<summary>
+Read from DB table Spuser
+ </summary>
+	<returns>
+Return a Spuser object
+ </returns>
+</member><member name="M:SDS.DataSource._SpuserDAO.Save(SDS.DataSource.Spuser@)">
+	<summary>
+Save on DB table Spuser
+ </summary>
+	<returns>
+Return ID insert in DB
+ </returns>
+</member><member name="M:SDS.DataSource._SpuserDAO.Delete(System.Int32)">
+	<summary>
+Delete from DB table Spuser. Accept id of object to delete.
+ </summary>
+</member><member name="M:SDS.DataSource._SpuserDAO.Delete(SDS.DataSource.Spuser@,System.Collections.Generic.List{SDS.DataSource.Spuser}@)">
+	<summary>
+Delete from DB table Spuser. Accept object to delete and optional a List to remove the object from.
+ </summary>
+</member><member name="M:SDS.DataSource._SpuserDAO.Find(SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Spuser
+ </summary>
+	<returns>
+Return first of Spuser
+ </returns>
+</member><member name="M:SDS.DataSource._SpuserDAO.Find(System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Spuser
+ </summary>
+	<returns>
+Return first of Spuser
+ </returns>
+</member><member name="M:SDS.DataSource._SpuserDAO.FindAll(SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Spuser
+ </summary>
+	<returns>
+Return a list of Spuser
+ </returns>
+</member><member name="M:SDS.DataSource._SpuserDAO.FindAll(System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Spuser
+ </summary>
+	<returns>
+Return a list of Spuser
+ </returns>
+</member><member name="M:SDS.DataSource._SpuserDAO.FindAll(System.Int32,System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Spuser
+ </summary>
+	<returns>
+Return a list of Spuser
+ </returns>
+</member><member name="M:SDS.DataSource._SpuserDAO.FindAll(SDS.DataSource.LUNA.LunaSearchOption,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Spuser
+ </summary>
+	<returns>
+Return a list of Spuser
+ </returns>
+</member><member name="T:SDS.DataSource._SpuserDAO">
+	<summary>
+This class manage persistency on db of Spuser object
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:SDS.DataSource.DivrefDAO">
+	<summary>
+DAO Class for table Divref
+ </summary>
+	<remarks>
+Write your DATABASE custom method here
+ </remarks>
+</member><member name="T:SDS.DataSource.SdmasterDAO">
+	<summary>
+DAO Class for table Sdmaster
+ </summary>
+	<remarks>
+Write your DATABASE custom method here
+ </remarks>
+</member><member name="T:SDS.DataSource.SpuserDAO">
+	<summary>
+DAO Class for table Spuser
+ </summary>
+	<remarks>
+Write your DATABASE custom method here
+ </remarks>
+</member><member name="T:SDS.DataSource.Ctrl_s">
+	<summary>
+Entity Class for table Ctrl_s
+ </summary>
+	<remarks>
+Write your custom method and property here
+ </remarks>
+</member><member name="T:SDS.DataSource.ICtrl_s">
+	<summary>
+Interface for table Ctrl_s
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="T:SDS.DataSource.Interest_s">
+	<summary>
+Entity Class for table Interest_s
+ </summary>
+	<remarks>
+Write your custom method and property here
+ </remarks>
+</member><member name="T:SDS.DataSource.IInterest_s">
+	<summary>
+Interface for table Interest_s
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="M:SDS.DataSource._Interest_s.Read(System.Int32)">
+	<summary>
+This method read an Interest_s from DB.
+ </summary>
+	<returns>
+Return 0 if all ok, 1 if error
+ </returns>
+</member><member name="M:SDS.DataSource._Interest_s.Save">
+	<summary>
+This method save an Interest_s on DB.
+ </summary>
+	<returns>
+Return Id insert in DB if all ok, 0 if error
+ </returns>
+</member><member name="T:SDS.DataSource._Interest_s">
+	<summary>
+DAO Class for table Interest_s
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="T:SDS.DataSource._IInterest_s">
+	<summary>
+Interface for table Interest_s
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="M:SDS.DataSource._Param_s.Read(System.Int32)">
+	<summary>
+This method read an Param_s from DB.
+ </summary>
+	<returns>
+Return 0 if all ok, 1 if error
+ </returns>
+</member><member name="M:SDS.DataSource._Param_s.Save">
+	<summary>
+This method save an Param_s on DB.
+ </summary>
+	<returns>
+Return Id insert in DB if all ok, 0 if error
+ </returns>
+</member><member name="T:SDS.DataSource._Param_s">
+	<summary>
+DAO Class for table Param_s
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="T:SDS.DataSource._IParam_s">
+	<summary>
+Interface for table Param_s
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="M:SDS.DataSource._Sdmaster.Read(System.Int32)">
+	<summary>
+This method read an Sdmaster from DB.
+ </summary>
+	<returns>
+Return 0 if all ok, 1 if error
+ </returns>
+</member><member name="M:SDS.DataSource._Sdmaster.Save">
+	<summary>
+This method save an Sdmaster on DB.
+ </summary>
+	<returns>
+Return Id insert in DB if all ok, 0 if error
+ </returns>
+</member><member name="T:SDS.DataSource._Sdmaster">
+	<summary>
+DAO Class for table Sdmaster
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="T:SDS.DataSource._ISdmaster">
+	<summary>
+Interface for table Sdmaster
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="M:SDS.DataSource._SnterestDAO.Read(System.Int32)">
+	<summary>
+Read from DB table Snterest
+ </summary>
+	<returns>
+Return a Snterest object
+ </returns>
+</member><member name="M:SDS.DataSource._SnterestDAO.Save(SDS.DataSource.Snterest@)">
+	<summary>
+Save on DB table Snterest
+ </summary>
+	<returns>
+Return ID insert in DB
+ </returns>
+</member><member name="M:SDS.DataSource._SnterestDAO.Delete(System.Int32)">
+	<summary>
+Delete from DB table Snterest. Accept id of object to delete.
+ </summary>
+</member><member name="M:SDS.DataSource._SnterestDAO.Delete(SDS.DataSource.Snterest@,System.Collections.Generic.List{SDS.DataSource.Snterest}@)">
+	<summary>
+Delete from DB table Snterest. Accept object to delete and optional a List to remove the object from.
+ </summary>
+</member><member name="M:SDS.DataSource._SnterestDAO.Find(SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Snterest
+ </summary>
+	<returns>
+Return first of Snterest
+ </returns>
+</member><member name="M:SDS.DataSource._SnterestDAO.Find(System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Snterest
+ </summary>
+	<returns>
+Return first of Snterest
+ </returns>
+</member><member name="M:SDS.DataSource._SnterestDAO.FindAll(SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Snterest
+ </summary>
+	<returns>
+Return a list of Snterest
+ </returns>
+</member><member name="M:SDS.DataSource._SnterestDAO.FindAll(System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Snterest
+ </summary>
+	<returns>
+Return a list of Snterest
+ </returns>
+</member><member name="M:SDS.DataSource._SnterestDAO.FindAll(System.Int32,System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Snterest
+ </summary>
+	<returns>
+Return a list of Snterest
+ </returns>
+</member><member name="M:SDS.DataSource._SnterestDAO.FindAll(SDS.DataSource.LUNA.LunaSearchOption,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Snterest
+ </summary>
+	<returns>
+Return a list of Snterest
+ </returns>
+</member><member name="T:SDS.DataSource._SnterestDAO">
+	<summary>
+This class manage persistency on db of Snterest object
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="T:SDS.DataSource.SdothersDAO">
+	<summary>
+DAO Class for table Sdothers
+ </summary>
+	<remarks>
+Write your DATABASE custom method here
+ </remarks>
+</member><member name="T:SDS.DataSource.Aloans">
+	<summary>
+Entity Class for table Aloans
+ </summary>
+	<remarks>
+Write your custom method and property here
+ </remarks>
+</member><member name="T:SDS.DataSource.IAloans">
+	<summary>
+Interface for table Aloans
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="M:SDS.DataSource._RnterestDAO.Read(System.Int32)">
+	<summary>
+Read from DB table Rnterest
+ </summary>
+	<returns>
+Return a Rnterest object
+ </returns>
+</member><member name="M:SDS.DataSource._RnterestDAO.Save(SDS.DataSource.Rnterest@)">
+	<summary>
+Save on DB table Rnterest
+ </summary>
+	<returns>
+Return ID insert in DB
+ </returns>
+</member><member name="M:SDS.DataSource._RnterestDAO.Delete(System.Int32)">
+	<summary>
+Delete from DB table Rnterest. Accept id of object to delete.
+ </summary>
+</member><member name="M:SDS.DataSource._RnterestDAO.Delete(SDS.DataSource.Rnterest@,System.Collections.Generic.List{SDS.DataSource.Rnterest}@)">
+	<summary>
+Delete from DB table Rnterest. Accept object to delete and optional a List to remove the object from.
+ </summary>
+</member><member name="M:SDS.DataSource._RnterestDAO.Find(SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Rnterest
+ </summary>
+	<returns>
+Return first of Rnterest
+ </returns>
+</member><member name="M:SDS.DataSource._RnterestDAO.Find(System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Rnterest
+ </summary>
+	<returns>
+Return first of Rnterest
+ </returns>
+</member><member name="M:SDS.DataSource._RnterestDAO.FindAll(SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Rnterest
+ </summary>
+	<returns>
+Return a list of Rnterest
+ </returns>
+</member><member name="M:SDS.DataSource._RnterestDAO.FindAll(System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Rnterest
+ </summary>
+	<returns>
+Return a list of Rnterest
+ </returns>
+</member><member name="M:SDS.DataSource._RnterestDAO.FindAll(System.Int32,System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Rnterest
+ </summary>
+	<returns>
+Return a list of Rnterest
+ </returns>
+</member><member name="M:SDS.DataSource._RnterestDAO.FindAll(SDS.DataSource.LUNA.LunaSearchOption,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Rnterest
+ </summary>
+	<returns>
+Return a list of Rnterest
+ </returns>
+</member><member name="T:SDS.DataSource._RnterestDAO">
+	<summary>
+This class manage persistency on db of Rnterest object
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:SDS.DataSource._Sdedbal.Read(System.Int32)">
+	<summary>
+This method read an Sdedbal from DB.
+ </summary>
+	<returns>
+Return 0 if all ok, 1 if error
+ </returns>
+</member><member name="M:SDS.DataSource._Sdedbal.Save">
+	<summary>
+This method save an Sdedbal on DB.
+ </summary>
+	<returns>
+Return Id insert in DB if all ok, 0 if error
+ </returns>
+</member><member name="T:SDS.DataSource._Sdedbal">
+	<summary>
+DAO Class for table Sdedbal
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="T:SDS.DataSource._ISdedbal">
+	<summary>
+Interface for table Sdedbal
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="M:SDS.DataSource._SdedbalDAO.Read(System.Int32)">
+	<summary>
+Read from DB table Sdedbal
+ </summary>
+	<returns>
+Return a Sdedbal object
+ </returns>
+</member><member name="M:SDS.DataSource._SdedbalDAO.Save(SDS.DataSource.Sdedbal@)">
+	<summary>
+Save on DB table Sdedbal
+ </summary>
+	<returns>
+Return ID insert in DB
+ </returns>
+</member><member name="M:SDS.DataSource._SdedbalDAO.Delete(System.Int32)">
+	<summary>
+Delete from DB table Sdedbal. Accept id of object to delete.
+ </summary>
+</member><member name="M:SDS.DataSource._SdedbalDAO.Delete(SDS.DataSource.Sdedbal@,System.Collections.Generic.List{SDS.DataSource.Sdedbal}@)">
+	<summary>
+Delete from DB table Sdedbal. Accept object to delete and optional a List to remove the object from.
+ </summary>
+</member><member name="M:SDS.DataSource._SdedbalDAO.Find(SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdedbal
+ </summary>
+	<returns>
+Return first of Sdedbal
+ </returns>
+</member><member name="M:SDS.DataSource._SdedbalDAO.Find(System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdedbal
+ </summary>
+	<returns>
+Return first of Sdedbal
+ </returns>
+</member><member name="M:SDS.DataSource._SdedbalDAO.FindAll(SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdedbal
+ </summary>
+	<returns>
+Return a list of Sdedbal
+ </returns>
+</member><member name="M:SDS.DataSource._SdedbalDAO.FindAll(System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdedbal
+ </summary>
+	<returns>
+Return a list of Sdedbal
+ </returns>
+</member><member name="M:SDS.DataSource._SdedbalDAO.FindAll(System.Int32,System.String,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdedbal
+ </summary>
+	<returns>
+Return a list of Sdedbal
+ </returns>
+</member><member name="M:SDS.DataSource._SdedbalDAO.FindAll(SDS.DataSource.LUNA.LunaSearchOption,SDS.DataSource.LUNA.LunaSearchParameter[])">
+	<summary>
+Find on DB table Sdedbal
+ </summary>
+	<returns>
+Return a list of Sdedbal
+ </returns>
+</member><member name="T:SDS.DataSource._SdedbalDAO">
+	<summary>
+This class manage persistency on db of Sdedbal object
+ </summary>
+	<remarks>
+	</remarks>
+</member><member name="M:SDS.DataSource._Sdtran.Read(System.Int32)">
+	<summary>
+This method read an Sdtran from DB.
+ </summary>
+	<returns>
+Return 0 if all ok, 1 if error
+ </returns>
+</member><member name="M:SDS.DataSource._Sdtran.Save">
+	<summary>
+This method save an Sdtran on DB.
+ </summary>
+	<returns>
+Return Id insert in DB if all ok, 0 if error
+ </returns>
+</member><member name="T:SDS.DataSource._Sdtran">
+	<summary>
+DAO Class for table Sdtran
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="T:SDS.DataSource._ISdtran">
+	<summary>
+Interface for table Sdtran
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member><member name="T:SDS.DataSource.Interest_sDAO">
+	<summary>
+DAO Class for table Interest_s
+ </summary>
+	<remarks>
+Write your DATABASE custom method here
+ </remarks>
+</member><member name="T:SDS.DataSource.SnterestDAO">
+	<summary>
+DAO Class for table Snterest
+ </summary>
+	<remarks>
+Write your DATABASE custom method here
+ </remarks>
+</member><member name="T:SDS.DataSource.Sdpost">
+	<summary>
+Entity Class for table Sdpost
+ </summary>
+	<remarks>
+Write your custom method and property here
+ </remarks>
+</member><member name="T:SDS.DataSource.ISdpost">
+	<summary>
+Interface for table Sdpost
+ </summary>
+	<remarks>
+Don't write code here
+ </remarks>
+</member>
+</members>
+</doc>
