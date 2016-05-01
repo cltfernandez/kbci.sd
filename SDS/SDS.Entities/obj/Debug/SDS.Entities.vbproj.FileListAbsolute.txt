@@ -34,12 +34,3 @@ C:\BackUps\Development\Staging\SD KBCI 2008\SDS\SDS.Entities\obj\Debug\SDS.Entit
 C:\BackUps\Development\Staging\SD KBCI 2008\SDS\SDS.Entities\obj\Debug\SDS.Entities.dll
 C:\BackUps\Development\Staging\SD KBCI 2008\SDS\SDS.Entities\obj\Debug\SDS.Entities.xml
 C:\BackUps\Development\Staging\SD KBCI 2008\SDS\SDS.Entities\obj\Debug\SDS.Entities.pdb
-C:\BackUps\Development\KBCI Savings and Deposit System VS2008\SDS\SDS.Entities\bin\Debug\SDS.Entities.dll
-C:\BackUps\Development\KBCI Savings and Deposit System VS2008\SDS\SDS.Entities\bin\Debug\SDS.Entities.pdb
-C:\BackUps\Development\KBCI Savings and Deposit System VS2008\SDS\SDS.Entities\bin\Debug\SDS.Entities.xml
-C:\BackUps\Development\KBCI Savings and Deposit System VS2008\SDS\SDS.Entities\obj\Debug\ResolveAssemblyReference.cache
-C:\BackUps\Development\KBCI Savings and Deposit System VS2008\SDS\SDS.Entities\obj\Debug\SDS.Entities.Resources.resources
-C:\BackUps\Development\KBCI Savings and Deposit System VS2008\SDS\SDS.Entities\obj\Debug\SDS.Entities.vbproj.GenerateResource.Cache
-C:\BackUps\Development\KBCI Savings and Deposit System VS2008\SDS\SDS.Entities\obj\Debug\SDS.Entities.dll
-C:\BackUps\Development\KBCI Savings and Deposit System VS2008\SDS\SDS.Entities\obj\Debug\SDS.Entities.xml
-C:\BackUps\Development\KBCI Savings and Deposit System VS2008\SDS\SDS.Entities\obj\Debug\SDS.Entities.pdb
