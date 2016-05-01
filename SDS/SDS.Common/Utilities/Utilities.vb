@@ -4,9 +4,9 @@
         Return crypto.Decrypt
     End Function
 
-    'Public Shared Function GetGlobalResourceString(ByVal resourceKey As String) As String
-    '    Dim myResource As New My.Resources.GlobalResource
-    '    Return myResource.ResourceManager.GetString(resourceKey)
-    'End Function
+    Public Shared Function GetGlobalResourceString(ByVal resourceKey As String) As String
+        Dim myResource As New My.Resources.GlobalResource
+        Return myResource.ResourceManager.GetString(resourceKey)
+    End Function
 
 End Class

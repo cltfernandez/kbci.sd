@@ -9,6 +9,7 @@
 
 
 Imports System.Data.Common
+Imports SDS.Common
 
 ''' <summary>
 '''DAO Class for table Sdtran
@@ -27,6 +28,48 @@ Public Class SdtranDAO
         MyBase.New(Connection)
     End Sub
 
+    Public Function RecalculateLedger(ByVal AccountNo As String, ByVal StartDate As Date) As RecalculateLedgerResult
+        Dim StoredProcedureName As String = "s_RecalculateLedger"
 
+        Try
+
+            Using myCommand As DbCommand = _Cn.CreateCommand
+                myCommand.CommandText = StoredProcedureName
+                myCommand.CommandType = CommandType.StoredProcedure
+
+
+                Dim paramAccountNo = myCommand.CreateParameter
+                With paramAccountNo
+                    .ParameterName = "@AcctNo"
+                    .Value = AccountNo
+                End With
+
+                Dim paramStartDate = myCommand.CreateParameter
+                With paramStartDate
+                    .ParameterName = "@StartDate"
+                    .Value = StartDate
+                End With
+
+                Dim paramResult = myCommand.CreateParameter
+                With paramResult
+                    .ParameterName = "@Result"
+                    .Value = RecalculateLedgerResult.Successful
+                    .Direction = ParameterDirection.Output
+                End With
+
+                myCommand.Parameters.Add(paramAccountNo)
+                myCommand.Parameters.Add(paramStartDate)
+                myCommand.Parameters.Add(paramResult)
+
+                If Not LUNA.LunaContext.TransactionBox Is Nothing Then myCommand.Transaction = LUNA.LunaContext.TransactionBox.Transaction
+                myCommand.ExecuteNonQuery()
+
+                Return myCommand.Parameters("@Result").Value()
+            End Using
+
+        Catch ex As Exception
+            ManageError(ex)
+        End Try
+    End Function
 
 End Class

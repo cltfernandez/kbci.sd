@@ -1,3 +1,4 @@
+Imports SDS.BusinessLogic
 Public Class frmSDS_Main
     Inherits System.Windows.Forms.Form
 
@@ -141,8 +142,6 @@ Public Class frmSDS_Main
     Friend WithEvents MenuItem92 As System.Windows.Forms.MenuItem
     Friend WithEvents MenuItem93 As System.Windows.Forms.MenuItem
     Friend WithEvents MenuItem94 As System.Windows.Forms.MenuItem
-    Friend WithEvents MenuItem95 As System.Windows.Forms.MenuItem
-    Friend WithEvents MenuItem99 As System.Windows.Forms.MenuItem
     Friend WithEvents MenuItem6 As System.Windows.Forms.MenuItem
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
@@ -200,8 +199,6 @@ Public Class frmSDS_Main
         Me.MenuItem38 = New System.Windows.Forms.MenuItem
         Me.MenuItem39 = New System.Windows.Forms.MenuItem
         Me.MenuItem94 = New System.Windows.Forms.MenuItem
-        Me.MenuItem95 = New System.Windows.Forms.MenuItem
-        Me.MenuItem99 = New System.Windows.Forms.MenuItem
         Me.MenuItem81 = New System.Windows.Forms.MenuItem
         Me.MenuItem88 = New System.Windows.Forms.MenuItem
         Me.MenuItem67 = New System.Windows.Forms.MenuItem
@@ -534,18 +531,7 @@ Public Class frmSDS_Main
         'MenuItem94
         '
         Me.MenuItem94.Index = 10
-        Me.MenuItem94.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.MenuItem95, Me.MenuItem99})
         resources.ApplyResources(Me.MenuItem94, "MenuItem94")
-        '
-        'MenuItem95
-        '
-        Me.MenuItem95.Index = 0
-        resources.ApplyResources(Me.MenuItem95, "MenuItem95")
-        '
-        'MenuItem99
-        '
-        Me.MenuItem99.Index = 1
-        resources.ApplyResources(Me.MenuItem99, "MenuItem99")
         '
         'MenuItem81
         '
@@ -934,6 +920,7 @@ Public Class frmSDS_Main
     Private frmSDS_DormancyCharges As frmSDS_DormancyCharges
     Private AboutBox1 As AboutBox1
     Private frmSDS_Backup As frmSDS_Backup
+    Private frmRecalculateLedger As frmRecalculateLedger
     Dim LDAMT, DR As Decimal
     Private Sub frmSDS_Main_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Dim x As MenuItem
@@ -2455,4 +2442,16 @@ Public Class frmSDS_Main
 
     End Sub
 
+    Private Sub MenuItem95_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
+    End Sub
+
+    Private Sub MenuItem99_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
+    End Sub
+
+    Private Sub MenuItem94_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItem94.Click
+        frmRecalculateLedger = New frmRecalculateLedger(New RecalculateLedgerBusinessLogic(), New MessagePromptBusinessLogic())
+        frmRecalculateLedger.ShowDialog()
+    End Sub
 End Class

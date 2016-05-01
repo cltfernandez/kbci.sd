@@ -8,3 +8,4 @@ C:\BackUps\Development\KBCI Savings and Deposit System VS2008\SDS\SDS.Common\bin
 C:\BackUps\Development\KBCI Savings and Deposit System VS2008\SDS\SDS.Common\obj\Debug\SDS.Common.dll
 C:\BackUps\Development\KBCI Savings and Deposit System VS2008\SDS\SDS.Common\obj\Debug\SDS.Common.xml
 C:\BackUps\Development\KBCI Savings and Deposit System VS2008\SDS\SDS.Common\obj\Debug\SDS.Common.pdb
+C:\BackUps\Development\KBCI Savings and Deposit System VS2008\SDS\SDS.Common\obj\Debug\SDS.Common.GlobalResource.resources

@@ -65,6 +65,12 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants.vb" />
+    <Compile Include="GlobalResource.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GlobalResource.resx</DependentUpon>
+    </Compile>
     <Compile Include="Utilities\Crpyto.vb" />
     <Compile Include="Utilities\Crypt.vb" />
     <Compile Include="Utilities\Utilities.vb" />
@@ -90,6 +96,11 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlobalResource.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>GlobalResource.Designer.vb</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

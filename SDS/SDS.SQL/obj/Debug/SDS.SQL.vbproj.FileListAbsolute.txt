@@ -1,0 +1,5 @@
+C:\BackUps\Development\KBCI Savings and Deposit System VS2008\SDS\SDS.SQL\bin\SqlClassLibrary.dll
+C:\BackUps\Development\KBCI Savings and Deposit System VS2008\SDS\SDS.SQL\bin\SqlClassLibrary.pdb
+C:\BackUps\Development\KBCI Savings and Deposit System VS2008\SDS\SDS.SQL\obj\Debug\ResolveAssemblyReference.cache
+C:\BackUps\Development\KBCI Savings and Deposit System VS2008\SDS\SDS.SQL\obj\Debug\SqlClassLibrary.dll
+C:\BackUps\Development\KBCI Savings and Deposit System VS2008\SDS\SDS.SQL\obj\Debug\SqlClassLibrary.pdb

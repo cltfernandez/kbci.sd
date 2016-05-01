@@ -6,6 +6,7 @@ GO
 CREATE PROCEDURE [dbo].[s_RecalculateLedger]
 		@AcctNo VARCHAR(10)
 		,@StartDate DATE
+		,@Result INT OUTPUT
 AS
 BEGIN
 	DECLARE  @CURRENTACCT VARCHAR(10) = ''
@@ -80,10 +81,13 @@ BEGIN
 		BEGIN CATCH
 
 		IF @@TRANCOUNT > 0
+			SET @Result = 0
 			ROLLBACK TRANSACTION;
+			 
 		END CATCH;
 
 		IF @@TRANCOUNT > 0
+			SET @Result = 1
 			COMMIT TRANSACTION;
 
 

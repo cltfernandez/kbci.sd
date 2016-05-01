@@ -40,15 +40,9 @@ C:\BackUps\Development\KBCI Savings and Deposit System VS2008\SDS\SDS\bin\Debug\
 C:\BackUps\Development\KBCI Savings and Deposit System VS2008\SDS\SDS\bin\Debug\SDS.xml
 C:\BackUps\Development\KBCI Savings and Deposit System VS2008\SDS\SDS\bin\Debug\af\SDS.resources.dll
 C:\BackUps\Development\KBCI Savings and Deposit System VS2008\SDS\SDS\bin\Debug\CLTF.dll
-C:\BackUps\Development\KBCI Savings and Deposit System VS2008\SDS\SDS\bin\Debug\SDS.Business.dll
 C:\BackUps\Development\KBCI Savings and Deposit System VS2008\SDS\SDS\bin\Debug\SDS.Entities.dll
-C:\BackUps\Development\KBCI Savings and Deposit System VS2008\SDS\SDS\bin\Debug\SDS.DataSource.dll
 C:\BackUps\Development\KBCI Savings and Deposit System VS2008\SDS\SDS\bin\Debug\Jc.Scripts.dll
 C:\BackUps\Development\KBCI Savings and Deposit System VS2008\SDS\SDS\bin\Debug\SDS.Common.dll
-C:\BackUps\Development\KBCI Savings and Deposit System VS2008\SDS\SDS\bin\Debug\SDS.DataSource.pdb
-C:\BackUps\Development\KBCI Savings and Deposit System VS2008\SDS\SDS\bin\Debug\SDS.DataSource.xml
-C:\BackUps\Development\KBCI Savings and Deposit System VS2008\SDS\SDS\bin\Debug\SDS.Business.pdb
-C:\BackUps\Development\KBCI Savings and Deposit System VS2008\SDS\SDS\bin\Debug\SDS.Business.xml
 C:\BackUps\Development\KBCI Savings and Deposit System VS2008\SDS\SDS\bin\Debug\SDS.Common.pdb
 C:\BackUps\Development\KBCI Savings and Deposit System VS2008\SDS\SDS\bin\Debug\SDS.Common.xml
 C:\BackUps\Development\KBCI Savings and Deposit System VS2008\SDS\SDS\bin\Debug\SDS.Entities.pdb
@@ -61,3 +55,10 @@ E:\Programs\FDInstaller\KBCI Savings and Deposit System VS2008\SDS\SDS\bin\Debug
 E:\Programs\FDInstaller\KBCI Savings and Deposit System VS2008\SDS\SDS\obj\Debug\SDS.exe
 E:\Programs\FDInstaller\KBCI Savings and Deposit System VS2008\SDS\SDS\obj\Debug\SDS.xml
 E:\Programs\FDInstaller\KBCI Savings and Deposit System VS2008\SDS\SDS\obj\Debug\SDS.pdb
+C:\BackUps\Development\KBCI Savings and Deposit System VS2008\SDS\SDS\obj\Debug\SDS.frmRecalculateLedger.resources
+C:\BackUps\Development\KBCI Savings and Deposit System VS2008\SDS\SDS\bin\Debug\SDS.DataAccessObject.dll
+C:\BackUps\Development\KBCI Savings and Deposit System VS2008\SDS\SDS\bin\Debug\SDS.DataAccessObject.pdb
+C:\BackUps\Development\KBCI Savings and Deposit System VS2008\SDS\SDS\bin\Debug\SDS.DataAccessObject.xml
+C:\BackUps\Development\KBCI Savings and Deposit System VS2008\SDS\SDS\bin\Debug\SDS.BusinessLogic.dll
+C:\BackUps\Development\KBCI Savings and Deposit System VS2008\SDS\SDS\bin\Debug\SDS.BusinessLogic.pdb
+C:\BackUps\Development\KBCI Savings and Deposit System VS2008\SDS\SDS\bin\Debug\SDS.BusinessLogic.xml

@@ -7,8 +7,8 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{37F03907-B429-424E-9977-357C03841B44}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>SDS.Business</RootNamespace>
-    <AssemblyName>SDS.Business</AssemblyName>
+    <RootNamespace>SDS.BusinessLogic</RootNamespace>
+    <AssemblyName>SDS.BusinessLogic</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Windows</MyType>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
@@ -23,7 +23,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>SDS.Business.xml</DocumentationFile>
+    <DocumentationFile>SDS.BusinessLogic.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -32,7 +32,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>SDS.Business.xml</DocumentationFile>
+    <DocumentationFile>SDS.BusinessLogic.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <ItemGroup>
@@ -80,7 +80,10 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConfigurationManager.vb" />
+    <Compile Include="Implementation\MessagePromptBusinessLogic.vb" />
+    <Compile Include="Implementation\RecalculateLedgerBusinessLogic.vb" />
+    <Compile Include="Interfaces\IRecalculateLedgerBusinessLogic.vb" />
+    <Compile Include="Interfaces\IMessagePromptBusinessLogic.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -96,11 +99,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="ObjectBinder.vb" />
-    <Compile Include="Security.vb" />
-    <Compile Include="TransactionManager.vb" />
-    <Compile Include="UsersManager.vb" />
-    <Compile Include="Utilities.vb" />
+    <Compile Include="Implementation\ObjectBinder.vb" />
+    <Compile Include="Implementation\Security.vb" />
+    <Compile Include="Implementation\TransactionManager.vb" />
+    <Compile Include="Implementation\UsersManager.vb" />
+    <Compile Include="Implementation\Utilities.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -122,6 +125,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SDS.Common\SDS.Common.vbproj">
+      <Project>{6731CBB5-597D-4A25-8A64-15182C606FDE}</Project>
+      <Name>SDS.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SDS.DataSource\SDS.DataAccessObject.vbproj">
       <Project>{81880EA1-5447-4638-B420-ACF629A3DEE8}</Project>
       <Name>SDS.DataAccessObject</Name>
@@ -130,9 +137,6 @@
       <Project>{A4FB6C50-0D98-4A03-8A68-88451BE00262}</Project>
       <Name>SDS.Entities</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="NewFolder1\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

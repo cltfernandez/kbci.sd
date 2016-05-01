@@ -6,6 +6,35 @@ SDS.Common
 </name>
 </assembly>
 <members>
-
+<member name="P:SDS.Common.My.Resources.GlobalResource.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:SDS.Common.My.Resources.GlobalResource.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="P:SDS.Common.My.Resources.GlobalResource.Calculating">
+	<summary>
+  Looks up a localized string similar to Calculating....
+</summary>
+</member><member name="P:SDS.Common.My.Resources.GlobalResource.RecalculateLedger">
+	<summary>
+  Looks up a localized string similar to Ledger Recalculation.
+</summary>
+</member><member name="P:SDS.Common.My.Resources.GlobalResource.RecalculationFailed">
+	<summary>
+  Looks up a localized string similar to Recalculation Failed!.
+</summary>
+</member><member name="P:SDS.Common.My.Resources.GlobalResource.RecalculationSuccessful">
+	<summary>
+  Looks up a localized string similar to Recalculation Successful!.
+</summary>
+</member><member name="T:SDS.Common.My.Resources.GlobalResource">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
 </members>
 </doc>
