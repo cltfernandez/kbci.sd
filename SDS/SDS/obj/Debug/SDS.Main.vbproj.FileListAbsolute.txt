@@ -1,4 +1,0 @@
-E:\Programs\FDInstaller\KBCI Savings and Deposit System VS2008\SDS\SDS\bin\Debug\SDS.exe.config
-E:\Programs\FDInstaller\KBCI Savings and Deposit System VS2008\SDS\SDS\obj\Debug\SDS.exe
-E:\Programs\FDInstaller\KBCI Savings and Deposit System VS2008\SDS\SDS\obj\Debug\SDS.xml
-E:\Programs\FDInstaller\KBCI Savings and Deposit System VS2008\SDS\SDS\obj\Debug\SDS.pdb
