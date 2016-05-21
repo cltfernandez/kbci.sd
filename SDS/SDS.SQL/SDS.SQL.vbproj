@@ -60,6 +60,11 @@
       <SubType>Content</SubType>
     </Content>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="StoredProcedures\4_s_GetDebitCreditTotals.sql">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Import Project="$(MSBuildToolsPath)\SqlServer.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
