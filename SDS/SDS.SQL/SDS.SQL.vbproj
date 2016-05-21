@@ -56,14 +56,22 @@
     <Compile Include="My Project\AssemblyInfo.vb" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="StoredProcedures\_s_RecalculateLedger.sql">
+    <Content Include="_4_StoredProcedures\4_s_RecalculateLedger.sql">
       <SubType>Content</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="StoredProcedures\4_s_GetDebitCreditTotals.sql">
+    <Content Include="_4_StoredProcedures\4_s_GetDebitCreditTotals.sql">
       <SubType>Content</SubType>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="_1_Tables\" />
+    <Folder Include="_2_Views\" />
+    <Folder Include="_3_Functions\" />
+    <Folder Include="_5_Constraints\" />
+    <Folder Include="_6_Data\" />
+    <Folder Include="_7_PostScripts\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Import Project="$(MSBuildToolsPath)\SqlServer.targets" />
