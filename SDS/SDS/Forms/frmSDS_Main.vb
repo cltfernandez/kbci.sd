@@ -1,4 +1,7 @@
 Imports SDS.BusinessLogic
+Imports SDS.ViewModels
+Imports SDS.Common.Utilities
+
 Public Class frmSDS_Main
     Inherits System.Windows.Forms.Form
 
@@ -896,7 +899,7 @@ Public Class frmSDS_Main
 
     Private frmSDS_Main_TEntry As frmSDS_Main_TEntry
     Private frmFDS_Main_PrntFDL_Srch As frmFDS_Main_PrntFDL_Srch
-    Private frmFD_Member As frmFD_Member
+    Private ReportViewerForm As frmReportViewer
     Private frmFDS_Main_PrntFDL As frmFDS_Main_PrntFDL
     Private frmSDS_Main_Batch As frmSDS_Main_Batch
     Private frmSDS_Main_Payroll As frmSDS_Main_Payroll
@@ -922,6 +925,18 @@ Public Class frmSDS_Main
     Private frmSDS_Backup As frmSDS_Backup
     Private frmRecalculateLedger As frmRecalculateLedger
     Dim LDAMT, DR As Decimal
+
+
+    Private _IReportQueryBL As IReportQueryBusinessLogic
+    Public Property IReportQueryBL() As IReportQueryBusinessLogic
+        Get
+            Return _IReportQueryBL
+        End Get
+        Set(ByVal value As IReportQueryBusinessLogic)
+            _IReportQueryBL = value
+        End Set
+    End Property
+
     Private Sub frmSDS_Main_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Dim x As MenuItem
         For Each x In MainMenu1.MenuItems
@@ -995,8 +1010,8 @@ Public Class frmSDS_Main
         Dim sQRY As String
         SDDB = True
         frmFDS_Main_PrntFDL_Srch = New frmFDS_Main_PrntFDL_Srch
-        frmFD_Member = New frmFD_Member
-        frmFD_Member.MdiParent = Me
+        ReportViewerForm = New frmReportViewer
+        ReportViewerForm.MdiParent = Me
         frmFDS_Main_PrntFDL_Srch.ShowDialog()
 
         If SW = True Then
@@ -1023,8 +1038,8 @@ Public Class frmSDS_Main
                     DDATE.Text = "AS OF " & DateValue(TODATE).ToString("MMM dd,yyyy")
                     rptAcctNo.Text = Mid(SEL_KBCI_NO, 1, 4) & "-" & Mid(SEL_KBCI_NO, 5, 5) & "-" & Mid(SEL_KBCI_NO, 10, 1)
                     rptName.Text = SEL_FNAME
-                    GenRPT(DT, dst, frmFD_Member.CrystalReportViewer1, rpt, 0, "1:3:3:3:3:2:2:2")
-                    frmFD_Member.Show()
+                    GenRPT(DT, dst, ReportViewerForm.CrystalReportViewer1, rpt, 0, "1:3:3:3:3:2:2:2")
+                    ReportViewerForm.Show()
                 Else
                     MsgBox("No transactions found on the specified date.", MsgBoxStyle.Information, "Member's Transaction Ledger")
                 End If
@@ -1077,8 +1092,8 @@ Public Class frmSDS_Main
         Dim sQRY As String
         SDDB = True
         frmFDS_Main_PrntFDL_Srch = New frmFDS_Main_PrntFDL_Srch
-        frmFD_Member = New frmFD_Member
-        frmFD_Member.MdiParent = Me
+        ReportViewerForm = New frmReportViewer
+        ReportViewerForm.MdiParent = Me
         sQRY = "SELECT 'S-' + SUBSTRING(SP.ACCTNO,5,5) + '-' + SUBSTRING(SP.ACCTNO,10,1) ACCTNO," & _
                "SM.ACCTSNAME, SP.SDBBAL, SP.PAMT, SP.SDEBAL, SP.SDSEQ FROM SDMASTER SM WITH (NOLOCK) RIGHT JOIN SDPOST SP WITH (NOLOCK) ON SM.ACCTNO=SP.ACCTNO"
         Dim DT As New DataTable
@@ -1092,8 +1107,8 @@ Public Class frmSDS_Main
         If DT.Rows.Count > 0 Then
             Dim DDATE As CrystalDecisions.CrystalReports.Engine.TextObject = rpt.Section2.ReportObjects("Text8")
             DDATE.Text = "POSTING DATE : " & CTRL_S.SYSDATE
-            GenRPT(DT, dst, frmFD_Member.CrystalReportViewer1, rpt, 0, "3:3:2:2:2:3")
-            frmFD_Member.Show()
+            GenRPT(DT, dst, ReportViewerForm.CrystalReportViewer1, rpt, 0, "3:3:2:2:2:3")
+            ReportViewerForm.Show()
         Else
             MsgBox("No transactions found on the specified date.", MsgBoxStyle.Information, "Payroll Transaction")
         End If
@@ -1106,8 +1121,8 @@ Public Class frmSDS_Main
         Dim rpt As New rptMem_Loanhold
         Dim ds As New DataSet
         Dim sQRY As String
-        frmFD_Member = New frmFD_Member
-        frmFD_Member.MdiParent = Me
+        ReportViewerForm = New frmReportViewer
+        ReportViewerForm.MdiParent = Me
         frmFDS_Main_PrntFDL = New frmFDS_Main_PrntFDL
         frmFDS_Main_PrntFDL.ShowDialog()
         If SW = True Then
@@ -1131,8 +1146,8 @@ Public Class frmSDS_Main
                 DDATE.Text = "FROM " & FRDATE & " TO " & TODATE
                 TDBT.Text = FormatNumber(CDbl(GetRStr("SELECT isnull(SUM(HOLDAMT),0) DBT FROM LNHOLD WITH (NOLOCK) WHERE HOLDDATE BETWEEN '" & sDate & "' AND HOLDTYPE='DM'", "DBT", 0)))
                 TCDT.Text = FormatNumber(CDbl(GetRStr("SELECT isnull(SUM(HOLDAMT),0) DBT FROM LNHOLD WITH (NOLOCK) WHERE HOLDDATE BETWEEN '" & sDate & "' AND HOLDTYPE='CM'", "DBT", 0)))
-                GenRPT(DT, dst, frmFD_Member.CrystalReportViewer1, rpt, 0, "5:3:3:3:2:1:3:3:3:1:3")
-                frmFD_Member.Show()
+                GenRPT(DT, dst, ReportViewerForm.CrystalReportViewer1, rpt, 0, "5:3:3:3:2:1:3:3:3:1:3")
+                ReportViewerForm.Show()
             Else
                 MsgBox("No transactions found on the specified date.", MsgBoxStyle.Information, "S/A Transaction Register")
             End If
@@ -1148,8 +1163,8 @@ Public Class frmSDS_Main
         Dim sQRY As String
         SDDB = True
         frmFDS_Main_PrntFDL_Srch = New frmFDS_Main_PrntFDL_Srch
-        frmFD_Member = New frmFD_Member
-        frmFD_Member.MdiParent = Me
+        ReportViewerForm = New frmReportViewer
+        ReportViewerForm.MdiParent = Me
         sQRY = "SELECT 'S-' + SUBSTRING(SP.FEBTC_SA,5,5) + '-' + SUBSTRING(SP.FEBTC_SA,10,1) ACCTNO," & _
                "SM.ACCTSNAME,ISNULL(SP.SDBBAL,0) SDBBAL,((ISNULL(SP.DIVIDEND,0) + ISNULL(SP.REFUND,0)) - ISNULL(SP.DEDUCTIONS,0)) PAMT,ISNULL(SP.SDEBAL,0) SDEBAL,SP.SDSEQ " & _
                "FROM SDMASTER SM WITH (NOLOCK) RIGHT JOIN DIVREF_S SP WITH (NOLOCK) ON  SM.ACCTNO=SP.FEBTC_SA WHERE SM.ACCTSTAT='A'"
@@ -1164,8 +1179,8 @@ Public Class frmSDS_Main
         If DT.Rows.Count > 0 Then
             Dim DDATE As CrystalDecisions.CrystalReports.Engine.TextObject = rpt.Section2.ReportObjects("Text8")
             DDATE.Text = "POSTING DATE : " & CTRL_S.SYSDATE
-            GenRPT(DT, dst, frmFD_Member.CrystalReportViewer1, rpt, 0, "3:3:2:2:2:3")
-            frmFD_Member.Show()
+            GenRPT(DT, dst, ReportViewerForm.CrystalReportViewer1, rpt, 0, "3:3:2:2:2:3")
+            ReportViewerForm.Show()
         Else
             MsgBox("No transactions found on the specified date.", MsgBoxStyle.Information, "Dividend/Refund Transaction")
         End If
@@ -1187,8 +1202,8 @@ Public Class frmSDS_Main
         Dim sQRY As String
         SDDB = True
         frmFDS_Main_PrntFDL_Srch = New frmFDS_Main_PrntFDL_Srch
-        frmFD_Member = New frmFD_Member
-        frmFD_Member.MdiParent = Me
+        ReportViewerForm = New frmReportViewer
+        ReportViewerForm.MdiParent = Me
         sQRY = "SELECT SUBSTRING(EX.ACCTNO,1,4) + '-' + SUBSTRING(EX.ACCTNO,5,5) + '-' +SUBSTRING(EX.ACCTNO,10,1) ACCTNO ,EX.KBCI_NO,EX.PN_NO,EX.LOAN_TYPE,SM.ACCTNAME,EX.AMOUNT,EX.ADD_DATE,EX.REMARKS," & _
                "(CASE WHEN EX.STATUS='1' THEN 'EXTRACTED' ELSE (CASE WHEN EX.STATUS='2' THEN 'POSTED' ELSE '' END) END) STATUS," & _
                "EX.EXSEQ,EX.EXTIME,EX.EXBBAL,EX.EXEBAL FROM EXTRACT EX WITH (NOLOCK) LEFT JOIN SDMASTER SM WITH (NOLOCK) ON EX.ACCTNO=SM.ACCTNO ORDER BY EX.LOAN_TYPE"
@@ -1206,8 +1221,8 @@ Public Class frmSDS_Main
         If DT.Rows.Count > 0 Then
             'Dim DDATE As CrystalDecisions.CrystalReports.Engine.TextObject = rpt.Section2.ReportObjects("Text8")
             'DDATE.Text = "POSTING DATE : " & SYSDATE
-            GenRPT(DT, dst, frmFD_Member.CrystalReportViewer1, rpt, 0, "3:3:3:3:3:2:1:3:3:3:3:2:2")
-            frmFD_Member.Show()
+            GenRPT(DT, dst, ReportViewerForm.CrystalReportViewer1, rpt, 0, "3:3:3:3:3:2:1:3:3:3:3:2:2")
+            ReportViewerForm.Show()
         Else
             MsgBox("No transactions found on the specified date.", MsgBoxStyle.Information, "File Proof List")
         End If
@@ -1312,8 +1327,8 @@ Public Class frmSDS_Main
         Dim rpt As New rptTel_Blotter
         Dim ds As New DataSet
         Dim sQRY As String
-        frmFD_Member = New frmFD_Member
-        frmFD_Member.MdiParent = Me
+        ReportViewerForm = New frmReportViewer
+        ReportViewerForm.MdiParent = Me
         sQRY = "SELECT X.OTHNAME NAME,(CASE WHEN X.OTHTYPE='X' OR X.OTHTYPE='Y' THEN 'S' ELSE '' END) TCODE,(CASE WHEN X.OTHTYPE='A' OR X.OTHTYPE='X' THEN X.OTHAMOUNT ELSE 0 END) CASH," & _
                "(CASE WHEN X.OTHTYPE='B' OR X.OTHTYPE='Y' THEN X.OTHAMOUNT ELSE 0 END) [CHECK],(CASE WHEN X.OTHTYPE='W' THEN X.OTHAMOUNT ELSE 0 END) WITHD," & _
                "(CASE WHEN X.OTHTYPE='E' THEN X.OTHAMOUNT ELSE 0 END) ELOAN,(CASE WHEN X.OTHTYPE='D' THEN X.OTHAMOUNT ELSE 0 END) REFUND," & _
@@ -1338,8 +1353,8 @@ Public Class frmSDS_Main
             Dim DDATE As CrystalDecisions.CrystalReports.Engine.TextObject = rpt.Section2.ReportObjects("Text3")
             DDATE.Text = "FOR THE DAY " & CTRL_S.ADMDATE
             TELLER.Text = "TELLERS BLOTTER - " & SPUSER.SPUSERID
-            GenRPT(DT, dst, frmFD_Member.CrystalReportViewer1, rpt, 0, "3:3:2:2:2:2:2:2")
-            frmFD_Member.Show()
+            GenRPT(DT, dst, ReportViewerForm.CrystalReportViewer1, rpt, 0, "3:3:2:2:2:2:2:2")
+            ReportViewerForm.Show()
         Else
             MsgBox("No transactions found on the specified date.", MsgBoxStyle.Information, "Daily Transaction Register")
         End If
@@ -1366,8 +1381,8 @@ Public Class frmSDS_Main
         Dim ds As New DataSet
         Dim sQRY As String
         SDDB = True
-        frmFD_Member = New frmFD_Member
-        frmFD_Member.MdiParent = Me
+        ReportViewerForm = New frmReportViewer
+        ReportViewerForm.MdiParent = Me
         sQRY = "SELECT 'S-' + SUBSTRING(ACCTNO,5,5) + '-' + SUBSTRING(ACCTNO,10,1) ACCTNO," & _
                "ACCTSNAME,LEFT(ACCTADDR1,40) ACCTADDR1,ADD_DATE,ACCTIDEP FROM SDMASTER WITH (NOLOCK) " & _
                "WHERE MONTH(ADD_DATE)=MONTH('" & CTRL_S.SYSDATE & "') AND YEAR(ADD_DATE)=YEAR('" & CTRL_S.SYSDATE & "')"
@@ -1382,8 +1397,8 @@ Public Class frmSDS_Main
         If DT.Rows.Count > 0 Then
             Dim DDATE As CrystalDecisions.CrystalReports.Engine.TextObject = rpt.Section2.ReportObjects("Text2")
             DDATE.Text = "FOR THE MONTH OF " & MonthName(Month(CTRL_S.SYSDATE)) & ", " & Year(CTRL_S.SYSDATE)
-            GenRPT(DT, dst, frmFD_Member.CrystalReportViewer1, rpt, 0, "3:3:3:1:2")
-            frmFD_Member.Show()
+            GenRPT(DT, dst, ReportViewerForm.CrystalReportViewer1, rpt, 0, "3:3:3:1:2")
+            ReportViewerForm.Show()
         Else
             MsgBox("No transactions found on the specified date.", MsgBoxStyle.Information, "Daily Transaction Register")
         End If
@@ -1398,8 +1413,8 @@ Public Class frmSDS_Main
         Dim ds As New DataSet
         Dim sQRY As String
         SDDB = True
-        frmFD_Member = New frmFD_Member
-        frmFD_Member.MdiParent = Me
+        ReportViewerForm = New frmReportViewer
+        ReportViewerForm.MdiParent = Me
         sQRY = "SELECT 'S-' + SUBSTRING(ACCTNO,5,5) + '-' + SUBSTRING(ACCTNO,10,1) ACCTNO,ACCTNAME ACCTSNAME,CHG_DATE ADD_DATE,ISNULL(ACCTIDEP,0) ACCTIDEP FROM SDMASTER WITH (NOLOCK) " & _
                "WHERE MONTH(CHG_DATE)=MONTH('" & CTRL_S.SYSDATE & "') AND YEAR(CHG_DATE)=YEAR('" & CTRL_S.SYSDATE & "') AND ACCTSTAT='C'"
 
@@ -1414,8 +1429,8 @@ Public Class frmSDS_Main
         If DT.Rows.Count > 0 Then
             Dim DDATE As CrystalDecisions.CrystalReports.Engine.TextObject = rpt.Section2.ReportObjects("Text2")
             DDATE.Text = "FOR THE MONTH OF " & MonthName(Month(CTRL_S.SYSDATE)) & ", " & Year(CTRL_S.SYSDATE)
-            GenRPT(DT, dst, frmFD_Member.CrystalReportViewer1, rpt, 0, "3:3:1:2")
-            frmFD_Member.Show()
+            GenRPT(DT, dst, ReportViewerForm.CrystalReportViewer1, rpt, 0, "3:3:1:2")
+            ReportViewerForm.Show()
 
         Else
             MsgBox("No transactions found on the specified date.", MsgBoxStyle.Information, "Daily Transaction Register")
@@ -1431,8 +1446,8 @@ Public Class frmSDS_Main
         Dim ds As New DataSet
         Dim sQRY As String
         SDDB = True
-        frmFD_Member = New frmFD_Member
-        frmFD_Member.MdiParent = Me
+        ReportViewerForm = New frmReportViewer
+        ReportViewerForm.MdiParent = Me
         sQRY = "SELECT 'S-' + SUBSTRING(ACCTNO,5,5) + '-' + SUBSTRING(ACCTNO,10,1) ACCTNO," & _
                "ACCTSNAME,LEFT(ACCTADDR1,40) ACCTADDR1,CHG_DATE,ACCTIDEP FROM SDMASTER WITH (NOLOCK) " & _
                "WHERE MONTH(CHG_DATE)=MONTH('" & CTRL_S.SYSDATE & "') AND YEAR(CHG_DATE)=YEAR('" & CTRL_S.SYSDATE & "') AND ACCTSTAT='R'"
@@ -1447,8 +1462,8 @@ Public Class frmSDS_Main
         If DT.Rows.Count > 0 Then
             Dim DDATE As CrystalDecisions.CrystalReports.Engine.TextObject = rpt.Section2.ReportObjects("Text2")
             DDATE.Text = "FOR THE MONTH OF " & MonthName(Month(CTRL_S.SYSDATE)) & ", " & Year(CTRL_S.SYSDATE)
-            GenRPT(DT, dst, frmFD_Member.CrystalReportViewer1, rpt, 0, "3:3:1:2")
-            frmFD_Member.Show()
+            GenRPT(DT, dst, ReportViewerForm.CrystalReportViewer1, rpt, 0, "3:3:1:2")
+            ReportViewerForm.Show()
         Else
             MsgBox("No transactions found on the specified date.", MsgBoxStyle.Information, "Daily Transaction Register")
         End If
@@ -1463,8 +1478,8 @@ Public Class frmSDS_Main
         Dim ds As New DataSet
         Dim sQRY As String
         SDDB = True
-        frmFD_Member = New frmFD_Member
-        frmFD_Member.MdiParent = Me
+        ReportViewerForm = New frmReportViewer
+        ReportViewerForm.MdiParent = Me
         sQRY = "SELECT 'S-' + SUBSTRING(ACCTNO,5,5) + '-' + SUBSTRING(ACCTNO,10,1) ACCTNO,ACCTSNAME," & _
                "(CASE WHEN ACCTSTAT='A' THEN 'ACTIVE' ELSE (CASE WHEN ACCTSTAT='C' THEN 'CLOSED' ELSE " & _
                "(CASE WHEN ACCTSTAT='D' THEN 'DORMANT' ELSE (CASE WHEN ACCTSTAT='R' THEN 'REACTIVED' END) END) END) END) ACCTSTAT," & _
@@ -1480,8 +1495,8 @@ Public Class frmSDS_Main
         If DT.Rows.Count > 0 Then
             Dim DDATE As CrystalDecisions.CrystalReports.Engine.TextObject = rpt.Section2.ReportObjects("Text2")
             DDATE.Text = "FOR THE MONTH OF " & MonthName(Month(CTRL_S.SYSDATE)) & ", " & Year(CTRL_S.SYSDATE)
-            GenRPT(DT, dst, frmFD_Member.CrystalReportViewer1, rpt, 0, "3:3:3:2")
-            frmFD_Member.Show()
+            GenRPT(DT, dst, ReportViewerForm.CrystalReportViewer1, rpt, 0, "3:3:3:2")
+            ReportViewerForm.Show()
 
         Else
             MsgBox("No transactions found on the specified date.", MsgBoxStyle.Information, "Daily Transaction Register")
@@ -1497,8 +1512,8 @@ Public Class frmSDS_Main
         Dim ds As New DataSet
         Dim sQRY As String
         SDDB = True
-        frmFD_Member = New frmFD_Member
-        frmFD_Member.MdiParent = Me
+        ReportViewerForm = New frmReportViewer
+        ReportViewerForm.MdiParent = Me
         sQRY = "DECLARE @DATE VARCHAR(MAX)='" & CTRL_S.SYSDATE & "' SELECT'S-'+SUBSTRING(MM.ACCTNO,5,5)+'-'+" & _
                 "SUBSTRING(MM.ACCTNO,10,1)ACCTNO,MM.ACCTNAME NAME,ISNULL(IT.ADB,0)ADB,ISNULL((CASE " & _
                 "WHEN MONTH(@DATE)=1OR MONTH(@DATE)=4OR MONTH(@DATE)=7OR MONTH(@DATE)=10THEN IT.MONTH1 " & _
@@ -1518,8 +1533,8 @@ Public Class frmSDS_Main
         If DT.Rows.Count > 0 Then
             Dim DDATE As CrystalDecisions.CrystalReports.Engine.TextObject = rpt.Section2.ReportObjects("Text2")
             DDATE.Text = "FOR THE MONTH OF " & MonthName(Month(CTRL_S.SYSDATE)) & ", " & Year(CTRL_S.SYSDATE)
-            GenRPT(DT, dst, frmFD_Member.CrystalReportViewer1, rpt, 0, "3:3:2:2:2")
-            frmFD_Member.Show()
+            GenRPT(DT, dst, ReportViewerForm.CrystalReportViewer1, rpt, 0, "3:3:2:2:2")
+            ReportViewerForm.Show()
         Else
             MsgBox("No transactions found on the specified date.", MsgBoxStyle.Information, "Daily Transaction Register")
         End If
@@ -1534,8 +1549,8 @@ Public Class frmSDS_Main
         Dim ds As New DataSet
         Dim sQRY As String
         SDDB = True
-        frmFD_Member = New frmFD_Member
-        frmFD_Member.MdiParent = Me
+        ReportViewerForm = New frmReportViewer
+        ReportViewerForm.MdiParent = Me
         sQRY = "SELECT 'S-' + SUBSTRING(ACCTNO,5,5) + '-' + SUBSTRING(ACCTNO,10,1) ACCTNO,ACCTSNAME,LTRANDATE,ACCTOBAL " & _
                "FROM SDMASTER WITH (NOLOCK) WHERE DATEDIFF(D,LTRANDATE,'" & CTRL_S.SYSDATE & "')>=" & CTRL_S.DBDRM
         Dim DT As New DataTable
@@ -1549,8 +1564,8 @@ Public Class frmSDS_Main
         If DT.Rows.Count > 0 Then
             Dim DDATE As CrystalDecisions.CrystalReports.Engine.TextObject = rpt.Section2.ReportObjects("Text2")
             DDATE.Text = "FOR THE MONTH OF " & MonthName(Month(CTRL_S.SYSDATE)) & ", " & Year(CTRL_S.SYSDATE)
-            GenRPT(DT, dst, frmFD_Member.CrystalReportViewer1, rpt, 0, "3:3:1:2")
-            frmFD_Member.Show()
+            GenRPT(DT, dst, ReportViewerForm.CrystalReportViewer1, rpt, 0, "3:3:1:2")
+            ReportViewerForm.Show()
 
         Else
             MsgBox("No transactions found on the specified date.", MsgBoxStyle.Information, "Daily Transaction Register")
@@ -1566,8 +1581,8 @@ Public Class frmSDS_Main
         Dim ds As New DataSet
         Dim sQRY As String
         SDDB = True
-        frmFD_Member = New frmFD_Member
-        frmFD_Member.MdiParent = Me
+        ReportViewerForm = New frmReportViewer
+        ReportViewerForm.MdiParent = Me
         sQRY = "SELECT 'S-' + SUBSTRING(ACCTNO,5,5) + '-' + SUBSTRING(ACCTNO,10,1) ACCTNO,ACCTSNAME," & _
                "(CASE WHEN ACCTSTAT='A' THEN 'ACTIVE' ELSE (CASE WHEN ACCTSTAT='C' THEN 'CLOSED' ELSE " & _
                "(CASE WHEN ACCTSTAT='D' THEN 'DORMANT' ELSE (CASE WHEN ACCTSTAT='R' THEN 'REACTIVED' END) END) END) END) ACCTSTAT,LTRANDATE,ACCTOBAL FROM SDMASTER WITH (NOLOCK) ORDER BY ACCTNO"
@@ -1583,8 +1598,8 @@ Public Class frmSDS_Main
         If DT.Rows.Count > 0 Then
             Dim DDATE As CrystalDecisions.CrystalReports.Engine.TextObject = rpt.Section2.ReportObjects("Text2")
             DDATE.Text = "FOR THE MONTH OF " & MonthName(Month(CTRL_S.SYSDATE)) & ", " & Year(CTRL_S.SYSDATE)
-            GenRPT(DT, dst, frmFD_Member.CrystalReportViewer1, rpt, 0, "3:3:3:3:2")
-            frmFD_Member.Show()
+            GenRPT(DT, dst, ReportViewerForm.CrystalReportViewer1, rpt, 0, "3:3:3:3:2")
+            ReportViewerForm.Show()
         Else
             MsgBox("No transactions found on the specified date.", MsgBoxStyle.Information, "Daily Transaction Register")
         End If
@@ -1599,8 +1614,8 @@ Public Class frmSDS_Main
         Dim ds As New DataSet
         Dim sQRY As String
         SDDB = True
-        frmFD_Member = New frmFD_Member
-        frmFD_Member.MdiParent = Me
+        ReportViewerForm = New frmReportViewer
+        ReportViewerForm.MdiParent = Me
         sQRY = "SELECT 'S-' + SUBSTRING(SM.ACCTNO,5,5) + '-' + SUBSTRING(SM.ACCTNO,10,1) ACCTNO,SM.ACCTSNAME," & _
                "(SM.ACCTOBAL - ISNULL(IT.QTD,0)) OLDBAL, ISNULL(IT.QTD,0) QTD, '0.00' WTAX, SM.ACCTOBAL " & _
                "FROM INTRST_S IT WITH (NOLOCK) INNER JOIN SDMASTER SM WITH (NOLOCK) ON IT.ACCTNO=SM.ACCTNO WHERE SM.ACCTSTAT IN ('A','D') ORDER BY SM.ACCTNO"
@@ -1615,8 +1630,8 @@ Public Class frmSDS_Main
         If DT.Rows.Count > 0 Then
             Dim DDATE As CrystalDecisions.CrystalReports.Engine.TextObject = rpt.Section2.ReportObjects("Text2")
             DDATE.Text = "FOR THE QUARTER ENDING " & MonthName(Month(CTRL_S.SYSDATE)) & ", " & Year(CTRL_S.SYSDATE)
-            GenRPT(DT, dst, frmFD_Member.CrystalReportViewer1, rpt, 0, "3:3:2:2:2:2")
-            frmFD_Member.Show()
+            GenRPT(DT, dst, ReportViewerForm.CrystalReportViewer1, rpt, 0, "3:3:2:2:2:2")
+            ReportViewerForm.Show()
 
         Else
             MsgBox("No transactions found on the specified date.", MsgBoxStyle.Information, "Daily Transaction Register")
@@ -1632,8 +1647,8 @@ Public Class frmSDS_Main
         Dim ds As New DataSet
         Dim sQRY As String
         SDDB = True
-        frmFD_Member = New frmFD_Member
-        frmFD_Member.MdiParent = Me
+        ReportViewerForm = New frmReportViewer
+        ReportViewerForm.MdiParent = Me
         sQRY = "SELECT ISNULL(SUM((CASE WHEN  TTL.TRANCODE='WD' THEN TRANAMT ELSE 0 END))+SUM((CASE WHEN  TTL.TRANCODE='NWD' THEN TRANAMT ELSE 0 END)),0) SAW," & _
                "ISNULL(SUM((CASE WHEN  TTL.TRANCODE='DM' THEN TRANAMT ELSE 0 END)),0) SADM," & _
                "ISNULL(ABS(SUM((CASE WHEN  TTL.TRANCODE='NCD' THEN TRANAMT ELSE 0 END))+SUM((CASE WHEN  TTL.TRANCODE='CSD' THEN TRANAMT ELSE 0 END))),0) SACD," & _
@@ -1668,8 +1683,8 @@ Public Class frmSDS_Main
         If DT.Rows.Count > 0 Then
             Dim DDATE As CrystalDecisions.CrystalReports.Engine.TextObject = rpt.Section2.ReportObjects("Text2")
             DDATE.Text = "FOR THE DAY " & CTRL_S.SYSDATE
-            GenRPT(DT, dst, frmFD_Member.CrystalReportViewer1, rpt, 0, "2:2:2:2:2:6:6:6:6:6:2:2:2:6:6:6")
-            frmFD_Member.Show()
+            GenRPT(DT, dst, ReportViewerForm.CrystalReportViewer1, rpt, 0, "2:2:2:2:2:6:6:6:6:6:2:2:2:6:6:6")
+            ReportViewerForm.Show()
 
         Else
             MsgBox("No transactions found on the specified date.", MsgBoxStyle.Information, "Daily Transaction Register")
@@ -1699,8 +1714,8 @@ Public Class frmSDS_Main
         Dim ds As New DataSet
         Dim sQRY As String
         SDDB = True
-        frmFD_Member = New frmFD_Member
-        frmFD_Member.MdiParent = Me
+        ReportViewerForm = New frmReportViewer
+        ReportViewerForm.MdiParent = Me
         sQRY = "SELECT 'S-' + SUBSTRING(SM.ACCTNO,5,5) + '-' + SUBSTRING(SM.ACCTNO,10,1) ACCTNO,SM.ACCTSNAME,ISNULL(SC.CHKAMT,0) CHKAMT," & _
                 "SC.CHKCODE,SC.TRANDATE,SC.CHKNUM,SC.CHKBANK,SC.ADD_TIME,SC.[USER] FROM SDMASTER SM WITH (NOLOCK) RIGHT JOIN SDCHECK SC WITH (NOLOCK) " & _
                 "ON SM.ACCTNO=SC.ACCTNUM WHERE SC.TRANDATE='" & CTRL_S.SYSDATE & "'"
@@ -1736,8 +1751,8 @@ Public Class frmSDS_Main
             End With
             tb.CloseDataTable()
             DDATE.Text = "FOR THE DAY " & CTRL_S.SYSDATE
-            GenRPT(DT, dst, frmFD_Member.CrystalReportViewer1, rpt, 0, "3:3:2:3:1:3:3:3:3")
-            frmFD_Member.Show()
+            GenRPT(DT, dst, ReportViewerForm.CrystalReportViewer1, rpt, 0, "3:3:2:3:1:3:3:3:3")
+            ReportViewerForm.Show()
         Else
             MsgBox("No transactions found on the specified date.", MsgBoxStyle.Information, "Daily Transaction Register")
         End If
@@ -1752,8 +1767,8 @@ Public Class frmSDS_Main
         Dim ds As New DataSet
         Dim sQRY As String
         SDDB = True
-        frmFD_Member = New frmFD_Member
-        frmFD_Member.MdiParent = Me
+        ReportViewerForm = New frmReportViewer
+        ReportViewerForm.MdiParent = Me
         sQRY = "SELECT 'S-' + SUBSTRING(SM.ACCTNO,5,5) + '-' + SUBSTRING(SM.ACCTNO,10,1) ACCTNO,SM.ACCTSNAME,ST.TRANBBAL," & _
                "(CASE WHEN ST.TRANDEB > 0 THEN ST.TRANDEB ELSE 0 END) TRANDEB,(CASE WHEN ST.TRANCRE > 0 THEN ST.TRANCRE ELSE 0 END) TRANCRE," & _
                "ST.TRANEBAL,ST.TRANCODE,ST.CHKNUM,ST.ADD_TIME,ST.TRANSEQ,ST.[USER] FROM SDMASTER SM WITH (NOLOCK) INNER JOIN SDTRAN ST WITH (NOLOCK) ON SM.ACCTNO=ST.ACCTNUM " & _
@@ -1769,8 +1784,8 @@ Public Class frmSDS_Main
         If DT.Rows.Count > 0 Then
             Dim DDATE As CrystalDecisions.CrystalReports.Engine.TextObject = rpt.Section2.ReportObjects("Text2")
             DDATE.Text = "FOR THE DAY " & CTRL_S.SYSDATE
-            GenRPT(DT, dst, frmFD_Member.CrystalReportViewer1, rpt, 0, "3:3:2:2:2:2:3:3:3:3:3")
-            frmFD_Member.Show()
+            GenRPT(DT, dst, ReportViewerForm.CrystalReportViewer1, rpt, 0, "3:3:2:2:2:2:3:3:3:3:3")
+            ReportViewerForm.Show()
 
         Else
             MsgBox("No transactions found on the specified date.", MsgBoxStyle.Information, "Daily Transaction Register")
@@ -1832,8 +1847,8 @@ Public Class frmSDS_Main
         Dim ds As New DataSet
         Dim sQRY As String
         SDDB = True
-        frmFD_Member = New frmFD_Member
-        frmFD_Member.MdiParent = Me
+        ReportViewerForm = New frmReportViewer
+        ReportViewerForm.MdiParent = Me
         sQRY = "SELECT 'S-' + SUBSTRING(SM.ACCTNO,5,5) + '-' + SUBSTRING(SM.ACCTNO,10,1) ACCTNO,SM.ACCTSNAME," & _
                "SC.CHKAMT, SC.CHKCODE, SC.TRANDATE, SC.CHKNUM, SC.ADD_TIME " & _
                "FROM SDCHECK SC WITH (NOLOCK) INNER JOIN SDMASTER SM WITH (NOLOCK) ON SC.ACCTNUM=SM.ACCTNO " & _
@@ -1870,8 +1885,8 @@ Public Class frmSDS_Main
             End With
             tb.CloseDataTable()
             DDATE.Text = "FOR THE DAY " & CTRL_S.SYSDATE
-            GenRPT(DT, dst, frmFD_Member.CrystalReportViewer1, rpt, 0, "3:3:2:3:3:3:3")
-            frmFD_Member.Show()
+            GenRPT(DT, dst, ReportViewerForm.CrystalReportViewer1, rpt, 0, "3:3:2:3:3:3:3")
+            ReportViewerForm.Show()
 
         Else
             MsgBox("No transactions found on the specified date.", MsgBoxStyle.Information, "Daily Transaction Register")
@@ -1887,8 +1902,8 @@ Public Class frmSDS_Main
         Dim ds As New DataSet
         Dim sQRY As String
         SDDB = True
-        frmFD_Member = New frmFD_Member
-        frmFD_Member.MdiParent = Me
+        ReportViewerForm = New frmReportViewer
+        ReportViewerForm.MdiParent = Me
         sQRY = "SELECT 'S-' + SUBSTRING(SM.ACCTNO,5,5) + '-' + SUBSTRING(SM.ACCTNO,10,1) ACCTNO,SM.ACCTSNAME," & _
                "(CASE WHEN ST.TRANDEB > 0 THEN ST.TRANDEB ELSE 0 END) TRANDEB,(CASE WHEN ST.TRANCRE > 0 THEN ST.TRANCRE ELSE 0 END) TRANCRE," & _
                "ST.TRANCODE,ST.[USER],ST.TRANSEQ,ST.ADD_TIME FROM SDMASTER SM WITH (NOLOCK) INNER JOIN SDTRAN ST WITH (NOLOCK) ON SM.ACCTNO=ST.ACCTNUM " & _
@@ -1906,8 +1921,8 @@ Public Class frmSDS_Main
             Dim txtTITLE As CrystalDecisions.CrystalReports.Engine.TextObject = rpt.Section2.ReportObjects("Text1")
             DDATE.Text = "FOR THE DAY " & CTRL_S.SYSDATE
             txtTITLE.Text = "ERROR CORRECTION REPORT"
-            GenRPT(DT, dst, frmFD_Member.CrystalReportViewer1, rpt, 0, "3:3:2:2:3:3:3:3")
-            frmFD_Member.Show()
+            GenRPT(DT, dst, ReportViewerForm.CrystalReportViewer1, rpt, 0, "3:3:2:2:3:3:3:3")
+            ReportViewerForm.Show()
 
         Else
             MsgBox("No transactions found on the specified date.", MsgBoxStyle.Information, "Daily Transaction Register")
@@ -1920,58 +1935,26 @@ Public Class frmSDS_Main
 
     Private Sub MenuItem60_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItem60.Click
         Dim dst As New DataTable("dtsSD_Main")
-        Dim rpt As New rptEOD_DCTotals
-        Dim ds As New DataSet
-        Dim sQRY As String
+        Dim rpt As New rptEOD_DCTotals                
         SDDB = True
-        frmFD_Member = New frmFD_Member
-        frmFD_Member.MdiParent = Me
-        'sQRY = "SELECT	'001' CTRLNO,SUM(TRANBBAL) TRANBBAL,SUM(TRANDEB) TRANDEB," & _
-        '       "SUM(TRANCRE) TRANCRE,SUM(TRANEBAL) TRANEBAL FROM SDTRAN WITH (NOLOCK) WHERE TRANDATE='" & CTRL_S.SYSDATE & "'"
+        ReportViewerForm = New frmReportViewer
+        ReportViewerForm.MdiParent = Me
 
-        sQRY = "DECLARE @TRANDEB AS MONEY DECLARE @TRANCRE AS MONEY DECLARE @TRANBBAL AS MONEY " & _
-                "DECLARE @TRANEBAL AS MONEY DECLARE @CTRLNO AS CHAR(3) " & _
-                "SELECT @CTRLNO='001',@TRANBBAL=SUM(X.TRANBBAL),@TRANDEB=SUM(X.TRANDEB) " & _
-                ",@TRANCRE=SUM(X.TRANCRE),@TRANEBAL=SUM(X.TRANEBAL)  " & _
-                "FROM (SELECT A.ACCTNUM,(SELECT TRANBBAL FROM SDTRAN WHERE SDTRAN_ID= MIN(A.SDTRAN_ID)) TRANBBAL " & _
-                ",SUM(A.TRANDEB) TRANDEB	,SUM(A.TRANCRE) TRANCRE  " & _
-                ",(SELECT TRANEBAL FROM SDTRAN WHERE SDTRAN_ID= MAX(A.SDTRAN_ID)) TRANEBAL " & _
-                "FROM SDTRAN A INNER JOIN (SELECT ACCTNUM , MAX(TRANDATE) COMP FROM SDTRAN WITH (NOLOCK) GROUP BY ACCTNUM HAVING MAX(TRANDATE) IS NOT NULL) B " & _
-                "ON A.ACCTNUM+CAST(A.TRANDATE AS VARCHAR(11))=B.ACCTNUM+CAST(B.COMP AS VARCHAR(11)) WHERE TRANDATE='" & CTRL_S.SYSDATE & "' AND REVERSED=0 " & _
-                "GROUP BY A.ACCTNUM) X " & _
-                "SELECT @CTRLNO CTRLNO,@TRANBBAL TRANBBAL,@TRANDEB TRANDEB,@TRANCRE TRANCRE,@TRANEBAL TRANEBAL  " & _
-                "UNION ALL  " & _
-                "SELECT @CTRLNO CTRLNO, SUM(Y.TRANBBAL),@TRANDEB,@TRANCRE,(SUM(Y.TRANBBAL) - @TRANDEB)+ @TRANCRE TRANEBAL " & _
-                "FROM (SELECT A.ACCTNUM,CASE WHEN MAX(TRANDATE)='" & CTRL_S.SYSDATE & "' THEN " & _
-                "(SELECT TRANBBAL FROM SDTRAN WHERE SDTRAN_ID= MIN(A.SDTRAN_ID)) ELSE " & _
-                "(SELECT TRANEBAL FROM SDTRAN WHERE SDTRAN_ID= MAX(A.SDTRAN_ID)) END TRANBBAL " & _
-                "FROM SDTRAN A INNER JOIN (SELECT ACCTNUM ,MAX(TRANDATE) COMP FROM SDTRAN WITH (NOLOCK)  " & _
-                "GROUP BY ACCTNUM HAVING MAX(TRANDATE) IS NOT NULL) B " & _
-                "ON A.ACCTNUM+CAST(A.TRANDATE AS VARCHAR(11))=B.ACCTNUM+CAST(B.COMP AS VARCHAR(11)) GROUP BY A.ACCTNUM) Y"
+        IReportQueryBL = New DebitCreditTotalsQueryLogic
+        Dim ReportModel As ReportViewModel = IReportQueryBL.GenerateModel(CTRL_S.SYSDATE)
 
-        Dim DT As New DataTable
-        Dim cnn As New SqlConnection(rCN)
-        Dim sqlCMD As New SqlCommand(sQRY, cnn)
-        Dim ad As New SqlDataAdapter(sqlCMD)
-        sqlCMD.CommandType = CommandType.Text
-        cnn.Open()
-        ad.Fill(DT)
-        cnn.Close()
-        If DT.Rows.Count > 0 Then
+        If ReportModel.Data.Rows.Count > 0 Then
             Dim DDATE As CrystalDecisions.CrystalReports.Engine.TextObject = rpt.Section2.ReportObjects("Text2")
             Dim txtTITLE As CrystalDecisions.CrystalReports.Engine.TextObject = rpt.Section2.ReportObjects("Text1")
-            DDATE.Text = "FOR THE DAY " & CTRL_S.SYSDATE
-            txtTITLE.Text = "DEBIT/CREDIT TOTALS"
-            GenRPT(DT, dst, frmFD_Member.CrystalReportViewer1, rpt, 0, "3:2:2:2:2")
-            frmFD_Member.Show()
-
-
+            DDATE.Text = String.Format(ReportModel.SubHeader, DateValue(CTRL_S.SYSDATE))
+            txtTITLE.Text = ReportModel.ReportTitle ' ""
+            GenRPT(ReportModel.Data, dst, ReportViewerForm.CrystalReportViewer1, rpt, 0, "3:2:2:2:2")
+            ReportViewerForm.Show()
         Else
-            MsgBox("No transactions found on the specified date.", MsgBoxStyle.Information, "Daily Transaction Register")
+            MsgBox(GetGlobalResourceString("NoRecordsFound"), MsgBoxStyle.Information, GetGlobalResourceString("SavingsDepositSystemReport"))
         End If
         closeRPT("6")
         SW = False
-        DT.Dispose()
     End Sub
 
     Private Sub MenuItem61_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItem61.Click
@@ -1980,8 +1963,8 @@ Public Class frmSDS_Main
         Dim ds As New DataSet
         Dim sQRY As String
         SDDB = True
-        frmFD_Member = New frmFD_Member
-        frmFD_Member.MdiParent = Me
+        ReportViewerForm = New frmReportViewer
+        ReportViewerForm.MdiParent = Me
         sQRY = "SELECT ACCTNUM,TRANBBAL,TRANDEB,TRANCRE,TRANCODE,TRANEBAL,ADD_TIME," & _
                "CHKNUM,CHKCODE,[OVERRIDE],[USER] FROM SDTRAN WITH (NOLOCK) WHERE TRANDATE='" & CTRL_S.SYSDATE & "'"
         Dim DT As New DataTable
@@ -1995,8 +1978,8 @@ Public Class frmSDS_Main
         If DT.Rows.Count > 0 Then
             Dim DDATE As CrystalDecisions.CrystalReports.Engine.TextObject = rpt.Section2.ReportObjects("Text2")
             DDATE.Text = "FOR THE DAY " & CTRL_S.SYSDATE
-            GenRPT(DT, dst, frmFD_Member.CrystalReportViewer1, rpt, 0, "3:2:2:2:3:2:3:3:3:3:3")
-            frmFD_Member.Show()
+            GenRPT(DT, dst, ReportViewerForm.CrystalReportViewer1, rpt, 0, "3:2:2:2:3:2:3:3:3:3:3")
+            ReportViewerForm.Show()
 
         Else
             MsgBox("No transactions found on the specified date.", MsgBoxStyle.Information, "Daily Transaction Register")
@@ -2012,8 +1995,8 @@ Public Class frmSDS_Main
         Dim ds As New DataSet
         Dim sQRY As String
         SDDB = True
-        frmFD_Member = New frmFD_Member
-        frmFD_Member.MdiParent = Me
+        ReportViewerForm = New frmReportViewer
+        ReportViewerForm.MdiParent = Me
         sQRY = "SELECT 'S-' + SUBSTRING(SM.ACCTNO,5,5) + '-' + SUBSTRING(SM.ACCTNO,10,1) ACCTNO,SM.ACCTSNAME,ST.TRANCRE AMOUNT,ST.ADD_TIME,ST.[USER]" & _
                "FROM SDMASTER SM WITH (NOLOCK) INNER JOIN SDTRAN ST WITH (NOLOCK) ON SM.ACCTNO=ST.ACCTNUM WHERE (ST.TRANCODE='CSD' OR ST.TRANCODE='NCD') AND TRANDATE='" & CTRL_S.SYSDATE & "' AND ST.REVERSED='FALSE'"
         Dim DT As New DataTable
@@ -2027,8 +2010,8 @@ Public Class frmSDS_Main
         If DT.Rows.Count > 0 Then
             Dim DDATE As CrystalDecisions.CrystalReports.Engine.TextObject = rpt.Section2.ReportObjects("Text2")
             DDATE.Text = "FOR THE DAY " & CTRL_S.SYSDATE
-            GenRPT(DT, dst, frmFD_Member.CrystalReportViewer1, rpt, 0, "3:3:2:3:3")
-            frmFD_Member.Show()
+            GenRPT(DT, dst, ReportViewerForm.CrystalReportViewer1, rpt, 0, "3:3:2:3:3")
+            ReportViewerForm.Show()
 
         Else
             MsgBox("No transactions found on the specified date.", MsgBoxStyle.Information, "Daily Transaction Register")
@@ -2044,8 +2027,8 @@ Public Class frmSDS_Main
         Dim ds As New DataSet
         Dim sQRY As String
         SDDB = True
-        frmFD_Member = New frmFD_Member
-        frmFD_Member.MdiParent = Me
+        ReportViewerForm = New frmReportViewer
+        ReportViewerForm.MdiParent = Me
         sQRY = "SELECT 'S-' + SUBSTRING(SM.ACCTNO,5,5) + '-' + SUBSTRING(SM.ACCTNO,10,1) ACCTNO,SM.ACCTSNAME,ST.TRANDEB AMOUNT,ST.ADD_TIME,ST.[USER]" & _
                "FROM SDMASTER SM WITH (NOLOCK) INNER JOIN SDTRAN ST WITH (NOLOCK) ON SM.ACCTNO=ST.ACCTNUM WHERE (ST.TRANCODE='NWD' OR ST.TRANCODE='WD') AND TRANDATE='" & CTRL_S.SYSDATE & "' AND ST.REVERSED='FALSE'"
         Dim DT As New DataTable
@@ -2059,8 +2042,8 @@ Public Class frmSDS_Main
         If DT.Rows.Count > 0 Then
             Dim DDATE As CrystalDecisions.CrystalReports.Engine.TextObject = rpt.Section2.ReportObjects("Text2")
             DDATE.Text = "FOR THE DAY " & CTRL_S.SYSDATE
-            GenRPT(DT, dst, frmFD_Member.CrystalReportViewer1, rpt, 0, "3:3:2:3:3")
-            frmFD_Member.Show()
+            GenRPT(DT, dst, ReportViewerForm.CrystalReportViewer1, rpt, 0, "3:3:2:3:3")
+            ReportViewerForm.Show()
         Else
             MsgBox("No transactions found on the specified date.", MsgBoxStyle.Information, "Daily Transaction Register")
         End If
@@ -2074,8 +2057,8 @@ Public Class frmSDS_Main
         Dim ds As New DataSet
         Dim sQRY As String
         SDDB = True
-        frmFD_Member = New frmFD_Member
-        frmFD_Member.MdiParent = Me
+        ReportViewerForm = New frmReportViewer
+        ReportViewerForm.MdiParent = Me
         sQRY = "SELECT 'S-' + SUBSTRING(SM.ACCTNO,5,5) + '-' + SUBSTRING(SM.ACCTNO,10,1) ACCTNO,SM.ACCTSNAME,ST.TRANCRE AMOUNT,ST.ADD_TIME,ST.[USER]" & _
                "FROM SDMASTER SM WITH (NOLOCK) INNER JOIN SDTRAN ST WITH (NOLOCK) ON SM.ACCTNO=ST.ACCTNUM WHERE ST.TRANCODE='CM' AND  (ISNULL(CHKNUM,'') != 'PAYROLL' AND ISNULL(CHKNUM,'') !='DIVIDEND' AND ISNULL(CHKNUM,'') !='REFUND' AND ISNULL(CHKNUM,'') NOT LIKE 'ADV-%') AND TRANDATE='" & CTRL_S.SYSDATE & "' AND REVERSED='FALSE'"
         Dim DT As New DataTable
@@ -2089,8 +2072,8 @@ Public Class frmSDS_Main
         If DT.Rows.Count > 0 Then
             Dim DDATE As CrystalDecisions.CrystalReports.Engine.TextObject = rpt.Section2.ReportObjects("Text2")
             DDATE.Text = "FOR THE DAY " & CTRL_S.SYSDATE
-            GenRPT(DT, dst, frmFD_Member.CrystalReportViewer1, rpt, 0, "3:3:2:3:3")
-            frmFD_Member.Show()
+            GenRPT(DT, dst, ReportViewerForm.CrystalReportViewer1, rpt, 0, "3:3:2:3:3")
+            ReportViewerForm.Show()
         Else
             MsgBox("No transactions found on the specified date.", MsgBoxStyle.Information, "Daily Transaction Register")
         End If
@@ -2104,8 +2087,8 @@ Public Class frmSDS_Main
         Dim ds As New DataSet
         Dim sQRY As String
         SDDB = True
-        frmFD_Member = New frmFD_Member
-        frmFD_Member.MdiParent = Me
+        ReportViewerForm = New frmReportViewer
+        ReportViewerForm.MdiParent = Me
         sQRY = "SELECT 'S-' + SUBSTRING(SM.ACCTNO,5,5) + '-' + SUBSTRING(SM.ACCTNO,10,1) ACCTNO,SM.ACCTSNAME,ST.TRANDEB AMOUNT,ST.ADD_TIME,ST.[USER]" & _
                "FROM SDMASTER SM WITH (NOLOCK) INNER JOIN SDTRAN ST WITH (NOLOCK) ON SM.ACCTNO=ST.ACCTNUM WHERE ST.TRANCODE='DM' AND TRANDATE='" & CTRL_S.SYSDATE & "' AND REVERSED='FALSE'"
         Dim DT As New DataTable
@@ -2119,8 +2102,8 @@ Public Class frmSDS_Main
         If DT.Rows.Count > 0 Then
             Dim DDATE As CrystalDecisions.CrystalReports.Engine.TextObject = rpt.Section2.ReportObjects("Text2")
             DDATE.Text = "FOR THE DAY " & CTRL_S.SYSDATE
-            GenRPT(DT, dst, frmFD_Member.CrystalReportViewer1, rpt, 0, "3:3:2:3:3")
-            frmFD_Member.Show()
+            GenRPT(DT, dst, ReportViewerForm.CrystalReportViewer1, rpt, 0, "3:3:2:3:3")
+            ReportViewerForm.Show()
         Else
             MsgBox("No transactions found on the specified date.", MsgBoxStyle.Information, "Daily Transaction Register")
         End If
@@ -2174,8 +2157,8 @@ Public Class frmSDS_Main
         Dim sQRY As String
         SDDB = True
         frmFDS_Main_PrntFDL_Srch = New frmFDS_Main_PrntFDL_Srch
-        frmFD_Member = New frmFD_Member
-        frmFD_Member.MdiParent = Me
+        ReportViewerForm = New frmReportViewer
+        ReportViewerForm.MdiParent = Me
         sQRY = "SELECT  [ACCTNO],[ACCTSTAT],[ACCTSNAME],[ACCTADDR1],[ACCTNAME],[ADD_DATE],[LTRANDATE],[ACCTOBAL],[ACCTFLOATS] FROM [SDMASTER] WITH (NOLOCK) ORDER BY ACCTNO"
         Dim DT As New DataTable
         Dim cnn As New SqlConnection(rCN)
@@ -2188,8 +2171,8 @@ Public Class frmSDS_Main
         If DT.Rows.Count > 0 Then
             Dim DDATE As CrystalDecisions.CrystalReports.Engine.TextObject = rpt.Section2.ReportObjects("Text2")
             DDATE.Text = "AS OF " & CTRL_S.SYSDATE
-            GenRPT(DT, dst, frmFD_Member.CrystalReportViewer1, rpt, 0, "5:3:3:3:3:1:1:2:2")
-            frmFD_Member.Show()
+            GenRPT(DT, dst, ReportViewerForm.CrystalReportViewer1, rpt, 0, "5:3:3:3:3:1:1:2:2")
+            ReportViewerForm.Show()
         Else
             MsgBox("No transactions found on the specified date.", MsgBoxStyle.Information, "Dividend/Refund Transaction")
         End If
@@ -2204,8 +2187,8 @@ Public Class frmSDS_Main
         Dim sQRY As String
         SDDB = True
         frmFDS_Main_PrntFDL_Srch = New frmFDS_Main_PrntFDL_Srch
-        frmFD_Member = New frmFD_Member
-        frmFD_Member.MdiParent = Me
+        ReportViewerForm = New frmReportViewer
+        ReportViewerForm.MdiParent = Me
         sQRY = "SELECT [ADATE],[ATIME],[AUSER],[AOVER],[AACTI]  FROM [ACTIVITY] WITH (NOLOCK)"
         Dim DT As New DataTable
         Dim cnn As New SqlConnection(rCN)
@@ -2218,8 +2201,8 @@ Public Class frmSDS_Main
         If DT.Rows.Count > 0 Then
             Dim DDATE As CrystalDecisions.CrystalReports.Engine.TextObject = rpt.Section2.ReportObjects("Text2")
             DDATE.Text = "AS OF " & CTRL_S.SYSDATE
-            GenRPT(DT, dst, frmFD_Member.CrystalReportViewer1, rpt, 0, "1:3:3:3:3")
-            frmFD_Member.Show()
+            GenRPT(DT, dst, ReportViewerForm.CrystalReportViewer1, rpt, 0, "1:3:3:3:3")
+            ReportViewerForm.Show()
         Else
             MsgBox("No transactions found on the specified date.", MsgBoxStyle.Information, "Dividend/Refund Transaction")
         End If
@@ -2289,8 +2272,8 @@ Public Class frmSDS_Main
         Dim sQRY As String
         SDDB = True
         frmFDS_Main_PrntFDL_Srch = New frmFDS_Main_PrntFDL_Srch
-        frmFD_Member = New frmFD_Member
-        frmFD_Member.MdiParent = Me
+        ReportViewerForm = New frmReportViewer
+        ReportViewerForm.MdiParent = Me
         sQRY = "SELECT 'S-' + SUBSTRING(SP.FEBTC_SA,5,5) + '-' + SUBSTRING(SP.FEBTC_SA,10,1) ACCTNO," & _
                "SM.ACCTSNAME,ISNULL(SP.SDBBAL,0) SDBBAL,((ISNULL(SP.DIVIDEND,0) + ISNULL(SP.REFUND,0)) - ISNULL(SP.DEDUCTIONS,0)) PAMT,ISNULL(SP.SDEBAL,0) SDEBAL,SP.SDSEQ " & _
                "FROM SDMASTER SM WITH (NOLOCK) RIGHT JOIN DIVREF_S SP WITH (NOLOCK) ON  SM.ACCTNO=SP.FEBTC_SA JOIN MEMBERS MM ON SM.KBCI_NO= MM.KBCI_NO WHERE MM.MEM_STAT='R'"
@@ -2305,8 +2288,8 @@ Public Class frmSDS_Main
         If DT.Rows.Count > 0 Then
             Dim DDATE As CrystalDecisions.CrystalReports.Engine.TextObject = rpt.Section2.ReportObjects("Text8")
             DDATE.Text = "POSTING DATE : " & CTRL_S.SYSDATE
-            GenRPT(DT, dst, frmFD_Member.CrystalReportViewer1, rpt, 0, "3:3:2:2:2:3")
-            frmFD_Member.Show()
+            GenRPT(DT, dst, ReportViewerForm.CrystalReportViewer1, rpt, 0, "3:3:2:2:2:3")
+            ReportViewerForm.Show()
         Else
             MsgBox("No transactions found on the specified date.", MsgBoxStyle.Information, "Dividend/Refund Transaction")
         End If
@@ -2320,8 +2303,8 @@ Public Class frmSDS_Main
         Dim ds As New DataSet
         Dim sQRY As String
         SDDB = True
-        frmFD_Member = New frmFD_Member
-        frmFD_Member.MdiParent = Me
+        ReportViewerForm = New frmReportViewer
+        ReportViewerForm.MdiParent = Me
         sQRY = "select A.KBCI_NO,B.ACCTNO,B.ACCTNAME ACCTSNAME,A.MEM_STAT,B.ACCTSTAT,B.ACCTABAL,C.TRANDATE LTRANDATE," & _
                 "C.TRANEBAL ACCTOBAL from MEMBERS A JOIN SDMASTER B on A.KBCI_NO=B.KBCI_NO JOIN(select ACCTNUM," & _
                 "TRANDATE,TRANEBAL from SDTRAN where SDTRAN_ID in(select MAX(sdtran_id)id from SDTRAN " & _
@@ -2338,8 +2321,8 @@ Public Class frmSDS_Main
         If DT.Rows.Count > 0 Then
             Dim DDATE As CrystalDecisions.CrystalReports.Engine.TextObject = rpt.Section2.ReportObjects("Text2")
             DDATE.Text = "FOR THE MONTH OF " & MonthName(Month(CTRL_S.SYSDATE)) & ", " & Year(CTRL_S.SYSDATE)
-            GenRPT(DT, dst, frmFD_Member.CrystalReportViewer1, rpt, 0, "3:3:1:2")
-            frmFD_Member.Show()
+            GenRPT(DT, dst, ReportViewerForm.CrystalReportViewer1, rpt, 0, "3:3:1:2")
+            ReportViewerForm.Show()
 
         Else
             MsgBox("No transactions found on the specified date.", MsgBoxStyle.Information, "Daily Transaction Register")
@@ -2355,8 +2338,8 @@ Public Class frmSDS_Main
         Dim ds As New DataSet
         Dim sQRY As String
         SDDB = True
-        frmFD_Member = New frmFD_Member
-        frmFD_Member.MdiParent = Me
+        ReportViewerForm = New frmReportViewer
+        ReportViewerForm.MdiParent = Me
 
         sQRY = "DECLARE @DC NUMERIC(6,2)=" & CTRL_S.DormancyCharge & " DECLARE @DATE AS DATE='" & CTRL_S.SYSDATE & "' SELECT ACCTNO, B.ACCTNAME ACCTSNAME,C." & _
                 "TRANDEB DORMANCYFEE,C.TRANEBAL ACCTEBAL FROM MEMBERS A INNER JOIN SDMASTER B ON A.KBCI_NO=B." & _
@@ -2381,8 +2364,8 @@ Public Class frmSDS_Main
         If DT.Rows.Count > 0 Then
             Dim DDATE As CrystalDecisions.CrystalReports.Engine.TextObject = rpt.Section2.ReportObjects("Text2")
             DDATE.Text = "FOR THE MONTH OF " & MonthName(Month(CTRL_S.SYSDATE)) & ", " & Year(CTRL_S.SYSDATE)
-            GenRPT(DT, dst, frmFD_Member.CrystalReportViewer1, rpt, 0, "3:3:2:2")
-            frmFD_Member.Show()
+            GenRPT(DT, dst, ReportViewerForm.CrystalReportViewer1, rpt, 0, "3:3:2:2")
+            ReportViewerForm.Show()
 
         Else
             MsgBox("No transactions found on the specified date.", MsgBoxStyle.Information, "Daily Transaction Register")
@@ -2403,8 +2386,8 @@ Public Class frmSDS_Main
         Dim ds As New DataSet
         Dim sQRY As String
         SDDB = True
-        frmFD_Member = New frmFD_Member
-        frmFD_Member.MdiParent = Me
+        ReportViewerForm = New frmReportViewer
+        ReportViewerForm.MdiParent = Me
         sQRY = "select B.ACCTNO,B.ACCTNAME ACCTSNAME,C.TRANDATE LTRANDATE," & _
                 "C.TRANEBAL ACCTOBAL from MEMBERS A JOIN SDMASTER B on A.KBCI_NO=B.KBCI_NO JOIN(select ACCTNUM," & _
                 "TRANDATE,TRANEBAL from SDTRAN where SDTRAN_ID in(select MAX(sdtran_id)id from SDTRAN " & _
@@ -2422,8 +2405,8 @@ Public Class frmSDS_Main
         If DT.Rows.Count > 0 Then
             Dim DDATE As CrystalDecisions.CrystalReports.Engine.TextObject = rpt.Section2.ReportObjects("Text2")
             DDATE.Text = "FOR THE MONTH OF " & MonthName(Month(CTRL_S.SYSDATE)) & ", " & Year(CTRL_S.SYSDATE)
-            GenRPT(DT, dst, frmFD_Member.CrystalReportViewer1, rpt, 0, "3:3:1:2")
-            frmFD_Member.Show()
+            GenRPT(DT, dst, ReportViewerForm.CrystalReportViewer1, rpt, 0, "3:3:1:2")
+            ReportViewerForm.Show()
 
         Else
             MsgBox("No transactions found on the specified date.", MsgBoxStyle.Information, "Daily Transaction Register")

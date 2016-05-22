@@ -15,6 +15,8 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SDS.Common", "SDS.Common\SD
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SDS.SQL", "SDS.SQL\SDS.SQL.vbproj", "{9ECCDFF5-0D58-4219-9F4E-0664A72EDEAC}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SDS.ViewModels", "SDS.ViewModels\SDS.ViewModels.vbproj", "{FE0E9CF1-07C1-42C0-AF01-55F3A57DAC7A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,10 @@ Global
 		{9ECCDFF5-0D58-4219-9F4E-0664A72EDEAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9ECCDFF5-0D58-4219-9F4E-0664A72EDEAC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9ECCDFF5-0D58-4219-9F4E-0664A72EDEAC}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{FE0E9CF1-07C1-42C0-AF01-55F3A57DAC7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE0E9CF1-07C1-42C0-AF01-55F3A57DAC7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE0E9CF1-07C1-42C0-AF01-55F3A57DAC7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE0E9CF1-07C1-42C0-AF01-55F3A57DAC7A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

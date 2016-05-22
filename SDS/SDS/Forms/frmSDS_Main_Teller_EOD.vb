@@ -1,5 +1,5 @@
 ﻿Public Class frmSDS_Main_Teller_EOD
-    Dim frmFD_Member As frmFD_Member
+    Dim frmFD_Member As frmReportViewer
     Private Sub frmSDS_Main_Teller_EOD_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         cmpEOD()
         FillCtrl()
@@ -133,7 +133,7 @@
                                        CDbl(Label69.Text) + CDbl(Label67.Text) + CDbl(Label68.Text) + _
                                        CDbl(Label74.Text) + CDbl(Label70.Text) + CDbl(Label72.Text) + _
                                        CDbl(Label75.Text) + CDbl(Label71.Text) + CDbl(Label73.Text) + _
-                                       CDbl(Label76.Text) + CDbl(Label77.Text))        
+                                       CDbl(Label76.Text) + CDbl(Label77.Text))
     End Sub
     Sub EnDs(ByVal flag As Boolean)
         Dim control As Control
@@ -261,7 +261,7 @@
         Dim sQRY As String
         SDDB = True
 
-        frmFD_Member = New frmFD_Member
+        frmFD_Member = New frmReportViewer
         'frmFD_Member.MdiParent = frmSDS_Main
         sQRY = "SELECT SU.SPUSERNAME, ST.[CASHB],ST.[COCIB],ST.[ADDMREQ],ST.[CASHSAV],ST.[CASHOR],ST.[ADDCHECKS],ST.[ADDLTD]," & _
             "ST.[CTFNAME1],ST.[CTFAMT1],ST.[CTFNAME2],ST.[CTFAMT2],ST.[CTFNAME3],ST.[CTFAMT3],ST.[ADDCASH],ST.[CRSAV],ST.[CRORO],ST.[CRACC],ST.[CRCR]," & _

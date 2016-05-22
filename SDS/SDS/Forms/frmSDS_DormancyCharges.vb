@@ -2,7 +2,7 @@
 
 Public Class frmSDS_DormancyCharges
 
-    Private frmFD_Member As frmFD_Member
+    Private frmFD_Member As frmReportViewer
 
     Private Sub bgwInsertTransaction_DoWork(ByVal sender As System.Object, ByVal e As System.ComponentModel.DoWorkEventArgs) Handles bgwInsertTransaction.DoWork
         CTRL_S.getData()
@@ -57,7 +57,7 @@ Public Class frmSDS_DormancyCharges
         Dim ds As New DataSet
         Dim sQRY As String
         SDDB = True
-        frmFD_Member = New frmFD_Member
+        frmFD_Member = New frmReportViewer
         frmFD_Member.MdiParent = Me
 
         sQRY = "DECLARE @DC NUMERIC(6,2)=" & CTRL_S.DormancyCharge & " DECLARE @DATE AS DATE='" & CTRL_S.SYSDATE & "' SELECT ACCTNO,ACCTSNAME,C." & _

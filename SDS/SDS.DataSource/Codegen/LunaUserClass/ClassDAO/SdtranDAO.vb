@@ -72,4 +72,48 @@ Public Class SdtranDAO
         End Try
     End Function
 
+    Public Function GetDebitCreditTotals(ByVal SystemDate As Date) As List(Of Sdtran)
+        Dim StoredProcedureName As String = "s_GetDebitCreditTotals"
+        Dim cls As New Sdtran
+        Dim Ls As New List(Of Sdtran)
+        Try
+
+            Using myCommand As DbCommand = _Cn.CreateCommand
+                myCommand.CommandText = StoredProcedureName
+                myCommand.CommandType = CommandType.StoredProcedure
+
+
+                Dim paramSystemDate = myCommand.CreateParameter
+                With paramSystemDate
+                    .ParameterName = "@SystemDate"
+                    .Value = SystemDate
+                End With
+
+                myCommand.Parameters.Add(paramSystemDate)
+
+                If Not LUNA.LunaContext.TransactionBox Is Nothing Then myCommand.Transaction = LUNA.LunaContext.TransactionBox.Transaction
+                Using myReader As DbDataReader = myCommand.ExecuteReader()                    
+                    While myReader.Read
+                        Dim classe As New Sdtran
+
+                        classe.SDTRAN_ID = myReader.GetInt32(0)
+                        classe.ACCTNUM = myReader.GetString(1)
+                        classe.TRANBBAL = myReader.GetDecimal(2)
+                        classe.TRANCRE = myReader.GetDecimal(3)
+                        classe.TRANDEB = myReader.GetDecimal(4)
+                        classe.TRANEBAL = myReader.GetDecimal(5)
+                        Ls.Add(classe)
+                    End While
+                    myReader.Close()
+                End Using
+            End Using
+        Catch ex As Exception
+            ManageError(ex)
+        End Try
+
+        Return Ls
+    End Function
+
+
+
 End Class

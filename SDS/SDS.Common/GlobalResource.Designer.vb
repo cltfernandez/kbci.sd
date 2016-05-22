@@ -74,6 +74,33 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to FOR THE DAY {0}.
+        '''</summary>
+        Friend Shared ReadOnly Property DebitCreditTotalsSubHeader() As String
+            Get
+                Return ResourceManager.GetString("DebitCreditTotalsSubHeader", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to DEBIT/CREDIT TOTALS.
+        '''</summary>
+        Friend Shared ReadOnly Property DebitCreditTotalsTitle() As String
+            Get
+                Return ResourceManager.GetString("DebitCreditTotalsTitle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to No Records Found..
+        '''</summary>
+        Friend Shared ReadOnly Property NoRecordsFound() As String
+            Get
+                Return ResourceManager.GetString("NoRecordsFound", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Ledger Recalculation.
         '''</summary>
         Friend Shared ReadOnly Property RecalculateLedger() As String
@@ -97,6 +124,15 @@ Namespace My.Resources
         Friend Shared ReadOnly Property RecalculationSuccessful() As String
             Get
                 Return ResourceManager.GetString("RecalculationSuccessful", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Savings Deposit System - Generate Report.
+        '''</summary>
+        Friend Shared ReadOnly Property SavingsDepositSystemReport() As String
+            Get
+                Return ResourceManager.GetString("SavingsDepositSystemReport", resourceCulture)
             End Get
         End Property
     End Class

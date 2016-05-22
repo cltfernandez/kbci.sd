@@ -1,4 +1,4 @@
-Public Class frmFD_Member
+Public Class frmReportViewer
     Inherits System.Windows.Forms.Form
 
 #Region " Windows Form Designer generated code "

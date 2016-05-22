@@ -206,7 +206,7 @@
     <Compile Include="Forms\frmFDS_Main_PrntFDL_Srch.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmFD_Member.vb">
+    <Compile Include="Forms\frmReportViewer.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\frmSDS_Close_OTC.Designer.vb">
@@ -535,8 +535,8 @@
       <DependentUpon>frmFDS_Main_PrntFDL_Srch.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmFD_Member.resx">
-      <DependentUpon>frmFD_Member.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\frmReportViewer.resx">
+      <DependentUpon>frmReportViewer.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmPayrollExtract.resx">
@@ -859,6 +859,10 @@
     <ProjectReference Include="..\SDS.Entities\SDS.Entities.vbproj">
       <Project>{A4FB6C50-0D98-4A03-8A68-88451BE00262}</Project>
       <Name>SDS.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SDS.ViewModels\SDS.ViewModels.vbproj">
+      <Project>{FE0E9CF1-07C1-42C0-AF01-55F3A57DAC7A}</Project>
+      <Name>SDS.ViewModels</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
