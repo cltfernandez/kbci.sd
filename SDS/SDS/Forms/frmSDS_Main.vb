@@ -912,7 +912,7 @@ Public Class frmSDS_Main
     Private frmSDS_Main_Teller_EOD As frmSDS_Main_Teller_EOD
     Private frmSDS_Close_Table As frmSDS_Close_Table
     Private frmSDS_Close_otc As frmSDS_Close_OTC
-    Private frmMain_Ctrl As frmSDS_Main_Ctrl
+    Private frmMain_Ctrl As PolicyDefinitionsForm
     Private Form1 As Form1
     Private frmSDS_Main_Access As frmSDS_Main_Access
     Private frmSDS_Main_AcctFloats As frmSDS_Main_AcctFloats
@@ -1364,7 +1364,7 @@ Public Class frmSDS_Main
 
     Private Sub MenuItem22_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItem22.Click
         If IsFormLoaded("frmMain_Ctrl") Then Exit Sub
-        frmMain_Ctrl = New frmSDS_Main_Ctrl
+        frmMain_Ctrl = New PolicyDefinitionsForm
         frmMain_Ctrl.ShowDialog()
     End Sub
 
@@ -2434,7 +2434,7 @@ Public Class frmSDS_Main
     End Sub
 
     Private Sub MenuItem94_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItem94.Click
-        frmRecalculateLedger = New frmRecalculateLedger(New RecalculateLedgerBusinessLogic(), New MessagePromptBusinessLogic())
+        frmRecalculateLedger = New frmRecalculateLedger(New RecalculateLedgerBusinessLogic(), New RecalculateLedgerPrompt())
         frmRecalculateLedger.ShowDialog()
     End Sub
 End Class

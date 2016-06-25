@@ -172,10 +172,10 @@
     <Compile Include="Forms\frmSDS_Main_AcctFloats.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmSDS_Main_Ctrl.Designer.vb">
-      <DependentUpon>frmSDS_Main_Ctrl.vb</DependentUpon>
+    <Compile Include="Forms\PolicyDefinitionsForm.Designer.vb">
+      <DependentUpon>PolicyDefinitionsForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmSDS_Main_Ctrl.vb">
+    <Compile Include="Forms\PolicyDefinitionsForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\frmSDS_Main_Access.Designer.vb">
@@ -562,8 +562,8 @@
       <DependentUpon>frmSDS_Main_AcctFloats.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmSDS_Main_Ctrl.resx">
-      <DependentUpon>frmSDS_Main_Ctrl.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\PolicyDefinitionsForm.resx">
+      <DependentUpon>PolicyDefinitionsForm.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmSDS_Close_OTC.resx">

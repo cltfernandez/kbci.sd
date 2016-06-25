@@ -140,6 +140,9 @@
   <data name="RecalculationSuccessful" xml:space="preserve">
     <value>Recalculation Successful!</value>
   </data>
+  <data name="SavingsDepositSystem" xml:space="preserve">
+    <value>Savings Deposit System</value>
+  </data>
   <data name="SavingsDepositSystemReport" xml:space="preserve">
     <value>Savings Deposit System - Generate Report</value>
   </data>

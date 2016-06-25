@@ -4,7 +4,7 @@
 '*********************************
 'Code created with Luna 4.15.2.90 
 'Author: Diego Lunadei
-'Date: 20/06/2015 
+'Date: 25/06/2016 
 #End Region
 
 
@@ -287,6 +287,16 @@ Public Overrides Property DormancyCharge() as single
     End Get
     Set (byval value as single)
         MyBase.DormancyCharge= value
+    End Set
+End property 
+
+
+Public Overrides Property MinimumInterestEarningBalance() as single
+    Get
+	    Return MyBase.MinimumInterestEarningBalance
+    End Get
+    Set (byval value as single)
+        MyBase.MinimumInterestEarningBalance= value
     End Set
 End property 
 

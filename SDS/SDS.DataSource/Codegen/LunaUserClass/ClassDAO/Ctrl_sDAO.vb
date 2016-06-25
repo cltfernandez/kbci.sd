@@ -4,7 +4,7 @@
 '*********************************
 'Code created with Luna 4.15.2.90 
 'Author: Diego Lunadei
-'Date: 20/06/2015 
+'Date: 25/06/2016 
 #End Region
 
 
@@ -26,7 +26,4 @@ Public Class Ctrl_sDAO
     Public Sub New(ByVal Connection As DbConnection)
         MyBase.New(Connection)
     End Sub
-
-
-
 End Class

@@ -4,7 +4,7 @@
 '*********************************
 'Code created with Luna 4.15.2.90 
 'Author: Diego Lunadei
-'Date: 20/06/2015 
+'Date: 25/06/2016 
 #End Region
 
 
@@ -90,7 +90,7 @@ Public Overrides Function Save(byRef cls as Ctrl_s) as Integer
                             sql &= " ADMDATE,"
                             sql &= " ADD_DATE,"
                             sql &= " CHG_DATE,"
-                            sql &= " USER,"
+                            sql &= " [USER],"
                             sql &= " SDRATE,"
                             sql &= " ACCTBR,"
                             sql &= " ACCTSEQ,"
@@ -110,7 +110,8 @@ Public Overrides Function Save(byRef cls as Ctrl_s) as Integer
                             sql &= " EOD_FLAG,"
                             sql &= " P_PRINT,"
                             sql &= " R_PRINT,"
-                            sql &= " DormancyCharge"
+                            sql &= " DormancyCharge,"
+                            sql &= " MinimumInterestEarningBalance"
                       sql &= ") VALUES ("
                       sql &= " @SYSDATE,"
                       sql &= " @ADMDATE,"
@@ -136,7 +137,8 @@ Public Overrides Function Save(byRef cls as Ctrl_s) as Integer
                       sql &= " @EOD_FLAG,"
                       sql &= " @P_PRINT,"
                       sql &= " @R_PRINT,"
-                      sql &= " @DormancyCharge"
+                      sql &= " @DormancyCharge,"
+                      sql &= " @MinimumInterestEarningBalance"
                       sql &= ")"
 		            Else
 			            sql = "UPDATE Ctrl_s SET "
@@ -144,7 +146,7 @@ Public Overrides Function Save(byRef cls as Ctrl_s) as Integer
                   sql &= "ADMDATE = @ADMDATE,"
                   sql &= "ADD_DATE = @ADD_DATE,"
                   sql &= "CHG_DATE = @CHG_DATE,"
-                  sql &= "USER = @USER,"
+                  sql &= "[USER] = @USER,"
                   sql &= "SDRATE = @SDRATE,"
                   sql &= "ACCTBR = @ACCTBR,"
                   sql &= "ACCTSEQ = @ACCTSEQ,"
@@ -164,7 +166,8 @@ Public Overrides Function Save(byRef cls as Ctrl_s) as Integer
                   sql &= "EOD_FLAG = @EOD_FLAG,"
                   sql &= "P_PRINT = @P_PRINT,"
                   sql &= "R_PRINT = @R_PRINT,"
-                  sql &= "DormancyCharge = @DormancyCharge"
+                  sql &= "DormancyCharge = @DormancyCharge,"
+                  sql &= "MinimumInterestEarningBalance = @MinimumInterestEarningBalance"
 			            sql &= " WHERE CTRL_S_ID= " & cls.CTRL_S_ID
 		            End if
 					
@@ -312,6 +315,11 @@ Public Overrides Function Save(byRef cls as Ctrl_s) as Integer
 					p = myCommand.CreateParameter
 					p.ParameterName = "@DormancyCharge"
 					p.Value = cls.DormancyCharge
+  					myCommand.Parameters.Add(p)
+
+					p = myCommand.CreateParameter
+					p.ParameterName = "@MinimumInterestEarningBalance"
+					p.Value = cls.MinimumInterestEarningBalance
   					myCommand.Parameters.Add(p)
 
                     myCommand.CommandType = CommandType.Text
@@ -506,27 +514,25 @@ Public Overrides Function GetAll(Optional OrderByField as string = "", Optional 
     Return Ls
 End Function
 
-
-
-    Protected Function GetData(ByVal sql As String, Optional ByVal AddEmptyItem As Boolean = False) As iEnumerable(Of Ctrl_s)
-        Dim Ls As New List(Of Ctrl_s)
-        Try
-            Using myCommand As DbCommand = _Cn.CreateCommand
-                myCommand.CommandText = sql
-                If Not LUNA.LunaContext.TransactionBox Is Nothing Then myCommand.Transaction = LUNA.LunaContext.TransactionBox.Transaction
-                Using myReader As DbDataReader = myCommand.ExecuteReader()
-                    If AddEmptyItem Then Ls.Add(New Ctrl_s() With {.CTRL_S_ID = Nothing, .SYSDATE = Nothing, .ADMDATE = Nothing, .ADD_DATE = Nothing, .CHG_DATE = Nothing, .USER = "", .SDRATE = 0, .ACCTBR = "", .ACCTSEQ = 0, .PMAXL = 0, .LMAXL = 0, .BINIT = False, .BPOST = False, .CLR_ONUS = 0, .CLR_LOCAL = 0, .CLR_REG = 0, .MINBAL = 0, .DBDORMANT = 0, .EOM_FLAG = False, .EOQ_FLAG = False, .EOY_FLAG = False, .OTC_FLAG = False, .EOD_FLAG = False, .P_PRINT = "", .R_PRINT = "", .DormancyCharge = 0})
-                    While myReader.Read
-                        Dim classe As New Ctrl_s(CType(myReader, IDataRecord))
-                        Ls.Add(classe)
-                    End While
-                    myReader.Close()
-                End Using
+Protected Function GetData(sql as string, Optional ByVal AddEmptyItem As Boolean = False) as iEnumerable(Of Ctrl_s)
+    Dim Ls As New List(Of Ctrl_s)
+    Try
+        Using myCommand As DbCommand = _Cn.CreateCommand
+            myCommand.CommandText = sql
+            If Not LUNA.LunaContext.TransactionBox Is Nothing Then myCommand.Transaction = LUNA.LunaContext.TransactionBox.Transaction
+            Using myReader As DbDataReader = myCommand.ExecuteReader()
+                If AddEmptyItem Then Ls.Add(New  Ctrl_s() With {.CTRL_S_ID = Nothing ,.SYSDATE = Nothing ,.ADMDATE = Nothing ,.ADD_DATE = Nothing ,.CHG_DATE = Nothing ,.USER = "" ,.SDRATE = 0 ,.ACCTBR = "" ,.ACCTSEQ = 0 ,.PMAXL = 0 ,.LMAXL = 0 ,.BINIT = False ,.BPOST = False ,.CLR_ONUS = 0 ,.CLR_LOCAL = 0 ,.CLR_REG = 0 ,.MINBAL = 0 ,.DBDORMANT = 0 ,.EOM_FLAG = False ,.EOQ_FLAG = False ,.EOY_FLAG = False ,.OTC_FLAG = False ,.EOD_FLAG = False ,.P_PRINT = "" ,.R_PRINT = "" ,.DormancyCharge = 0 ,.MinimumInterestEarningBalance = 0  })
+                while myReader.Read
+	                Dim classe as new Ctrl_s(CType(myReader, IDataRecord))
+	                Ls.Add(classe)
+                end while
+                myReader.Close()
             End Using
+        End Using
 
-        Catch ex As Exception
-            ManageError(ex)
-        End Try
-        Return Ls
-    End Function
+    Catch ex As Exception
+	    ManageError(ex)
+    End Try
+    Return Ls
+End Function
 End Class

@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmSDS_Main_Ctrl
+Partial Class PolicyDefinitionsForm
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,8 +22,10 @@ Partial Class frmSDS_Main_Ctrl
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmSDS_Main_Ctrl))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PolicyDefinitionsForm))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
+        Me.Label17 = New System.Windows.Forms.Label
+        Me.txtDormancyFee = New System.Windows.Forms.TextBox
         Me.TextBox2 = New System.Windows.Forms.TextBox
         Me.TextBox1 = New System.Windows.Forms.TextBox
         Me.CheckBox4 = New System.Windows.Forms.CheckBox
@@ -56,8 +58,8 @@ Partial Class frmSDS_Main_Ctrl
         Me.PictureBox1 = New System.Windows.Forms.PictureBox
         Me.Button6 = New System.Windows.Forms.Button
         Me.Button1 = New System.Windows.Forms.Button
-        Me.Label17 = New System.Windows.Forms.Label
-        Me.txtDormancyFee = New System.Windows.Forms.TextBox
+        Me.txtMinimumInterestEarningBalance = New System.Windows.Forms.TextBox
+        Me.Label18 = New System.Windows.Forms.Label
         Me.GroupBox1.SuspendLayout()
         CType(Me.NumericUpDown4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown5, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -69,6 +71,8 @@ Partial Class frmSDS_Main_Ctrl
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Label18)
+        Me.GroupBox1.Controls.Add(Me.txtMinimumInterestEarningBalance)
         Me.GroupBox1.Controls.Add(Me.Label17)
         Me.GroupBox1.Controls.Add(Me.txtDormancyFee)
         Me.GroupBox1.Controls.Add(Me.TextBox2)
@@ -101,9 +105,32 @@ Partial Class frmSDS_Main_Ctrl
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 63)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(568, 254)
+        Me.GroupBox1.Size = New System.Drawing.Size(568, 288)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
+        '
+        'Label17
+        '
+        Me.Label17.BackColor = System.Drawing.Color.Transparent
+        Me.Label17.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.Location = New System.Drawing.Point(6, 159)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(134, 20)
+        Me.Label17.TabIndex = 106
+        Me.Label17.Text = "Dormancy Fee:"
+        Me.Label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'txtDormancyFee
+        '
+        Me.txtDormancyFee.Enabled = False
+        Me.txtDormancyFee.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDormancyFee.Location = New System.Drawing.Point(144, 158)
+        Me.txtDormancyFee.MaxLength = 20
+        Me.txtDormancyFee.Name = "txtDormancyFee"
+        Me.txtDormancyFee.Size = New System.Drawing.Size(102, 21)
+        Me.txtDormancyFee.TabIndex = 105
+        Me.txtDormancyFee.Text = "0.00"
+        Me.txtDormancyFee.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'TextBox2
         '
@@ -171,7 +198,7 @@ Partial Class frmSDS_Main_Ctrl
         Me.NumericUpDown4.DecimalPlaces = 4
         Me.NumericUpDown4.Enabled = False
         Me.NumericUpDown4.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NumericUpDown4.Location = New System.Drawing.Point(144, 185)
+        Me.NumericUpDown4.Location = New System.Drawing.Point(144, 217)
         Me.NumericUpDown4.Name = "NumericUpDown4"
         Me.NumericUpDown4.Size = New System.Drawing.Size(71, 21)
         Me.NumericUpDown4.TabIndex = 5
@@ -181,7 +208,7 @@ Partial Class frmSDS_Main_Ctrl
         '
         Me.Label9.BackColor = System.Drawing.Color.Transparent
         Me.Label9.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(221, 186)
+        Me.Label9.Location = New System.Drawing.Point(221, 218)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(26, 20)
         Me.Label9.TabIndex = 104
@@ -192,7 +219,7 @@ Partial Class frmSDS_Main_Ctrl
         '
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(6, 183)
+        Me.Label8.Location = New System.Drawing.Point(6, 215)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(134, 20)
         Me.Label8.TabIndex = 103
@@ -226,7 +253,7 @@ Partial Class frmSDS_Main_Ctrl
         '
         Me.NumericUpDown5.Enabled = False
         Me.NumericUpDown5.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NumericUpDown5.Location = New System.Drawing.Point(144, 212)
+        Me.NumericUpDown5.Location = New System.Drawing.Point(144, 244)
         Me.NumericUpDown5.Maximum = New Decimal(New Integer() {999999, 0, 0, 0})
         Me.NumericUpDown5.Name = "NumericUpDown5"
         Me.NumericUpDown5.Size = New System.Drawing.Size(46, 21)
@@ -259,7 +286,7 @@ Partial Class frmSDS_Main_Ctrl
         '
         Me.Label11.BackColor = System.Drawing.Color.Transparent
         Me.Label11.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(196, 213)
+        Me.Label11.Location = New System.Drawing.Point(196, 245)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(50, 20)
         Me.Label11.TabIndex = 100
@@ -314,7 +341,7 @@ Partial Class frmSDS_Main_Ctrl
         '
         Me.Label10.BackColor = System.Drawing.Color.Transparent
         Me.Label10.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(6, 212)
+        Me.Label10.Location = New System.Drawing.Point(6, 244)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(162, 21)
         Me.Label10.TabIndex = 46
@@ -435,7 +462,7 @@ Partial Class frmSDS_Main_Ctrl
         '
         Me.Button6.BackgroundImage = CType(resources.GetObject("Button6.BackgroundImage"), System.Drawing.Image)
         Me.Button6.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button6.Location = New System.Drawing.Point(372, 323)
+        Me.Button6.Location = New System.Drawing.Point(372, 357)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(101, 23)
         Me.Button6.TabIndex = 1
@@ -446,41 +473,41 @@ Partial Class frmSDS_Main_Ctrl
         Me.Button1.BackgroundImage = CType(resources.GetObject("Button1.BackgroundImage"), System.Drawing.Image)
         Me.Button1.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.Button1.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(479, 323)
+        Me.Button1.Location = New System.Drawing.Point(479, 357)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(101, 23)
         Me.Button1.TabIndex = 2
         Me.Button1.Text = "C&lose"
         '
-        'Label17
+        'txtMinimumInterestEarningBalance
         '
-        Me.Label17.BackColor = System.Drawing.Color.Transparent
-        Me.Label17.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(6, 159)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(134, 20)
-        Me.Label17.TabIndex = 106
-        Me.Label17.Text = "Dormancy Fee:"
-        Me.Label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.txtMinimumInterestEarningBalance.Enabled = False
+        Me.txtMinimumInterestEarningBalance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtMinimumInterestEarningBalance.Location = New System.Drawing.Point(144, 185)
+        Me.txtMinimumInterestEarningBalance.MaxLength = 20
+        Me.txtMinimumInterestEarningBalance.Name = "txtMinimumInterestEarningBalance"
+        Me.txtMinimumInterestEarningBalance.Size = New System.Drawing.Size(102, 21)
+        Me.txtMinimumInterestEarningBalance.TabIndex = 105
+        Me.txtMinimumInterestEarningBalance.Text = "0.00"
+        Me.txtMinimumInterestEarningBalance.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'txtDormancyFee
+        'Label18
         '
-        Me.txtDormancyFee.Enabled = False
-        Me.txtDormancyFee.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDormancyFee.Location = New System.Drawing.Point(144, 158)
-        Me.txtDormancyFee.MaxLength = 20
-        Me.txtDormancyFee.Name = "txtDormancyFee"
-        Me.txtDormancyFee.Size = New System.Drawing.Size(102, 21)
-        Me.txtDormancyFee.TabIndex = 105
-        Me.txtDormancyFee.Text = "0.00"
-        Me.txtDormancyFee.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.Label18.BackColor = System.Drawing.Color.Transparent
+        Me.Label18.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label18.Location = New System.Drawing.Point(6, 186)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(134, 29)
+        Me.Label18.TabIndex = 106
+        Me.Label18.Text = "Minimum Interest Earning Balance:"
+        Me.Label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'frmSDS_Main_Ctrl
+        'PolicyDefinitionsForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.Button1
-        Me.ClientSize = New System.Drawing.Size(594, 358)
+        Me.ClientSize = New System.Drawing.Size(594, 392)
         Me.ControlBox = False
         Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.Button1)
@@ -488,7 +515,7 @@ Partial Class frmSDS_Main_Ctrl
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Name = "frmSDS_Main_Ctrl"
+        Me.Name = "PolicyDefinitionsForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
@@ -536,4 +563,6 @@ Partial Class frmSDS_Main_Ctrl
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents Label17 As System.Windows.Forms.Label
     Friend WithEvents txtDormancyFee As System.Windows.Forms.TextBox
+    Friend WithEvents Label18 As System.Windows.Forms.Label
+    Friend WithEvents txtMinimumInterestEarningBalance As System.Windows.Forms.TextBox
 End Class

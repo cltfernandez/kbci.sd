@@ -1,3 +1,5 @@
+Imports System.Text.RegularExpressions
+
 Module frmFDS_Mod1
     Public BALANCE As Integer
     Public SW As Boolean = False
@@ -80,12 +82,12 @@ Module frmFDS_Mod1
             wdsCTR = 0
             LV.Columns.Clear()
             wdSET = Split(wSET, ":")
-            frSet = Split(fSET, ":")    
+            frSet = Split(fSET, ":")
             For colCTR = 0 To DT.Columns.Count - 1
                 Select Case frSet(colCTR)
                     Case 1
                         LV.Columns.Add(DT.Columns(colCTR).Name, CInt(wdSET(colCTR)), HorizontalAlignment.Left)
-                    Case 2                    
+                    Case 2
                         LV.Columns.Add(DT.Columns(colCTR).Name, CInt(wdSET(colCTR)), HorizontalAlignment.Center)
                     Case 3
                         LV.Columns.Add(DT.Columns(colCTR).Name, CInt(wdSET(colCTR)), HorizontalAlignment.Right)
@@ -114,7 +116,7 @@ Module frmFDS_Mod1
                                     .SubItems.Add(Chr(checkStatus))
                                     .SubItems.Item(colCTR).ForeColor = Color.Black
                                     .SubItems.Item(colCTR).Font = myCheckFont
-                                End With                                
+                                End With
                                 ReDim bOWCheck(i)
                             Case Else
                                 TempNode.SubItems.Add(CStr(DT.Rows(i).Cells(DT.Columns(colCTR).Name).Value))
@@ -275,7 +277,7 @@ errHand:
     End Function
     Public Function GetData(ByVal QRYStr As String, ByVal FLTR As String) As DataTable
         Dim DT As New DataTable
-        Dim cnn As New SqlConnection(rCN)        
+        Dim cnn As New SqlConnection(rCN)
         Dim sqlCMD As New SqlCommand(QRYStr, cnn)
         Dim ad As New SqlDataAdapter(sqlCMD)
         sqlCMD.CommandType = CommandType.Text
@@ -551,7 +553,16 @@ ErrorHandler:
         Return WhichCell
 
     End Function
+    Public Sub DecimalValidator(ByRef e As System.Windows.Forms.KeyPressEventArgs)
+        Dim decimalRex As Regex = New Regex("^[0-9]*[.]{0,1}[0-9]*$")
+        If e.KeyChar = Microsoft.VisualBasic.Strings.ChrW(Keys.Back) Then
+            Exit Sub
+        End If
 
+        If Not decimalRex.IsMatch(e.KeyChar.ToString()) Then
+            e.Handled = True
+        End If
+    End Sub
     'INSERT * TO MEMBERS
     'WLOG("INSERT INTO MEMBERS([KBCI_NO],[LNAME],[FNAME],[MI],[MEM_CODE],[MEM_STAT],[MEM_DATE],[BY_WHOM],[CB_EMPNO],[CB_HIRE],[DEPT],[REGION],[OFF_TEL],[DORI],[REA_DORI],[SEX],[B_DATE],[CIV_STAT],[MEM_ADDR],[RES_TEL],[POSITION],[SAL_BAS],[SAL_ALL],[OTH_INC],[FEBTC_SA],[FEBTC_CA],[FD_CERTNO],[FD_DATE],[AP_AMOUNT],[AR_AMOUNT],[FD_AMOUNT],[SD_AMOUNT],[TD_AMOUNT],[OTH_AMOUNT],[YTD_DIVAMT],[YTD_LRI],[REM_PROP],[REM_VALUE],[NO_DEPEND],[SP_NAME],[SP_EMPLOY],[SP_OFFTEL],[SP_CBEMPNO],[SP_KBCINO],[SP_SALARY],[APRUN_AMT],[ARRUN_AMT],[RUN_AMT],[ADD_DATE],[CHG_DATE],[USER],[REC_STAT],[FD_CNTR]) " & _
     '"VALUES    ('" & .Fields("KBCI_NO").Value & "','" & .Fields("LNAME").Value & "','" & .Fields("FNAME").Value & "','" & .Fields("MI").Value & "','" & .Fields("MEM_CODE").Value & "','" & .Fields("MEM_STAT").Value & "','" & .Fields("MEM_DATE").Value & "','" & .Fields("BY_WHOM").Value & "','" & .Fields("CB_EMPNO").Value & "','" & .Fields("CB_HIRE").Value & "','" & .Fields("DEPT").Value & "','" & .Fields("REGION").Value & "','" & .Fields("OFF_TEL").Value & "'," & .Fields("DORI").Value & ",'" & .Fields("REA_DORI").Value & "','" & .Fields("SEX").Value & "','" & .Fields("B_DATE").Value & _

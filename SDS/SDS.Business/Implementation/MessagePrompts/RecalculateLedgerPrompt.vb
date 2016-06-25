@@ -1,8 +1,8 @@
 ﻿Imports SDS.Common
 Imports SDS.Common.Utilities
-Public Class MessagePromptBusinessLogic : Implements IMessagePromptBusinessLogic
+Public Class RecalculateLedgerPrompt : Implements IMessagePromptBusinessLogic
 
-    Public Sub GetMessageFromResult(ByVal result As RecalculateLedgerResult) Implements IMessagePromptBusinessLogic.GetMessageFromResult
+    Public Sub GetMessageFromResult(ByVal result As Integer) Implements IMessagePromptBusinessLogic.GetMessageFromResult
         Select Case result
             Case RecalculateLedgerResult.Failed
                 MsgBox(GetGlobalResourceString("RecalculationFailed"), MsgBoxStyle.Critical, GetGlobalResourceString("RecalculateLedger"))

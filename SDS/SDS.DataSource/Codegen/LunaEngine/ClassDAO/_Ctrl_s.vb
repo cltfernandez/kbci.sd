@@ -4,7 +4,7 @@
 '*********************************
 'Code created with Luna 4.15.2.90 
 'Author: Diego Lunadei
-'Date: 20/06/2015 
+'Date: 25/06/2016 
 #End Region
 
 
@@ -58,6 +58,7 @@ Public Overridable Sub FillFromDataRecord(myRecord As IDataRecord) Implements _I
     		if not myRecord("P_PRINT") is DBNull.Value then P_PRINT = myRecord("P_PRINT")
     		if not myRecord("R_PRINT") is DBNull.Value then R_PRINT = myRecord("R_PRINT")
     		if not myRecord("DormancyCharge") is DBNull.Value then DormancyCharge = myRecord("DormancyCharge")
+    		if not myRecord("MinimumInterestEarningBalance") is DBNull.Value then MinimumInterestEarningBalance = myRecord("MinimumInterestEarningBalance")
        
 End Sub
 
@@ -415,6 +416,19 @@ Public Overridable Property DormancyCharge() as single  Implements _ICtrl_s.Dorm
     End Set
 End property 
 
+Protected _MinimumInterestEarningBalance as single  = 0 
+Public Overridable Property MinimumInterestEarningBalance() as single  Implements _ICtrl_s.MinimumInterestEarningBalance
+    Get
+	    Return _MinimumInterestEarningBalance
+    End Get
+    Set (byval value as single)
+	    If _MinimumInterestEarningBalance <> value Then
+	        IsChanged = True
+	        _MinimumInterestEarningBalance= value
+	    End If
+    End Set
+End property 
+
 
 #End Region
 
@@ -457,6 +471,7 @@ Public Overridable Function Read(Id As Integer) As Integer
                     _P_PRINT = int.P_PRINT
                     _R_PRINT = int.R_PRINT
                     _DormancyCharge = int.DormancyCharge
+                    _MinimumInterestEarningBalance = int.MinimumInterestEarningBalance
         	    End Using
         Manager = nothing
     Catch ex As Exception
@@ -595,6 +610,9 @@ Sub FillFromDataRecord(myRecord As IDataRecord)
 
     
     Property DormancyCharge() as single
+
+    
+    Property MinimumInterestEarningBalance() as single
 
     
 #End Region
