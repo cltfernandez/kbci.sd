@@ -1,4 +1,17 @@
 ﻿Public Class frmSDS_Main_Ovrride
+
+    Private _OverrideUserName As String
+    Public Property OverrideUserName() As String
+        Get
+            Return _overrideUserName
+        End Get
+        Set(ByVal value As String)
+            _overrideUserName = value
+        End Set
+    End Property
+
+
+
     Private Sub Button6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button6.Click
         Try
             Dim Crypt As New Crpyt(PasswordTextBox.Text, System.Configuration.ConfigurationManager.AppSettings("32"))
@@ -12,6 +25,7 @@
                         If CInt(GetRStr(CleanSTR("SELECT SPUSERPOS FROM SPUSER WHERE SPUSERID='" & UsernameTextBox.Text.Trim & "'"), "SPUSERPOS", 0)) = 3 Then
                             MsgBox("Transaction Authorized", MsgBoxStyle.Information, "Override Successful")
                             OVRUSER = UsernameTextBox.Text.ToUpper
+                            _OverrideUserName = UsernameTextBox.Text.ToUpper
                             SW = True
                         Else
                             MsgBox("User not authorized to override", MsgBoxStyle.Information, "Override Failed")

@@ -1052,9 +1052,20 @@ Public Class frmSDS_Main_TEntry
             Dim x, prtLN As Integer
             Dim TCRED, TDEB As Decimal
             Dim CTRANCODE As String
-            Dim IsPosted As Integer = 0            
+            Dim IsPosted As Integer = 0
+
+
 
             If CheckBox2.Checked = True Then
+
+                If ListView2.CheckedItems.Count > 0 And SPUSER.SPUSERPOS <> 3 Then
+                    Dim frmSDS_Main_Ovrride As frmSDS_Main_Ovrride = New frmSDS_Main_Ovrride
+                    frmSDS_Main_Ovrride.ShowDialog()
+                    If SW = False Then
+                        Exit Sub
+                    End If
+                End If
+
                 msg = MsgBox("Would you like to reverse [" & ListView2.CheckedItems.Count & "] transactions?", MsgBoxStyle.Exclamation + MsgBoxStyle.YesNo, "Error Correction")
                 msg2 = MsgBox("Would you like to post this on the passbook?", MsgBoxStyle.Exclamation + MsgBoxStyle.YesNo, "Passbook Print")
                 If msg = vbYes Then

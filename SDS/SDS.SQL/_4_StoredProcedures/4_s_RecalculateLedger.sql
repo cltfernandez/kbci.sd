@@ -29,13 +29,14 @@ BEGIN
 				,TRANDEB
 				,TRANCRE
 				,TRANEBAL			
-			FROM SDTRAN
+			FROM SDTRAN TXN
 			WHERE (@AcctNo = '' OR
 					(@AcctNo !='' AND @AcctNo = ACCTNUM)) AND				
 				   (@StartDate IS NULL OR
 				   (@StartDate IS NOT NULL AND TRANDATE >= @StartDate ))				
 					AND (TRANDEB > 0 OR TRANCRE > 0)
-					AND ACCTNUM IS NOT NULL				
+					AND ACCTNUM IS NOT NULL	
+					AND EXISTS (SELECT 1 FROM SDMASTER SDM WHERE SDM.ACCTNO = TXN.ACCTNUM AND SDM.ACCTSTAT='A')			
 					
 			ORDER BY
 				 ACCTNUM
