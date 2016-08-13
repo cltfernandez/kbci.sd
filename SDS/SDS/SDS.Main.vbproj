@@ -200,7 +200,7 @@
     <Compile Include="Forms\AboutBox1.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmFDS_Main_PrntFDL.vb">
+    <Compile Include="Forms\frmDateRangePickerDialog.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\frmFDS_Main_PrntFDL_Srch.vb">
@@ -323,6 +323,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Reports\DailyBalanceRunUpReport.vb">
+      <DependentUpon>DailyBalanceRunUpReport.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Reports\rptEOM_DormantAccounts.vb">
       <DependentUpon>rptEOM_DormantAccounts.rpt</DependentUpon>
@@ -527,8 +533,8 @@
       <DependentUpon>frmDIVREFExtract.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmFDS_Main_PrntFDL.resx">
-      <DependentUpon>frmFDS_Main_PrntFDL.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\frmDateRangePickerDialog.resx">
+      <DependentUpon>frmDateRangePickerDialog.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmFDS_Main_PrntFDL_Srch.resx">
@@ -651,6 +657,10 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\DailyBalanceRunUpReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DailyBalanceRunUpReport.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptEOM_DormantAccounts.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

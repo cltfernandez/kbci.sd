@@ -1,4 +1,5 @@
-Public Class frmFDS_Main_PrntFDL
+Imports SDS.Common
+Public Class frmDateRangePickerDialog
     Inherits System.Windows.Forms.Form
 
 #Region " Windows Form Designer generated code "
@@ -37,7 +38,7 @@ Public Class frmFDS_Main_PrntFDL
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmFDS_Main_PrntFDL))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmDateRangePickerDialog))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
         Me.Button1 = New System.Windows.Forms.Button
         Me.Button2 = New System.Windows.Forms.Button
@@ -143,10 +144,29 @@ Public Class frmFDS_Main_PrntFDL
     End Sub
 
 #End Region
+    Public StartDate As Date
+    Public EndDate As Date
+    Public DateRange As String
 
+
+    Private _DatePickerType As DatepickerType
+    Public Property DatePickerType() As DatePickerType
+        Get
+            Return _DatePickerType
+        End Get
+        Set(ByVal value As DatePickerType)
+            _DatePickerType = value
+        End Set
+    End Property
     Private Sub frmFDS_Main_PrntFDL_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         DateTimePicker1.Value = DateValue(CTRL_S.SYSDATE)
         DateTimePicker2.Value = DateValue(CTRL_S.SYSDATE)
+
+        If DatePickerType = DatePickerType.SingleDate Then
+            DateTimePicker2.Visible = False
+            Label1.Text = "AS OF : "
+            Label2.Visible = False
+        End If
     End Sub
 
     Private Sub Label4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
@@ -161,9 +181,12 @@ Public Class frmFDS_Main_PrntFDL
             SW = True
             If DateTimePicker2.Visible = False Then
                 sDate = DateTimePicker1.Value.ToString("MM/dd/yyyy") & "' and '" & DateTimePicker1.Value.ToString("MM/dd/yyyy")
+                StartDate = DateTimePicker1.Value
             Else
                 FRDATE = DateTimePicker1.Value.ToString("MM/dd/yyyy") : TODATE = DateTimePicker2.Value.ToString("MM/dd/yyyy")
                 sDate = DateTimePicker1.Value.ToString("MM/dd/yyyy") & "' and '" & DateTimePicker2.Value.ToString("MM/dd/yyyy")
+                StartDate = DateTimePicker1.Value
+                EndDate = DateTimePicker2.Value
             End If
             Me.Close()
         Else

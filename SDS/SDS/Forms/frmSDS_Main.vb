@@ -145,6 +145,8 @@ Public Class frmSDS_Main
     Friend WithEvents MenuItem92 As System.Windows.Forms.MenuItem
     Friend WithEvents MenuItem93 As System.Windows.Forms.MenuItem
     Friend WithEvents MenuItem94 As System.Windows.Forms.MenuItem
+    Friend WithEvents MenuItem95 As System.Windows.Forms.MenuItem
+    Friend WithEvents MenuItem99 As System.Windows.Forms.MenuItem
     Friend WithEvents MenuItem6 As System.Windows.Forms.MenuItem
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
@@ -262,6 +264,8 @@ Public Class frmSDS_Main
         Me.ToolStripStatusLabel11 = New System.Windows.Forms.ToolStripStatusLabel
         Me.ToolStripStatusLabel7 = New System.Windows.Forms.ToolStripStatusLabel
         Me.ToolStripStatusLabel8 = New System.Windows.Forms.ToolStripStatusLabel
+        Me.MenuItem95 = New System.Windows.Forms.MenuItem
+        Me.MenuItem99 = New System.Windows.Forms.MenuItem
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -478,7 +482,7 @@ Public Class frmSDS_Main
         'MenuItem25
         '
         Me.MenuItem25.Index = 3
-        Me.MenuItem25.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.MenuItem84, Me.MenuItem26, Me.MenuItem28, Me.MenuItem29, Me.MenuItem30, Me.MenuItem35, Me.MenuItem36, Me.MenuItem37, Me.MenuItem38, Me.MenuItem39, Me.MenuItem94, Me.MenuItem81, Me.MenuItem88, Me.MenuItem67, Me.MenuItem90})
+        Me.MenuItem25.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.MenuItem84, Me.MenuItem26, Me.MenuItem28, Me.MenuItem29, Me.MenuItem30, Me.MenuItem35, Me.MenuItem36, Me.MenuItem37, Me.MenuItem38, Me.MenuItem39, Me.MenuItem94, Me.MenuItem81, Me.MenuItem88, Me.MenuItem67, Me.MenuItem90, Me.MenuItem95, Me.MenuItem99})
         resources.ApplyResources(Me.MenuItem25, "MenuItem25")
         '
         'MenuItem84
@@ -876,6 +880,16 @@ Public Class frmSDS_Main
         Me.ToolStripStatusLabel8.Name = "ToolStripStatusLabel8"
         resources.ApplyResources(Me.ToolStripStatusLabel8, "ToolStripStatusLabel8")
         '
+        'MenuItem95
+        '
+        Me.MenuItem95.Index = 15
+        resources.ApplyResources(Me.MenuItem95, "MenuItem95")
+        '
+        'MenuItem99
+        '
+        Me.MenuItem99.Index = 16
+        resources.ApplyResources(Me.MenuItem99, "MenuItem99")
+        '
         'frmSDS_Main
         '
         resources.ApplyResources(Me, "$this")
@@ -900,7 +914,7 @@ Public Class frmSDS_Main
     Private frmSDS_Main_TEntry As frmSDS_Main_TEntry
     Private frmFDS_Main_PrntFDL_Srch As frmFDS_Main_PrntFDL_Srch
     Private ReportViewerForm As frmReportViewer
-    Private frmFDS_Main_PrntFDL As frmFDS_Main_PrntFDL
+    Private DateRangePickerForm As frmDateRangePickerDialog
     Private frmSDS_Main_Batch As frmSDS_Main_Batch
     Private frmSDS_Main_Payroll As frmSDS_Main_Payroll
     Private frmSDS_Main_Log As frmSDS_Main_Log
@@ -1013,10 +1027,9 @@ Public Class frmSDS_Main
         ReportViewerForm = New frmReportViewer
         ReportViewerForm.MdiParent = Me
         frmFDS_Main_PrntFDL_Srch.ShowDialog()
-
         If SW = True Then
-            frmFDS_Main_PrntFDL = New frmFDS_Main_PrntFDL
-            frmFDS_Main_PrntFDL.ShowDialog()
+            DateRangePickerForm = New frmDateRangePickerDialog
+            DateRangePickerForm.ShowDialog()
             If SW = True Then
                 sQRY = "SELECT ST.TRANDATE TRAN_DATE,ST.ADD_TIME [TIME],ST.TRANCODE COD,ST.CHKBANK BANK," & _
                                  "ST.CHKNUM CHECK_NUM,ST.TRANDEB DEBIT,ST.TRANCRE CREDIT,ST.TRANEBAL BALANCE " & _
@@ -1123,8 +1136,8 @@ Public Class frmSDS_Main
         Dim sQRY As String
         ReportViewerForm = New frmReportViewer
         ReportViewerForm.MdiParent = Me
-        frmFDS_Main_PrntFDL = New frmFDS_Main_PrntFDL
-        frmFDS_Main_PrntFDL.ShowDialog()
+        DateRangePickerForm = New frmDateRangePickerDialog
+        DateRangePickerForm.ShowDialog()
         If SW = True Then
             sQRY = "SELECT LH.ACCTNO,SM.ACCTNAME,LH.HOLDCD,LH.HOLDTYPE,LH.HOLDAMT, " & _
                    "LH.HOLDDATE,LH.HOLDUSER,LH.HOLDRMKS,LH.POSTSTAT,LH.POSTDATE,LH.POSTUSER " & _
@@ -1935,7 +1948,7 @@ Public Class frmSDS_Main
 
     Private Sub MenuItem60_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItem60.Click
         Dim dst As New DataTable("dtsSD_Main")
-        Dim rpt As New rptEOD_DCTotals                
+        Dim rpt As New rptEOD_DCTotals
         SDDB = True
         ReportViewerForm = New frmReportViewer
         ReportViewerForm.MdiParent = Me
@@ -2436,5 +2449,47 @@ Public Class frmSDS_Main
     Private Sub MenuItem94_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItem94.Click
         frmRecalculateLedger = New frmRecalculateLedger(New RecalculateLedgerBusinessLogic(), New RecalculateLedgerPrompt())
         frmRecalculateLedger.ShowDialog()
+    End Sub
+
+    Private Sub MenuItem99_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItem99.Click
+        Dim dst As New DataTable("dtsSD_Main")
+        Dim rpt As New DailyBalanceRunUpReport
+        Dim ds As New DataSet
+        Dim sQRY As String
+        SDDB = True
+
+        DateRangePickerForm = New frmDateRangePickerDialog
+        DateRangePickerForm.DatePickerType = Common.DatePickerType.SingleDate
+        DateRangePickerForm.ShowDialog()
+        If SW = True Then
+            Dim CutoffDate As Date = DateRangePickerForm.StartDate
+            ReportViewerForm = New frmReportViewer
+            ReportViewerForm.MdiParent = Me
+            sQRY = "DECLARE @CUTOFF AS DATE SET @CUTOFF='" & CutoffDate & "'SELECT SDT.ACCTNUM ACCTNO,SDM.ACCTNAME ACCTSNAME,CASE SDM" & _
+                    ".ACCTSTAT WHEN'A'THEN'ACTIVE'WHEN'C'THEN'CLOSED'WHEN'D'THEN'DORMANT'WHEN'R'THEN" & _
+                    "'REACTIVATED'END ACCTSTAT,CAST(SDT.TRANDATE AS VARCHAR(10)) LTRANDATE,SDT.TRANEBAL ACCTOBAL FROM(SELECT ACCTNUM,TRANCRE," & _
+                    "TRANDEB,TRANDATE,TRANEBAL FROM SDTRAN X WHERE EXISTS(SELECT 1FROM(select MAX(SDTRAN_ID)" & _
+                    "SDTRAN_ID from SDTRAN A WHERE TRANDATE<=@CUTOFF GROUP BY ACCTNUM)Y WHERE X.SDTRAN_ID=Y." & _
+                    "SDTRAN_ID))SDT JOIN SDMASTER SDM ON SDT.ACCTNUM=SDM.ACCTNO ORDER BY SDT.ACCTNUM"
+            Dim DT As New DataTable
+            Dim cnn As New SqlConnection(rCN)
+            Dim sqlCMD As New SqlCommand(sQRY, cnn)
+            Dim ad As New SqlDataAdapter(sqlCMD)
+            sqlCMD.CommandType = CommandType.Text
+            cnn.Open()
+            ad.Fill(DT)
+            cnn.Close()
+            If DT.Rows.Count > 0 Then
+                Dim DDATE As CrystalDecisions.CrystalReports.Engine.TextObject = rpt.Section2.ReportObjects("Text2")
+                DDATE.Text = String.Format("AS OF: {0}", CutoffDate.ToString("MM/dd/yyyy"))
+                GenRPT(DT, dst, ReportViewerForm.CrystalReportViewer1, rpt, 0, "3:3:3:3:2")
+                ReportViewerForm.Show()
+            Else
+                MsgBox("No transactions found on the specified date.", MsgBoxStyle.Information, "Daily Transaction Register")
+            End If
+            closeRPT("15")
+            SW = False
+            DT.Dispose()
+        End If
     End Sub
 End Class
