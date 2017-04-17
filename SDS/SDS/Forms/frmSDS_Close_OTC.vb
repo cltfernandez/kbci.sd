@@ -1,11 +1,23 @@
 ﻿Imports System.Windows.Forms
+Imports SDS.BusinessLogic
+Imports SDS.ViewModels
 
 Public Class frmSDS_Close_OTC
     Dim batch_Ran As Boolean
+    Private _formService As IFormOperations
+    Sub New()
+        _formService = New PolicyDefinitionsService()
+        ' This call is required by the Windows Form Designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+
+    End Sub
     Private Sub frmSDS_Close_OTC_Activated(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Activated
         If Not batch_Ran Then bgwOTCProcess.RunWorkerAsync()
     End Sub
     Sub CompADB()
+        Dim ctrlViewModel = DirectCast(_formService.GetData(), [PolicyDefinitionsViewModel])
         Dim x, y, dayPTR, No_days, R1, R2, Range As Integer
         Dim ACC As New CLTF.DB.SQLDBConnection
         Dim AC2BAL As New CLTF.DB.SQLDBConnection
@@ -75,7 +87,7 @@ Public Class frmSDS_Close_OTC
                     accADB = CDbl(AC2BAL.GetValue("ACCTOBAL")) : AC2BAL.CloseDataTable()
                 End If
             End With
-            If accADB < CTRL_S.MINBAL Then
+            If accADB < CTRL_S.MINBAL Or accADB < ctrlViewModel.MinimumInterestEarningBalance Then
                 accINT = 0
             Else
                 'accINT = accADB * (Math.Truncate((SDRATE / 1200) * 100000) / 100000)
@@ -194,10 +206,10 @@ Public Class frmSDS_Close_OTC
                 'If CBool(GetRStr("SELECT LNTACCR FROM PARAM_S", "LNTACCR", 0)) Then
                 If CBool(GetRStr("SELECT INTACCR FROM PARAM_S", "INTACCR", 0)) Then
                     msg = MsgBox("Interest for [" & CTRL_S.SYSDATE & "] is already accrued.", MsgBoxStyle.Information + MsgBoxStyle.OkCancel, "Over-the-counter")
-                    If msg = vbCancel Then Exit Sub                    
+                    If msg = vbCancel Then Exit Sub
                 End If
                 msg = MsgBox("Accrue Interest for " & CTRL_S.SYSDATE & ".", MsgBoxStyle.Exclamation + MsgBoxStyle.OkCancel, "End-of-Day")
-                If msg = vbCancel Then Exit Sub                
+                If msg = vbCancel Then Exit Sub
 
                 If Month(DateValue(CTRL_S.SYSDATE)) = 1 Or Month(DateValue(CTRL_S.SYSDATE)) = 4 Or Month(DateValue(CTRL_S.SYSDATE)) = 7 _
                    Or Month(DateValue(CTRL_S.SYSDATE)) = 10 Then
