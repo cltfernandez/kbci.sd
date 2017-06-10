@@ -1,6 +1,6 @@
 ﻿Imports SDS.BusinessLogic
 Imports SDS.ViewModels
-Public Class frmSDS_Change_Password
+Public Class ChangePasswordForm
 
     Private PasswordService As IFormOperations
     Private MessageService As IMessagePromptBusinessLogic

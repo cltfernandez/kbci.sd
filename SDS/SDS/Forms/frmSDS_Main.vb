@@ -933,7 +933,7 @@ Public Class frmSDS_Main
     Private frmSDS_Main_TEntry_Oth As frmSDS_Main_TEntry_Oth
     Private frmPayrollExtract As frmPayrollExtract
     Private frmDIVREFExtract As frmDividendRefundImport
-    Private frmSDS_Change_Password As frmSDS_Change_Password
+    Private frmSDS_Change_Password As ChangePasswordForm
     Private frmSDS_DormancyCharges As frmSDS_DormancyCharges
     Private AboutBox1 As AboutBox1
     Private frmSDS_Backup As frmSDS_Backup
@@ -2268,7 +2268,7 @@ Public Class frmSDS_Main
     End Sub
 
     Private Sub MenuItem86_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItem86.Click
-        frmSDS_Change_Password = New frmSDS_Change_Password
+        frmSDS_Change_Password = New ChangePasswordForm
         frmSDS_Change_Password.ShowDialog()
     End Sub
 
