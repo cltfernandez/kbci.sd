@@ -21,7 +21,7 @@ Public Class PolicyDefinitionsService : Implements IFormOperations
     End Function
 
 
-    Public Function SaveData(ByVal data As Object) As RecordUpdateResult Implements IFormOperations.SaveData
+    Public Function SaveData(ByVal data As Object) As Integer Implements IFormOperations.SaveData
         Dim ctrlViewModel = DirectCast(data, [PolicyDefinitionsViewModel])
         Dim businessObject As New Ctrl_s
         Using dao As New Ctrl_sDAO

@@ -6,35 +6,14 @@ Imports SDS.Common.Utilities
 Public Class frmRecalculateLedger
     Dim batch_Ran As Boolean
 
-    Public Sub New(ByVal CalculationLogic As IRecalculateLedgerBusinessLogic, _
-                    ByVal MsgSvc As IMessagePromptBusinessLogic)
+    Public Sub New(ByVal MsgSvc As IMessagePromptBusinessLogic)
 
-        _IMessageService = MsgSvc
-        _ICalculationLogic = CalculationLogic
+        _IMessageService = MsgSvc        
         InitializeComponent()
     End Sub
 
     Private _IMessageService As IMessagePromptBusinessLogic
-    Private Property IMessageService() As IMessagePromptBusinessLogic
-        Get
-            Return _IMessageService
-        End Get
-        Set(ByVal value As IMessagePromptBusinessLogic)
-            _IMessageService = value
-        End Set
-    End Property
-
-    Private _ICalculationLogic As IRecalculateLedgerBusinessLogic
-    Public Property ICalculationLogic() As IRecalculateLedgerBusinessLogic
-        Get
-            Return _ICalculationLogic
-        End Get
-        Set(ByVal value As IRecalculateLedgerBusinessLogic)
-            _ICalculationLogic = value
-        End Set
-    End Property
-
-
+    Private CalculatorService As IRecalculateLedgerBusinessLogic
 
     Private _StartDate As Date
     Public Property StartDate() As Date
@@ -61,12 +40,12 @@ Public Class frmRecalculateLedger
     Private MemberSearchForm As frmFDS_Main_PrntFDL_Srch
     Private Result As RecalculateLedgerResult
     Private Sub bgwOTCProcess_DoWork(ByVal sender As System.Object, ByVal e As System.ComponentModel.DoWorkEventArgs) Handles bgwOTCProcess.DoWork
-
-        Result = ICalculationLogic.Calculate(AccountNo, StartDate)
+        CalculatorService = New RecalculateLedgerBusinessLogic(AccountNo, StartDate)
+        Result = CalculatorService.Calculate()
     End Sub
 
     Private Sub bgwOTCProcess_RunWorkerCompleted(ByVal sender As System.Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles bgwOTCProcess.RunWorkerCompleted
-        IMessageService.GetMessageFromResult(Result)
+        _IMessageService.GetMessageFromResult(Result)
         lblStatus.Text = String.Empty
     End Sub
 

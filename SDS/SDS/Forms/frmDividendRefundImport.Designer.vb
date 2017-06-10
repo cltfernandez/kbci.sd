@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmDIVREFExtract
+Partial Class frmDividendRefundImport
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,7 +22,7 @@ Partial Class frmDIVREFExtract
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmDIVREFExtract))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmDividendRefundImport))
         Me.Button2 = New System.Windows.Forms.Button
         Me.TextBox2 = New System.Windows.Forms.TextBox
         Me.DataGridView1 = New System.Windows.Forms.DataGridView

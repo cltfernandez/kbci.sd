@@ -120,6 +120,12 @@
   <data name="Calculating" xml:space="preserve">
     <value>Calculating...</value>
   </data>
+  <data name="ChangePasswordFailed" xml:space="preserve">
+    <value>Change Password Failed!</value>
+  </data>
+  <data name="ChangePasswordSuccess" xml:space="preserve">
+    <value>Change Password Successful!</value>
+  </data>
   <data name="DebitCreditTotalsSubHeader" xml:space="preserve">
     <value>FOR THE DAY {0}</value>
     <comment>Reports</comment>
@@ -127,6 +133,15 @@
   <data name="DebitCreditTotalsTitle" xml:space="preserve">
     <value>DEBIT/CREDIT TOTALS</value>
     <comment>Reports</comment>
+  </data>
+  <data name="DividendRefundImport" xml:space="preserve">
+    <value>Dividends / Refunds Import</value>
+  </data>
+  <data name="DivrefImportSuccess" xml:space="preserve">
+    <value>Dividend/Refund import successful. You can now execute DIV/REF posting.</value>
+  </data>
+  <data name="InvalidDateRange" xml:space="preserve">
+    <value>Invalid date range please, select a valid date range.</value>
   </data>
   <data name="NoRecordsFound" xml:space="preserve">
     <value>No Records Found.</value>

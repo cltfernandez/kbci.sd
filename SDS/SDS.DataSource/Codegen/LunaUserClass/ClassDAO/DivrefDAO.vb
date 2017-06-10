@@ -9,6 +9,7 @@
 
 
 Imports System.Data.Common
+Imports System.Data.SqlClient
 
 ''' <summary>
 '''DAO Class for table Divref
@@ -17,7 +18,7 @@ Imports System.Data.Common
 '''Write your DATABASE custom method here
 ''' </remarks>
 Public Class DivrefDAO
-	Inherits _DivrefDAO
+    Inherits _DivrefDAO
 
     Public Sub New()
         MyBase.New()
@@ -27,5 +28,17 @@ Public Class DivrefDAO
         MyBase.New(Connection)
     End Sub
 
+    Public Sub ImportDividendsAndRefund(ByVal ImportData As DataTable)
+
+        Using myCommand As DbCommand = _Cn.CreateCommand
+            myCommand.CommandText = "TRUNCATE TABLE DIVREF"
+            If Not LUNA.LunaContext.TransactionBox Is Nothing Then myCommand.Transaction = LUNA.LunaContext.TransactionBox.Transaction
+            myCommand.ExecuteNonQuery()
+        End Using
+        Using bcopy As New SqlBulkCopy(_Cn.ConnectionString)
+            bcopy.DestinationTableName = "DIVREF"
+            bcopy.WriteToServer(ImportData)
+        End Using
+    End Sub
 
 End Class

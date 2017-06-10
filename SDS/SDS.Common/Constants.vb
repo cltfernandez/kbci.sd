@@ -11,6 +11,13 @@ Public Enum RecordUpdateResult
     RecordExists = 3
 End Enum
 
+Public Enum ChangePasswordResult
+    IncorrectPassword = 0
+    ConfirmPasswordMismatch = 1
+    Successful = 2
+    Unsuccessful = 3
+End Enum
+
 Public Enum DatePickerType
     DateRange = 0
     SingleDate = 1

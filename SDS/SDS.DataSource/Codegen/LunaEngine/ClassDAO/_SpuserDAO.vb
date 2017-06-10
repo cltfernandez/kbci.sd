@@ -122,7 +122,7 @@ Public Overrides Function Save(byRef cls as Spuser) as Integer
                   sql &= "SPTAG = @SPTAG,"
                   sql &= "ADD_DATE = @ADD_DATE,"
                   sql &= "CHG_DATE = @CHG_DATE,"
-                  sql &= "USER = @USER"
+                            sql &= "[USER] = @USER"
 			            sql &= " WHERE SPUSER_ID= " & cls.SPUSER_ID
 		            End if
 					
@@ -355,10 +355,13 @@ Private Function FindReal(ByVal SearchOption As LUNA.LunaSearchOption, ByVal Par
 	    End if
     Next
 
-    If SearchOption.OrderBy.Length Then Sql &= " ORDER BY " & SearchOption.OrderBy
+            If Not SearchOption.OrderBy = Nothing Then
+                sql &= " ORDER BY " & SearchOption.OrderBy
+            End If
 
-	
-    Ls = GetData(sql, SearchOption.AddEmptyItem)
+
+
+            Ls = GetData(sql, SearchOption.AddEmptyItem)
 
     Catch ex As Exception
 	    ManageError(ex)

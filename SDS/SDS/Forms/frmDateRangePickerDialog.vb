@@ -1,4 +1,5 @@
 Imports SDS.Common
+Imports SDS.Common.Utilities
 Public Class frmDateRangePickerDialog
     Inherits System.Windows.Forms.Form
 
@@ -190,7 +191,7 @@ Public Class frmDateRangePickerDialog
             End If
             Me.Close()
         Else
-            MsgBox("Invalid date range please, select a valid date range.", MsgBoxStyle.Information, "Date Range")
+            MsgBox(GetGlobalResourceString("InvalidDateRange"), MsgBoxStyle.Information, "Date Range")
         End If
     End Sub
 

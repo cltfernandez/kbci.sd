@@ -174,6 +174,19 @@ Public Class db_Database
 
         End Using
     End Sub
+
+    Public Function GetLocData(ByVal QRYStr As String, ByVal lcnStr As String) As DataTable
+        Dim DT As New DataTable
+        Dim cnn As New OleDbConnection(lcnStr)
+        Dim sqlCMD As New OleDbCommand(QRYStr, cnn)
+        Dim ad As New OleDbDataAdapter(sqlCMD)
+        sqlCMD.CommandType = CommandType.Text
+        cnn.Open()
+        ad.Fill(DT)
+        cnn.Close()
+        Return DT
+    End Function
+
 #End Region
 
 End Class

@@ -932,7 +932,7 @@ Public Class frmSDS_Main
     Private frmSDS_Main_AcctFloats As frmSDS_Main_AcctFloats
     Private frmSDS_Main_TEntry_Oth As frmSDS_Main_TEntry_Oth
     Private frmPayrollExtract As frmPayrollExtract
-    Private frmDIVREFExtract As frmDIVREFExtract
+    Private frmDIVREFExtract As frmDividendRefundImport
     Private frmSDS_Change_Password As frmSDS_Change_Password
     Private frmSDS_DormancyCharges As frmSDS_DormancyCharges
     Private AboutBox1 As AboutBox1
@@ -2259,7 +2259,7 @@ Public Class frmSDS_Main
     End Sub
 
     Private Sub MenuItem85_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItem85.Click
-        frmDIVREFExtract = New frmDIVREFExtract
+        frmDIVREFExtract = New frmDividendRefundImport
         frmDIVREFExtract.ShowDialog()
     End Sub
 
@@ -2447,7 +2447,7 @@ Public Class frmSDS_Main
     End Sub
 
     Private Sub MenuItem94_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItem94.Click
-        frmRecalculateLedger = New frmRecalculateLedger(New RecalculateLedgerBusinessLogic(), New RecalculateLedgerPrompt())
+        frmRecalculateLedger = New frmRecalculateLedger(New RecalculateLedgerPrompt())
         frmRecalculateLedger.ShowDialog()
     End Sub
 

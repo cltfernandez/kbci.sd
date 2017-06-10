@@ -136,10 +136,10 @@
     <Compile Include="Forms\Form1.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmDIVREFExtract.Designer.vb">
-      <DependentUpon>frmDIVREFExtract.vb</DependentUpon>
+    <Compile Include="Forms\frmDividendRefundImport.Designer.vb">
+      <DependentUpon>frmDividendRefundImport.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmDIVREFExtract.vb">
+    <Compile Include="Forms\frmDividendRefundImport.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\frmPayrollExtract.Designer.vb">
@@ -529,8 +529,8 @@
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmDIVREFExtract.resx">
-      <DependentUpon>frmDIVREFExtract.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\frmDividendRefundImport.resx">
+      <DependentUpon>frmDividendRefundImport.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmDateRangePickerDialog.resx">
@@ -865,10 +865,6 @@
     <ProjectReference Include="..\SDS.Common\SDS.Common.vbproj">
       <Project>{6731CBB5-597D-4A25-8A64-15182C606FDE}</Project>
       <Name>SDS.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SDS.Entities\SDS.Entities.vbproj">
-      <Project>{A4FB6C50-0D98-4A03-8A68-88451BE00262}</Project>
-      <Name>SDS.Entities</Name>
     </ProjectReference>
     <ProjectReference Include="..\SDS.ViewModels\SDS.ViewModels.vbproj">
       <Project>{FE0E9CF1-07C1-42C0-AF01-55F3A57DAC7A}</Project>

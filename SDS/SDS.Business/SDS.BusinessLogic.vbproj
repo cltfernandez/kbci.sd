@@ -84,12 +84,16 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Implementation\DividendRefundImportService.vb" />
+    <Compile Include="Implementation\FormOperations\ChangePasswordService.vb" />
     <Compile Include="Implementation\FormOperations\PolicyDefinitionsService.vb" />
+    <Compile Include="Implementation\MessagePrompts\ChangePasswordPrompts.vb" />
     <Compile Include="Implementation\MessagePrompts\DataOperationPrompt.vb" />
     <Compile Include="Implementation\MessagePrompts\RecalculateLedgerPrompt.vb" />
     <Compile Include="Implementation\RecalculateLedgerBusinessLogic.vb" />
     <Compile Include="Implementation\ReportQuery\DebitCreditTotalsQueryLogic.vb" />
     <Compile Include="Interfaces\IFormOperations.vb" />
+    <Compile Include="Interfaces\IImportExportService.vb" />
     <Compile Include="Interfaces\IRecalculateLedgerBusinessLogic.vb" />
     <Compile Include="Interfaces\IMessagePromptBusinessLogic.vb" />
     <Compile Include="Interfaces\IReportQueryBusinessLogic.vb" />
@@ -108,10 +112,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Implementation\ObjectBinder.vb" />
     <Compile Include="Implementation\Security.vb" />
-    <Compile Include="Implementation\TransactionManager.vb" />
-    <Compile Include="Implementation\UsersManager.vb" />
     <Compile Include="Implementation\Utilities.vb" />
   </ItemGroup>
   <ItemGroup>
@@ -141,10 +142,6 @@
     <ProjectReference Include="..\SDS.DataSource\SDS.DataAccessObject.vbproj">
       <Project>{81880EA1-5447-4638-B420-ACF629A3DEE8}</Project>
       <Name>SDS.DataAccessObject</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SDS.Entities\SDS.Entities.vbproj">
-      <Project>{A4FB6C50-0D98-4A03-8A68-88451BE00262}</Project>
-      <Name>SDS.Entities</Name>
     </ProjectReference>
     <ProjectReference Include="..\SDS.ViewModels\SDS.ViewModels.vbproj">
       <Project>{FE0E9CF1-07C1-42C0-AF01-55F3A57DAC7A}</Project>
