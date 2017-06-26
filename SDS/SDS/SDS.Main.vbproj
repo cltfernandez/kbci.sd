@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{598EB03F-25B6-4E08-A080-97F202D5203C}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -528,6 +528,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmDividendRefundImport.resx">
       <DependentUpon>frmDividendRefundImport.vb</DependentUpon>
@@ -559,6 +560,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmSDS_DormancyCharges.resx">
       <DependentUpon>frmSDS_DormancyCharges.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmSDS_Main_Access.resx">
       <DependentUpon>frmSDS_Main_Access.vb</DependentUpon>

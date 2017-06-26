@@ -34,20 +34,14 @@ Public Class frmSDS_Close_OTC
         ACC.OpenCmdDataTable(rCN, qryStr)
         DTA = ACC.GetTable()
         ACC.CloseDataTable()
-        qryStr2 = "SELECT SM.ACCTNUM,SM.TRANBBAL,SX.TRANEBAL,SM.TRANDATE " & _
-                  "FROM (SELECT ACCTNUM,TRANBBAL,TRANDATE " & _
-                  "FROM SDTRAN " & _
-                  "WHERE SDTRAN_ID IN (SELECT MIN(SDTRAN_ID) SDTRAN_ID " & _
-                  "FROM SDTRAN " & _
-                  "WHERE TRANDATE BETWEEN '" & StrDay & "' AND '" & EndDay & "' " & _
-                  "GROUP BY	ACCTNUM,TRANDATE)) SM " & _
-                  "INNER JOIN (SELECT ACCTNUM,TRANEBAL,TRANDATE " & _
-                  "FROM SDTRAN " & _
-                  "WHERE SDTRAN_ID IN (SELECT MAX(SDTRAN_ID) SDTRAN_ID " & _
-                  "FROM SDTRAN " & _
-                  "WHERE TRANDATE BETWEEN '" & StrDay & "' AND '" & EndDay & "' " & _
-                  "GROUP BY	ACCTNUM,TRANDATE)) SX " & _
-                  "ON SM.ACCTNUM+CONVERT(VARCHAR(8),SM.TRANDATE,112)=SX.ACCTNUM+CONVERT(VARCHAR(8),SX.TRANDATE,112)"
+        qryStr2 = " SELECT ST.ACCTNUM ,ST.TRANBBAL ,ST.TRANDATE ,PKEY = ST.ACCTNUM + CONVERT(VARCHAR(8), " & _
+        "ST.TRANDATE, 112) INTO #tempMin FROM SDTRAN ST WHERE SDTRAN_ID IN( SELECT MIN(SDTRAN_ID) SDTRAN_ID " & _
+        "FROM SDTRAN WHERE TRANDATE BETWEEN '" & StrDay & "' AND '" & EndDay & "' and ACCTNUM is not null " & _
+        "GROUP BY ACCTNUM ,TRANDATE) SELECT ST2.ACCTNUM ,ST2.TRANEBAL ,ST2.TRANDATE ,PKEY = " & _
+        "ST2.ACCTNUM + CONVERT(VARCHAR(8), ST2.TRANDATE, 112) INTO #tempMax FROM SDTRAN ST2 WHERE SDTRAN_ID " & _
+        "IN ( SELECT MAX(SDTRAN_ID) SDTRAN_ID FROM SDTRAN WHERE TRANDATE BETWEEN '" & StrDay & "' AND '" & EndDay & "' and ACCTNUM is not null GROUP BY ACCTNUM ,TRANDATE) " & _
+        "SELECT SM.ACCTNUM ,SM.TRANBBAL ,SX.TRANEBAL ,SM.TRANDATE FROM #tempMin SM INNER JOIN #tempMax SX ON SM.PKEY = SX.PKEY " & _
+        "order by SM.ACCTNUM ,SM.TRANDATE drop table #tempmin drop table #tempmax"
         upd.ConnString = rCN
         upd.OpenCommand()
         ACC.OpenCmdDataTable(rCN, qryStr2)

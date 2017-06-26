@@ -212,6 +212,8 @@ Public Class frmSDS_Main
         Me.MenuItem97 = New System.Windows.Forms.MenuItem
         Me.MenuItem96 = New System.Windows.Forms.MenuItem
         Me.MenuItem98 = New System.Windows.Forms.MenuItem
+        Me.MenuItem95 = New System.Windows.Forms.MenuItem
+        Me.MenuItem99 = New System.Windows.Forms.MenuItem
         Me.MenuItem40 = New System.Windows.Forms.MenuItem
         Me.MenuItem41 = New System.Windows.Forms.MenuItem
         Me.MenuItem7 = New System.Windows.Forms.MenuItem
@@ -264,8 +266,6 @@ Public Class frmSDS_Main
         Me.ToolStripStatusLabel11 = New System.Windows.Forms.ToolStripStatusLabel
         Me.ToolStripStatusLabel7 = New System.Windows.Forms.ToolStripStatusLabel
         Me.ToolStripStatusLabel8 = New System.Windows.Forms.ToolStripStatusLabel
-        Me.MenuItem95 = New System.Windows.Forms.MenuItem
-        Me.MenuItem99 = New System.Windows.Forms.MenuItem
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -581,6 +581,16 @@ Public Class frmSDS_Main
         Me.MenuItem98.Index = 3
         resources.ApplyResources(Me.MenuItem98, "MenuItem98")
         '
+        'MenuItem95
+        '
+        Me.MenuItem95.Index = 15
+        resources.ApplyResources(Me.MenuItem95, "MenuItem95")
+        '
+        'MenuItem99
+        '
+        Me.MenuItem99.Index = 16
+        resources.ApplyResources(Me.MenuItem99, "MenuItem99")
+        '
         'MenuItem40
         '
         Me.MenuItem40.Index = 4
@@ -879,16 +889,6 @@ Public Class frmSDS_Main
         Me.ToolStripStatusLabel8.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
         Me.ToolStripStatusLabel8.Name = "ToolStripStatusLabel8"
         resources.ApplyResources(Me.ToolStripStatusLabel8, "ToolStripStatusLabel8")
-        '
-        'MenuItem95
-        '
-        Me.MenuItem95.Index = 15
-        resources.ApplyResources(Me.MenuItem95, "MenuItem95")
-        '
-        'MenuItem99
-        '
-        Me.MenuItem99.Index = 16
-        resources.ApplyResources(Me.MenuItem99, "MenuItem99")
         '
         'frmSDS_Main
         '
@@ -1364,7 +1364,7 @@ Public Class frmSDS_Main
         If DT.Rows.Count > 0 Then
             Dim TELLER As CrystalDecisions.CrystalReports.Engine.TextObject = rpt.Section2.ReportObjects("Text2")
             Dim DDATE As CrystalDecisions.CrystalReports.Engine.TextObject = rpt.Section2.ReportObjects("Text3")
-            DDATE.Text = "FOR THE DAY " & CTRL_S.ADMDATE
+            DDATE.Text = "FOR THE DAY " & CTRL_S.SYSDATE
             TELLER.Text = "TELLERS BLOTTER - " & SPUSER.SPUSERID
             GenRPT(DT, dst, ReportViewerForm.CrystalReportViewer1, rpt, 0, "3:3:2:2:2:2:2:2")
             ReportViewerForm.Show()
@@ -2497,4 +2497,6 @@ Public Class frmSDS_Main
             DT.Dispose()
         End If
     End Sub
+
+
 End Class

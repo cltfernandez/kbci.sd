@@ -120,16 +120,133 @@
   <metadata name="MainMenu1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="MenuItem2.Text" xml:space="preserve">
+    <value>Lock</value>
+  </data>
+  <data name="MenuItem3.Text" xml:space="preserve">
+    <value>Log off</value>
+  </data>
+  <data name="MenuItem80.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="MenuItem86.Text" xml:space="preserve">
+    <value>Change Password</value>
+  </data>
+  <data name="MenuItem87.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="MenuItem4.Text" xml:space="preserve">
+    <value>Exit</value>
+  </data>
   <data name="MenuItem1.Text" xml:space="preserve">
     <value>File</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="MenuItem6.Shortcut" type="System.Windows.Forms.Shortcut, System.Windows.Forms">
+    <value>F1</value>
+  </data>
+  <data name="MenuItem6.Text" xml:space="preserve">
+    <value>Transaction Entry</value>
+  </data>
+  <data name="MenuItem82.Text" xml:space="preserve">
+    <value>Other Transactions</value>
+  </data>
+  <data name="MenuItem11.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="MenuItem20.Text" xml:space="preserve">
+    <value>Ledger Printing</value>
+  </data>
+  <data name="MenuItem31.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="MenuItem12.Text" xml:space="preserve">
+    <value>Batch CM/DM Posting</value>
+  </data>
+  <data name="MenuItem32.Text" xml:space="preserve">
+    <value>Payroll Processing</value>
+  </data>
+  <data name="MenuItem83.Text" xml:space="preserve">
+    <value>Payroll Extract</value>
+  </data>
+  <data name="MenuItem33.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="MenuItem34.Text" xml:space="preserve">
+    <value>Print Payroll Report</value>
+  </data>
+  <data name="MenuItem47.Text" xml:space="preserve">
+    <value>Print Advance Pay Report</value>
+  </data>
+  <data name="MenuItem48.Text" xml:space="preserve">
+    <value>Print Loan Hold Report</value>
+  </data>
+  <data name="MenuItem13.Text" xml:space="preserve">
+    <value>Payroll Posting</value>
+  </data>
+  <data name="MenuItem14.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="MenuItem49.Text" xml:space="preserve">
+    <value>Process DIV/REF</value>
+  </data>
+  <data name="MenuItem85.Text" xml:space="preserve">
+    <value>DIV/REF Extract</value>
+  </data>
+  <data name="MenuItem50.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="MenuItem51.Text" xml:space="preserve">
+    <value>Print Report</value>
+  </data>
+  <data name="MenuItem89.Text" xml:space="preserve">
+    <value>Print Unposted Transactions</value>
+  </data>
+  <data name="MenuItem15.Text" xml:space="preserve">
+    <value>Process DIV/REF</value>
   </data>
   <data name="MenuItem5.Text" xml:space="preserve">
     <value>Financial</value>
   </data>
+  <data name="MenuItem17.Shortcut" type="System.Windows.Forms.Shortcut, System.Windows.Forms">
+    <value>F2</value>
+  </data>
+  <data name="MenuItem17.Text" xml:space="preserve">
+    <value>Accounts</value>
+  </data>
+  <data name="MenuItem19.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="MenuItem21.Text" xml:space="preserve">
+    <value>User File</value>
+  </data>
+  <data name="MenuItem22.Text" xml:space="preserve">
+    <value>Control File</value>
+  </data>
+  <data name="MenuItem92.Text" xml:space="preserve">
+    <value>Connection</value>
+  </data>
+  <data name="MenuItem23.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="MenuItem52.Text" xml:space="preserve">
+    <value>Cash Transfer / Requesition</value>
+  </data>
+  <data name="MenuItem53.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="MenuItem54.Text" xml:space="preserve">
+    <value>Teller's Blotter</value>
+  </data>
+  <data name="MenuItem55.Text" xml:space="preserve">
+    <value>End-of-Day</value>
+  </data>
+  <data name="MenuItem24.Text" xml:space="preserve">
+    <value>Tellering</value>
+  </data>
   <data name="MenuItem16.Text" xml:space="preserve">
     <value>Maintenance</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="MenuItem84.Shortcut" type="System.Windows.Forms.Shortcut, System.Windows.Forms">
     <value>F5</value>
   </data>
@@ -178,144 +295,6 @@
   <data name="MenuItem67.Text" xml:space="preserve">
     <value>-</value>
   </data>
-  <data name="MenuItem90.Text" xml:space="preserve">
-    <value>Dormant Accounts</value>
-  </data>
-  <data name="MenuItem95.Text" xml:space="preserve">
-    <value>-</value>
-  </data>
-  <data name="MenuItem99.Text" xml:space="preserve">
-    <value>Print Balance Run-Up</value>
-  </data>
-  <data name="MenuItem25.Text" xml:space="preserve">
-    <value>Supervisor</value>
-  </data>
-  <data name="MenuItem40.Text" xml:space="preserve">
-    <value>End-of-day</value>
-  </data>
-  <data name="MenuItem44.Text" xml:space="preserve">
-    <value>Close</value>
-  </data>
-  <data name="MenuItem27.Text" xml:space="preserve">
-    <value>Help</value>
-  </data>
-  <data name="MenuItem2.Text" xml:space="preserve">
-    <value>Lock</value>
-  </data>
-  <data name="MenuItem3.Text" xml:space="preserve">
-    <value>Log off</value>
-  </data>
-  <data name="MenuItem80.Text" xml:space="preserve">
-    <value>-</value>
-  </data>
-  <data name="MenuItem86.Text" xml:space="preserve">
-    <value>Change Password</value>
-  </data>
-  <data name="MenuItem87.Text" xml:space="preserve">
-    <value>-</value>
-  </data>
-  <data name="MenuItem4.Text" xml:space="preserve">
-    <value>Exit</value>
-  </data>
-  <data name="MenuItem6.Shortcut" type="System.Windows.Forms.Shortcut, System.Windows.Forms">
-    <value>F1</value>
-  </data>
-  <data name="MenuItem6.Text" xml:space="preserve">
-    <value>Transaction Entry</value>
-  </data>
-  <data name="MenuItem82.Text" xml:space="preserve">
-    <value>Other Transactions</value>
-  </data>
-  <data name="MenuItem11.Text" xml:space="preserve">
-    <value>-</value>
-  </data>
-  <data name="MenuItem20.Text" xml:space="preserve">
-    <value>Ledger Printing</value>
-  </data>
-  <data name="MenuItem31.Text" xml:space="preserve">
-    <value>-</value>
-  </data>
-  <data name="MenuItem12.Text" xml:space="preserve">
-    <value>Batch CM/DM Posting</value>
-  </data>
-  <data name="MenuItem13.Text" xml:space="preserve">
-    <value>Payroll Posting</value>
-  </data>
-  <data name="MenuItem32.Text" xml:space="preserve">
-    <value>Payroll Processing</value>
-  </data>
-  <data name="MenuItem83.Text" xml:space="preserve">
-    <value>Payroll Extract</value>
-  </data>
-  <data name="MenuItem33.Text" xml:space="preserve">
-    <value>-</value>
-  </data>
-  <data name="MenuItem34.Text" xml:space="preserve">
-    <value>Print Payroll Report</value>
-  </data>
-  <data name="MenuItem47.Text" xml:space="preserve">
-    <value>Print Advance Pay Report</value>
-  </data>
-  <data name="MenuItem48.Text" xml:space="preserve">
-    <value>Print Loan Hold Report</value>
-  </data>
-  <data name="MenuItem14.Text" xml:space="preserve">
-    <value>-</value>
-  </data>
-  <data name="MenuItem15.Text" xml:space="preserve">
-    <value>Process DIV/REF</value>
-  </data>
-  <data name="MenuItem49.Text" xml:space="preserve">
-    <value>Process DIV/REF</value>
-  </data>
-  <data name="MenuItem85.Text" xml:space="preserve">
-    <value>DIV/REF Extract</value>
-  </data>
-  <data name="MenuItem50.Text" xml:space="preserve">
-    <value>-</value>
-  </data>
-  <data name="MenuItem51.Text" xml:space="preserve">
-    <value>Print Report</value>
-  </data>
-  <data name="MenuItem89.Text" xml:space="preserve">
-    <value>Print Unposted Transactions</value>
-  </data>
-  <data name="MenuItem17.Shortcut" type="System.Windows.Forms.Shortcut, System.Windows.Forms">
-    <value>F2</value>
-  </data>
-  <data name="MenuItem17.Text" xml:space="preserve">
-    <value>Accounts</value>
-  </data>
-  <data name="MenuItem19.Text" xml:space="preserve">
-    <value>-</value>
-  </data>
-  <data name="MenuItem21.Text" xml:space="preserve">
-    <value>User File</value>
-  </data>
-  <data name="MenuItem22.Text" xml:space="preserve">
-    <value>Control File</value>
-  </data>
-  <data name="MenuItem92.Text" xml:space="preserve">
-    <value>Connection</value>
-  </data>
-  <data name="MenuItem23.Text" xml:space="preserve">
-    <value>-</value>
-  </data>
-  <data name="MenuItem24.Text" xml:space="preserve">
-    <value>Tellering</value>
-  </data>
-  <data name="MenuItem52.Text" xml:space="preserve">
-    <value>Cash Transfer / Requesition</value>
-  </data>
-  <data name="MenuItem53.Text" xml:space="preserve">
-    <value>-</value>
-  </data>
-  <data name="MenuItem54.Text" xml:space="preserve">
-    <value>Teller's Blotter</value>
-  </data>
-  <data name="MenuItem55.Text" xml:space="preserve">
-    <value>End-of-Day</value>
-  </data>
   <data name="MenuItem91.Text" xml:space="preserve">
     <value>Print Dormant Accounts</value>
   </data>
@@ -328,8 +307,17 @@
   <data name="MenuItem98.Text" xml:space="preserve">
     <value>Print Charges Report</value>
   </data>
-  <data name="MenuItem41.Text" xml:space="preserve">
-    <value>Print EOD Reports</value>
+  <data name="MenuItem90.Text" xml:space="preserve">
+    <value>Dormant Accounts</value>
+  </data>
+  <data name="MenuItem95.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="MenuItem99.Text" xml:space="preserve">
+    <value>Print Balance Run-Up</value>
+  </data>
+  <data name="MenuItem25.Text" xml:space="preserve">
+    <value>Supervisor</value>
   </data>
   <data name="MenuItem7.Text" xml:space="preserve">
     <value>Branch Totals</value>
@@ -364,14 +352,11 @@
   <data name="MenuItem65.Text" xml:space="preserve">
     <value>Debit Memo Register</value>
   </data>
+  <data name="MenuItem41.Text" xml:space="preserve">
+    <value>Print EOD Reports</value>
+  </data>
   <data name="MenuItem8.Text" xml:space="preserve">
     <value>-</value>
-  </data>
-  <data name="MenuItem9.Text" xml:space="preserve">
-    <value>End-of-Month</value>
-  </data>
-  <data name="MenuItem66.Text" xml:space="preserve">
-    <value>Print EOM Reports</value>
   </data>
   <data name="MenuItem68.Text" xml:space="preserve">
     <value>New Accounts</value>
@@ -394,11 +379,14 @@
   <data name="MenuItem74.Text" xml:space="preserve">
     <value>Balance Run-up</value>
   </data>
+  <data name="MenuItem66.Text" xml:space="preserve">
+    <value>Print EOM Reports</value>
+  </data>
+  <data name="MenuItem9.Text" xml:space="preserve">
+    <value>End-of-Month</value>
+  </data>
   <data name="MenuItem10.Text" xml:space="preserve">
     <value>-</value>
-  </data>
-  <data name="MenuItem18.Text" xml:space="preserve">
-    <value>End-of-Quarter</value>
   </data>
   <data name="MenuItem75.Text" xml:space="preserve">
     <value>Int. Payment Report by Acct. size</value>
@@ -406,14 +394,20 @@
   <data name="MenuItem93.Text" xml:space="preserve">
     <value>Unposted Interest Report</value>
   </data>
+  <data name="MenuItem18.Text" xml:space="preserve">
+    <value>End-of-Quarter</value>
+  </data>
   <data name="MenuItem42.Text" xml:space="preserve">
     <value>-</value>
+  </data>
+  <data name="MenuItem76.Text" xml:space="preserve">
+    <value>Year-To-Date Interest</value>
   </data>
   <data name="MenuItem43.Text" xml:space="preserve">
     <value>End-of-Year</value>
   </data>
-  <data name="MenuItem76.Text" xml:space="preserve">
-    <value>Year-To-Date Interest</value>
+  <data name="MenuItem40.Text" xml:space="preserve">
+    <value>End-of-day</value>
   </data>
   <data name="MenuItem45.Shortcut" type="System.Windows.Forms.Shortcut, System.Windows.Forms">
     <value>F11</value>
@@ -427,6 +421,9 @@
   <data name="MenuItem46.Text" xml:space="preserve">
     <value>End-of-Day</value>
   </data>
+  <data name="MenuItem44.Text" xml:space="preserve">
+    <value>Close</value>
+  </data>
   <data name="MenuItem77.Text" xml:space="preserve">
     <value>Help</value>
   </data>
@@ -435,6 +432,9 @@
   </data>
   <data name="MenuItem79.Text" xml:space="preserve">
     <value>About KBCI SDS 1.0</value>
+  </data>
+  <data name="MenuItem27.Text" xml:space="preserve">
+    <value>Help</value>
   </data>
   <metadata name="Timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>107, 16</value>
@@ -484,34 +484,10 @@
     <value>System Time</value>
   </data>
   <metadata name="StatusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>0, 251</value>
+    <value>0, 253</value>
   </metadata>
   <data name="StatusStrip1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 8.25pt, style=Bold</value>
-  </data>
-  <data name="StatusStrip1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 253</value>
-  </data>
-  <data name="StatusStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>746, 22</value>
-  </data>
-  <data name="StatusStrip1.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="StatusStrip1.Text" xml:space="preserve">
-    <value>StatusStrip1</value>
-  </data>
-  <data name="&gt;&gt;StatusStrip1.Name" xml:space="preserve">
-    <value>StatusStrip1</value>
-  </data>
-  <data name="&gt;&gt;StatusStrip1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;StatusStrip1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;StatusStrip1.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="ToolStripStatusLabel10.Size" type="System.Drawing.Size, System.Drawing">
     <value>39, 17</value>
@@ -570,6 +546,30 @@
   <data name="ToolStripStatusLabel8.ToolTipText" xml:space="preserve">
     <value>System Time</value>
   </data>
+  <data name="StatusStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 253</value>
+  </data>
+  <data name="StatusStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>746, 22</value>
+  </data>
+  <data name="StatusStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="StatusStrip1.Text" xml:space="preserve">
+    <value>StatusStrip1</value>
+  </data>
+  <data name="&gt;&gt;StatusStrip1.Name" xml:space="preserve">
+    <value>StatusStrip1</value>
+  </data>
+  <data name="&gt;&gt;StatusStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;StatusStrip1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;StatusStrip1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -579,7 +579,7 @@
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAYAAAB5fY51AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAr0AAAK9AG9UbOKAABw/klE
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAryAAAK8gE9UvcRAABw/klE
         QVR4Xu29d9weVZn/7353V13LKhb8LixiKFIDIRBaQggkENJJIRCQFnrvEMqNrqyIYqXYXcGKEgvqCtgL
         CgqCgDTpJcRAQg8hfP/Y3/Wenc/zu+bk3Pc985TwhFx5vd6v5z5zypyZOeeT61xzzpnX/M///E8QBMEq
         QfZgEATBYCR7MAiCYDCSPRgEQTAYyR4MgiAYjGQP/r//9/9WJ/7B+D/GPxr/ZPxzyWsdr0vwcUpPXsqg
@@ -1567,6 +1567,18 @@
   <data name="&gt;&gt;MenuItem98.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;MenuItem95.Name" xml:space="preserve">
+    <value>MenuItem95</value>
+  </data>
+  <data name="&gt;&gt;MenuItem95.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MenuItem99.Name" xml:space="preserve">
+    <value>MenuItem99</value>
+  </data>
+  <data name="&gt;&gt;MenuItem99.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;MenuItem40.Name" xml:space="preserve">
     <value>MenuItem40</value>
   </data>
@@ -1872,18 +1884,6 @@
   </data>
   <data name="&gt;&gt;ToolStripStatusLabel8.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;MenuItem95.Name" xml:space="preserve">
-    <value>MenuItem95</value>
-  </data>
-  <data name="&gt;&gt;MenuItem95.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;MenuItem99.Name" xml:space="preserve">
-    <value>MenuItem99</value>
-  </data>
-  <data name="&gt;&gt;MenuItem99.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>frmSDS_Main</value>

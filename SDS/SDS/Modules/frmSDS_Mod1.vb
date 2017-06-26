@@ -563,10 +563,95 @@ ErrorHandler:
             e.Handled = True
         End If
     End Sub
-    'INSERT * TO MEMBERS
-    'WLOG("INSERT INTO MEMBERS([KBCI_NO],[LNAME],[FNAME],[MI],[MEM_CODE],[MEM_STAT],[MEM_DATE],[BY_WHOM],[CB_EMPNO],[CB_HIRE],[DEPT],[REGION],[OFF_TEL],[DORI],[REA_DORI],[SEX],[B_DATE],[CIV_STAT],[MEM_ADDR],[RES_TEL],[POSITION],[SAL_BAS],[SAL_ALL],[OTH_INC],[FEBTC_SA],[FEBTC_CA],[FD_CERTNO],[FD_DATE],[AP_AMOUNT],[AR_AMOUNT],[FD_AMOUNT],[SD_AMOUNT],[TD_AMOUNT],[OTH_AMOUNT],[YTD_DIVAMT],[YTD_LRI],[REM_PROP],[REM_VALUE],[NO_DEPEND],[SP_NAME],[SP_EMPLOY],[SP_OFFTEL],[SP_CBEMPNO],[SP_KBCINO],[SP_SALARY],[APRUN_AMT],[ARRUN_AMT],[RUN_AMT],[ADD_DATE],[CHG_DATE],[USER],[REC_STAT],[FD_CNTR]) " & _
-    '"VALUES    ('" & .Fields("KBCI_NO").Value & "','" & .Fields("LNAME").Value & "','" & .Fields("FNAME").Value & "','" & .Fields("MI").Value & "','" & .Fields("MEM_CODE").Value & "','" & .Fields("MEM_STAT").Value & "','" & .Fields("MEM_DATE").Value & "','" & .Fields("BY_WHOM").Value & "','" & .Fields("CB_EMPNO").Value & "','" & .Fields("CB_HIRE").Value & "','" & .Fields("DEPT").Value & "','" & .Fields("REGION").Value & "','" & .Fields("OFF_TEL").Value & "'," & .Fields("DORI").Value & ",'" & .Fields("REA_DORI").Value & "','" & .Fields("SEX").Value & "','" & .Fields("B_DATE").Value & _
-    '         "','" & .Fields("CIV_STAT").Value & "','" & .Fields("MEM_ADDR").Value & "','" & .Fields("RES_TEL").Value & "','" & .Fields("POSITION").Value & "'," & .Fields("SAL_BAS").Value & "," & .Fields("SAL_ALL").Value & "," & .Fields("OTH_INC").Value & ",'" & .Fields("FEBTC_SA").Value & "','" & .Fields("FEBTC_CA").Value & "','" & .Fields("FD_CERTNO").Value & "','" & .Fields("FD_DATE").Value & "'," & .Fields("AP_AMOUNT").Value & "," & .Fields("AR_AMOUNT").Value & "," & .Fields("FD_AMOUNT").Value & "," & .Fields("SD_AMOUNT").Value & "," & .Fields("TD_AMOUNT").Value & "," & .Fields("OTH_AMOUNT").Value & _
-    '           "," & .Fields("YTD_DIVAMT").Value & "," & .Fields("YTD_LRI").Value & ",'" & .Fields("REM_PROP").Value & "'," & .Fields("REM_VALUE").Value & "," & .Fields("NO_DEPEND").Value & ",'" & .Fields("SP_NAME").Value & "','" & .Fields("SP_EMPLOY").Value & "','" & .Fields("SP_OFFTEL").Value & "','" & .Fields("SP_CBEMPNO").Value & "','" & .Fields("SP_KBCINO").Value & "'," & .Fields("SP_SALARY").Value & "," & .Fields("APRUN_AMT").Value & "," & .Fields("ARRUN_AMT").Value & "," & .Fields("RUN_AMT").Value & ",'" & .Fields("ADD_DATE").Value & "','" & .Fields("CHG_DATE").Value & "','" & .Fields("USER").Value & "'," & .Fields("REC_STAT").Value & "," & .Fields("FD_CNTR").Value & ")", App_Path() & "INSERT.log")
+    Public Function GetGridViewDataFromObject(Of T)(ByVal items As List(Of T), ByRef DG As DataGridView) As DataGridView
+        DG.DataSource = items
+        Return DG
+    End Function
 
+    Public Function FormatKBCINo(ByVal rawKBCINo As String) As String
+        Return String.Format("{0}-{1}-{2}", Mid(rawKBCINo, 1, 2), Mid(rawKBCINo, 3, 4), Mid(rawKBCINo, 7, 1))
+    End Function
+
+    Public Sub PopulateListView(ByRef listViewControl As ListView, ByRef gridView As DataGridView, ByVal wSET As String, ByVal fSET As String)
+        Dim sLvw As New ListViewItem
+        Dim colCTR, wds, wdsCTR As Integer
+        Dim wdSET(50) As String
+        Dim frSet(50) As String
+        Dim TempStr() As String
+        Dim TempNode As ListViewItem
+        Dim TempArr() As ListViewItem
+        Dim i As Integer
+        Dim myCheckFont As New System.Drawing.Font("Wingdings", 12, FontStyle.Regular)
+        Dim myRegFont As New System.Drawing.Font("Tahoma", 8.25, FontStyle.Bold)
+
+        listViewControl.Items.Clear()
+        If gridView.Rows.Count > 0 Then
+            'StartTime = System.DateTime.Now           
+            wdsCTR = 0
+            listViewControl.Columns.Clear()
+            For wds = 0 To Len(wSET)
+                If Mid(wSET, wds + 1, 1) = ":" Then
+                    wdsCTR += 1
+                Else
+                    wdSET(wdsCTR) = wdSET(wdsCTR) & Mid(wSET, wds + 1, 1)
+                End If
+            Next
+            wdsCTR = 0
+            For wds = 0 To Len(fSET)
+                If Mid(fSET, wds + 1, 1) = ":" Then
+                    wdsCTR += 1
+                Else
+                    frSet(wdsCTR) = frSet(wdsCTR) & Mid(fSET, wds + 1, 1)
+                End If
+            Next
+            For colCTR = 0 To gridView.Columns.Count - 1
+                Select Case frSet(colCTR)
+                    Case 1
+                        listViewControl.Columns.Add(gridView.Columns(colCTR).HeaderText, CInt(wdSET(colCTR)), HorizontalAlignment.Left)
+                    Case 2
+                        listViewControl.Columns.Add(gridView.Columns(colCTR).HeaderText, CInt(wdSET(colCTR)), HorizontalAlignment.Center)
+                    Case 3
+                        listViewControl.Columns.Add(gridView.Columns(colCTR).HeaderText, CInt(wdSET(colCTR)), HorizontalAlignment.Right)
+                End Select
+
+            Next
+            ReDim TempStr(0)
+            ReDim TempArr(gridView.Rows.Count - 1)
+            For i = 0 To gridView.Rows.Count - 1
+                TempStr(0) = CStr(gridView.Rows(i).Cells(gridView.Columns(0).Name).Value)
+                TempNode = New ListViewItem(TempStr)
+                For colCTR = 1 To gridView.Columns.Count - 1
+                    If Not IsDBNull(gridView.Rows(i).Cells(gridView.Columns(colCTR).Name).Value) Then
+                        TempNode.Font = myRegFont
+                        If gridView.Columns(colCTR).Name = "PrintLineNumber" Then
+                            Dim checked = CBool(gridView.Rows(i).Cells(gridView.Columns(colCTR).Name).Value)
+                            Dim checkStatus
+                            With TempNode
+                                If checked Then checkStatus = CheckboxEnum.Checked Else checkStatus = CheckboxEnum.Unchecked
+                                .UseItemStyleForSubItems = False
+                                .SubItems.Add(Chr(checkStatus))
+                                .SubItems.Item(colCTR).ForeColor = Color.Black
+                                .SubItems.Item(colCTR).Font = myCheckFont
+                            End With
+                            ReDim bOWCheck(i)
+                        ElseIf CInt(frSet(colCTR)) = 3 Then
+                            TempNode.SubItems.Add(FormatNumber(CStr(gridView.Rows(i).Cells(gridView.Columns(colCTR).Name).Value), 2))
+                        Else
+                            Dim itemValue As String = CStr(gridView.Rows(i).Cells(gridView.Columns(colCTR).Name).Value)
+                            If itemValue.StartsWith("12:00:00 AM") Then
+                                itemValue = "--"
+                            End If
+                            TempNode.SubItems.Add(itemValue)
+                        End If
+                    Else
+                        TempNode.SubItems.Add("NULL")
+                    End If
+                Next
+                TempNode.Tag = i.ToString
+
+                TempArr(i) = TempNode
+            Next i
+            listViewControl.Items.AddRange(TempArr)
+        End If
+    End Sub
 End Module

@@ -1,8 +1,7 @@
+Imports SDS.Common
+
 Public Class frmFDS_Main_PrntFDL_Srch
     Inherits System.Windows.Forms.Form
-
-#Region " Windows Form Designer generated code "
-
     Public Sub New()
         MyBase.New()
 
@@ -12,6 +11,15 @@ Public Class frmFDS_Main_PrntFDL_Srch
         'Add any initialization after the InitializeComponent() call
 
     End Sub
+
+    Sub New(ByVal SearchType As MemberSearchType)
+        MyBase.New()
+        InitializeComponent()
+        _SearchType = SearchType
+    End Sub
+#Region " Windows Form Designer generated code "
+
+
 
     'Form overrides dispose to clean up the component list.
     Protected Overloads Overrides Sub Dispose(ByVal disposing As Boolean)
@@ -261,57 +269,26 @@ Public Class frmFDS_Main_PrntFDL_Srch
     Dim QRY, SRCH, fField, WD, ST As String
     Dim mTXT As TextBox
 
-    Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
-        'Timer1.Enabled = False
 
-
-
-    End Sub
-
+    Private _SearchType As MemberSearchType
 
     Private Sub TextBox1_KeyUp(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles TextBox1.KeyUp
-        fField = "NAME"
-        SRCH = TextBox1.Text
+        SRCH = TextBox1.Text : fField = TableFieldConstants.Name
         Me.AcceptButton = Button3
-        'If TextBox1.Text <> "" Then
-        '    If ((e.KeyValue > 31 And e.KeyValue < 128) Or e.KeyValue = 8) Then
-        '        eload = False
-        '        If Timer1.Enabled = True Then Timer1.Stop()
-        '        Timer1.Enabled = True
-        '    End If
-        'Else
-        '    If eload = False Then
-        '        If Timer1.Enabled = True Then Timer1.Stop()
-        '        Timer1.Enabled = True
-        '        eload = True
-        '    End If
-        'End If
+
     End Sub
     Private Sub TextBox3_KeyUp(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles TextBox3.KeyUp
-        If SDDB Then
-            fField = "ACCT_NO"
+        If _SearchType = MemberSearchType.SavingsMasterData Then
+            fField = TableFieldConstants.AccountNumber
         Else
-            fField = "KBCI_NO"
+            fField = TableFieldConstants.KbciNumber
         End If
         SRCH = TextBox3.Text
         Me.AcceptButton = Button3
-        'If TextBox3.Text <> "" Then
-        '    If ((e.KeyValue > 31 And e.KeyValue < 128) Or e.KeyValue = 8) Then
-        '        eload = False
-        '        If Timer1.Enabled = True Then Timer1.Stop()
-        '        Timer1.Enabled = True
-        '    End If
-        'Else
-        '    If eload = False Then
-        '        If Timer1.Enabled = True Then Timer1.Stop()
-        '        Timer1.Enabled = True
-        '        eload = True
-        '    End If
-        'End If
     End Sub
 
     Private Sub frmFDS_Main_PrntFDL_Srch_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        If SDDB Then
+        If _SearchType = MemberSearchType.SavingsMasterData Then
             QRY = "SELECT SDMASTER_ID, ACCTNO ACCT_NO,ACCTNAME NAME,ACCTSTAT STATUS FROM SDMASTER"
             WD = "0:100:451:50"
             ST = "1:2:1:2"
@@ -327,8 +304,9 @@ Public Class frmFDS_Main_PrntFDL_Srch
         If ListView1.SelectedItems.Count > 0 Then
             SW = True
             SEL_KBCI_NO = ListView1.Items(ListView1.SelectedIndices(0)).SubItems(1).Text
-            SEL_FNAME = TextBox1.Text            
-            Me.Dispose()
+            SEL_FNAME = TextBox1.Text
+            'SelectedMember = rsMemberSearch.Find(Function(x) x.KBCI_NO = SEL_KBCI_NO)
+            Me.DialogResult = System.Windows.Forms.DialogResult.OK
         End If
     End Sub
 
@@ -358,21 +336,5 @@ Public Class frmFDS_Main_PrntFDL_Srch
             FillLV(ListView1, GetData(QRY, "", DataGridView1), WD, ST, False)
         End If
         If DataGridView1.Rows.Count > 0 Then ListView1.Focus()
-    End Sub
-
-    Private Sub GroupBox1_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GroupBox1.Enter
-
-    End Sub
-
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        Me.Close()
-    End Sub
-
-    Private Sub TextBox1_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TextBox1.TextChanged
-
-    End Sub
-
-    Private Sub TextBox3_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TextBox3.TextChanged
-
     End Sub
 End Class

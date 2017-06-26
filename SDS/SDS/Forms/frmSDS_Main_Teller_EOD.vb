@@ -272,7 +272,9 @@
         Dim cnn As New SqlConnection(rCN)
         Dim sqlCMD As New SqlCommand(sQRY, cnn)
         Dim ad As New SqlDataAdapter(sqlCMD)
+        Dim DDATE As CrystalDecisions.CrystalReports.Engine.TextObject = rpt.Section2.ReportObjects("Text35")
         sqlCMD.CommandType = CommandType.Text
+        DDATE.Text = FormatDateTime(CTRL_S.SYSDATE, DateFormat.LongDate)
         cnn.Open()
         ad.Fill(DT)
         cnn.Close()
