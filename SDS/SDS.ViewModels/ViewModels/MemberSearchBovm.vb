@@ -1,73 +1,56 @@
 ﻿
 Public Class MemberSearchBovm
 
-    Private _KBCI_ID As Int64
-    Public Property KBCI_ID() As Int64
+    Private _Id As Integer
+    Public Property Id() As Integer
         Get
-            Return _KBCI_ID
+            Return _Id
         End Get
-        Set(ByVal value As Int64)
-            _KBCI_ID = value
+        Set(ByVal value As Integer)
+            _Id = value
         End Set
     End Property
 
 
-    Private _KBCI_NO As String
-    Public Property KBCI_NO() As String
+    Private _KbciNumber As String
+    Public Property KbciNumber() As String
         Get
-            Return _KBCI_NO
+            Return _KbciNumber
         End Get
         Set(ByVal value As String)
-            _KBCI_NO = value
+            _KbciNumber = value
         End Set
     End Property
 
-    Private _LNAME As String
-    Public Property LNAME() As String
+    Private _FullName As String
+    Public Property FullName() As String
         Get
-            Return _LNAME
+            Return _FullName
         End Get
         Set(ByVal value As String)
-            _LNAME = value
+            _FullName = value
         End Set
     End Property
 
-    Private _FNAME As String
-    Public Property FNAME() As String
+    Private _AccountNumber As String
+    Public Property AccountNumber() As String
         Get
-            Return _FNAME
+            Return _AccountNumber
         End Get
         Set(ByVal value As String)
-            _FNAME = value
+            _AccountNumber = value
         End Set
     End Property
 
-    Private _MI As String
-    Public Property MI() As String
+    Private _AccountStatus As String
+    Public Property AccountStatus() As String
         Get
-            Return _MI
+            Return _AccountStatus
         End Get
         Set(ByVal value As String)
-            _MI = value
-        End Set
-    End Property
-    Private _FEBTC_SA As String
-    Public Property FEBTC_SA() As String
-        Get
-            Return _FEBTC_SA
-        End Get
-        Set(ByVal value As String)
-            _FEBTC_SA = value
+            _AccountStatus = value
         End Set
     End Property
 
-    Private _FEBTC_CA As String
-    Public Property FEBTC_CA() As String
-        Get
-            Return _FEBTC_CA
-        End Get
-        Set(ByVal value As String)
-            _FEBTC_CA = value
-        End Set
-    End Property
+
 End Class

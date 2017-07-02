@@ -96,7 +96,7 @@ Public Overrides Function Save(byRef cls as Spuser) as Integer
                             sql &= " SPTAG,"
                             sql &= " ADD_DATE,"
                             sql &= " CHG_DATE,"
-                            sql &= " USER"
+                            sql &= " [USER]"
                       sql &= ") VALUES ("
                       sql &= " @SPUSERID,"
                       sql &= " @SPUSERPASS,"

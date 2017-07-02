@@ -18,7 +18,7 @@ Public Class ChangePasswordForm
 
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
         Dim chPassViewModel = New ChangePasswordViewModel
-        PasswordService = New ChangePasswordService()
+        PasswordService = New ChangePasswordService(False)
         MessageService = New ChangePasswordPrompts
 
         chPassViewModel.Id = SPUSER.SPUSER_ID

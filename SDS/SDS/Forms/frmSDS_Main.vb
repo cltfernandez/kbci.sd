@@ -1,6 +1,7 @@
 Imports SDS.BusinessLogic
 Imports SDS.ViewModels
 Imports SDS.Common.Utilities
+Imports SDS.Common
 
 Public Class frmSDS_Main
     Inherits System.Windows.Forms.Form
@@ -35,62 +36,62 @@ Public Class frmSDS_Main
     'Do not modify it using the code editor.
     Friend WithEvents MainMenu1 As System.Windows.Forms.MainMenu
     Friend WithEvents MenuItem1 As System.Windows.Forms.MenuItem
-    Friend WithEvents MenuItem2 As System.Windows.Forms.MenuItem
-    Friend WithEvents MenuItem3 As System.Windows.Forms.MenuItem
-    Friend WithEvents MenuItem4 As System.Windows.Forms.MenuItem
-    Friend WithEvents MenuItem5 As System.Windows.Forms.MenuItem
+    Friend WithEvents mnuLockApplication As System.Windows.Forms.MenuItem
+    Friend WithEvents mnuLogOff As System.Windows.Forms.MenuItem
+    Friend WithEvents mnuExit As System.Windows.Forms.MenuItem
+    Friend WithEvents mnuFinancial As System.Windows.Forms.MenuItem
     Friend WithEvents MenuItem11 As System.Windows.Forms.MenuItem
-    Friend WithEvents MenuItem12 As System.Windows.Forms.MenuItem
-    Friend WithEvents MenuItem13 As System.Windows.Forms.MenuItem
+    Friend WithEvents mnuBatchPosting As System.Windows.Forms.MenuItem
+    Friend WithEvents mnuPayrollPosting As System.Windows.Forms.MenuItem
     Friend WithEvents MenuItem14 As System.Windows.Forms.MenuItem
-    Friend WithEvents MenuItem15 As System.Windows.Forms.MenuItem
-    Friend WithEvents MenuItem16 As System.Windows.Forms.MenuItem
-    Friend WithEvents MenuItem17 As System.Windows.Forms.MenuItem
+    Friend WithEvents mnuProcessDivRef As System.Windows.Forms.MenuItem
+    Friend WithEvents mnuMaintenance As System.Windows.Forms.MenuItem
+    Friend WithEvents mnuAccounts As System.Windows.Forms.MenuItem
     Friend WithEvents MenuItem19 As System.Windows.Forms.MenuItem
-    Friend WithEvents MenuItem21 As System.Windows.Forms.MenuItem
-    Friend WithEvents MenuItem22 As System.Windows.Forms.MenuItem
+    Friend WithEvents mnuUserFile As System.Windows.Forms.MenuItem
+    Friend WithEvents mnuControlFile As System.Windows.Forms.MenuItem
     Friend WithEvents MenuItem23 As System.Windows.Forms.MenuItem
-    Friend WithEvents MenuItem24 As System.Windows.Forms.MenuItem
-    Friend WithEvents MenuItem25 As System.Windows.Forms.MenuItem
-    Friend WithEvents MenuItem26 As System.Windows.Forms.MenuItem
-    Friend WithEvents MenuItem28 As System.Windows.Forms.MenuItem
-    Friend WithEvents MenuItem29 As System.Windows.Forms.MenuItem
+    Friend WithEvents mnuTellering As System.Windows.Forms.MenuItem
+    Friend WithEvents mnuSupervisor As System.Windows.Forms.MenuItem
+    Friend WithEvents mnuReleaseFloat As System.Windows.Forms.MenuItem
+    Friend WithEvents mnuReactivateAccount As System.Windows.Forms.MenuItem
+    Friend WithEvents mnuChangeParameters As System.Windows.Forms.MenuItem
     Friend WithEvents MenuItem30 As System.Windows.Forms.MenuItem
-    Friend WithEvents MenuItem35 As System.Windows.Forms.MenuItem
-    Friend WithEvents MenuItem36 As System.Windows.Forms.MenuItem
+    Friend WithEvents mnuMasterFileProofList As System.Windows.Forms.MenuItem
+    Friend WithEvents mnuActivityLog As System.Windows.Forms.MenuItem
     Friend WithEvents MenuItem37 As System.Windows.Forms.MenuItem
-    Friend WithEvents MenuItem38 As System.Windows.Forms.MenuItem
-    Friend WithEvents MenuItem39 As System.Windows.Forms.MenuItem
-    Friend WithEvents MenuItem40 As System.Windows.Forms.MenuItem
-    Friend WithEvents MenuItem41 As System.Windows.Forms.MenuItem
+    Friend WithEvents mnuArchiveLedger As System.Windows.Forms.MenuItem
+    Friend WithEvents mnuPrintArchivedLedger As System.Windows.Forms.MenuItem
+    Friend WithEvents mnuEndOfDay As System.Windows.Forms.MenuItem
+    Friend WithEvents mnuPrintEODReport As System.Windows.Forms.MenuItem
     Friend WithEvents MenuItem8 As System.Windows.Forms.MenuItem
-    Friend WithEvents MenuItem9 As System.Windows.Forms.MenuItem
+    Friend WithEvents mnuEndOfMonthReport As System.Windows.Forms.MenuItem
     Friend WithEvents MenuItem10 As System.Windows.Forms.MenuItem
-    Friend WithEvents MenuItem18 As System.Windows.Forms.MenuItem
+    Friend WithEvents mnuEndOfQuarterReport As System.Windows.Forms.MenuItem
     Friend WithEvents MenuItem42 As System.Windows.Forms.MenuItem
-    Friend WithEvents MenuItem43 As System.Windows.Forms.MenuItem
-    Friend WithEvents MenuItem44 As System.Windows.Forms.MenuItem
-    Friend WithEvents MenuItem45 As System.Windows.Forms.MenuItem
-    Friend WithEvents MenuItem46 As System.Windows.Forms.MenuItem
-    Friend WithEvents MenuItem20 As System.Windows.Forms.MenuItem
+    Friend WithEvents mnuEndOfYearReport As System.Windows.Forms.MenuItem
+    Friend WithEvents mnuClose As System.Windows.Forms.MenuItem
+    Friend WithEvents mnuCloseOTC As System.Windows.Forms.MenuItem
+    Friend WithEvents mnuCloseEOD As System.Windows.Forms.MenuItem
+    Friend WithEvents mnuLedgerPrinting As System.Windows.Forms.MenuItem
     Friend WithEvents MenuItem31 As System.Windows.Forms.MenuItem
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
-    Friend WithEvents MenuItem32 As System.Windows.Forms.MenuItem
+    Friend WithEvents mnuPayrollProcessing As System.Windows.Forms.MenuItem
     Friend WithEvents MenuItem33 As System.Windows.Forms.MenuItem
-    Friend WithEvents MenuItem34 As System.Windows.Forms.MenuItem
-    Friend WithEvents MenuItem47 As System.Windows.Forms.MenuItem
-    Friend WithEvents MenuItem48 As System.Windows.Forms.MenuItem
-    Friend WithEvents MenuItem49 As System.Windows.Forms.MenuItem
+    Friend WithEvents mnuPrintPayrollReport As System.Windows.Forms.MenuItem
+    Friend WithEvents mnuPrintAdvancePayReport As System.Windows.Forms.MenuItem
+    Friend WithEvents mnuPrintLoanHoldReport As System.Windows.Forms.MenuItem
+    Friend WithEvents mnuProcessDividendRefund As System.Windows.Forms.MenuItem
     Friend WithEvents MenuItem50 As System.Windows.Forms.MenuItem
-    Friend WithEvents MenuItem51 As System.Windows.Forms.MenuItem
+    Friend WithEvents mnuPrintDivrefReport As System.Windows.Forms.MenuItem
     Friend WithEvents ToolStripStatusLabel1 As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents ToolStripStatusLabel2 As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents ToolStripStatusLabel3 As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents ToolStripStatusLabel4 As System.Windows.Forms.ToolStripStatusLabel
-    Friend WithEvents MenuItem52 As System.Windows.Forms.MenuItem
+    Friend WithEvents mnuCashTransferRequest As System.Windows.Forms.MenuItem
     Friend WithEvents MenuItem53 As System.Windows.Forms.MenuItem
-    Friend WithEvents MenuItem54 As System.Windows.Forms.MenuItem
-    Friend WithEvents MenuItem55 As System.Windows.Forms.MenuItem
+    Friend WithEvents mnuTellersBlotter As System.Windows.Forms.MenuItem
+    Friend WithEvents mnuTellersEod As System.Windows.Forms.MenuItem
     Friend WithEvents StatusStrip1 As System.Windows.Forms.StatusStrip
     Friend WithEvents ToolStripStatusLabel5 As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents ToolStripStatusLabel6 As System.Windows.Forms.ToolStripStatusLabel
@@ -107,7 +108,7 @@ Public Class frmSDS_Main
     Friend WithEvents MenuItem63 As System.Windows.Forms.MenuItem
     Friend WithEvents MenuItem64 As System.Windows.Forms.MenuItem
     Friend WithEvents MenuItem65 As System.Windows.Forms.MenuItem
-    Friend WithEvents MenuItem66 As System.Windows.Forms.MenuItem
+    Friend WithEvents mnuPrintEOMReports As System.Windows.Forms.MenuItem
     Friend WithEvents MenuItem68 As System.Windows.Forms.MenuItem
     Friend WithEvents MenuItem69 As System.Windows.Forms.MenuItem
     Friend WithEvents MenuItem70 As System.Windows.Forms.MenuItem
@@ -128,94 +129,94 @@ Public Class frmSDS_Main
     Friend WithEvents ToolStripStatusLabel11 As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents ToolStripStatusLabel12 As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents ToolStripStatusLabel13 As System.Windows.Forms.ToolStripStatusLabel
-    Friend WithEvents MenuItem82 As System.Windows.Forms.MenuItem
-    Friend WithEvents MenuItem83 As System.Windows.Forms.MenuItem
-    Friend WithEvents MenuItem84 As System.Windows.Forms.MenuItem
-    Friend WithEvents MenuItem85 As System.Windows.Forms.MenuItem
-    Friend WithEvents MenuItem86 As System.Windows.Forms.MenuItem
+    Friend WithEvents mnuOtherTransactions As System.Windows.Forms.MenuItem
+    Friend WithEvents mnuPayrollExtract As System.Windows.Forms.MenuItem
+    Friend WithEvents mnuReopenOtc As System.Windows.Forms.MenuItem
+    Friend WithEvents DivRefExtract As System.Windows.Forms.MenuItem
+    Friend WithEvents mnuChangePassword As System.Windows.Forms.MenuItem
     Friend WithEvents MenuItem87 As System.Windows.Forms.MenuItem
-    Friend WithEvents MenuItem88 As System.Windows.Forms.MenuItem
-    Friend WithEvents MenuItem89 As System.Windows.Forms.MenuItem
+    Friend WithEvents mnuBackupDatabase As System.Windows.Forms.MenuItem
+    Friend WithEvents mnuPrintUnpostedTxn As System.Windows.Forms.MenuItem
     Friend WithEvents MenuItem67 As System.Windows.Forms.MenuItem
-    Friend WithEvents MenuItem90 As System.Windows.Forms.MenuItem
-    Friend WithEvents MenuItem91 As System.Windows.Forms.MenuItem
+    Friend WithEvents mnuDormantAccounts As System.Windows.Forms.MenuItem
+    Friend WithEvents mnuPrintDormantAccounts As System.Windows.Forms.MenuItem
     Friend WithEvents MenuItem97 As System.Windows.Forms.MenuItem
-    Friend WithEvents MenuItem96 As System.Windows.Forms.MenuItem
-    Friend WithEvents MenuItem98 As System.Windows.Forms.MenuItem
-    Friend WithEvents MenuItem92 As System.Windows.Forms.MenuItem
+    Friend WithEvents mnuPostDormancyCharges As System.Windows.Forms.MenuItem
+    Friend WithEvents mnuPrintDormancyChargeReport As System.Windows.Forms.MenuItem
+    Friend WithEvents mnuConnection As System.Windows.Forms.MenuItem
     Friend WithEvents MenuItem93 As System.Windows.Forms.MenuItem
-    Friend WithEvents MenuItem94 As System.Windows.Forms.MenuItem
+    Friend WithEvents mnuRecalculateLedger As System.Windows.Forms.MenuItem
     Friend WithEvents MenuItem95 As System.Windows.Forms.MenuItem
-    Friend WithEvents MenuItem99 As System.Windows.Forms.MenuItem
-    Friend WithEvents MenuItem6 As System.Windows.Forms.MenuItem
+    Friend WithEvents mnuPrintBalanceRunUp As System.Windows.Forms.MenuItem
+    Friend WithEvents mnuTransactionEntry As System.Windows.Forms.MenuItem
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmSDS_Main))
         Me.MainMenu1 = New System.Windows.Forms.MainMenu(Me.components)
         Me.MenuItem1 = New System.Windows.Forms.MenuItem
-        Me.MenuItem2 = New System.Windows.Forms.MenuItem
-        Me.MenuItem3 = New System.Windows.Forms.MenuItem
+        Me.mnuLockApplication = New System.Windows.Forms.MenuItem
+        Me.mnuLogOff = New System.Windows.Forms.MenuItem
         Me.MenuItem80 = New System.Windows.Forms.MenuItem
-        Me.MenuItem86 = New System.Windows.Forms.MenuItem
+        Me.mnuChangePassword = New System.Windows.Forms.MenuItem
         Me.MenuItem87 = New System.Windows.Forms.MenuItem
-        Me.MenuItem4 = New System.Windows.Forms.MenuItem
-        Me.MenuItem5 = New System.Windows.Forms.MenuItem
-        Me.MenuItem6 = New System.Windows.Forms.MenuItem
-        Me.MenuItem82 = New System.Windows.Forms.MenuItem
+        Me.mnuExit = New System.Windows.Forms.MenuItem
+        Me.mnuFinancial = New System.Windows.Forms.MenuItem
+        Me.mnuTransactionEntry = New System.Windows.Forms.MenuItem
+        Me.mnuOtherTransactions = New System.Windows.Forms.MenuItem
         Me.MenuItem11 = New System.Windows.Forms.MenuItem
-        Me.MenuItem20 = New System.Windows.Forms.MenuItem
+        Me.mnuLedgerPrinting = New System.Windows.Forms.MenuItem
         Me.MenuItem31 = New System.Windows.Forms.MenuItem
-        Me.MenuItem12 = New System.Windows.Forms.MenuItem
-        Me.MenuItem13 = New System.Windows.Forms.MenuItem
-        Me.MenuItem32 = New System.Windows.Forms.MenuItem
-        Me.MenuItem83 = New System.Windows.Forms.MenuItem
+        Me.mnuBatchPosting = New System.Windows.Forms.MenuItem
+        Me.mnuPayrollPosting = New System.Windows.Forms.MenuItem
+        Me.mnuPayrollProcessing = New System.Windows.Forms.MenuItem
+        Me.mnuPayrollExtract = New System.Windows.Forms.MenuItem
         Me.MenuItem33 = New System.Windows.Forms.MenuItem
-        Me.MenuItem34 = New System.Windows.Forms.MenuItem
-        Me.MenuItem47 = New System.Windows.Forms.MenuItem
-        Me.MenuItem48 = New System.Windows.Forms.MenuItem
+        Me.mnuPrintPayrollReport = New System.Windows.Forms.MenuItem
+        Me.mnuPrintAdvancePayReport = New System.Windows.Forms.MenuItem
+        Me.mnuPrintLoanHoldReport = New System.Windows.Forms.MenuItem
         Me.MenuItem14 = New System.Windows.Forms.MenuItem
-        Me.MenuItem15 = New System.Windows.Forms.MenuItem
-        Me.MenuItem49 = New System.Windows.Forms.MenuItem
-        Me.MenuItem85 = New System.Windows.Forms.MenuItem
+        Me.mnuProcessDivRef = New System.Windows.Forms.MenuItem
+        Me.mnuProcessDividendRefund = New System.Windows.Forms.MenuItem
+        Me.DivRefExtract = New System.Windows.Forms.MenuItem
         Me.MenuItem50 = New System.Windows.Forms.MenuItem
-        Me.MenuItem51 = New System.Windows.Forms.MenuItem
-        Me.MenuItem89 = New System.Windows.Forms.MenuItem
-        Me.MenuItem16 = New System.Windows.Forms.MenuItem
-        Me.MenuItem17 = New System.Windows.Forms.MenuItem
+        Me.mnuPrintDivrefReport = New System.Windows.Forms.MenuItem
+        Me.mnuPrintUnpostedTxn = New System.Windows.Forms.MenuItem
+        Me.mnuMaintenance = New System.Windows.Forms.MenuItem
+        Me.mnuAccounts = New System.Windows.Forms.MenuItem
         Me.MenuItem19 = New System.Windows.Forms.MenuItem
-        Me.MenuItem21 = New System.Windows.Forms.MenuItem
-        Me.MenuItem22 = New System.Windows.Forms.MenuItem
-        Me.MenuItem92 = New System.Windows.Forms.MenuItem
+        Me.mnuUserFile = New System.Windows.Forms.MenuItem
+        Me.mnuControlFile = New System.Windows.Forms.MenuItem
+        Me.mnuConnection = New System.Windows.Forms.MenuItem
         Me.MenuItem23 = New System.Windows.Forms.MenuItem
-        Me.MenuItem24 = New System.Windows.Forms.MenuItem
-        Me.MenuItem52 = New System.Windows.Forms.MenuItem
+        Me.mnuTellering = New System.Windows.Forms.MenuItem
+        Me.mnuCashTransferRequest = New System.Windows.Forms.MenuItem
         Me.MenuItem53 = New System.Windows.Forms.MenuItem
-        Me.MenuItem54 = New System.Windows.Forms.MenuItem
-        Me.MenuItem55 = New System.Windows.Forms.MenuItem
-        Me.MenuItem25 = New System.Windows.Forms.MenuItem
-        Me.MenuItem84 = New System.Windows.Forms.MenuItem
-        Me.MenuItem26 = New System.Windows.Forms.MenuItem
-        Me.MenuItem28 = New System.Windows.Forms.MenuItem
-        Me.MenuItem29 = New System.Windows.Forms.MenuItem
+        Me.mnuTellersBlotter = New System.Windows.Forms.MenuItem
+        Me.mnuTellersEod = New System.Windows.Forms.MenuItem
+        Me.mnuSupervisor = New System.Windows.Forms.MenuItem
+        Me.mnuReopenOtc = New System.Windows.Forms.MenuItem
+        Me.mnuReleaseFloat = New System.Windows.Forms.MenuItem
+        Me.mnuReactivateAccount = New System.Windows.Forms.MenuItem
+        Me.mnuChangeParameters = New System.Windows.Forms.MenuItem
         Me.MenuItem30 = New System.Windows.Forms.MenuItem
-        Me.MenuItem35 = New System.Windows.Forms.MenuItem
-        Me.MenuItem36 = New System.Windows.Forms.MenuItem
+        Me.mnuMasterFileProofList = New System.Windows.Forms.MenuItem
+        Me.mnuActivityLog = New System.Windows.Forms.MenuItem
         Me.MenuItem37 = New System.Windows.Forms.MenuItem
-        Me.MenuItem38 = New System.Windows.Forms.MenuItem
-        Me.MenuItem39 = New System.Windows.Forms.MenuItem
-        Me.MenuItem94 = New System.Windows.Forms.MenuItem
+        Me.mnuArchiveLedger = New System.Windows.Forms.MenuItem
+        Me.mnuPrintArchivedLedger = New System.Windows.Forms.MenuItem
+        Me.mnuRecalculateLedger = New System.Windows.Forms.MenuItem
         Me.MenuItem81 = New System.Windows.Forms.MenuItem
-        Me.MenuItem88 = New System.Windows.Forms.MenuItem
+        Me.mnuBackupDatabase = New System.Windows.Forms.MenuItem
         Me.MenuItem67 = New System.Windows.Forms.MenuItem
-        Me.MenuItem90 = New System.Windows.Forms.MenuItem
-        Me.MenuItem91 = New System.Windows.Forms.MenuItem
+        Me.mnuDormantAccounts = New System.Windows.Forms.MenuItem
+        Me.mnuPrintDormantAccounts = New System.Windows.Forms.MenuItem
         Me.MenuItem97 = New System.Windows.Forms.MenuItem
-        Me.MenuItem96 = New System.Windows.Forms.MenuItem
-        Me.MenuItem98 = New System.Windows.Forms.MenuItem
+        Me.mnuPostDormancyCharges = New System.Windows.Forms.MenuItem
+        Me.mnuPrintDormancyChargeReport = New System.Windows.Forms.MenuItem
         Me.MenuItem95 = New System.Windows.Forms.MenuItem
-        Me.MenuItem99 = New System.Windows.Forms.MenuItem
-        Me.MenuItem40 = New System.Windows.Forms.MenuItem
-        Me.MenuItem41 = New System.Windows.Forms.MenuItem
+        Me.mnuPrintBalanceRunUp = New System.Windows.Forms.MenuItem
+        Me.mnuEndOfDay = New System.Windows.Forms.MenuItem
+        Me.mnuPrintEODReport = New System.Windows.Forms.MenuItem
         Me.MenuItem7 = New System.Windows.Forms.MenuItem
         Me.MenuItem56 = New System.Windows.Forms.MenuItem
         Me.MenuItem57 = New System.Windows.Forms.MenuItem
@@ -228,8 +229,8 @@ Public Class frmSDS_Main
         Me.MenuItem64 = New System.Windows.Forms.MenuItem
         Me.MenuItem65 = New System.Windows.Forms.MenuItem
         Me.MenuItem8 = New System.Windows.Forms.MenuItem
-        Me.MenuItem9 = New System.Windows.Forms.MenuItem
-        Me.MenuItem66 = New System.Windows.Forms.MenuItem
+        Me.mnuEndOfMonthReport = New System.Windows.Forms.MenuItem
+        Me.mnuPrintEOMReports = New System.Windows.Forms.MenuItem
         Me.MenuItem68 = New System.Windows.Forms.MenuItem
         Me.MenuItem69 = New System.Windows.Forms.MenuItem
         Me.MenuItem70 = New System.Windows.Forms.MenuItem
@@ -238,15 +239,15 @@ Public Class frmSDS_Main
         Me.MenuItem73 = New System.Windows.Forms.MenuItem
         Me.MenuItem74 = New System.Windows.Forms.MenuItem
         Me.MenuItem10 = New System.Windows.Forms.MenuItem
-        Me.MenuItem18 = New System.Windows.Forms.MenuItem
+        Me.mnuEndOfQuarterReport = New System.Windows.Forms.MenuItem
         Me.MenuItem75 = New System.Windows.Forms.MenuItem
         Me.MenuItem93 = New System.Windows.Forms.MenuItem
         Me.MenuItem42 = New System.Windows.Forms.MenuItem
-        Me.MenuItem43 = New System.Windows.Forms.MenuItem
+        Me.mnuEndOfYearReport = New System.Windows.Forms.MenuItem
         Me.MenuItem76 = New System.Windows.Forms.MenuItem
-        Me.MenuItem44 = New System.Windows.Forms.MenuItem
-        Me.MenuItem45 = New System.Windows.Forms.MenuItem
-        Me.MenuItem46 = New System.Windows.Forms.MenuItem
+        Me.mnuClose = New System.Windows.Forms.MenuItem
+        Me.mnuCloseOTC = New System.Windows.Forms.MenuItem
+        Me.mnuCloseEOD = New System.Windows.Forms.MenuItem
         Me.MenuItem27 = New System.Windows.Forms.MenuItem
         Me.MenuItem77 = New System.Windows.Forms.MenuItem
         Me.MenuItem78 = New System.Windows.Forms.MenuItem
@@ -271,337 +272,337 @@ Public Class frmSDS_Main
         '
         'MainMenu1
         '
-        Me.MainMenu1.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.MenuItem1, Me.MenuItem5, Me.MenuItem16, Me.MenuItem25, Me.MenuItem40, Me.MenuItem44, Me.MenuItem27})
+        Me.MainMenu1.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.MenuItem1, Me.mnuFinancial, Me.mnuMaintenance, Me.mnuSupervisor, Me.mnuEndOfDay, Me.mnuClose, Me.MenuItem27})
         '
         'MenuItem1
         '
         Me.MenuItem1.Index = 0
-        Me.MenuItem1.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.MenuItem2, Me.MenuItem3, Me.MenuItem80, Me.MenuItem86, Me.MenuItem87, Me.MenuItem4})
+        Me.MenuItem1.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.mnuLockApplication, Me.mnuLogOff, Me.MenuItem80, Me.mnuChangePassword, Me.MenuItem87, Me.mnuExit})
         resources.ApplyResources(Me.MenuItem1, "MenuItem1")
         '
-        'MenuItem2
+        'mnuLockApplication
         '
-        Me.MenuItem2.Index = 0
-        resources.ApplyResources(Me.MenuItem2, "MenuItem2")
+        Me.mnuLockApplication.Index = 0
+        resources.ApplyResources(Me.mnuLockApplication, "mnuLockApplication")
         '
-        'MenuItem3
+        'mnuLogOff
         '
-        Me.MenuItem3.Index = 1
-        resources.ApplyResources(Me.MenuItem3, "MenuItem3")
+        Me.mnuLogOff.Index = 1
+        resources.ApplyResources(Me.mnuLogOff, "mnuLogOff")
         '
         'MenuItem80
         '
         Me.MenuItem80.Index = 2
         resources.ApplyResources(Me.MenuItem80, "MenuItem80")
         '
-        'MenuItem86
+        'mnuChangePassword
         '
-        Me.MenuItem86.Index = 3
-        resources.ApplyResources(Me.MenuItem86, "MenuItem86")
+        Me.mnuChangePassword.Index = 3
+        resources.ApplyResources(Me.mnuChangePassword, "mnuChangePassword")
         '
         'MenuItem87
         '
         Me.MenuItem87.Index = 4
         resources.ApplyResources(Me.MenuItem87, "MenuItem87")
         '
-        'MenuItem4
+        'mnuExit
         '
-        Me.MenuItem4.Index = 5
-        resources.ApplyResources(Me.MenuItem4, "MenuItem4")
+        Me.mnuExit.Index = 5
+        resources.ApplyResources(Me.mnuExit, "mnuExit")
         '
-        'MenuItem5
+        'mnuFinancial
         '
-        Me.MenuItem5.Index = 1
-        Me.MenuItem5.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.MenuItem6, Me.MenuItem82, Me.MenuItem11, Me.MenuItem20, Me.MenuItem31, Me.MenuItem12, Me.MenuItem13, Me.MenuItem14, Me.MenuItem15})
-        resources.ApplyResources(Me.MenuItem5, "MenuItem5")
+        Me.mnuFinancial.Index = 1
+        Me.mnuFinancial.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.mnuTransactionEntry, Me.mnuOtherTransactions, Me.MenuItem11, Me.mnuLedgerPrinting, Me.MenuItem31, Me.mnuBatchPosting, Me.mnuPayrollPosting, Me.MenuItem14, Me.mnuProcessDivRef})
+        resources.ApplyResources(Me.mnuFinancial, "mnuFinancial")
         '
-        'MenuItem6
+        'mnuTransactionEntry
         '
-        Me.MenuItem6.Index = 0
-        resources.ApplyResources(Me.MenuItem6, "MenuItem6")
+        Me.mnuTransactionEntry.Index = 0
+        resources.ApplyResources(Me.mnuTransactionEntry, "mnuTransactionEntry")
         '
-        'MenuItem82
+        'mnuOtherTransactions
         '
-        Me.MenuItem82.Index = 1
-        resources.ApplyResources(Me.MenuItem82, "MenuItem82")
+        Me.mnuOtherTransactions.Index = 1
+        resources.ApplyResources(Me.mnuOtherTransactions, "mnuOtherTransactions")
         '
         'MenuItem11
         '
         Me.MenuItem11.Index = 2
         resources.ApplyResources(Me.MenuItem11, "MenuItem11")
         '
-        'MenuItem20
+        'mnuLedgerPrinting
         '
-        Me.MenuItem20.Index = 3
-        resources.ApplyResources(Me.MenuItem20, "MenuItem20")
+        Me.mnuLedgerPrinting.Index = 3
+        resources.ApplyResources(Me.mnuLedgerPrinting, "mnuLedgerPrinting")
         '
         'MenuItem31
         '
         Me.MenuItem31.Index = 4
         resources.ApplyResources(Me.MenuItem31, "MenuItem31")
         '
-        'MenuItem12
+        'mnuBatchPosting
         '
-        Me.MenuItem12.Index = 5
-        resources.ApplyResources(Me.MenuItem12, "MenuItem12")
+        Me.mnuBatchPosting.Index = 5
+        resources.ApplyResources(Me.mnuBatchPosting, "mnuBatchPosting")
         '
-        'MenuItem13
+        'mnuPayrollPosting
         '
-        Me.MenuItem13.Index = 6
-        Me.MenuItem13.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.MenuItem32, Me.MenuItem83, Me.MenuItem33, Me.MenuItem34, Me.MenuItem47, Me.MenuItem48})
-        resources.ApplyResources(Me.MenuItem13, "MenuItem13")
+        Me.mnuPayrollPosting.Index = 6
+        Me.mnuPayrollPosting.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.mnuPayrollProcessing, Me.mnuPayrollExtract, Me.MenuItem33, Me.mnuPrintPayrollReport, Me.mnuPrintAdvancePayReport, Me.mnuPrintLoanHoldReport})
+        resources.ApplyResources(Me.mnuPayrollPosting, "mnuPayrollPosting")
         '
-        'MenuItem32
+        'mnuPayrollProcessing
         '
-        Me.MenuItem32.Index = 0
-        resources.ApplyResources(Me.MenuItem32, "MenuItem32")
+        Me.mnuPayrollProcessing.Index = 0
+        resources.ApplyResources(Me.mnuPayrollProcessing, "mnuPayrollProcessing")
         '
-        'MenuItem83
+        'mnuPayrollExtract
         '
-        Me.MenuItem83.Index = 1
-        resources.ApplyResources(Me.MenuItem83, "MenuItem83")
+        Me.mnuPayrollExtract.Index = 1
+        resources.ApplyResources(Me.mnuPayrollExtract, "mnuPayrollExtract")
         '
         'MenuItem33
         '
         Me.MenuItem33.Index = 2
         resources.ApplyResources(Me.MenuItem33, "MenuItem33")
         '
-        'MenuItem34
+        'mnuPrintPayrollReport
         '
-        Me.MenuItem34.Index = 3
-        resources.ApplyResources(Me.MenuItem34, "MenuItem34")
+        Me.mnuPrintPayrollReport.Index = 3
+        resources.ApplyResources(Me.mnuPrintPayrollReport, "mnuPrintPayrollReport")
         '
-        'MenuItem47
+        'mnuPrintAdvancePayReport
         '
-        Me.MenuItem47.Index = 4
-        resources.ApplyResources(Me.MenuItem47, "MenuItem47")
+        Me.mnuPrintAdvancePayReport.Index = 4
+        resources.ApplyResources(Me.mnuPrintAdvancePayReport, "mnuPrintAdvancePayReport")
         '
-        'MenuItem48
+        'mnuPrintLoanHoldReport
         '
-        Me.MenuItem48.Index = 5
-        resources.ApplyResources(Me.MenuItem48, "MenuItem48")
+        Me.mnuPrintLoanHoldReport.Index = 5
+        resources.ApplyResources(Me.mnuPrintLoanHoldReport, "mnuPrintLoanHoldReport")
         '
         'MenuItem14
         '
         Me.MenuItem14.Index = 7
         resources.ApplyResources(Me.MenuItem14, "MenuItem14")
         '
-        'MenuItem15
+        'mnuProcessDivRef
         '
-        Me.MenuItem15.Index = 8
-        Me.MenuItem15.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.MenuItem49, Me.MenuItem85, Me.MenuItem50, Me.MenuItem51, Me.MenuItem89})
-        resources.ApplyResources(Me.MenuItem15, "MenuItem15")
+        Me.mnuProcessDivRef.Index = 8
+        Me.mnuProcessDivRef.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.mnuProcessDividendRefund, Me.DivRefExtract, Me.MenuItem50, Me.mnuPrintDivrefReport, Me.mnuPrintUnpostedTxn})
+        resources.ApplyResources(Me.mnuProcessDivRef, "mnuProcessDivRef")
         '
-        'MenuItem49
+        'mnuProcessDividendRefund
         '
-        Me.MenuItem49.Index = 0
-        resources.ApplyResources(Me.MenuItem49, "MenuItem49")
+        Me.mnuProcessDividendRefund.Index = 0
+        resources.ApplyResources(Me.mnuProcessDividendRefund, "mnuProcessDividendRefund")
         '
-        'MenuItem85
+        'DivRefExtract
         '
-        Me.MenuItem85.Index = 1
-        resources.ApplyResources(Me.MenuItem85, "MenuItem85")
+        Me.DivRefExtract.Index = 1
+        resources.ApplyResources(Me.DivRefExtract, "DivRefExtract")
         '
         'MenuItem50
         '
         Me.MenuItem50.Index = 2
         resources.ApplyResources(Me.MenuItem50, "MenuItem50")
         '
-        'MenuItem51
+        'mnuPrintDivrefReport
         '
-        Me.MenuItem51.Index = 3
-        resources.ApplyResources(Me.MenuItem51, "MenuItem51")
+        Me.mnuPrintDivrefReport.Index = 3
+        resources.ApplyResources(Me.mnuPrintDivrefReport, "mnuPrintDivrefReport")
         '
-        'MenuItem89
+        'mnuPrintUnpostedTxn
         '
-        Me.MenuItem89.Index = 4
-        resources.ApplyResources(Me.MenuItem89, "MenuItem89")
+        Me.mnuPrintUnpostedTxn.Index = 4
+        resources.ApplyResources(Me.mnuPrintUnpostedTxn, "mnuPrintUnpostedTxn")
         '
-        'MenuItem16
+        'mnuMaintenance
         '
-        Me.MenuItem16.Index = 2
-        Me.MenuItem16.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.MenuItem17, Me.MenuItem19, Me.MenuItem21, Me.MenuItem22, Me.MenuItem92, Me.MenuItem23, Me.MenuItem24})
-        resources.ApplyResources(Me.MenuItem16, "MenuItem16")
+        Me.mnuMaintenance.Index = 2
+        Me.mnuMaintenance.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.mnuAccounts, Me.MenuItem19, Me.mnuUserFile, Me.mnuControlFile, Me.mnuConnection, Me.MenuItem23, Me.mnuTellering})
+        resources.ApplyResources(Me.mnuMaintenance, "mnuMaintenance")
         '
-        'MenuItem17
+        'mnuAccounts
         '
-        Me.MenuItem17.Index = 0
-        resources.ApplyResources(Me.MenuItem17, "MenuItem17")
+        Me.mnuAccounts.Index = 0
+        resources.ApplyResources(Me.mnuAccounts, "mnuAccounts")
         '
         'MenuItem19
         '
         Me.MenuItem19.Index = 1
         resources.ApplyResources(Me.MenuItem19, "MenuItem19")
         '
-        'MenuItem21
+        'mnuUserFile
         '
-        Me.MenuItem21.Index = 2
-        resources.ApplyResources(Me.MenuItem21, "MenuItem21")
+        Me.mnuUserFile.Index = 2
+        resources.ApplyResources(Me.mnuUserFile, "mnuUserFile")
         '
-        'MenuItem22
+        'mnuControlFile
         '
-        Me.MenuItem22.Index = 3
-        resources.ApplyResources(Me.MenuItem22, "MenuItem22")
+        Me.mnuControlFile.Index = 3
+        resources.ApplyResources(Me.mnuControlFile, "mnuControlFile")
         '
-        'MenuItem92
+        'mnuConnection
         '
-        Me.MenuItem92.Index = 4
-        resources.ApplyResources(Me.MenuItem92, "MenuItem92")
+        Me.mnuConnection.Index = 4
+        resources.ApplyResources(Me.mnuConnection, "mnuConnection")
         '
         'MenuItem23
         '
         Me.MenuItem23.Index = 5
         resources.ApplyResources(Me.MenuItem23, "MenuItem23")
         '
-        'MenuItem24
+        'mnuTellering
         '
-        Me.MenuItem24.Index = 6
-        Me.MenuItem24.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.MenuItem52, Me.MenuItem53, Me.MenuItem54, Me.MenuItem55})
-        resources.ApplyResources(Me.MenuItem24, "MenuItem24")
+        Me.mnuTellering.Index = 6
+        Me.mnuTellering.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.mnuCashTransferRequest, Me.MenuItem53, Me.mnuTellersBlotter, Me.mnuTellersEod})
+        resources.ApplyResources(Me.mnuTellering, "mnuTellering")
         '
-        'MenuItem52
+        'mnuCashTransferRequest
         '
-        Me.MenuItem52.Index = 0
-        resources.ApplyResources(Me.MenuItem52, "MenuItem52")
+        Me.mnuCashTransferRequest.Index = 0
+        resources.ApplyResources(Me.mnuCashTransferRequest, "mnuCashTransferRequest")
         '
         'MenuItem53
         '
         Me.MenuItem53.Index = 1
         resources.ApplyResources(Me.MenuItem53, "MenuItem53")
         '
-        'MenuItem54
+        'mnuTellersBlotter
         '
-        Me.MenuItem54.Index = 2
-        resources.ApplyResources(Me.MenuItem54, "MenuItem54")
+        Me.mnuTellersBlotter.Index = 2
+        resources.ApplyResources(Me.mnuTellersBlotter, "mnuTellersBlotter")
         '
-        'MenuItem55
+        'mnuTellersEod
         '
-        Me.MenuItem55.Index = 3
-        resources.ApplyResources(Me.MenuItem55, "MenuItem55")
+        Me.mnuTellersEod.Index = 3
+        resources.ApplyResources(Me.mnuTellersEod, "mnuTellersEod")
         '
-        'MenuItem25
+        'mnuSupervisor
         '
-        Me.MenuItem25.Index = 3
-        Me.MenuItem25.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.MenuItem84, Me.MenuItem26, Me.MenuItem28, Me.MenuItem29, Me.MenuItem30, Me.MenuItem35, Me.MenuItem36, Me.MenuItem37, Me.MenuItem38, Me.MenuItem39, Me.MenuItem94, Me.MenuItem81, Me.MenuItem88, Me.MenuItem67, Me.MenuItem90, Me.MenuItem95, Me.MenuItem99})
-        resources.ApplyResources(Me.MenuItem25, "MenuItem25")
+        Me.mnuSupervisor.Index = 3
+        Me.mnuSupervisor.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.mnuReopenOtc, Me.mnuReleaseFloat, Me.mnuReactivateAccount, Me.mnuChangeParameters, Me.MenuItem30, Me.mnuMasterFileProofList, Me.mnuActivityLog, Me.MenuItem37, Me.mnuArchiveLedger, Me.mnuPrintArchivedLedger, Me.mnuRecalculateLedger, Me.MenuItem81, Me.mnuBackupDatabase, Me.MenuItem67, Me.mnuDormantAccounts, Me.MenuItem95, Me.mnuPrintBalanceRunUp})
+        resources.ApplyResources(Me.mnuSupervisor, "mnuSupervisor")
         '
-        'MenuItem84
+        'mnuReopenOtc
         '
-        Me.MenuItem84.Index = 0
-        resources.ApplyResources(Me.MenuItem84, "MenuItem84")
+        Me.mnuReopenOtc.Index = 0
+        resources.ApplyResources(Me.mnuReopenOtc, "mnuReopenOtc")
         '
-        'MenuItem26
+        'mnuReleaseFloat
         '
-        Me.MenuItem26.Index = 1
-        resources.ApplyResources(Me.MenuItem26, "MenuItem26")
+        Me.mnuReleaseFloat.Index = 1
+        resources.ApplyResources(Me.mnuReleaseFloat, "mnuReleaseFloat")
         '
-        'MenuItem28
+        'mnuReactivateAccount
         '
-        Me.MenuItem28.Index = 2
-        resources.ApplyResources(Me.MenuItem28, "MenuItem28")
+        Me.mnuReactivateAccount.Index = 2
+        resources.ApplyResources(Me.mnuReactivateAccount, "mnuReactivateAccount")
         '
-        'MenuItem29
+        'mnuChangeParameters
         '
-        Me.MenuItem29.Index = 3
-        resources.ApplyResources(Me.MenuItem29, "MenuItem29")
+        Me.mnuChangeParameters.Index = 3
+        resources.ApplyResources(Me.mnuChangeParameters, "mnuChangeParameters")
         '
         'MenuItem30
         '
         Me.MenuItem30.Index = 4
         resources.ApplyResources(Me.MenuItem30, "MenuItem30")
         '
-        'MenuItem35
+        'mnuMasterFileProofList
         '
-        Me.MenuItem35.Index = 5
-        resources.ApplyResources(Me.MenuItem35, "MenuItem35")
+        Me.mnuMasterFileProofList.Index = 5
+        resources.ApplyResources(Me.mnuMasterFileProofList, "mnuMasterFileProofList")
         '
-        'MenuItem36
+        'mnuActivityLog
         '
-        Me.MenuItem36.Index = 6
-        resources.ApplyResources(Me.MenuItem36, "MenuItem36")
+        Me.mnuActivityLog.Index = 6
+        resources.ApplyResources(Me.mnuActivityLog, "mnuActivityLog")
         '
         'MenuItem37
         '
         Me.MenuItem37.Index = 7
         resources.ApplyResources(Me.MenuItem37, "MenuItem37")
         '
-        'MenuItem38
+        'mnuArchiveLedger
         '
-        Me.MenuItem38.Index = 8
-        resources.ApplyResources(Me.MenuItem38, "MenuItem38")
+        Me.mnuArchiveLedger.Index = 8
+        resources.ApplyResources(Me.mnuArchiveLedger, "mnuArchiveLedger")
         '
-        'MenuItem39
+        'mnuPrintArchivedLedger
         '
-        Me.MenuItem39.Index = 9
-        resources.ApplyResources(Me.MenuItem39, "MenuItem39")
+        Me.mnuPrintArchivedLedger.Index = 9
+        resources.ApplyResources(Me.mnuPrintArchivedLedger, "mnuPrintArchivedLedger")
         '
-        'MenuItem94
+        'mnuRecalculateLedger
         '
-        Me.MenuItem94.Index = 10
-        resources.ApplyResources(Me.MenuItem94, "MenuItem94")
+        Me.mnuRecalculateLedger.Index = 10
+        resources.ApplyResources(Me.mnuRecalculateLedger, "mnuRecalculateLedger")
         '
         'MenuItem81
         '
         Me.MenuItem81.Index = 11
         resources.ApplyResources(Me.MenuItem81, "MenuItem81")
         '
-        'MenuItem88
+        'mnuBackupDatabase
         '
-        Me.MenuItem88.Index = 12
-        resources.ApplyResources(Me.MenuItem88, "MenuItem88")
+        Me.mnuBackupDatabase.Index = 12
+        resources.ApplyResources(Me.mnuBackupDatabase, "mnuBackupDatabase")
         '
         'MenuItem67
         '
         Me.MenuItem67.Index = 13
         resources.ApplyResources(Me.MenuItem67, "MenuItem67")
         '
-        'MenuItem90
+        'mnuDormantAccounts
         '
-        Me.MenuItem90.Index = 14
-        Me.MenuItem90.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.MenuItem91, Me.MenuItem97, Me.MenuItem96, Me.MenuItem98})
-        resources.ApplyResources(Me.MenuItem90, "MenuItem90")
+        Me.mnuDormantAccounts.Index = 14
+        Me.mnuDormantAccounts.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.mnuPrintDormantAccounts, Me.MenuItem97, Me.mnuPostDormancyCharges, Me.mnuPrintDormancyChargeReport})
+        resources.ApplyResources(Me.mnuDormantAccounts, "mnuDormantAccounts")
         '
-        'MenuItem91
+        'mnuPrintDormantAccounts
         '
-        Me.MenuItem91.Index = 0
-        resources.ApplyResources(Me.MenuItem91, "MenuItem91")
+        Me.mnuPrintDormantAccounts.Index = 0
+        resources.ApplyResources(Me.mnuPrintDormantAccounts, "mnuPrintDormantAccounts")
         '
         'MenuItem97
         '
         Me.MenuItem97.Index = 1
         resources.ApplyResources(Me.MenuItem97, "MenuItem97")
         '
-        'MenuItem96
+        'mnuPostDormancyCharges
         '
-        Me.MenuItem96.Index = 2
-        resources.ApplyResources(Me.MenuItem96, "MenuItem96")
+        Me.mnuPostDormancyCharges.Index = 2
+        resources.ApplyResources(Me.mnuPostDormancyCharges, "mnuPostDormancyCharges")
         '
-        'MenuItem98
+        'mnuPrintDormancyChargeReport
         '
-        Me.MenuItem98.Index = 3
-        resources.ApplyResources(Me.MenuItem98, "MenuItem98")
+        Me.mnuPrintDormancyChargeReport.Index = 3
+        resources.ApplyResources(Me.mnuPrintDormancyChargeReport, "mnuPrintDormancyChargeReport")
         '
         'MenuItem95
         '
         Me.MenuItem95.Index = 15
         resources.ApplyResources(Me.MenuItem95, "MenuItem95")
         '
-        'MenuItem99
+        'mnuPrintBalanceRunUp
         '
-        Me.MenuItem99.Index = 16
-        resources.ApplyResources(Me.MenuItem99, "MenuItem99")
+        Me.mnuPrintBalanceRunUp.Index = 16
+        resources.ApplyResources(Me.mnuPrintBalanceRunUp, "mnuPrintBalanceRunUp")
         '
-        'MenuItem40
+        'mnuEndOfDay
         '
-        Me.MenuItem40.Index = 4
-        Me.MenuItem40.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.MenuItem41, Me.MenuItem8, Me.MenuItem9, Me.MenuItem10, Me.MenuItem18, Me.MenuItem42, Me.MenuItem43})
-        resources.ApplyResources(Me.MenuItem40, "MenuItem40")
+        Me.mnuEndOfDay.Index = 4
+        Me.mnuEndOfDay.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.mnuPrintEODReport, Me.MenuItem8, Me.mnuEndOfMonthReport, Me.MenuItem10, Me.mnuEndOfQuarterReport, Me.MenuItem42, Me.mnuEndOfYearReport})
+        resources.ApplyResources(Me.mnuEndOfDay, "mnuEndOfDay")
         '
-        'MenuItem41
+        'mnuPrintEODReport
         '
-        Me.MenuItem41.Index = 0
-        Me.MenuItem41.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.MenuItem7, Me.MenuItem56, Me.MenuItem57, Me.MenuItem58, Me.MenuItem59, Me.MenuItem60, Me.MenuItem61, Me.MenuItem62, Me.MenuItem63, Me.MenuItem64, Me.MenuItem65})
-        resources.ApplyResources(Me.MenuItem41, "MenuItem41")
+        Me.mnuPrintEODReport.Index = 0
+        Me.mnuPrintEODReport.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.MenuItem7, Me.MenuItem56, Me.MenuItem57, Me.MenuItem58, Me.MenuItem59, Me.MenuItem60, Me.MenuItem61, Me.MenuItem62, Me.MenuItem63, Me.MenuItem64, Me.MenuItem65})
+        resources.ApplyResources(Me.mnuPrintEODReport, "mnuPrintEODReport")
         '
         'MenuItem7
         '
@@ -663,17 +664,17 @@ Public Class frmSDS_Main
         Me.MenuItem8.Index = 1
         resources.ApplyResources(Me.MenuItem8, "MenuItem8")
         '
-        'MenuItem9
+        'mnuEndOfMonthReport
         '
-        Me.MenuItem9.Index = 2
-        Me.MenuItem9.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.MenuItem66})
-        resources.ApplyResources(Me.MenuItem9, "MenuItem9")
+        Me.mnuEndOfMonthReport.Index = 2
+        Me.mnuEndOfMonthReport.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.mnuPrintEOMReports})
+        resources.ApplyResources(Me.mnuEndOfMonthReport, "mnuEndOfMonthReport")
         '
-        'MenuItem66
+        'mnuPrintEOMReports
         '
-        Me.MenuItem66.Index = 0
-        Me.MenuItem66.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.MenuItem68, Me.MenuItem69, Me.MenuItem70, Me.MenuItem71, Me.MenuItem72, Me.MenuItem73, Me.MenuItem74})
-        resources.ApplyResources(Me.MenuItem66, "MenuItem66")
+        Me.mnuPrintEOMReports.Index = 0
+        Me.mnuPrintEOMReports.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.MenuItem68, Me.MenuItem69, Me.MenuItem70, Me.MenuItem71, Me.MenuItem72, Me.MenuItem73, Me.MenuItem74})
+        resources.ApplyResources(Me.mnuPrintEOMReports, "mnuPrintEOMReports")
         '
         'MenuItem68
         '
@@ -715,11 +716,11 @@ Public Class frmSDS_Main
         Me.MenuItem10.Index = 3
         resources.ApplyResources(Me.MenuItem10, "MenuItem10")
         '
-        'MenuItem18
+        'mnuEndOfQuarterReport
         '
-        Me.MenuItem18.Index = 4
-        Me.MenuItem18.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.MenuItem75, Me.MenuItem93})
-        resources.ApplyResources(Me.MenuItem18, "MenuItem18")
+        Me.mnuEndOfQuarterReport.Index = 4
+        Me.mnuEndOfQuarterReport.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.MenuItem75, Me.MenuItem93})
+        resources.ApplyResources(Me.mnuEndOfQuarterReport, "mnuEndOfQuarterReport")
         '
         'MenuItem75
         '
@@ -736,32 +737,32 @@ Public Class frmSDS_Main
         Me.MenuItem42.Index = 5
         resources.ApplyResources(Me.MenuItem42, "MenuItem42")
         '
-        'MenuItem43
+        'mnuEndOfYearReport
         '
-        Me.MenuItem43.Index = 6
-        Me.MenuItem43.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.MenuItem76})
-        resources.ApplyResources(Me.MenuItem43, "MenuItem43")
+        Me.mnuEndOfYearReport.Index = 6
+        Me.mnuEndOfYearReport.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.MenuItem76})
+        resources.ApplyResources(Me.mnuEndOfYearReport, "mnuEndOfYearReport")
         '
         'MenuItem76
         '
         Me.MenuItem76.Index = 0
         resources.ApplyResources(Me.MenuItem76, "MenuItem76")
         '
-        'MenuItem44
+        'mnuClose
         '
-        Me.MenuItem44.Index = 5
-        Me.MenuItem44.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.MenuItem45, Me.MenuItem46})
-        resources.ApplyResources(Me.MenuItem44, "MenuItem44")
+        Me.mnuClose.Index = 5
+        Me.mnuClose.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.mnuCloseOTC, Me.mnuCloseEOD})
+        resources.ApplyResources(Me.mnuClose, "mnuClose")
         '
-        'MenuItem45
+        'mnuCloseOTC
         '
-        Me.MenuItem45.Index = 0
-        resources.ApplyResources(Me.MenuItem45, "MenuItem45")
+        Me.mnuCloseOTC.Index = 0
+        resources.ApplyResources(Me.mnuCloseOTC, "mnuCloseOTC")
         '
-        'MenuItem46
+        'mnuCloseEOD
         '
-        Me.MenuItem46.Index = 1
-        resources.ApplyResources(Me.MenuItem46, "MenuItem46")
+        Me.mnuCloseEOD.Index = 1
+        resources.ApplyResources(Me.mnuCloseEOD, "mnuCloseEOD")
         '
         'MenuItem27
         '
@@ -912,7 +913,6 @@ Public Class frmSDS_Main
 #End Region
 
     Private frmSDS_Main_TEntry As frmSDS_Main_TEntry
-    Private frmFDS_Main_PrntFDL_Srch As frmFDS_Main_PrntFDL_Srch
     Private ReportViewerForm As frmReportViewer
     Private DateRangePickerForm As frmDateRangePickerDialog
     Private frmSDS_Main_Batch As frmSDS_Main_Batch
@@ -928,7 +928,7 @@ Public Class frmSDS_Main
     Private frmSDS_Close_otc As frmSDS_Close_OTC
     Private frmMain_Ctrl As PolicyDefinitionsForm
     Private Form1 As Form1
-    Private frmSDS_Main_Access As frmSDS_Main_Access
+    Private frmSDS_Main_Access As frmUserAccessForm
     Private frmSDS_Main_AcctFloats As frmSDS_Main_AcctFloats
     Private frmSDS_Main_TEntry_Oth As frmSDS_Main_TEntry_Oth
     Private frmPayrollExtract As frmPayrollExtract
@@ -955,7 +955,7 @@ Public Class frmSDS_Main
         Dim x As MenuItem
         For Each x In MainMenu1.MenuItems
             x.Enabled = True
-        Next
+        Next        
         RunStartup()
     End Sub
     Sub RunStartup()
@@ -1010,59 +1010,60 @@ Public Class frmSDS_Main
 
     End Sub
 
-    Private Sub MenuItem6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItem6.Click
+    Private Sub MenuItem6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuTransactionEntry.Click
         If IsFormLoaded("frmSDS_Main_TEntry") Then Exit Sub
         frmSDS_Main_TEntry = New frmSDS_Main_TEntry
         frmSDS_Main_TEntry.MdiParent = Me
         frmSDS_Main_TEntry.Show()
     End Sub
 
-    Private Sub MenuItem20_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItem20.Click
+    Private Sub MenuItem20_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuLedgerPrinting.Click
         Dim dst As New DataTable("dtsSD_Main")
         Dim rpt As New rptMem_Ledger
         Dim ds As New DataSet
         Dim sQRY As String
         SDDB = True
-        frmFDS_Main_PrntFDL_Srch = New frmFDS_Main_PrntFDL_Srch
-        ReportViewerForm = New frmReportViewer
-        ReportViewerForm.MdiParent = Me
-        frmFDS_Main_PrntFDL_Srch.ShowDialog()
-        If SW = True Then
-            DateRangePickerForm = New frmDateRangePickerDialog
-            DateRangePickerForm.ShowDialog()
-            If SW = True Then
-                sQRY = "SELECT ST.TRANDATE TRAN_DATE,ST.ADD_TIME [TIME],ST.TRANCODE COD,ST.CHKBANK BANK," & _
-                                 "ST.CHKNUM CHECK_NUM,ST.TRANDEB DEBIT,ST.TRANCRE CREDIT,ST.TRANEBAL BALANCE " & _
-                                 "FROM SDTRAN ST WITH (NOLOCK) WHERE ST.ACCTNUM='" & SEL_KBCI_NO & "' AND ST.TRANDATE BETWEEN '" & sDate & "' " & _
-                                 "ORDER BY ST.TRANDATE,SDTRAN_ID"
-                Dim DT As New DataTable
-                Dim cnn As New SqlConnection(rCN)
-                Dim sqlCMD As New SqlCommand(sQRY, cnn)
-                Dim ad As New SqlDataAdapter(sqlCMD)
-                sqlCMD.CommandType = CommandType.Text
-                cnn.Open()
-                ad.Fill(DT)
-                cnn.Close()
+        Using MemberSearchForm As New frmMemberSearchDialog
+            ReportViewerForm = New frmReportViewer
+            ReportViewerForm.MdiParent = Me
+            If MemberSearchForm.ShowDialog = System.Windows.Forms.DialogResult.OK Then
+                DateRangePickerForm = New frmDateRangePickerDialog
+                DateRangePickerForm.ShowDialog()
+                If SW = True Then
+                    sQRY = "SELECT ST.TRANDATE TRAN_DATE,ST.ADD_TIME [TIME],ST.TRANCODE COD,ST.CHKBANK BANK," & _
+                                     "ST.CHKNUM CHECK_NUM,ST.TRANDEB DEBIT,ST.TRANCRE CREDIT,ST.TRANEBAL BALANCE " & _
+                                     "FROM SDTRAN ST WITH (NOLOCK) WHERE ST.ACCTNUM='" & SEL_KBCI_NO & "' AND ST.TRANDATE BETWEEN '" & sDate & "' " & _
+                                     "ORDER BY ST.TRANDATE,SDTRAN_ID"
+                    Dim DT As New DataTable
+                    Dim cnn As New SqlConnection(rCN)
+                    Dim sqlCMD As New SqlCommand(sQRY, cnn)
+                    Dim ad As New SqlDataAdapter(sqlCMD)
+                    sqlCMD.CommandType = CommandType.Text
+                    cnn.Open()
+                    ad.Fill(DT)
+                    cnn.Close()
 
-                If DT.Rows.Count > 0 Then
-                    Dim DDATE As CrystalDecisions.CrystalReports.Engine.TextObject = rpt.Section2.ReportObjects("Text2")
-                    Dim rptAcctNo As CrystalDecisions.CrystalReports.Engine.TextObject = rpt.Section2.ReportObjects("Text5")
-                    Dim rptName As CrystalDecisions.CrystalReports.Engine.TextObject = rpt.Section2.ReportObjects("Text6")
-                    DDATE.Text = "AS OF " & DateValue(TODATE).ToString("MMM dd,yyyy")
-                    rptAcctNo.Text = Mid(SEL_KBCI_NO, 1, 4) & "-" & Mid(SEL_KBCI_NO, 5, 5) & "-" & Mid(SEL_KBCI_NO, 10, 1)
-                    rptName.Text = SEL_FNAME
-                    GenRPT(DT, dst, ReportViewerForm.CrystalReportViewer1, rpt, 0, "1:3:3:3:3:2:2:2")
-                    ReportViewerForm.Show()
-                Else
-                    MsgBox("No transactions found on the specified date.", MsgBoxStyle.Information, "Member's Transaction Ledger")
+                    If DT.Rows.Count > 0 Then
+                        Dim DDATE As CrystalDecisions.CrystalReports.Engine.TextObject = rpt.Section2.ReportObjects("Text2")
+                        Dim rptAcctNo As CrystalDecisions.CrystalReports.Engine.TextObject = rpt.Section2.ReportObjects("Text5")
+                        Dim rptName As CrystalDecisions.CrystalReports.Engine.TextObject = rpt.Section2.ReportObjects("Text6")
+                        DDATE.Text = "AS OF " & DateValue(TODATE).ToString("MMM dd,yyyy")
+                        rptAcctNo.Text = Mid(SEL_KBCI_NO, 1, 4) & "-" & Mid(SEL_KBCI_NO, 5, 5) & "-" & Mid(SEL_KBCI_NO, 10, 1)
+                        rptName.Text = SEL_FNAME
+                        GenRPT(DT, dst, ReportViewerForm.CrystalReportViewer1, rpt, 0, "1:3:3:3:3:2:2:2")
+                        ReportViewerForm.Show()
+                    Else
+                        MsgBox("No transactions found on the specified date.", MsgBoxStyle.Information, "Member's Transaction Ledger")
+                    End If
+                    SW = False
+                    DT.Dispose()
                 End If
-                SW = False
-                DT.Dispose()
             End If
-        End If
+        End Using
+
     End Sub
 
-    Private Sub MenuItem12_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItem12.Click
+    Private Sub MenuItem12_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuBatchPosting.Click
         If IsFormLoaded("frmSDS_Main_Batch") Then Exit Sub
 
         frmSDS_Main_Batch = New frmSDS_Main_Batch
@@ -1074,12 +1075,12 @@ Public Class frmSDS_Main
         StatusStrip1.Items(8).Text = TimeValue(Now)
     End Sub
 
-    Private Sub MenuItem32_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItem32.Click
+    Private Sub MenuItem32_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuPayrollProcessing.Click
         frmSDS_Main_Payroll = New frmSDS_Main_Payroll
         frmSDS_Main_Payroll.ShowDialog()
     End Sub
 
-    Private Sub MenuItem49_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItem49.Click
+    Private Sub MenuItem49_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuProcessDividendRefund.Click
         Dim msg As String
         DR = CDbl(GetRStr("select ((isnull(sum(dividend),0) + isnull(sum(refund),0)) - isnull(sum(deductions),0)) hash from divref WITH (NOLOCK) ", "hash", 0))
         LDAMT = CDbl(GetRStr("SELECT LDAMT FROM PARAM_S WITH (NOLOCK) ", "LDAMT", 0))
@@ -1097,14 +1098,12 @@ Public Class frmSDS_Main
         End If
     End Sub
 
-    Private Sub MenuItem34_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItem34.Click
+    Private Sub MenuItem34_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuPrintPayrollReport.Click
 
         Dim dst As New DataTable("dtsSD_Main")
         Dim rpt As New rptMem_Payroll
         Dim ds As New DataSet
         Dim sQRY As String
-        SDDB = True
-        frmFDS_Main_PrntFDL_Srch = New frmFDS_Main_PrntFDL_Srch
         ReportViewerForm = New frmReportViewer
         ReportViewerForm.MdiParent = Me
         sQRY = "SELECT 'S-' + SUBSTRING(SP.ACCTNO,5,5) + '-' + SUBSTRING(SP.ACCTNO,10,1) ACCTNO," & _
@@ -1129,7 +1128,7 @@ Public Class frmSDS_Main
         DT.Dispose()
     End Sub
 
-    Private Sub MenuItem48_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItem48.Click
+    Private Sub MenuItem48_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuPrintLoanHoldReport.Click
         Dim dst As New DataTable("dtsSD_Main")
         Dim rpt As New rptMem_Loanhold
         Dim ds As New DataSet
@@ -1169,13 +1168,11 @@ Public Class frmSDS_Main
         End If
     End Sub
 
-    Private Sub MenuItem51_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItem51.Click
+    Private Sub MenuItem51_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuPrintDivrefReport.Click
         Dim dst As New DataTable("dtsSD_Main")
         Dim rpt As New rptMem_Divref
         Dim ds As New DataSet
         Dim sQRY As String
-        SDDB = True
-        frmFDS_Main_PrntFDL_Srch = New frmFDS_Main_PrntFDL_Srch
         ReportViewerForm = New frmReportViewer
         ReportViewerForm.MdiParent = Me
         sQRY = "SELECT 'S-' + SUBSTRING(SP.FEBTC_SA,5,5) + '-' + SUBSTRING(SP.FEBTC_SA,10,1) ACCTNO," & _
@@ -1201,20 +1198,18 @@ Public Class frmSDS_Main
         DT.Dispose()
     End Sub
 
-    Private Sub MenuItem17_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItem17.Click
+    Private Sub MenuItem17_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuAccounts.Click
         If IsFormLoaded("frmSDS_Main_Memlist") Then Exit Sub
         frmSDS_Main_Memlist = New frmSDS_Main_Memlist
         frmSDS_Main_Memlist.MdiParent = Me
         frmSDS_Main_Memlist.Show()
     End Sub
 
-    Private Sub MenuItem47_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItem47.Click
+    Private Sub MenuItem47_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuPrintAdvancePayReport.Click
         Dim dst As New DataTable("dtsSD_Main")
         Dim rpt As New rptMem_APayment
         Dim ds As New DataSet
         Dim sQRY As String
-        SDDB = True
-        frmFDS_Main_PrntFDL_Srch = New frmFDS_Main_PrntFDL_Srch
         ReportViewerForm = New frmReportViewer
         ReportViewerForm.MdiParent = Me
         sQRY = "SELECT SUBSTRING(EX.ACCTNO,1,4) + '-' + SUBSTRING(EX.ACCTNO,5,5) + '-' +SUBSTRING(EX.ACCTNO,10,1) ACCTNO ,EX.KBCI_NO,EX.PN_NO,EX.LOAN_TYPE,SM.ACCTNAME,EX.AMOUNT,EX.ADD_DATE,EX.REMARKS," & _
@@ -1242,19 +1237,19 @@ Public Class frmSDS_Main
         SW = False
         'DT.Dispose()
     End Sub
-    Private Sub MenuItem52_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItem52.Click
+    Private Sub MenuItem52_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuCashTransferRequest.Click
         frmSDS_Main_Teller_Cash = New frmSDS_Main_Teller_Cash
         frmSDS_Main_Teller_Cash.ShowDialog()
     End Sub
 
-    Private Sub MenuItem55_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItem55.Click
+    Private Sub MenuItem55_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuTellersEod.Click
         If IsFormLoaded("frmSDS_Main_Teller_EOD") Then Exit Sub
         frmSDS_Main_Teller_EOD = New frmSDS_Main_Teller_EOD
         frmSDS_Main_Teller_EOD.MdiParent = Me
         frmSDS_Main_Teller_EOD.Show()
     End Sub
 
-    Private Sub MenuItem3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItem3.Click
+    Private Sub MenuItem3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuLogOff.Click
         Dim msg As String
         msg = MsgBox("Do you want to log-off?", MsgBoxStyle.Exclamation + MsgBoxStyle.YesNo, "[" & SPUSER.SPUSERID & "] Logout")
         If msg = vbYes Then
@@ -1265,7 +1260,7 @@ Public Class frmSDS_Main
         End If
     End Sub
 
-    Private Sub MenuItem46_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItem46.Click
+    Private Sub MenuItem46_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuCloseEOD.Click
         Dim msg As String
         Dim upd As New CLTF.DB.SQLDBConnection
         upd.ConnString = rCN
@@ -1323,7 +1318,7 @@ Public Class frmSDS_Main
 
     End Sub
 
-    Private Sub MenuItem45_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItem45.Click
+    Private Sub MenuItem45_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuCloseOTC.Click
         SW = False
         Application.EnableVisualStyles()
         frmSDS_Close_otc = New frmSDS_Close_OTC
@@ -1335,7 +1330,7 @@ Public Class frmSDS_Main
         End If
     End Sub
 
-    Private Sub MenuItem54_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItem54.Click
+    Private Sub MenuItem54_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuTellersBlotter.Click
         Dim dst As New DataTable("dtsSD_Main")
         Dim rpt As New rptTel_Blotter
         Dim ds As New DataSet
@@ -1375,15 +1370,15 @@ Public Class frmSDS_Main
         DT.Dispose()
     End Sub
 
-    Private Sub MenuItem22_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItem22.Click
+    Private Sub MenuItem22_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuControlFile.Click
         If IsFormLoaded("frmMain_Ctrl") Then Exit Sub
         frmMain_Ctrl = New PolicyDefinitionsForm
         frmMain_Ctrl.ShowDialog()
     End Sub
 
-    Private Sub MenuItem21_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItem21.Click
+    Private Sub MenuItem21_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuUserFile.Click
         If IsFormLoaded("frmSDS_Main_Access") Then Exit Sub
-        frmSDS_Main_Access = New frmSDS_Main_Access
+        frmSDS_Main_Access = New frmUserAccessForm
         frmSDS_Main_Access.ShowDialog()
 
     End Sub
@@ -1706,12 +1701,12 @@ Public Class frmSDS_Main
         DT.Dispose()
     End Sub
 
-    Private Sub MenuItem26_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItem26.Click
+    Private Sub MenuItem26_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuReleaseFloat.Click
         frmSDS_Main_AcctFloats = New frmSDS_Main_AcctFloats
         frmSDS_Main_AcctFloats.ShowDialog()
     End Sub
 
-    Private Sub MenuItem4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItem4.Click
+    Private Sub MenuItem4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuExit.Click
         Me.Close()
         End
     End Sub
@@ -1808,49 +1803,48 @@ Public Class frmSDS_Main
         DT.Dispose()
     End Sub
     Sub ApplyAcc()
-        'Dim CHK As New CLTF.DB.SQLDBConnection
-        'CHK.OpenCmdDataTable(rCN, "SELECT OTC_FLAG FROM CTRL_S WITH (NOLOCK) ")
         If CBool(CInt(CStr(SPTAG(0)))) = False Or CTRL_S.OTCF Then _
-        MenuItem6.Enabled = False : MenuItem82.Enabled = False Else MenuItem6.Enabled = True : MenuItem82.Enabled = True
+        mnuTransactionEntry.Enabled = False : mnuOtherTransactions.Enabled = False Else mnuTransactionEntry.Enabled = True : mnuOtherTransactions.Enabled = True
 
-        If CInt(SPUSER.SPUSERPOS) <> 1 Then MenuItem24.Enabled = False Else MenuItem24.Enabled = True
+        If CInt(SPUSER.SPUSERPOS) <> DirectCast(Position.Teller, Integer) Then mnuTellering.Enabled = False Else mnuTellering.Enabled = True
+        If CInt(SPUSER.SPUSERPOS) <> DirectCast(Position.SystemAdministrator, Integer) Then mnuSupervisor.Enabled = False Else mnuSupervisor.Enabled = True
 
-        If CBool(CInt(CStr(SPTAG(3)))) = False Then MenuItem20.Enabled = False Else MenuItem20.Enabled = True
-        If CBool(CInt(CStr(SPTAG(7)))) = False Then MenuItem32.Enabled = False Else MenuItem32.Enabled = True
+        If CBool(CInt(CStr(SPTAG(3)))) = False Then mnuLedgerPrinting.Enabled = False Else mnuLedgerPrinting.Enabled = True
+        If CBool(CInt(CStr(SPTAG(7)))) = False Then mnuPayrollProcessing.Enabled = False Else mnuPayrollProcessing.Enabled = True
         If CBool(CInt(CStr(SPTAG(8)))) = False Then
-            MenuItem34.Enabled = False
-            MenuItem47.Enabled = False
-            MenuItem48.Enabled = False
+            mnuPrintPayrollReport.Enabled = False
+            mnuPrintAdvancePayReport.Enabled = False
+            mnuPrintLoanHoldReport.Enabled = False
         Else
-            MenuItem34.Enabled = True
-            MenuItem47.Enabled = True
-            MenuItem48.Enabled = True
+            mnuPrintPayrollReport.Enabled = True
+            mnuPrintAdvancePayReport.Enabled = True
+            mnuPrintLoanHoldReport.Enabled = True
         End If
-        If CBool(CInt(CStr(SPTAG(9)))) = False Then MenuItem49.Enabled = False Else MenuItem49.Enabled = True
-        If CBool(CInt(CStr(SPTAG(10)))) = False Then MenuItem51.Enabled = False Else MenuItem51.Enabled = True
-        If CBool(CInt(CStr(SPTAG(14)))) = False Then MenuItem21.Enabled = False Else MenuItem21.Enabled = True
-        If CBool(CInt(CStr(SPTAG(15)))) = False Then MenuItem22.Enabled = False Else MenuItem22.Enabled = True
-        If CBool(CInt(CStr(SPTAG(16)))) = False Then MenuItem26.Enabled = False Else MenuItem26.Enabled = True
-        If CBool(CInt(CStr(SPTAG(23)))) = False Then MenuItem41.Enabled = False Else MenuItem41.Enabled = True
-        If CBool(CInt(CStr(SPTAG(25)))) = False Then MenuItem66.Enabled = False Else MenuItem66.Enabled = True
+        If CBool(CInt(CStr(SPTAG(9)))) = False Then mnuProcessDividendRefund.Enabled = False Else mnuProcessDividendRefund.Enabled = True
+        If CBool(CInt(CStr(SPTAG(10)))) = False Then mnuPrintDivrefReport.Enabled = False Else mnuPrintDivrefReport.Enabled = True
+        If CBool(CInt(CStr(SPTAG(14)))) = False Then mnuUserFile.Enabled = False Else mnuUserFile.Enabled = True
+        If CBool(CInt(CStr(SPTAG(15)))) = False Then mnuControlFile.Enabled = False Else mnuControlFile.Enabled = True
+        If CBool(CInt(CStr(SPTAG(16)))) = False Then mnuReleaseFloat.Enabled = False Else mnuReleaseFloat.Enabled = True
+        If CBool(CInt(CStr(SPTAG(23)))) = False Then mnuPrintEODReport.Enabled = False Else mnuPrintEODReport.Enabled = True
+        If CBool(CInt(CStr(SPTAG(25)))) = False Then mnuPrintEOMReports.Enabled = False Else mnuPrintEOMReports.Enabled = True
         If CBool(CInt(CStr(SPTAG(26)))) = False Then MenuItem67.Enabled = False Else MenuItem67.Enabled = True
         If CBool(CInt(CStr(SPTAG(27)))) = False Then MenuItem75.Enabled = False Else MenuItem75.Enabled = True
         If CBool(CInt(CStr(SPTAG(28)))) = False Then MenuItem76.Enabled = False Else MenuItem76.Enabled = True
-        If CBool(CInt(CStr(SPTAG(29)))) = False Then MenuItem45.Enabled = False : MenuItem84.Enabled = False Else MenuItem45.Enabled = True : MenuItem84.Enabled = True
-        If CBool(CInt(CStr(SPTAG(30)))) = False Then MenuItem46.Enabled = False Else MenuItem46.Enabled = True
+        If CBool(CInt(CStr(SPTAG(29)))) = False Then mnuCloseOTC.Enabled = False : mnuReopenOtc.Enabled = False Else mnuCloseOTC.Enabled = True : mnuReopenOtc.Enabled = True
+        If CBool(CInt(CStr(SPTAG(30)))) = False Then mnuCloseEOD.Enabled = False Else mnuCloseEOD.Enabled = True
 
-        If CBool(CTRL_S.OTCF) Then MenuItem40.Enabled = True Else MenuItem40.Enabled = False
-        If CBool(CTRL_S.OTCF) Then MenuItem29.Enabled = True Else MenuItem29.Enabled = False
+        If CBool(CTRL_S.OTCF) Then mnuEndOfDay.Enabled = True Else mnuEndOfDay.Enabled = False
+        If CBool(CTRL_S.OTCF) Then mnuChangeParameters.Enabled = True Else mnuChangeParameters.Enabled = False
 
-        'If Not CBool(Month(CTRL_S.SYSDATE) Mod 3) Then MenuItem18.Enabled = True Else MenuItem18.Enabled = False
+        If Not CBool(Month(CTRL_S.SYSDATE) Mod 3) Then mnuEndOfQuarterReport.Enabled = True Else mnuEndOfQuarterReport.Enabled = False
 
-        'If Month(CTRL_S.SYSDATE) = 12 Then MenuItem43.Enabled = True Else MenuItem43.Enabled = False
+        If Month(CTRL_S.SYSDATE) = 12 Then mnuEndOfYearReport.Enabled = True Else mnuEndOfYearReport.Enabled = False
         'If GetLastBusinessDay(Year(CTRL_S.SYSDATE), Month(CTRL_S.SYSDATE)) = CTRL_S.SYSDATE Then _
 
 
-        If CTRL_S.EOMF = True Then MenuItem9.Enabled = True Else MenuItem9.Enabled = False
-        If CTRL_S.EOQF = True Then MenuItem18.Enabled = True Else MenuItem18.Enabled = False
-        If CTRL_S.EOYF = True Then MenuItem43.Enabled = True Else MenuItem43.Enabled = False
+        If CTRL_S.EOMF = True Then mnuEndOfMonthReport.Enabled = True Else mnuEndOfMonthReport.Enabled = False
+        If CTRL_S.EOQF = True Then mnuEndOfQuarterReport.Enabled = True Else mnuEndOfQuarterReport.Enabled = False
+        If CTRL_S.EOYF = True Then mnuEndOfYearReport.Enabled = True Else mnuEndOfYearReport.Enabled = False
         'CHK.CloseDataTable()
     End Sub
 
@@ -2124,7 +2118,7 @@ Public Class frmSDS_Main
         DT.Dispose()
     End Sub
 
-    Private Sub MenuItem2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItem2.Click
+    Private Sub MenuItem2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuLockApplication.Click
         frmSDS_Main_Log = New frmSDS_Main_Log
         With frmSDS_Main_Log
             .TextBox6.Text = SPUSER.SPUSERID
@@ -2139,21 +2133,19 @@ Public Class frmSDS_Main
         'HELP
     End Sub
 
-    Private Sub MenuItem28_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItem28.Click
+    Private Sub MenuItem28_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuReactivateAccount.Click
         Dim upd As New CLTF.DB.SQLDBConnection
-        SDDB = True
-        frmFDS_Main_PrntFDL_Srch = New frmFDS_Main_PrntFDL_Srch
-        frmFDS_Main_PrntFDL_Srch.ShowDialog()
-        If SW = True Then
-            upd.OpenCommand(rCN)
-            MsgBox("Updated [" & upd.Execute("UPDATE SDMASTER SET " & _
-                            "ACCTSTAT='A'" & _
-                            " WHERE ACCTNO='" & SEL_KBCI_NO & "'") & "] record.", MsgBoxStyle.Information, "Member Maintenance")
-        End If
-
+        Using MemberSearchForm As New frmMemberSearchDialog
+            If MemberSearchForm.ShowDialog = System.Windows.Forms.DialogResult.OK Then
+                upd.OpenCommand(rCN)
+                MsgBox("Updated [" & upd.Execute("UPDATE SDMASTER SET " & _
+                                "ACCTSTAT='A'" & _
+                                " WHERE ACCTNO='" & SEL_KBCI_NO & "'") & "] record.", MsgBoxStyle.Information, "Member Maintenance")
+            End If
+        End Using
     End Sub
 
-    Private Sub MenuItem82_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItem82.Click
+    Private Sub MenuItem82_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuOtherTransactions.Click
         frmSDS_Main_TEntry_Oth = New frmSDS_Main_TEntry_Oth
         frmSDS_Main_TEntry_Oth.ShowDialog()
 
@@ -2163,13 +2155,11 @@ Public Class frmSDS_Main
         closeRPT("17")
     End Sub
 
-    Private Sub MenuItem35_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItem35.Click
+    Private Sub MenuItem35_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuMasterFileProofList.Click
         Dim dst As New DataTable("dtsSD_Main")
         Dim rpt As New rptMaster_Prooflist
         Dim ds As New DataSet
         Dim sQRY As String
-        SDDB = True
-        frmFDS_Main_PrntFDL_Srch = New frmFDS_Main_PrntFDL_Srch
         ReportViewerForm = New frmReportViewer
         ReportViewerForm.MdiParent = Me
         sQRY = "SELECT  [ACCTNO],[ACCTSTAT],[ACCTSNAME],[ACCTADDR1],[ACCTNAME],[ADD_DATE],[LTRANDATE],[ACCTOBAL],[ACCTFLOATS] FROM [SDMASTER] WITH (NOLOCK) ORDER BY ACCTNO"
@@ -2193,13 +2183,11 @@ Public Class frmSDS_Main
         DT.Dispose()
     End Sub
 
-    Private Sub MenuItem36_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItem36.Click
+    Private Sub MenuItem36_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuActivityLog.Click
         Dim dst As New DataTable("dtsSD_Main")
         Dim rpt As New rptActivity_Log
         Dim ds As New DataSet
         Dim sQRY As String
-        SDDB = True
-        frmFDS_Main_PrntFDL_Srch = New frmFDS_Main_PrntFDL_Srch
         ReportViewerForm = New frmReportViewer
         ReportViewerForm.MdiParent = Me
         sQRY = "SELECT [ADATE],[ATIME],[AUSER],[AOVER],[AACTI]  FROM [ACTIVITY] WITH (NOLOCK)"
@@ -2223,13 +2211,13 @@ Public Class frmSDS_Main
         DT.Dispose()
     End Sub
 
-    Private Sub MenuItem29_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItem29.Click
+    Private Sub MenuItem29_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuChangeParameters.Click
         frmSDS_Close_Table = New frmSDS_Close_Table
         frmSDS_Close_Table.btnApply.Visible = True
         frmSDS_Close_Table.ShowDialog()
     End Sub
 
-    Private Sub MenuItem83_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItem83.Click
+    Private Sub MenuItem83_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuPayrollExtract.Click
         frmPayrollExtract = New frmPayrollExtract
         frmPayrollExtract.ShowDialog()
     End Sub
@@ -2241,7 +2229,7 @@ Public Class frmSDS_Main
         UPD.CloseCommand()
     End Sub
 
-    Private Sub MenuItem84_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItem84.Click
+    Private Sub MenuItem84_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuReopenOtc.Click
         'reopen otc
         CTRL_S.getData()
         If Not CTRL_S.EOQF Then
@@ -2258,7 +2246,7 @@ Public Class frmSDS_Main
         End If
     End Sub
 
-    Private Sub MenuItem85_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItem85.Click
+    Private Sub MenuItem85_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DivRefExtract.Click
         frmDIVREFExtract = New frmDividendRefundImport
         frmDIVREFExtract.ShowDialog()
     End Sub
@@ -2267,24 +2255,22 @@ Public Class frmSDS_Main
         If SDMASTERID <> String.Empty Then LockREC(SDMASTERID, False)
     End Sub
 
-    Private Sub MenuItem86_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItem86.Click
+    Private Sub MenuItem86_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuChangePassword.Click
         frmSDS_Change_Password = New ChangePasswordForm
         frmSDS_Change_Password.ShowDialog()
     End Sub
 
-    Private Sub MenuItem88_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItem88.Click
+    Private Sub MenuItem88_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuBackupDatabase.Click
         Application.EnableVisualStyles()
         frmSDS_Backup = New frmSDS_Backup
         frmSDS_Backup.ShowDialog()
     End Sub
 
-    Private Sub MenuItem89_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItem89.Click
+    Private Sub MenuItem89_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuPrintUnpostedTxn.Click
         Dim dst As New DataTable("dtsSD_Main")
         Dim rpt As New rptMem_Divref_Unposted
         Dim ds As New DataSet
         Dim sQRY As String
-        SDDB = True
-        frmFDS_Main_PrntFDL_Srch = New frmFDS_Main_PrntFDL_Srch
         ReportViewerForm = New frmReportViewer
         ReportViewerForm.MdiParent = Me
         sQRY = "SELECT 'S-' + SUBSTRING(SP.FEBTC_SA,5,5) + '-' + SUBSTRING(SP.FEBTC_SA,10,1) ACCTNO," & _
@@ -2345,7 +2331,7 @@ Public Class frmSDS_Main
         DT.Dispose()
     End Sub
 
-    Private Sub MenuItem98_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItem98.Click
+    Private Sub MenuItem98_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuPrintDormancyChargeReport.Click
         Dim dst As New DataTable("dtsSD_Main")
         Dim rpt As New rptEOM_DormantAccounts
         Dim ds As New DataSet
@@ -2387,13 +2373,13 @@ Public Class frmSDS_Main
         DT.Dispose()
     End Sub
 
-    Private Sub MenuItem96_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItem96.Click
+    Private Sub MenuItem96_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuPostDormancyCharges.Click
         Application.EnableVisualStyles()
         frmSDS_DormancyCharges = New frmSDS_DormancyCharges
         frmSDS_DormancyCharges.ShowDialog()
     End Sub
 
-    Private Sub MenuItem91_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItem91.Click
+    Private Sub MenuItem91_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuPrintDormantAccounts.Click
         Dim dst As New DataTable("dtsSD_Main")
         Dim rpt As New rptEOM_DAccts
         Dim ds As New DataSet
@@ -2428,7 +2414,7 @@ Public Class frmSDS_Main
         DT.Dispose()
     End Sub
 
-    Private Sub MenuItem92_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItem92.Click
+    Private Sub MenuItem92_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuConnection.Click
         If IsFormLoaded("Form1") Then Exit Sub
         Form1 = New Form1
         Form1.ShowDialog()
@@ -2446,12 +2432,12 @@ Public Class frmSDS_Main
 
     End Sub
 
-    Private Sub MenuItem94_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItem94.Click
+    Private Sub MenuItem94_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuRecalculateLedger.Click
         frmRecalculateLedger = New frmRecalculateLedger(New RecalculateLedgerPrompt())
         frmRecalculateLedger.ShowDialog()
     End Sub
 
-    Private Sub MenuItem99_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItem99.Click
+    Private Sub MenuItem99_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuPrintBalanceRunUp.Click
         Dim dst As New DataTable("dtsSD_Main")
         Dim rpt As New DailyBalanceRunUpReport
         Dim ds As New DataSet

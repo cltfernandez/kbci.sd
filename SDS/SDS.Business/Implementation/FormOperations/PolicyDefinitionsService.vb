@@ -37,10 +37,14 @@ Public Class PolicyDefinitionsService : Implements IFormOperations
             ctrlViewModel.PrinterComm = businessObject.R_PRINT
             ctrlViewModel.PrinterPort = businessObject.P_PRINT
             Mapper.Map(ctrlViewModel, businessObject)
-            If dao.Save(businessObject) = 1 Then
+            If dao.Save(businessObject) > 0 Then
                 Return RecordUpdateResult.UpdateSuccessful
             End If
             Return RecordUpdateResult.Unsuccessful
         End Using
+    End Function
+
+    Public Function DeleteData(ByVal data As Object) As Integer Implements IFormOperations.DeleteData
+        Throw New NotImplementedException
     End Function
 End Class

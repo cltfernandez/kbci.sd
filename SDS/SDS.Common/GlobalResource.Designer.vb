@@ -65,11 +65,29 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Successfully Added New Record.
+        '''</summary>
+        Friend Shared ReadOnly Property AddSuccessful() As String
+            Get
+                Return ResourceManager.GetString("AddSuccessful", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Calculating....
         '''</summary>
         Friend Shared ReadOnly Property Calculating() As String
             Get
                 Return ResourceManager.GetString("Calculating", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Ca&amp;ncel.
+        '''</summary>
+        Friend Shared ReadOnly Property Cancel() As String
+            Get
+                Return ResourceManager.GetString("Cancel", resourceCulture)
             End Get
         End Property
         
@@ -92,6 +110,33 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to C&amp;lose.
+        '''</summary>
+        Friend Shared ReadOnly Property Close() As String
+            Get
+                Return ResourceManager.GetString("Close", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to This will delete the record permanently. Would you like to continue?.
+        '''</summary>
+        Friend Shared ReadOnly Property ConfirmDelete() As String
+            Get
+                Return ResourceManager.GetString("ConfirmDelete", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to The confirmed password does not match the new password.
+        '''</summary>
+        Friend Shared ReadOnly Property ConfirmPasswordNotMatch() As String
+            Get
+                Return ResourceManager.GetString("ConfirmPasswordNotMatch", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to FOR THE DAY {0}.
         '''</summary>
         Friend Shared ReadOnly Property DebitCreditTotalsSubHeader() As String
@@ -110,6 +155,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Deleted Successfully.
+        '''</summary>
+        Friend Shared ReadOnly Property DeletedSuccessful() As String
+            Get
+                Return ResourceManager.GetString("DeletedSuccessful", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Dividends / Refunds Import.
         '''</summary>
         Friend Shared ReadOnly Property DividendRefundImport() As String
@@ -124,6 +178,33 @@ Namespace My.Resources
         Friend Shared ReadOnly Property DivrefImportSuccess() As String
             Get
                 Return ResourceManager.GetString("DivrefImportSuccess", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to E&amp;dit.
+        '''</summary>
+        Friend Shared ReadOnly Property Edit() As String
+            Get
+                Return ResourceManager.GetString("Edit", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Please fill-out all fields..
+        '''</summary>
+        Friend Shared ReadOnly Property FillOutAllFields() As String
+            Get
+                Return ResourceManager.GetString("FillOutAllFields", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Password is incorrect..
+        '''</summary>
+        Friend Shared ReadOnly Property IncorrectPassword() As String
+            Get
+                Return ResourceManager.GetString("IncorrectPassword", resourceCulture)
             End Get
         End Property
         
@@ -173,6 +254,33 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Record Already Exists. Please try again.
+        '''</summary>
+        Friend Shared ReadOnly Property RecordExists() As String
+            Get
+                Return ResourceManager.GetString("RecordExists", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to &amp;Reset Password.
+        '''</summary>
+        Friend Shared ReadOnly Property ResetPassword() As String
+            Get
+                Return ResourceManager.GetString("ResetPassword", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Sa&amp;ve.
+        '''</summary>
+        Friend Shared ReadOnly Property Save() As String
+            Get
+                Return ResourceManager.GetString("Save", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Savings Deposit System.
         '''</summary>
         Friend Shared ReadOnly Property SavingsDepositSystem() As String
@@ -187,6 +295,33 @@ Namespace My.Resources
         Friend Shared ReadOnly Property SavingsDepositSystemReport() As String
             Get
                 Return ResourceManager.GetString("SavingsDepositSystemReport", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Savings Deposit System - User Access.
+        '''</summary>
+        Friend Shared ReadOnly Property SavingsDepositUserAccess() As String
+            Get
+                Return ResourceManager.GetString("SavingsDepositUserAccess", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Unexpected Error Occured.
+        '''</summary>
+        Friend Shared ReadOnly Property Unsuccessful() As String
+            Get
+                Return ResourceManager.GetString("Unsuccessful", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Record Update Successful.
+        '''</summary>
+        Friend Shared ReadOnly Property UpdateSuccessful() As String
+            Get
+                Return ResourceManager.GetString("UpdateSuccessful", resourceCulture)
             End Get
         End Property
     End Class

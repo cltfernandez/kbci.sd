@@ -1,7 +1,6 @@
 ﻿Public Class frmSDS_Main_Memlist
     Dim EDIT As Boolean
-    Dim qryMem, ffield, srchstr As String
-    Dim frmFDS_Main_PrntFDL_Srch As frmFDS_Main_PrntFDL_Srch
+    Dim qryMem, ffield, srchstr As String    
     Private closeform As Boolean = False
     Sub ApplyAcc()
         If CBool(CInt(CStr(SPTAG(11)))) = False Then
@@ -58,14 +57,13 @@
     End Sub
 
     Private Sub Button8_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button8.Click
-        SDDB = False
-        frmFDS_Main_PrntFDL_Srch = New frmFDS_Main_PrntFDL_Srch
-        frmFDS_Main_PrntFDL_Srch.ShowDialog()
-        If SW = True Then
-            TextBox2.Text = Ckbcino(SEL_KBCI_NO)
-            TextBox1.Text = SEL_FNAME
-            loadFDInfo()
-        End If
+        Using MemberSearchForm As New frmMemberSearchDialog(Common.MemberSearchType.MembersData)
+            If MemberSearchForm.ShowDialog = System.Windows.Forms.DialogResult.OK Then
+                TextBox2.Text = Ckbcino(SEL_KBCI_NO)
+                TextBox1.Text = SEL_FNAME
+                loadFDInfo()
+            End If
+        End Using
     End Sub
     Sub loadFDInfo()
         Dim tb As New CLTF.DB.SQLDBConnection
@@ -243,21 +241,19 @@
     End Sub
 
     Private Sub Button7_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button7.Click
-        SDDB = True
-        frmFDS_Main_PrntFDL_Srch = New frmFDS_Main_PrntFDL_Srch
-        frmFDS_Main_PrntFDL_Srch.ShowDialog()
-        If SW = True Then
-            Label16.Text = Ckbacctno(SEL_KBCI_NO)
-        End If
+        Using MemberSearchForm As New frmMemberSearchDialog
+            If MemberSearchForm.ShowDialog = System.Windows.Forms.DialogResult.OK Then
+                Label16.Text = Ckbacctno(SEL_KBCI_NO)
+            End If
+        End Using
     End Sub
 
     Private Sub Button6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button6.Click
-        SDDB = True
-        frmFDS_Main_PrntFDL_Srch = New frmFDS_Main_PrntFDL_Srch
-        frmFDS_Main_PrntFDL_Srch.ShowDialog()
-        If SW = True Then
-            Label17.Text = Ckbacctno(SEL_KBCI_NO)
-        End If
+        Using MemberSearchForm As New frmMemberSearchDialog
+            If MemberSearchForm.ShowDialog = System.Windows.Forms.DialogResult.OK Then
+                Label17.Text = Ckbacctno(SEL_KBCI_NO)
+            End If
+        End Using
     End Sub
 
 

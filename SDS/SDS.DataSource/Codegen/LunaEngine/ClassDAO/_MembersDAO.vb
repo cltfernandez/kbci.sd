@@ -711,7 +711,7 @@ Private Function FindReal(ByVal SearchOption As LUNA.LunaSearchOption, ByVal Par
 	    End if
     Next
 
-    If SearchOption.OrderBy.Length Then Sql &= " ORDER BY " & SearchOption.OrderBy
+            If Not SearchOption.OrderBy Is Nothing Then sql &= " ORDER BY " & SearchOption.OrderBy
 
 	
     Ls = GetData(sql, SearchOption.AddEmptyItem)

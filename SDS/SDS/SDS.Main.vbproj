@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{598EB03F-25B6-4E08-A080-97F202D5203C}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -178,10 +178,10 @@
     <Compile Include="Forms\PolicyDefinitionsForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmSDS_Main_Access.Designer.vb">
-      <DependentUpon>frmSDS_Main_Access.vb</DependentUpon>
+    <Compile Include="Forms\frmUserAccessForm.Designer.vb">
+      <DependentUpon>frmUserAccessForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmSDS_Main_Access.vb">
+    <Compile Include="Forms\frmUserAccessForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\frmSDS_Main_TEntry_Oth.Designer.vb">
@@ -203,7 +203,7 @@
     <Compile Include="Forms\frmDateRangePickerDialog.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmFDS_Main_PrntFDL_Srch.vb">
+    <Compile Include="Forms\frmMemberSearchDialog.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\frmReportViewer.vb">
@@ -538,8 +538,8 @@
       <DependentUpon>frmDateRangePickerDialog.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmFDS_Main_PrntFDL_Srch.resx">
-      <DependentUpon>frmFDS_Main_PrntFDL_Srch.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\frmMemberSearchDialog.resx">
+      <DependentUpon>frmMemberSearchDialog.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmReportViewer.resx">
@@ -562,8 +562,8 @@
       <DependentUpon>frmSDS_DormancyCharges.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmSDS_Main_Access.resx">
-      <DependentUpon>frmSDS_Main_Access.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\frmUserAccessForm.resx">
+      <DependentUpon>frmUserAccessForm.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmSDS_Main_AcctFloats.resx">

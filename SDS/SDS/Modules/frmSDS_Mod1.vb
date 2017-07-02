@@ -572,6 +572,10 @@ ErrorHandler:
         Return String.Format("{0}-{1}-{2}", Mid(rawKBCINo, 1, 2), Mid(rawKBCINo, 3, 4), Mid(rawKBCINo, 7, 1))
     End Function
 
+    Public Function FormatAccountNumber(ByVal rawAccountNumber As String) As String
+        Return String.Format("{0}-{1}-{2}", Mid(rawAccountNumber, 1, 4), Mid(rawAccountNumber, 5, 5), Mid(rawAccountNumber, 10, 1))        
+    End Function
+
     Public Sub PopulateListView(ByRef listViewControl As ListView, ByRef gridView As DataGridView, ByVal wSET As String, ByVal fSET As String)
         Dim sLvw As New ListViewItem
         Dim colCTR, wds, wdsCTR As Integer

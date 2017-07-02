@@ -37,7 +37,7 @@ Public Class frmRecalculateLedger
     End Property
 
 
-    Private MemberSearchForm As frmFDS_Main_PrntFDL_Srch
+
     Private Result As RecalculateLedgerResult
     Private Sub bgwOTCProcess_DoWork(ByVal sender As System.Object, ByVal e As System.ComponentModel.DoWorkEventArgs) Handles bgwOTCProcess.DoWork
         CalculatorService = New RecalculateLedgerBusinessLogic(AccountNo, StartDate)
@@ -62,13 +62,12 @@ Public Class frmRecalculateLedger
     End Sub
 
     Private Sub btnSearchMember_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSearchMember.Click
-        MemberSearchForm = New frmFDS_Main_PrntFDL_Srch
-        MemberSearchForm.ShowDialog()
-        If SW = True Then
-            AccountNo = SEL_KBCI_NO
-            txtSelectedMember.Text = SEL_FNAME
-        End If
-
+        Using MemberSearchForm As New frmMemberSearchDialog(MemberSearchType.SavingsMasterData)
+            If MemberSearchForm.ShowDialog = System.Windows.Forms.DialogResult.OK Then
+                AccountNo = SEL_KBCI_NO
+                txtSelectedMember.Text = SEL_FNAME
+            End If
+        End Using
     End Sub
 
     Private Sub rbRecalculateIndividual_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbRecalculateIndividual.CheckedChanged

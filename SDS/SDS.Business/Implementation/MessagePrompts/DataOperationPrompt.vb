@@ -10,7 +10,10 @@ Public Class DataOperationPrompt : Implements IMessagePromptBusinessLogic
                 MsgBox(GetGlobalResourceString("UpdateSuccessful"), MsgBoxStyle.Information, GetGlobalResourceString("SavingsDepositSystem"))
             Case RecordUpdateResult.Unsuccessful
                 MsgBox(GetGlobalResourceString("Unsuccessful"), MsgBoxStyle.Critical, GetGlobalResourceString("SavingsDepositSystem"))
-
+            Case RecordUpdateResult.RecordExists
+                MsgBox(GetGlobalResourceString("RecordExists"), MsgBoxStyle.Critical, GetGlobalResourceString("SavingsDepositSystem"))
+            Case RecordUpdateResult.DeletedSuccessful
+                MsgBox(GetGlobalResourceString("DeletedSuccessful"), MsgBoxStyle.Critical, GetGlobalResourceString("SavingsDepositSystem"))            
         End Select
     End Sub
 

@@ -86,7 +86,9 @@
   <ItemGroup>
     <Compile Include="Implementation\DividendRefundImportService.vb" />
     <Compile Include="Implementation\FormOperations\ChangePasswordService.vb" />
+    <Compile Include="Implementation\FormOperations\MemberSearchService.vb" />
     <Compile Include="Implementation\FormOperations\PolicyDefinitionsService.vb" />
+    <Compile Include="Implementation\FormOperations\UserSecurityService.vb" />
     <Compile Include="Implementation\MessagePrompts\ChangePasswordPrompts.vb" />
     <Compile Include="Implementation\MessagePrompts\DataOperationPrompt.vb" />
     <Compile Include="Implementation\MessagePrompts\RecalculateLedgerPrompt.vb" />

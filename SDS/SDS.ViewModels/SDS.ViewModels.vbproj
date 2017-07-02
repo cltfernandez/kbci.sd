@@ -80,6 +80,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="ViewModels\ChangePasswordViewModel.vb" />
+    <Compile Include="ViewModels\UserAccessViewModel.vb" />
+    <Compile Include="ViewModels\UserPermissionViewModel.vb" />
+    <Compile Include="ViewModels\UserViewModel.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">

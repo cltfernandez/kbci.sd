@@ -110,7 +110,7 @@ Public Overrides Function Save(byRef cls as Spteller) as Integer
                             sql &= " ADDTOTAL,"
                             sql &= " DIB,"
                             sql &= " REF,"
-                            sql &= " WITH,"
+                            sql &= " [WITH],"
                             sql &= " CHKENC,"
                             sql &= " COCI,"
                             sql &= " CHKDEP,"
@@ -124,7 +124,7 @@ Public Overrides Function Save(byRef cls as Spteller) as Integer
                             sql &= " TOTDISB,"
                             sql &= " CBALEND,"
                             sql &= " CTTCEND,"
-                            sql &= " OVER,"
+                            sql &= " [OVER],"
                             sql &= " B_1000,"
                             sql &= " B_500,"
                             sql &= " B_200,"
@@ -382,7 +382,7 @@ Public Overrides Function Save(byRef cls as Spteller) as Integer
   					myCommand.Parameters.Add(p)
 
 					p = myCommand.CreateParameter
-					p.ParameterName = "@WITH"
+                        p.ParameterName = "@WITH"
                         p.Value = cls.SDWITH
   					myCommand.Parameters.Add(p)
 
@@ -694,7 +694,7 @@ Private Function FindReal(ByVal SearchOption As LUNA.LunaSearchOption, ByVal Par
 	    End if
     Next
 
-    If SearchOption.OrderBy.Length Then Sql &= " ORDER BY " & SearchOption.OrderBy
+    If Not SearchOption.OrderBy is Nothing Then Sql &= " ORDER BY " & SearchOption.OrderBy
 
 	
     Ls = GetData(sql, SearchOption.AddEmptyItem)

@@ -117,14 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AddSuccessful" xml:space="preserve">
+    <value>Successfully Added New Record</value>
+  </data>
   <data name="Calculating" xml:space="preserve">
     <value>Calculating...</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Ca&amp;ncel</value>
   </data>
   <data name="ChangePasswordFailed" xml:space="preserve">
     <value>Change Password Failed!</value>
   </data>
   <data name="ChangePasswordSuccess" xml:space="preserve">
     <value>Change Password Successful!</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>C&amp;lose</value>
+  </data>
+  <data name="ConfirmDelete" xml:space="preserve">
+    <value>This will delete the record permanently. Would you like to continue?</value>
+  </data>
+  <data name="ConfirmPasswordNotMatch" xml:space="preserve">
+    <value>The confirmed password does not match the new password</value>
   </data>
   <data name="DebitCreditTotalsSubHeader" xml:space="preserve">
     <value>FOR THE DAY {0}</value>
@@ -134,11 +149,23 @@
     <value>DEBIT/CREDIT TOTALS</value>
     <comment>Reports</comment>
   </data>
+  <data name="DeletedSuccessful" xml:space="preserve">
+    <value>Deleted Successfully</value>
+  </data>
   <data name="DividendRefundImport" xml:space="preserve">
     <value>Dividends / Refunds Import</value>
   </data>
   <data name="DivrefImportSuccess" xml:space="preserve">
     <value>Dividend/Refund import successful. You can now execute DIV/REF posting.</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>E&amp;dit</value>
+  </data>
+  <data name="FillOutAllFields" xml:space="preserve">
+    <value>Please fill-out all fields.</value>
+  </data>
+  <data name="IncorrectPassword" xml:space="preserve">
+    <value>Password is incorrect.</value>
   </data>
   <data name="InvalidDateRange" xml:space="preserve">
     <value>Invalid date range please, select a valid date range.</value>
@@ -155,10 +182,28 @@
   <data name="RecalculationSuccessful" xml:space="preserve">
     <value>Recalculation Successful!</value>
   </data>
+  <data name="RecordExists" xml:space="preserve">
+    <value>Record Already Exists. Please try again</value>
+  </data>
+  <data name="ResetPassword" xml:space="preserve">
+    <value>&amp;Reset Password</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Sa&amp;ve</value>
+  </data>
   <data name="SavingsDepositSystem" xml:space="preserve">
     <value>Savings Deposit System</value>
   </data>
   <data name="SavingsDepositSystemReport" xml:space="preserve">
     <value>Savings Deposit System - Generate Report</value>
+  </data>
+  <data name="SavingsDepositUserAccess" xml:space="preserve">
+    <value>Savings Deposit System - User Access</value>
+  </data>
+  <data name="Unsuccessful" xml:space="preserve">
+    <value>Unexpected Error Occured</value>
+  </data>
+  <data name="UpdateSuccessful" xml:space="preserve">
+    <value>Record Update Successful</value>
   </data>
 </root>

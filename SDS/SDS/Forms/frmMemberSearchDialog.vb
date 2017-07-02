@@ -1,6 +1,8 @@
 Imports SDS.Common
+Imports SDS.ViewModels
+Imports SDS.BusinessLogic
 
-Public Class frmFDS_Main_PrntFDL_Srch
+Public Class frmMemberSearchDialog
     Inherits System.Windows.Forms.Form
     Public Sub New()
         MyBase.New()
@@ -54,7 +56,7 @@ Public Class frmFDS_Main_PrntFDL_Srch
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmFDS_Main_PrntFDL_Srch))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMemberSearchDialog))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
         Me.DataGridView1 = New System.Windows.Forms.DataGridView
         Me.Label5 = New System.Windows.Forms.Label
@@ -268,9 +270,21 @@ Public Class frmFDS_Main_PrntFDL_Srch
     Dim eload As Boolean
     Dim QRY, SRCH, fField, WD, ST As String
     Dim mTXT As TextBox
-
-
+    Private MemberSearchBovmList As New List(Of MemberSearchBovm)
     Private _SearchType As MemberSearchType
+    Private svc As IFormOperations
+    Private AlignmentDefinition As String
+    Private WidthDefinition As String
+
+    Private _SelectedMember As MemberSearchBovm
+    Public Property SelectedMember() As MemberSearchBovm
+        Get
+            Return _SelectedMember
+        End Get
+        Set(ByVal value As MemberSearchBovm)
+            _SelectedMember = value
+        End Set
+    End Property
 
     Private Sub TextBox1_KeyUp(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles TextBox1.KeyUp
         SRCH = TextBox1.Text : fField = TableFieldConstants.Name
@@ -289,23 +303,26 @@ Public Class frmFDS_Main_PrntFDL_Srch
 
     Private Sub frmFDS_Main_PrntFDL_Srch_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         If _SearchType = MemberSearchType.SavingsMasterData Then
-            QRY = "SELECT SDMASTER_ID, ACCTNO ACCT_NO,ACCTNAME NAME,ACCTSTAT STATUS FROM SDMASTER"
-            WD = "0:100:451:50"
-            ST = "1:2:1:2"
+            AlignmentDefinition = ColumnAlignmentDefinition.SavingsMasterSearchList
+            WidthDefinition = ColumnWidthDefinition.SavingsMasterSearchList
         Else
-            QRY = "SELECT KBCI_ID,KBCI_NO, LNAME + ', ' +FNAME + ' ' + MI + '.' NAME,FEBTC_SA FROM MEMBERS"
-            WD = "0:100:501:0"
-            ST = "1:1:1:1"
+            AlignmentDefinition = ColumnAlignmentDefinition.MembersSearchList
+            WidthDefinition = ColumnWidthDefinition.MembersSearchList
         End If
-        FillLV(ListView1, GetData(QRY, "", DataGridView1), WD, ST, False)
+
+        svc = New MemberSearchService(_SearchType)
+        MemberSearchBovmList = svc.GetData()
+        PopulateListView(ListView1, GetGridViewDataFromObject(MemberSearchBovmList, DataGridView1), WidthDefinition, AlignmentDefinition)
     End Sub
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
+        Dim idx As Integer
         If ListView1.SelectedItems.Count > 0 Then
+            If _SearchType = MemberSearchType.MembersData Then idx = 1 Else idx = 3
             SW = True
-            SEL_KBCI_NO = ListView1.Items(ListView1.SelectedIndices(0)).SubItems(1).Text
+            SEL_KBCI_NO = ListView1.Items(ListView1.SelectedIndices(0)).SubItems(idx).Text
             SEL_FNAME = TextBox1.Text
-            'SelectedMember = rsMemberSearch.Find(Function(x) x.KBCI_NO = SEL_KBCI_NO)
+            SelectedMember = MemberSearchBovmList.Find(Function(x) x.KbciNumber = SEL_KBCI_NO)
             Me.DialogResult = System.Windows.Forms.DialogResult.OK
         End If
     End Sub
@@ -317,11 +334,12 @@ Public Class frmFDS_Main_PrntFDL_Srch
     Private Sub ListView1_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ListView1.SelectedIndexChanged
         Dim ACCTNO As String
         If ListView1.SelectedIndices.Count > 0 Then
-            ACCTNO = ListView1.Items(ListView1.SelectedIndices(0)).SubItems(1).Text
-            If SDDB = False Then
-                TextBox3.Text = Mid(ACCTNO, 1, 2) & "-" & Mid(ACCTNO, 3, 4) & "-" & Mid(ACCTNO, 7, 1)
+            If _SearchType = MemberSearchType.MembersData Then
+                ACCTNO = ListView1.Items(ListView1.SelectedIndices(0)).SubItems(1).Text
+                TextBox3.Text = FormatKBCINo(ACCTNO)
             Else
-                TextBox3.Text = Mid(ACCTNO, 1, 4) & "-" & Mid(ACCTNO, 5, 5) & "-" & Mid(ACCTNO, 10, 1)
+                ACCTNO = ListView1.Items(ListView1.SelectedIndices(0)).SubItems(3).Text
+                TextBox3.Text = FormatAccountNumber(ACCTNO)
             End If
 
             TextBox1.Text = ListView1.Items(ListView1.SelectedIndices(0)).SubItems(2).Text
@@ -330,11 +348,17 @@ Public Class frmFDS_Main_PrntFDL_Srch
 
 
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
+
         If SRCH <> "" Then
-            FillLV(ListView1, GetData(QRY, fField & " like '%" & SRCH & "%'", DataGridView1), WD, ST, False)
+            Dim FoundMembers As List(Of MemberSearchBovm) = MemberSearchBovmList.Where(Function(x) x.AccountNumber.Contains(SRCH.ToUpper) Or x.FullName.Contains(SRCH.ToUpper)).ToList
+            PopulateListView(ListView1, GetGridViewDataFromObject(FoundMembers, DataGridView1), WidthDefinition, AlignmentDefinition)
         Else
-            FillLV(ListView1, GetData(QRY, "", DataGridView1), WD, ST, False)
+            PopulateListView(ListView1, GetGridViewDataFromObject(MemberSearchBovmList, DataGridView1), WidthDefinition, AlignmentDefinition)
         End If
         If DataGridView1.Rows.Count > 0 Then ListView1.Focus()
+    End Sub
+
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        Me.DialogResult = System.Windows.Forms.DialogResult.Cancel
     End Sub
 End Class
