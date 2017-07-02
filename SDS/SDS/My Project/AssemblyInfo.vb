@@ -12,7 +12,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("DSE KBCI - Savings Deposit System")> 
 <Assembly: AssemblyCompany("DSE BSP Credit Cooperative")> 
 <Assembly: AssemblyProduct("KBCI.SDS")> 
-<Assembly: AssemblyCopyright("Copyright ©  2009")> 
+<Assembly: AssemblyCopyright("Chris Fernandez - Copyright©  2009")> 
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)>
