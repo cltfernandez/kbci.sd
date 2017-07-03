@@ -914,7 +914,7 @@ Public Class frmSDS_Main
 
     Private frmSDS_Main_TEntry As frmSDS_Main_TEntry
     Private ReportViewerForm As frmReportViewer
-    Private DateRangePickerForm As frmDateRangePickerDialog
+    Private DateRangePickerForm As DateRangePickerDialog
     Private frmSDS_Main_Batch As frmSDS_Main_Batch
     Private frmSDS_Main_Payroll As frmSDS_Main_Payroll
     Private frmSDS_Main_Log As frmSDS_Main_Log
@@ -926,18 +926,18 @@ Public Class frmSDS_Main
     Private frmSDS_Main_Teller_EOD As frmSDS_Main_Teller_EOD
     Private frmSDS_Close_Table As frmSDS_Close_Table
     Private frmSDS_Close_otc As frmSDS_Close_OTC
-    Private frmMain_Ctrl As PolicyDefinitionsForm
-    Private Form1 As Form1
-    Private frmSDS_Main_Access As frmUserAccessForm
+    Private frmMain_Ctrl As PolicyDefinitions
+    Private Form1 As ApplicationConfiguration
+    Private frmSDS_Main_Access As UserAdministration
     Private frmSDS_Main_AcctFloats As frmSDS_Main_AcctFloats
     Private frmSDS_Main_TEntry_Oth As frmSDS_Main_TEntry_Oth
     Private frmPayrollExtract As frmPayrollExtract
-    Private frmDIVREFExtract As frmDividendRefundImport
-    Private frmSDS_Change_Password As ChangePasswordForm
+    Private frmDIVREFExtract As DividendRefundImport
+    Private frmSDS_Change_Password As ChangePasswordDialog
     Private frmSDS_DormancyCharges As frmSDS_DormancyCharges
-    Private AboutBox1 As AboutBox1
+    Private AboutBox1 As About
     Private frmSDS_Backup As frmSDS_Backup
-    Private frmRecalculateLedger As frmRecalculateLedger
+    Private frmRecalculateLedger As LedgerRecalculationDialog
     Dim LDAMT, DR As Decimal
 
 
@@ -955,7 +955,7 @@ Public Class frmSDS_Main
         Dim x As MenuItem
         For Each x In MainMenu1.MenuItems
             x.Enabled = True
-        Next        
+        Next
         RunStartup()
     End Sub
     Sub RunStartup()
@@ -1023,11 +1023,11 @@ Public Class frmSDS_Main
         Dim ds As New DataSet
         Dim sQRY As String
         SDDB = True
-        Using MemberSearchForm As New frmMemberSearchDialog
+        Using MemberSearchForm As New MemberSearchDialog
             ReportViewerForm = New frmReportViewer
             ReportViewerForm.MdiParent = Me
             If MemberSearchForm.ShowDialog = System.Windows.Forms.DialogResult.OK Then
-                DateRangePickerForm = New frmDateRangePickerDialog
+                DateRangePickerForm = New DateRangePickerDialog
                 DateRangePickerForm.ShowDialog()
                 If SW = True Then
                     sQRY = "SELECT ST.TRANDATE TRAN_DATE,ST.ADD_TIME [TIME],ST.TRANCODE COD,ST.CHKBANK BANK," & _
@@ -1135,7 +1135,7 @@ Public Class frmSDS_Main
         Dim sQRY As String
         ReportViewerForm = New frmReportViewer
         ReportViewerForm.MdiParent = Me
-        DateRangePickerForm = New frmDateRangePickerDialog
+        DateRangePickerForm = New DateRangePickerDialog
         DateRangePickerForm.ShowDialog()
         If SW = True Then
             sQRY = "SELECT LH.ACCTNO,SM.ACCTNAME,LH.HOLDCD,LH.HOLDTYPE,LH.HOLDAMT, " & _
@@ -1372,13 +1372,13 @@ Public Class frmSDS_Main
 
     Private Sub MenuItem22_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuControlFile.Click
         If IsFormLoaded("frmMain_Ctrl") Then Exit Sub
-        frmMain_Ctrl = New PolicyDefinitionsForm
+        frmMain_Ctrl = New PolicyDefinitions
         frmMain_Ctrl.ShowDialog()
     End Sub
 
     Private Sub MenuItem21_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuUserFile.Click
         If IsFormLoaded("frmSDS_Main_Access") Then Exit Sub
-        frmSDS_Main_Access = New frmUserAccessForm
+        frmSDS_Main_Access = New UserAdministration
         frmSDS_Main_Access.ShowDialog()
 
     End Sub
@@ -1712,7 +1712,7 @@ Public Class frmSDS_Main
     End Sub
 
     Private Sub MenuItem79_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItem79.Click
-        AboutBox1 = New AboutBox1
+        AboutBox1 = New About
         AboutBox1.ShowDialog()
     End Sub
 
@@ -2135,7 +2135,7 @@ Public Class frmSDS_Main
 
     Private Sub MenuItem28_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuReactivateAccount.Click
         Dim upd As New CLTF.DB.SQLDBConnection
-        Using MemberSearchForm As New frmMemberSearchDialog
+        Using MemberSearchForm As New MemberSearchDialog
             If MemberSearchForm.ShowDialog = System.Windows.Forms.DialogResult.OK Then
                 upd.OpenCommand(rCN)
                 MsgBox("Updated [" & upd.Execute("UPDATE SDMASTER SET " & _
@@ -2247,7 +2247,7 @@ Public Class frmSDS_Main
     End Sub
 
     Private Sub MenuItem85_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DivRefExtract.Click
-        frmDIVREFExtract = New frmDividendRefundImport
+        frmDIVREFExtract = New DividendRefundImport
         frmDIVREFExtract.ShowDialog()
     End Sub
 
@@ -2256,7 +2256,7 @@ Public Class frmSDS_Main
     End Sub
 
     Private Sub MenuItem86_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuChangePassword.Click
-        frmSDS_Change_Password = New ChangePasswordForm
+        frmSDS_Change_Password = New ChangePasswordDialog
         frmSDS_Change_Password.ShowDialog()
     End Sub
 
@@ -2416,7 +2416,7 @@ Public Class frmSDS_Main
 
     Private Sub MenuItem92_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuConnection.Click
         If IsFormLoaded("Form1") Then Exit Sub
-        Form1 = New Form1
+        Form1 = New ApplicationConfiguration
         Form1.ShowDialog()
     End Sub
 
@@ -2433,7 +2433,7 @@ Public Class frmSDS_Main
     End Sub
 
     Private Sub MenuItem94_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuRecalculateLedger.Click
-        frmRecalculateLedger = New frmRecalculateLedger(New RecalculateLedgerPrompt())
+        frmRecalculateLedger = New LedgerRecalculationDialog(New RecalculateLedgerPrompt())
         frmRecalculateLedger.ShowDialog()
     End Sub
 
@@ -2444,7 +2444,7 @@ Public Class frmSDS_Main
         Dim sQRY As String
         SDDB = True
 
-        DateRangePickerForm = New frmDateRangePickerDialog
+        DateRangePickerForm = New DateRangePickerDialog
         DateRangePickerForm.DatePickerType = Common.DatePickerType.SingleDate
         DateRangePickerForm.ShowDialog()
         If SW = True Then

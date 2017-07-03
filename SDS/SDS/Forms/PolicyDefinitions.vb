@@ -2,7 +2,7 @@
 Imports SDS.ViewModels
 Imports System.Text.RegularExpressions
 
-Public Class PolicyDefinitionsForm
+Public Class PolicyDefinitions
 
     Private _formService As IFormOperations
 
@@ -18,7 +18,7 @@ Public Class PolicyDefinitionsForm
         Me.Dispose()
     End Sub
 
-    Private Sub Button6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button6.Click        
+    Private Sub Button6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button6.Click
         If Button6.Text = "E&dit" Then
             Button6.Text = "Sa&ve"
             EorD(True, GroupBox1)

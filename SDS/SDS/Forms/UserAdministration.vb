@@ -2,7 +2,7 @@
 Imports SDS.ViewModels
 Imports SDS.Common.Utilities
 Imports SDS.Common
-Public Class frmUserAccessForm
+Public Class UserAdministration
     Dim MYSPTAG() As Char
     Dim EDIT As Boolean
     Dim SPUSER_ID As String
@@ -134,7 +134,7 @@ Public Class frmUserAccessForm
             btnNewUser.Enabled = False
             txtPassword.Enabled = True : txtPassword.Text = ""
             txtConfirmPassword.Enabled = True : txtConfirmPassword.Text = ""
-        Else            
+        Else
             MessageService = New ChangePasswordPrompts
             Dim resetPasswordVm As New ChangePasswordViewModel With {.Id = SelectedUser.Id, _
                                                                      .UserName = SelectedUser.UserId, _

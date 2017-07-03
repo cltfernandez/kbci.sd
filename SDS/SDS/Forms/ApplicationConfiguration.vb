@@ -3,7 +3,7 @@ Imports System.Text
 Imports System.Security.Cryptography
 Imports System.Configuration
 Imports System.Xml
-Public Class Form1
+Public Class ApplicationConfiguration
 
     Inherits System.Windows.Forms.Form
 
@@ -53,7 +53,7 @@ Public Class Form1
     Friend WithEvents TextBox8 As System.Windows.Forms.TextBox
     Friend WithEvents Label8 As System.Windows.Forms.Label
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ApplicationConfiguration))
         Me.Button3 = New System.Windows.Forms.Button
         Me.Label1 = New System.Windows.Forms.Label
         Me.TextBox1 = New System.Windows.Forms.TextBox
@@ -316,7 +316,7 @@ Public Class Form1
         MsgBox("New configration definitions are updated kindly restart the application to apply the changes.", MsgBoxStyle.Information, "SD Configuration")
 
     End Sub
-    Function encrypt(ByVal txt As String, ByVal key As String) As String        
+    Function encrypt(ByVal txt As String, ByVal key As String) As String
         Dim Crypt As New Crpyt(txt, key)
         Return Crypt.Encrypt
     End Function

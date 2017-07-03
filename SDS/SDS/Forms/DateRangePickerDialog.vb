@@ -1,6 +1,6 @@
 Imports SDS.Common
 Imports SDS.Common.Utilities
-Public Class frmDateRangePickerDialog
+Public Class DateRangePickerDialog
     Inherits System.Windows.Forms.Form
 
 #Region " Windows Form Designer generated code "
@@ -39,7 +39,7 @@ Public Class frmDateRangePickerDialog
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmDateRangePickerDialog))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DateRangePickerDialog))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
         Me.Button1 = New System.Windows.Forms.Button
         Me.Button2 = New System.Windows.Forms.Button

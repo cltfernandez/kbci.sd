@@ -2,7 +2,7 @@ Imports SDS.Common
 Imports SDS.ViewModels
 Imports SDS.BusinessLogic
 
-Public Class frmMemberSearchDialog
+Public Class MemberSearchDialog
     Inherits System.Windows.Forms.Form
     Public Sub New()
         MyBase.New()
@@ -56,7 +56,7 @@ Public Class frmMemberSearchDialog
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMemberSearchDialog))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MemberSearchDialog))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
         Me.DataGridView1 = New System.Windows.Forms.DataGridView
         Me.Label5 = New System.Windows.Forms.Label

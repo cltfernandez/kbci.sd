@@ -445,7 +445,7 @@ ErrorHandler:
         End If
     End Function
     Public Sub MSGB(ByVal mess As String)
-        Dim AboutBox1 As AboutBox1 = New AboutBox1
+        Dim AboutBox1 As About = New About
         AboutBox1.TextBoxDescription.Text = mess
         AboutBox1.ShowDialog()
         AboutBox1.Dispose()

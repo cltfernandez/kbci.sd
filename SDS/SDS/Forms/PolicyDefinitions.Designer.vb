@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class PolicyDefinitionsForm
+Partial Class PolicyDefinitions
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,7 +22,7 @@ Partial Class PolicyDefinitionsForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PolicyDefinitionsForm))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PolicyDefinitions))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
         Me.Label17 = New System.Windows.Forms.Label
         Me.txtDormancyFee = New System.Windows.Forms.TextBox

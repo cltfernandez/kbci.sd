@@ -133,13 +133,13 @@
     <Compile Include="Forms\frmSDS_Main_TEntry_TranUpdate.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Form1.vb">
+    <Compile Include="Forms\ApplicationConfiguration.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmDividendRefundImport.Designer.vb">
-      <DependentUpon>frmDividendRefundImport.vb</DependentUpon>
+    <Compile Include="Forms\DividendRefundImport.Designer.vb">
+      <DependentUpon>DividendRefundImport.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmDividendRefundImport.vb">
+    <Compile Include="Forms\DividendRefundImport.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\frmPayrollExtract.Designer.vb">
@@ -154,10 +154,10 @@
     <Compile Include="Forms\frmSDS_Backup.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ChangePasswordForm.Designer.vb">
-      <DependentUpon>ChangePasswordForm.vb</DependentUpon>
+    <Compile Include="Forms\ChangePasswordDialog.Designer.vb">
+      <DependentUpon>ChangePasswordDialog.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ChangePasswordForm.vb">
+    <Compile Include="Forms\ChangePasswordDialog.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\frmSDS_DormancyCharges.Designer.vb">
@@ -172,16 +172,16 @@
     <Compile Include="Forms\frmSDS_Main_AcctFloats.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\PolicyDefinitionsForm.Designer.vb">
-      <DependentUpon>PolicyDefinitionsForm.vb</DependentUpon>
+    <Compile Include="Forms\PolicyDefinitions.Designer.vb">
+      <DependentUpon>PolicyDefinitions.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\PolicyDefinitionsForm.vb">
+    <Compile Include="Forms\PolicyDefinitions.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmUserAccessForm.Designer.vb">
-      <DependentUpon>frmUserAccessForm.vb</DependentUpon>
+    <Compile Include="Forms\UserAdministration.Designer.vb">
+      <DependentUpon>UserAdministration.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmUserAccessForm.vb">
+    <Compile Include="Forms\UserAdministration.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\frmSDS_Main_TEntry_Oth.Designer.vb">
@@ -194,16 +194,16 @@
     <Compile Include="Dataset\dtsSD_Main.vb">
       <DependentUpon>dtsSD_Main.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AboutBox1.Designer.vb">
-      <DependentUpon>AboutBox1.vb</DependentUpon>
+    <Compile Include="Forms\About.Designer.vb">
+      <DependentUpon>About.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AboutBox1.vb">
+    <Compile Include="Forms\About.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmDateRangePickerDialog.vb">
+    <Compile Include="Forms\DateRangePickerDialog.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmMemberSearchDialog.vb">
+    <Compile Include="Forms\MemberSearchDialog.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\frmReportViewer.vb">
@@ -299,10 +299,10 @@
     <Compile Include="Forms\frmSDS_Main_TEntry_Tran.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmRecalculateLedger.Designer.vb">
-      <DependentUpon>frmRecalculateLedger.vb</DependentUpon>
+    <Compile Include="Forms\LedgerRecalculationDialog.Designer.vb">
+      <DependentUpon>LedgerRecalculationDialog.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmRecalculateLedger.vb">
+    <Compile Include="Forms\LedgerRecalculationDialog.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modules\frmSDS_Mod1.vb" />
@@ -518,28 +518,28 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Forms\AboutBox1.resx">
-      <DependentUpon>AboutBox1.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\About.resx">
+      <DependentUpon>About.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmSDS_Main_TEntry_TranUpdate.resx">
       <DependentUpon>frmSDS_Main_TEntry_TranUpdate.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\ApplicationConfiguration.resx">
+      <DependentUpon>ApplicationConfiguration.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmDividendRefundImport.resx">
-      <DependentUpon>frmDividendRefundImport.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\DividendRefundImport.resx">
+      <DependentUpon>DividendRefundImport.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmDateRangePickerDialog.resx">
-      <DependentUpon>frmDateRangePickerDialog.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\DateRangePickerDialog.resx">
+      <DependentUpon>DateRangePickerDialog.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmMemberSearchDialog.resx">
-      <DependentUpon>frmMemberSearchDialog.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\MemberSearchDialog.resx">
+      <DependentUpon>MemberSearchDialog.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmReportViewer.resx">
@@ -554,24 +554,24 @@
       <DependentUpon>frmSDS_Backup.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ChangePasswordForm.resx">
-      <DependentUpon>ChangePasswordForm.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\ChangePasswordDialog.resx">
+      <DependentUpon>ChangePasswordDialog.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmSDS_DormancyCharges.resx">
       <DependentUpon>frmSDS_DormancyCharges.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmUserAccessForm.resx">
-      <DependentUpon>frmUserAccessForm.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\UserAdministration.resx">
+      <DependentUpon>UserAdministration.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmSDS_Main_AcctFloats.resx">
       <DependentUpon>frmSDS_Main_AcctFloats.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PolicyDefinitionsForm.resx">
-      <DependentUpon>PolicyDefinitionsForm.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\PolicyDefinitions.resx">
+      <DependentUpon>PolicyDefinitions.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmSDS_Close_OTC.resx">
@@ -646,8 +646,8 @@
       <DependentUpon>frmSDS_Main_TEntry_Tran.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmRecalculateLedger.resx">
-      <DependentUpon>frmRecalculateLedger.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\LedgerRecalculationDialog.resx">
+      <DependentUpon>LedgerRecalculationDialog.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\TextPrint.resx">

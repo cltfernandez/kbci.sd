@@ -1,7 +1,7 @@
 ﻿Imports SDS.Common.Utilities
 Imports SDS.BusinessLogic
 Imports System.IO
-Public Class frmDividendRefundImport
+Public Class DividendRefundImport
     Private DBF2 As String
     Private ImportService As IImportExportService
     Private Sub bgwDVIREF_DoWork(ByVal sender As System.Object, ByVal e As System.ComponentModel.DoWorkEventArgs) Handles bgwDVIREF.DoWork

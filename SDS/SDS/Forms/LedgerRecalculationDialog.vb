@@ -3,12 +3,12 @@ Imports SDS.BusinessLogic
 Imports SDS.Common
 Imports SDS.Common.Utilities
 
-Public Class frmRecalculateLedger
+Public Class LedgerRecalculationDialog
     Dim batch_Ran As Boolean
 
     Public Sub New(ByVal MsgSvc As IMessagePromptBusinessLogic)
 
-        _IMessageService = MsgSvc        
+        _IMessageService = MsgSvc
         InitializeComponent()
     End Sub
 
@@ -50,7 +50,7 @@ Public Class frmRecalculateLedger
     End Sub
 
     Private Sub btnCalculate_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCalculate.Click
-        If rbRecalculateAll.Checked Or rbRecalculateIndividual.Checked Then            
+        If rbRecalculateAll.Checked Or rbRecalculateIndividual.Checked Then
             StartDate = dtpStartDate.Value
             lblStatus.Text = GetGlobalResourceString("Calculating")
             bgwOTCProcess.RunWorkerAsync()
@@ -62,7 +62,7 @@ Public Class frmRecalculateLedger
     End Sub
 
     Private Sub btnSearchMember_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSearchMember.Click
-        Using MemberSearchForm As New frmMemberSearchDialog(MemberSearchType.SavingsMasterData)
+        Using MemberSearchForm As New MemberSearchDialog(MemberSearchType.SavingsMasterData)
             If MemberSearchForm.ShowDialog = System.Windows.Forms.DialogResult.OK Then
                 AccountNo = SEL_KBCI_NO
                 txtSelectedMember.Text = SEL_FNAME

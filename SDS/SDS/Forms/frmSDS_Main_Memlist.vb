@@ -57,7 +57,7 @@
     End Sub
 
     Private Sub Button8_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button8.Click
-        Using MemberSearchForm As New frmMemberSearchDialog(Common.MemberSearchType.MembersData)
+        Using MemberSearchForm As New MemberSearchDialog(Common.MemberSearchType.MembersData)
             If MemberSearchForm.ShowDialog = System.Windows.Forms.DialogResult.OK Then
                 TextBox2.Text = Ckbcino(SEL_KBCI_NO)
                 TextBox1.Text = SEL_FNAME
@@ -241,7 +241,7 @@
     End Sub
 
     Private Sub Button7_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button7.Click
-        Using MemberSearchForm As New frmMemberSearchDialog
+        Using MemberSearchForm As New MemberSearchDialog
             If MemberSearchForm.ShowDialog = System.Windows.Forms.DialogResult.OK Then
                 Label16.Text = Ckbacctno(SEL_KBCI_NO)
             End If
@@ -249,7 +249,7 @@
     End Sub
 
     Private Sub Button6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button6.Click
-        Using MemberSearchForm As New frmMemberSearchDialog
+        Using MemberSearchForm As New MemberSearchDialog
             If MemberSearchForm.ShowDialog = System.Windows.Forms.DialogResult.OK Then
                 Label17.Text = Ckbacctno(SEL_KBCI_NO)
             End If
