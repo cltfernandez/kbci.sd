@@ -1299,7 +1299,7 @@ Public Class frmSDS_Main_TEntry
         If srchSTR <> "" Then
             Dim bindSDMaster As New BindingSource
             acctslist = New ent_sdmaster_list
-            acctslist.getDataList("WHERE " & fField & " like '%" & srchSTR & "%'", "ORDER BY ACCTNAME")
+            acctslist.getDataList("WHERE " & fField & " like '%" & srchSTR & "%' AND ACCTSTAT = 'A'", "ORDER BY ACCTNAME")
             bindSDMaster.DataSource = acctslist
             DataGridView1.DataSource = bindSDMaster
             FillLV(ListView1, DataGridView1, "0:109:77:548:0:0:0:0:0:102:0:0:0", "1:2:2:1:1:1:1:1:1:2:1:1:1", False)
@@ -1313,7 +1313,7 @@ Public Class frmSDS_Main_TEntry
     Private Sub LoadAcctsList()
         Dim bindSDMaster As New BindingSource
         acctslist = New ent_sdmaster_list
-        acctslist.getDataList(, "ORDER BY ACCTNAME")
+        acctslist.getDataList("WHERE ACCTSTAT = 'A'", "ORDER BY ACCTNAME")
         bindSDMaster.DataSource = acctslist
         DataGridView1.DataSource = bindSDMaster
         FillLV(ListView1, DataGridView1, "0:109:77:548:0:0:0:0:0:102:0:0:0", "1:2:2:1:1:1:1:1:1:2:1:1:1", False)
