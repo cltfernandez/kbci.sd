@@ -642,7 +642,7 @@ ErrorHandler:
                             TempNode.SubItems.Add(FormatNumber(CStr(gridView.Rows(i).Cells(gridView.Columns(colCTR).Name).Value), 2))
                         Else
                             Dim itemValue As String = CStr(gridView.Rows(i).Cells(gridView.Columns(colCTR).Name).Value)
-                            If itemValue.StartsWith("12:00:00 AM") Then
+                            If itemValue Is Nothing Then
                                 itemValue = "--"
                             End If
                             TempNode.SubItems.Add(itemValue)

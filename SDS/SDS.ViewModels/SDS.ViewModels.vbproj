@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="ViewModels\DebitCreditTotalsReportViewModel.vb" />
     <Compile Include="ViewModels\MemberSearchBovm.vb" />
+    <Compile Include="ViewModels\MemberViewModel.vb" />
     <Compile Include="ViewModels\PolicyDefinitionsViewModel.vb" />
     <Compile Include="ViewModels\ReportViewModel.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
