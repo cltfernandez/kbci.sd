@@ -350,7 +350,7 @@ Public Class MemberSearchDialog
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
 
         If SRCH <> "" Then
-            Dim FoundMembers As List(Of MemberSearchBovm) = MemberSearchBovmList.Where(Function(x) x.AccountNumber.Contains(SRCH.ToUpper) Or x.FullName.Contains(SRCH.ToUpper)).ToList
+            Dim FoundMembers As List(Of MemberSearchBovm) = MemberSearchBovmList.Where(Function(x) x.AccountNumber.Contains(SRCH.ToUpper) Or x.FullName.Contains(SRCH.ToUpper)).ToList()
             PopulateListView(ListView1, GetGridViewDataFromObject(FoundMembers, DataGridView1), WidthDefinition, AlignmentDefinition)
         Else
             PopulateListView(ListView1, GetGridViewDataFromObject(MemberSearchBovmList, DataGridView1), WidthDefinition, AlignmentDefinition)

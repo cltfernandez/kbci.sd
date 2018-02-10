@@ -150,7 +150,7 @@
         Dim upd2 As New CLTF.DB.SQLDBConnection
         Dim qrey, accntno As String
         If Button4.Text = "E&dit" Then
-            Button8.Visible = True
+            Button8.Visible = True            
             For Each CTRL5 In GroupBox6.Controls
                 If TypeOf CTRL5 Is TextBox Or TypeOf CTRL5 Is MaskedTextBox Then CTRL5.Enabled = True
             Next
@@ -163,6 +163,7 @@
                 upd.OpenCommand(rCN)
                 MsgBox("Updated [" & upd.Execute("UPDATE SDMASTER SET " & _
                             "CBEMPNO='" & TextBox5.Text.ToUpper.Replace("'", "''") & "'" & _
+                            ",KBCI_NO='" & TextBox2.Text.ToUpper.Replace("-", "") & "'" & _
                             ",ACCTSNAME='" & TextBox6.Text.ToUpper.Replace("'", "''") & "'" & _
                             ",ACCTPHONE1='" & TextBox9.Text.Replace("-", "").ToUpper.Replace("'", "''") & "'" & _
                             ",ACCTPHONE2='" & TextBox10.Text.Replace("-", "").ToUpper.Replace("'", "''") & "'" & _
@@ -171,6 +172,7 @@
                             " WHERE ACCTNO='" & TextBox4.Text.Replace("-", "") & "'") & "] record.", MsgBoxStyle.Information, "Member Maintenance")
                 EorD(False)
                 FillLV(ListView1, GetData(qryMem, "", DataGridView1), "0:109:77:548:0:0:0:0:102:0:0:0:0:0:0:0:0:0:0:0:0", "1:2:2:1:1:1:1:2:1:1:1:1:1:1:1:1:1:1:1:1:3", False)
+                Button8.Visible = False
                 Button8.Visible = False
                 Button4.Text = "E&dit"
             Else

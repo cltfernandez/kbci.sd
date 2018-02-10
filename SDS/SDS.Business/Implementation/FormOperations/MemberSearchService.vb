@@ -19,7 +19,7 @@ Public Class MemberSearchService : Implements IFormOperations
                                                                                       .KbciNumber = x.KBCI_NO, _
                                                                                       .FullName = String.Format("{0}, {1} {2}", x.LNAME, x.FNAME, x.MI), _
                                                                                       .AccountNumber = x.FEBTC_SA, _
-                                                                                      .AccountStatus = String.Empty}).ToList
+                                                                                      .AccountStatus = String.Empty}).OrderBy(Function(y) y.FullName).ToList
             End Using
 
         Else
@@ -30,7 +30,7 @@ Public Class MemberSearchService : Implements IFormOperations
                                                                                       .KbciNumber = x.KBCI_NO, _
                                                                                       .FullName = x.ACCTNAME, _
                                                                                       .AccountNumber = x.ACCTNO, _
-                                                                                      .AccountStatus = x.ACCTSTAT}).ToList
+                                                                                      .AccountStatus = x.ACCTSTAT}).OrderBy(Function(y) y.FullName).ToList
             End Using
         End If
     End Function
